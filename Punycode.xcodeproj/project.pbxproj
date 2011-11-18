@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2099A7D1471DE8600AC5387 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B2099A7C1471DE8600AC5387 /* LICENSE */; };
 		B2D4E99408E0191700574ACD /* Punycode_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */; };
 		B2D4E99508E0191700574ACD /* NSStringPunycodeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B2CB4DCB07B1586000B4C504 /* NSStringPunycodeAdditions.h */; };
 		B2D4E99608E0191700574ACD /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = B2CB4DCF07B158A600B4C504 /* Controller.h */; };
@@ -37,6 +38,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Punycode_Prefix.h; sourceTree = "<group>"; };
+		B2099A7C1471DE8600AC5387 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B2CB4DCB07B1586000B4C504 /* NSStringPunycodeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringPunycodeAdditions.h; sourceTree = "<group>"; };
 		B2CB4DCC07B1586000B4C504 /* NSStringPunycodeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPunycodeAdditions.m; sourceTree = "<group>"; };
 		B2CB4DCF07B158A600B4C504 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		29B97314FDCFA39411CA2CEA /* Punycode */ = {
 			isa = PBXGroup;
 			children = (
+				B2099A7C1471DE8600AC5387 /* LICENSE */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -149,9 +152,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B2D4E99208E0191700574ACD /* Punycode */ = {
+		B2D4E99208E0191700574ACD /* PunyCocoa */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2B33EA80A9B4534002D5B27 /* Build configuration list for PBXNativeTarget "Punycode" */;
+			buildConfigurationList = B2B33EA80A9B4534002D5B27 /* Build configuration list for PBXNativeTarget "PunyCocoa" */;
 			buildPhases = (
 				B2D4E99308E0191700574ACD /* Headers */,
 				B2D4E99708E0191700574ACD /* Resources */,
@@ -163,7 +166,7 @@
 			);
 			dependencies = (
 			);
-			name = Punycode;
+			name = PunyCocoa;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Punycode;
 			productReference = B2D4E9A208E0191800574ACD /* Punycode.app */;
@@ -188,7 +191,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B2D4E99208E0191700574ACD /* Punycode */,
+				B2D4E99208E0191700574ACD /* PunyCocoa */,
 			);
 		};
 /* End PBXProject section */
@@ -200,6 +203,7 @@
 			files = (
 				B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */,
 				B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */,
+				B2099A7D1471DE8600AC5387 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +354,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B2B33EA80A9B4534002D5B27 /* Build configuration list for PBXNativeTarget "Punycode" */ = {
+		B2B33EA80A9B4534002D5B27 /* Build configuration list for PBXNativeTarget "PunyCocoa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2B33EA90A9B4534002D5B27 /* Development */,
