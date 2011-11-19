@@ -104,7 +104,11 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 /*** Main encode function ***/
 
 - (const UTF32Char *)longCharactersWithCount:(NSUInteger *)count {
+#if BYTE_ORDER == LITTLE_ENDIAN
 	NSData *data = [self dataUsingEncoding:NSUTF32LittleEndianStringEncoding];
+#else
+	NSData *data = [self dataUsingEncoding:NSUTF32BigEndianStringEncoding];
+#endif
 	*count = [data length] / sizeof(UTF32Char);
 	return [data bytes];
 }
