@@ -66,7 +66,6 @@ static char encode_digit(unsigned d, int flag)
 
 static char encode_basic(unsigned bcp, int flag)
 {
-	
 	bcp -= (bcp - 97 < 26) << 5;
 	return bcp + ((!flag && (bcp - 65 < 26)) << 5);
 }
