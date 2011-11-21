@@ -115,7 +115,7 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 - (NSString *)punycodeEncodedString {
 	NSMutableString *ret = [NSMutableString string];
 	unsigned n, delta, h, b, outLen, bias, j, m, q, k, t;
-	/* unsigned */ NSUInteger input_length;// = [self length];
+	NSUInteger input_length;// = [self length];
 	const UTF32Char *longchars = [self longCharactersWithCount:&input_length];
 	/* Initialize the state: */
 	
@@ -143,10 +143,8 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	/* number of basic code points, and out is the number of characters */
 	/* that have been output.                                           */
 	
-	if (b > 0) {
+	if (b > 0)
 		[ret appendFormat:@"%C", delimiter];
-		//++outLen;
-	}
 	
 	/* Main encoding loop: */
 	

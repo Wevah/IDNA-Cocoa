@@ -19,9 +19,6 @@
 - (NSString *)encodedURLString;
 - (NSString *)decodedURLString;
 
-//+ (void)setIDNACharacterBlacklist:(NSCharacterSet *)aSet;
-//+ (NSCharacterSet *)IDNACharacterBlacklist;
-
 @end
 
 @interface NSURL (PunycodeAdditions)
