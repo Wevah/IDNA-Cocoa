@@ -214,7 +214,7 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	unsigned char *case_flags = NULL;
 	
 	/* Initialize the state: */
-	/*unsigned*/ NSUInteger input_length = [self length];
+	NSUInteger input_length = [self length];
 	n = initial_n;
 	outLen = i = 0;
 	max_out = UINT_MAX;
