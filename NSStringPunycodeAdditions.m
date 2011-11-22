@@ -305,7 +305,7 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 }
 
 - (NSString *)IDNAEncodedString {
-	NSCharacterSet *nonAscii = [[NSCharacterSet characterSetWithRange:NSMakeRange(1,127)] invertedSet];
+	NSCharacterSet *nonAscii = [[NSCharacterSet characterSetWithRange:NSMakeRange(1, 127)] invertedSet];
 	NSMutableString *ret = [NSMutableString string];
 	NSScanner *s = [NSScanner scannerWithString:[self precomposedStringWithCompatibilityMapping]];
 	NSCharacterSet *dotAt = [NSCharacterSet characterSetWithCharactersInString:@".@"];
