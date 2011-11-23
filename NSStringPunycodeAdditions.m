@@ -300,8 +300,12 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 		//memmove(output + i + 1, output + i, (outLen - i) * sizeof *output);
 		[utf32data replaceBytesInRange:NSMakeRange(i, 0) withBytes:&n length:sizeof(n)];
 	}
-		
+	
+#if BYTE_ORDER == LITTLE_ENDIAN
 	return [[[NSString alloc] initWithData:utf32data encoding:NSUTF32LittleEndianStringEncoding] autorelease];
+#else
+	return [[[NSString alloc] initWithData:utf32data encoding:NSUTF32BigEndianStringEncoding] autorelease];
+#endif
 }
 
 - (NSString *)IDNAEncodedString {
