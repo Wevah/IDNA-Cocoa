@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1070</int>
+		<int key="IBDocument.SystemTarget">1040</int>
 		<string key="IBDocument.SystemVersion">11C74</string>
 		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
 		<string key="IBDocument.AppKitVersion">1138.23</string>
@@ -52,7 +52,7 @@
 				<string key="NSWindowContentMaxSize">{1000, 92}</string>
 				<string key="NSWindowContentMinSize">{300, 92}</string>
 				<object class="NSView" key="NSWindowView" id="1000963834">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSTextField" id="830501834">
@@ -60,6 +60,7 @@
 							<int key="NSvFlags">258</int>
 							<string key="NSFrame">{{91, 50}, {351, 22}}</string>
 							<reference key="NSSuperview" ref="1000963834"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="433612174"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="926723044">
@@ -98,6 +99,7 @@
 							<int key="NSvFlags">260</int>
 							<string key="NSFrame">{{26, 52}, {60, 17}}</string>
 							<reference key="NSSuperview" ref="1000963834"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="830501834"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="617365356">
@@ -128,6 +130,7 @@
 							<int key="NSvFlags">258</int>
 							<string key="NSFrame">{{91, 20}, {351, 22}}</string>
 							<reference key="NSSuperview" ref="1000963834"/>
+							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="872907644">
 								<int key="NSCellFlags">-1804468671</int>
@@ -145,6 +148,7 @@
 							<int key="NSvFlags">260</int>
 							<string key="NSFrame">{{17, 22}, {69, 17}}</string>
 							<reference key="NSSuperview" ref="1000963834"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="533993984"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="856342494">
@@ -159,6 +163,8 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{462, 92}</string>
+					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="362896670"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
@@ -1546,27 +1552,21 @@
 					<string key="superclassName">NSWindowController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="stringFromIDNA:">id</string>
-						<string key="stringFromPunycode:">id</string>
-						<string key="stringToPunycode:">id</string>
+						<string key="stringToIDNA:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="stringFromIDNA:">
 							<string key="name">stringFromIDNA:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="stringFromPunycode:">
-							<string key="name">stringFromPunycode:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="stringToPunycode:">
-							<string key="name">stringToPunycode:</string>
+						<object class="IBActionInfo" key="stringToIDNA:">
+							<string key="name">stringToIDNA:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="idnField">NSTextField</string>
 						<string key="normalField">NSTextField</string>
-						<string key="punycodeField">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="idnField">
@@ -1575,10 +1575,6 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="normalField">
 							<string key="name">normalField</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="punycodeField">
-							<string key="name">punycodeField</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
 					</dictionary>
@@ -1634,7 +1630,7 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
-			<integer value="1070" key="NS.object.0"/>
+			<real value="1040" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
