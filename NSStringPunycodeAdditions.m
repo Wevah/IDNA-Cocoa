@@ -207,7 +207,7 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 - (NSString *)punycodeDecodedString {
 	UTF32Char n;
-	NSUInteger i, j, outLen;
+	unsigned i, j, outLen;
 	unsigned max_out, bias,
 	b, inPos, oldi, w, k, digit, t;
 	
@@ -444,9 +444,7 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	
 	if ([urlParts objectForKey:@"fragment"])
 		[ret appendFormat:@"#%@", [urlParts objectForKey:@"fragment"]];
-	
-	NSLog(@"%@", urlParts);
-		
+			
 	return ret;
 }
 
