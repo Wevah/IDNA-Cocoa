@@ -361,8 +361,8 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	NSScanner *s = [NSScanner scannerWithString:[self precomposedStringWithCompatibilityMapping]];
 	NSString *scheme = @"";
 	NSString *delim = @"";
-	//NSString *username = @"";
-	//NSString *password = @"";
+	NSString *username = nil;
+	NSString *password = nil;
 	NSString *host = @"";
 	NSString *path = @"";
 	NSString *fragment = nil;
@@ -386,15 +386,44 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 		[s scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&fragment];
 	}
 	
-	return [NSDictionary dictionaryWithObjectsAndKeys:
-			scheme,		@"scheme",
-			delim,		@"delim",
-			//username,	@"username",
-			//password,	@"password",
-			host,		@"host",
-			path,		@"path",
-			fragment,	@"fragment",
-			nil];
+	NSCharacterSet *colonAt = [NSCharacterSet characterSetWithCharactersInString:@":@"];
+	
+	s = [NSScanner scannerWithString:host];
+	NSString *temp = nil;
+	
+	if ([s scanUpToCharactersFromSet:colonAt intoString:&temp]) {
+		if (![s isAtEnd]) {
+			username = temp;
+			
+			if ([host characterAtIndex:[s scanLocation]] == ':') {
+				[s scanCharactersFromSet:colonAt intoString:&temp];
+								
+				if (![s isAtEnd] && [s scanUpToCharactersFromSet:colonAt intoString:&temp])
+					password = temp;
+			}
+			
+			[s scanCharactersFromSet:colonAt intoString:nil];
+						
+			if (![s isAtEnd] && [s scanUpToCharactersFromSet:colonAt intoString:&temp])
+				host = temp;
+		}
+	}
+	
+	NSMutableDictionary *parts = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+								  scheme,	@"scheme",
+								  delim,	@"delim",
+								  host,		@"host",
+								  path,		@"path",
+								  nil];
+	
+	if (username)
+		[parts setObject:username forKey:@"username"];
+	if (password)
+		[parts setObject:password forKey:@"password"];
+	if (fragment)
+		[parts setObject:fragment forKey:@"fragment"];
+	
+	return parts;
 }
 
 - (NSString *)encodedURLString {
@@ -403,10 +432,20 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	
 	NSString *path = [[[urlParts objectForKey:@"path"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	
-	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@", [urlParts objectForKey:@"scheme"], [urlParts objectForKey:@"delim"], [[urlParts objectForKey:@"host"] IDNAEncodedString], path];
+	NSMutableString *ret = [NSMutableString stringWithFormat:@"%@%@", [urlParts objectForKey:@"scheme"], [urlParts objectForKey:@"delim"]];
+	if ([urlParts objectForKey:@"username"]) {
+		if ([urlParts objectForKey:@"password"])
+			[ret appendFormat:@"%@:%@@", [urlParts objectForKey:@"username"], [urlParts objectForKey:@"password"]];
+		else
+			[ret appendFormat:@"%@@", [urlParts objectForKey:@"username"]];
+	}
+	
+	[ret appendFormat:@"%@%@", [[urlParts objectForKey:@"host"] IDNAEncodedString], path];
 	
 	if ([urlParts objectForKey:@"fragment"])
-		ret = [ret stringByAppendingFormat:@"#%@", [urlParts objectForKey:@"fragment"]];
+		[ret appendFormat:@"#%@", [urlParts objectForKey:@"fragment"]];
+	
+	NSLog(@"%@", urlParts);
 		
 	return ret;
 }

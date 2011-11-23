@@ -14,6 +14,7 @@
 - (NSString *)punycodeEncodedString;
 - (NSString *)punycodeDecodedString;
 
+// These methods currently expect self to start with a valid scheme.
 - (NSString *)IDNAEncodedString;
 - (NSString *)IDNADecodedString;
 - (NSString *)encodedURLString;
