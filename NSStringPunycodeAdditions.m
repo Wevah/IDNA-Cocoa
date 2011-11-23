@@ -8,7 +8,7 @@
 
 #import "NSStringPunycodeAdditions.h"
 
-// Encoding/decoding adapted/lifted from the example code in the Punycode spec (RFC 3492).
+// Encoding/decoding adapted/lifted from the example code in the IDNA Punycode spec (RFC 3492).
 // For some other stuff, see RFC 3490 (Internationalizing Domain Names in Applications)
 
 enum {
