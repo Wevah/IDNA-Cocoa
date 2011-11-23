@@ -206,8 +206,10 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 /*** Main decode function ***/
 
 - (NSString *)punycodeDecodedString {
-	unsigned n, outLen, i, max_out, bias,
-	b, j, inPos, oldi, w, k, digit, t;
+	UTF32Char n;
+	NSUInteger i, j, outLen;
+	unsigned max_out, bias,
+	b, inPos, oldi, w, k, digit, t;
 	
 	NSMutableData *utf32data = [NSMutableData data];
 	
@@ -232,7 +234,7 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 		return nil; //punycode_big_output;
 	
 	for (j = 0;  j < b;  ++j) {
-		UTF32Char c = [self characterAtIndex:j];
+		UTF32Char c = (UTF32Char)[self characterAtIndex:j];
 		
 		if (case_flags)
 			case_flags[outLen] = flagged(c);
@@ -298,7 +300,7 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 		}
 		
 		//memmove(output + i + 1, output + i, (outLen - i) * sizeof *output);
-		[utf32data replaceBytesInRange:NSMakeRange(i, 0) withBytes:&n length:sizeof(n)];
+		[utf32data replaceBytesInRange:NSMakeRange(i * sizeof(UTF32Char), 0) withBytes:&n length:sizeof(n)];
 	}
 	
 #if BYTE_ORDER == LITTLE_ENDIAN
@@ -359,10 +361,12 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	NSScanner *s = [NSScanner scannerWithString:[self precomposedStringWithCompatibilityMapping]];
 	NSString *scheme = @"";
 	NSString *delim = @"";
+	//NSString *username = @"";
+	//NSString *password = @"";
 	NSString *host = @"";
 	NSString *path = @"";
 	NSString *fragment = nil;
-
+	
 	if ([s scanUpToCharactersFromSet:colonSlash intoString:&host]) {
 		if (![s isAtEnd] && [self characterAtIndex:[s scanLocation]] == ':') {
 			scheme = host;
@@ -385,6 +389,8 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	return [NSDictionary dictionaryWithObjectsAndKeys:
 			scheme,		@"scheme",
 			delim,		@"delim",
+			//username,	@"username",
+			//password,	@"password",
 			host,		@"host",
 			path,		@"path",
 			fragment,	@"fragment",
