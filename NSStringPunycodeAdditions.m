@@ -303,9 +303,17 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	}
 	
 #if BYTE_ORDER == LITTLE_ENDIAN
+#if __has_feature(objc_arc)
+	return [[NSString alloc] initWithData:utf32data encoding:NSUTF32LittleEndianStringEncoding];
+#else
 	return [[[NSString alloc] initWithData:utf32data encoding:NSUTF32LittleEndianStringEncoding] autorelease];
+#endif
+#else
+#if __has_feature(objc_arc)
+	return [[NSString alloc] initWithData:utf32data encoding:NSUTF32BigEndianStringEncoding]];
 #else
 	return [[[NSString alloc] initWithData:utf32data encoding:NSUTF32BigEndianStringEncoding] autorelease];
+#endif
 #endif
 }
 
