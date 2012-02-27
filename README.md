@@ -18,7 +18,7 @@ NSString
 	- (NSString *)punycodeEncodedString;
 	- (NSString *)punycodeDecodedString;
 	
-Encodes or decodes a string to it's punycode-encoded format
+Encodes or decodes a string to its punycode-encoded format.
 	
 	- (NSString *)IDNAEncodedString;
 	
@@ -26,7 +26,7 @@ If `self` contains non-ASCII, calls `-punycodeEncodedString` and prepends `xn--`
 
 	- (NSString *)IDNADecodedString;
 
-Decodes a string returned by `-IDNAEncodedString`
+Decodes a string returned by `-IDNAEncodedString`.
 
 	- (NSString *)encodedURLString;
 	- (NSString *)decodedURLString;
