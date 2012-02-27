@@ -2,6 +2,23 @@
 <Bucket
    type = "1"
    version = "1.0">
+   <SymbolicBreakpoints>
+      <SymbolicBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "Yes"
+         symbolName = "-[NSData release]"
+         moduleName = "">
+         <Actions>
+            <BreakpointActionProxy
+               ActionType = "Xcode.BreakpointAction.DebuggerCommand">
+               <ActionContent
+                  consoleCommand = "bt">
+               </ActionContent>
+            </BreakpointActionProxy>
+         </Actions>
+      </SymbolicBreakpoint>
+   </SymbolicBreakpoints>
    <ExceptionBreakpoints>
       <ExceptionBreakpoint
          shouldBeEnabled = "Yes"
