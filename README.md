@@ -1,6 +1,7 @@
 Punycode Cocoa
 ==============
 
+v1.0 (2012)  
 by Nate Weaver (Wevah)  
 http://derailer.org/  
 https://github.com/Wevah/Punycode-Cocoa
