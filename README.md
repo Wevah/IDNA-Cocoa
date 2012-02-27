@@ -7,6 +7,8 @@ https://github.com/Wevah/Punycode-Cocoa
 
 A simple punycode/IDNA category on NSString, based on code and documentation from RFC 3492 and RFC 3490.
 
+To use in your own projects, all you need is NSStringPunycodeAdditions.h/m. This project includes a sample testing app.
+
 Methods
 -------
 
