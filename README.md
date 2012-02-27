@@ -1,6 +1,10 @@
 Punycode Cocoa
 ==============
 
+by Nate Weaver (Wevah)
+http://derailer.org/
+https://github.com/Wevah/Punycode-Cocoa
+
 A simple punycode/IDNA category on NSString, based on code and documentation from RFC 3492 and RFC 3490.
 
 Methods
@@ -32,4 +36,4 @@ NSURL
 
 	- (NSString *)decodedURLString;
 
-Convenience method on NSURL. Equivalent to `[[anURL absoluteString] decodedURLString]`
+Convenience method on NSURL. Equivalent to `[[anURL absoluteString] decodedURLString]`.
