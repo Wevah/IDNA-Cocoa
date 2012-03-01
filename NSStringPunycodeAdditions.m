@@ -248,7 +248,7 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	/* Main decoding loop:  Start just after the last delimiter if any  */
 	/* basic code points were copied; start at the beginning otherwise. */
 	
-	for (inPos = b > 0 ? b + 1 : 0; inPos < input_length; ++outLen) {
+	for (inPos = b > 0 ? b + 1 : 0; inPos < input_length; ++outLen, ++i) {
 		
 		/* in is the index of the next character to be consumed, and */
 		/* out is the number of code points in the output array.     */
