@@ -26,30 +26,27 @@
 }
 
 - (void)testPunycodeEncoding {
-	NSString *str;
-	NSString *encoded;
+	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+						  @"bcher-kva", @"bücher",
+						  @"d1abbgf6aiiy", @"президент",
+						  @"r8jz45g", @"例え",
+						  nil];
 	
-	str = @"bücher";
-	encoded = @"bcher-kva";
-	STAssertTrue([[str punycodeEncodedString] isEqualToString:encoded], @"%@ should encode to %@", str, encoded);
-	
-	str = @"президент";
-	encoded = @"d1abbgf6aiiy";
-	STAssertTrue([[str punycodeEncodedString] isEqualToString:encoded], @"%@ should encode to %@", str, encoded);
+	[dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+		STAssertTrue([[key punycodeEncodedString] isEqualToString:obj], @"%@ should encode to %@", key, obj);
+	}];
 }
 
 - (void)testPunycodeDecoding {
-	NSString *str;
-	NSString *decoded;
+	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+						  @"bücher", @"bcher-kva",
+						  @"президент", @"d1abbgf6aiiy",
+						  @"例え", @"r8jz45g",
+						  nil];
 	
-	str = @"bcher-kva";
-	decoded = @"bücher";
-	STAssertTrue([[str punycodeDecodedString] isEqualToString:decoded], @"%@ should decode to %@", str, decoded);
-	
-	str = @"d1abbgf6aiiy";
-	decoded = @"президент";
-	STAssertTrue([[str punycodeDecodedString] isEqualToString:decoded], @"%@ should decode to %@", str, decoded);
+	[dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+		STAssertTrue([[key punycodeDecodedString] isEqualToString:obj], @"%@ should decode to %@", key, obj);
+	}];
 }
-
 
 @end
