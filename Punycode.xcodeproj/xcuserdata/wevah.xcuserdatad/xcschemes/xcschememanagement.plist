@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>PunycodeTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>B255A5581500C4800073DF21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B2D4E99208E0191700574ACD</key>
 		<dict>
 			<key>primary</key>
