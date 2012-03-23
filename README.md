@@ -36,7 +36,9 @@ Performs encode/decode operations on each appropriate part (the domain bits) of 
 
 NSURL
 -----
-
+	
+	+ (NSURL *)URLWithUnicodeString:(NSString *)URLString;
+	
 	- (NSString *)decodedURLString;
 
 Convenience method on NSURL. Equivalent to `[[anURL absoluteString] decodedURLString]`.

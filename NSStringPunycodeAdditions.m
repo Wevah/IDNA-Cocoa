@@ -3,7 +3,10 @@
 //  Punycode
 //
 //  Created by Wevah on 2005.11.02.
-//  Copyright 2005 Derailer. All rights reserved.
+//  Copyright 2005-2012 Derailer. All rights reserved.
+//
+//  Distributed under an MIT-style license; please
+//  see the included LICENSE file for details.
 //
 
 #import "NSStringPunycodeAdditions.h"
@@ -32,7 +35,7 @@ enum {
 /* point (for use in representing integers) in the range 0 to */
 /* base-1, or base if cp is does not represent a value.       */
 
-static unsigned decode_digit(unsigned cp)
+static NSUInteger decode_digit(unsigned cp)
 {
 	return  cp - 48 < 10 ? cp - 22 :  cp - 65 < 26 ? cp - 65 :
 	cp - 97 < 26 ? cp - 97 : base;
@@ -57,31 +60,17 @@ static char encode_digit(unsigned d, int flag)
 
 #define flagged(bcp) ((unsigned)(bcp) - 65 < 26)
 
-/* encode_basic(bcp,flag) forces a basic code point to lowercase */
-/* if flag is zero, uppercase if flag is nonzero, and returns    */
-/* the resulting code point.  The code point is unchanged if it  */
-/* is caseless.  The behavior is undefined if bcp is not a basic */
-/* code point.                                                   */
-
-static char encode_basic(unsigned bcp, int flag)
-{
-	bcp -= (bcp - 97 < 26) << 5;
-	return bcp + ((!flag && (bcp - 65 < 26)) << 5);
-}
-
 /*** Platform-specific constants ***/
 
 /* maxint is the maximum value of a punycode_uint variable: */
 static const unsigned maxint = UINT_MAX;
-/* Because maxint is unsigned, -1 becomes the maximum value. */
 
 /*** Bias adaptation function ***/
 
-static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
+static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	unsigned k;
 	
 	delta = firsttime ? delta / damp : delta >> 1;
-	/* delta >> 1 is a faster way of doing delta / 2 */
 	delta += delta / numpoints;
 	
 	for (k = 0;  delta > ((base - tmin) * tmax) / 2;  k += base) {
@@ -101,46 +90,39 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 /*** Main encode function ***/
 
-- (const UTF32Char *)longCharactersWithCount:(NSUInteger *)count {
 #if BYTE_ORDER == LITTLE_ENDIAN
-	NSData *data = [self dataUsingEncoding:NSUTF32LittleEndianStringEncoding];
+#define UTF32_ENCODING NSUTF32LittleEndianStringEncoding
+#elif BYTE_ORDER == BIG_ENDIAN
+#define UTF32_ENCODING NSUTF32BigEndianStringEncoding
 #else
-	NSData *data = [self dataUsingEncoding:NSUTF32BigEndianStringEncoding];
+#error Unsupported endianness!
 #endif
+
+- (const UTF32Char *)longCharactersWithCount:(NSUInteger *)count {
+	NSData *data = [self dataUsingEncoding:UTF32_ENCODING];
 	*count = [data length] / sizeof(UTF32Char);
 	return [data bytes];
 }
 
 - (NSString *)punycodeEncodedString {
 	NSMutableString *ret = [NSMutableString string];
-	unsigned n, delta, h, b, outLen, bias, j, m, q, k, t;
-	NSUInteger input_length;// = [self length];
-	const UTF32Char *longchars = [self longCharactersWithCount:&input_length];
-	/* Initialize the state: */
+	unsigned delta, outLen, bias, j, m, q, k, t;
+	NSUInteger input_length;
+	const UTF32Char *longchars = [self longCharactersWithCount:&input_length];	
 	
-	unsigned char *case_flags = NULL;
-	
-	n = initial_n;
+	UTF32Char n = initial_n;
 	delta = outLen = 0;
 	bias = initial_bias;
-	
-	/* Handle the basic code points: */
-	
+		
 	for (j = 0;  j < input_length;  ++j) {
 		if (basic(longchars[j])) {
-			[ret appendFormat:@"%C",
-				case_flags ? (unichar)encode_basic(longchars[j], case_flags[j]) : longchars[j]];
+			[ret appendFormat:@"%C", longchars[j]];
 			++outLen;
 		}
-		/* else if ([self characterAtIndex:j] < n) return punycode_bad_input; */
-		/* (not needed for Punycode with unsigned code points) */
 	}
 	
-	h = b = outLen;
-	
-	/* h is the number of code points that have been handled, b is the  */
-	/* number of basic code points, and out is the number of characters */
-	/* that have been output.                                           */
+	NSUInteger b;
+	NSUInteger h = b = outLen;
 	
 	if (b > 0)
 		[ret appendFormat:@"%C", delimiter];
@@ -148,20 +130,12 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	/* Main encoding loop: */
 	
 	while (h < input_length) {
-		/* All non-basic code points < n have been     */
-		/* handled already.  Find the next larger one: */
-		
 		for (m = maxint, j = 0;  j < input_length;  ++j) {
-			/* if (basic([self characterAtIndex:j])) continue; */
-			/* (not needed for Punycode) */
 			unsigned c = longchars[j];
 			
 			if (c >= n && c < m)
 				m = longchars[j];
 		}
-		
-		/* Increase delta enough to advance the decoder's    */
-		/* <n,i> state to <m,0>, but guard against overflow: */
 		
 		if (m - n > (maxint - delta) / (h + 1))
 			return nil; //punycode_overflow;
@@ -171,15 +145,12 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 		for (j = 0;  j < input_length;  ++j) {
 			unsigned c = longchars[j];
 			
-			/* Punycode does not need to check whether [self characterAtIndex:j] is basic: */
 			if (c < n /* || basic([self characterAtIndex:j]) */ ) {
 				if (++delta == 0)
 					return nil; //punycode_overflow;
 			}
 			
-			if (c == n) {
-				/* Represent delta as a generalized variable-length integer: */
-				
+			if (c == n) {				
 				for (q = delta, k = base;  ;  k += base) {
 					t = k <= bias /* + tmin */ ? tmin :     /* +tmin not needed */
 						k >= bias + tmax ? tmax : k - bias;
@@ -189,7 +160,7 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 					q = (q - t) / (base - t);
 				}
 				
-				[ret appendFormat:@"%C", encode_digit(q, case_flags && case_flags[j])];
+				[ret appendFormat:@"%C", encode_digit(q, 0)];
 				bias = adapt(delta, h + 1, h == b);
 				delta = 0;
 				++h;
@@ -205,25 +176,16 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 /*** Main decode function ***/
 
 - (NSString *)punycodeDecodedString {
-	UTF32Char n;
-	unsigned i, j, outLen;
-	unsigned max_out, bias,
-	b, inPos, oldi, w, k, digit, t;
+	NSUInteger b, i, j;
 	
 	NSMutableData *utf32data = [NSMutableData data];
 	
-	unsigned char *case_flags = NULL;
-	
 	/* Initialize the state: */
 	NSUInteger input_length = [self length];
-	n = initial_n;
-	outLen = i = 0;
-	max_out = UINT_MAX;
-	bias = initial_bias;
-	
-	/* Handle the basic code points:  Let b be the number of input code */
-	/* points before the last delimiter, or 0 if there is none, then    */
-	/* copy the first b code points to the output.                      */
+	UTF32Char n = initial_n;
+	NSUInteger outLen = i = 0;
+	NSUInteger max_out = NSUIntegerMax;
+	NSUInteger bias = initial_bias;
 	
 	for (b = j = 0;  j < input_length;  ++j)
 		if (delim([self characterAtIndex:j]))
@@ -235,33 +197,20 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	for (j = 0;  j < b;  ++j) {
 		UTF32Char c = (UTF32Char)[self characterAtIndex:j];
 		
-		if (case_flags)
-			case_flags[outLen] = flagged(c);
 		if (!basic([self characterAtIndex:j]))
 			return nil; //punycode_bad_input;
-		
 		
 		[utf32data appendBytes:&c length:sizeof(c)];
 		++outLen;
 	}
 	
-	/* Main decoding loop:  Start just after the last delimiter if any  */
-	/* basic code points were copied; start at the beginning otherwise. */
-	
-	for (inPos = b > 0 ? b + 1 : 0; inPos < input_length; ++outLen, ++i) {
-		
-		/* in is the index of the next character to be consumed, and */
-		/* out is the number of code points in the output array.     */
-		
-		/* Decode a generalized variable-length integer into delta,  */
-		/* which gets added to i.  The overflow checking is easier   */
-		/* if we increase i as we go, then subtract off its starting */
-		/* value at the end to obtain delta.                         */
+	for (NSUInteger inPos = b > 0 ? b + 1 : 0; inPos < input_length; ++outLen, ++i) {
+		NSUInteger k, w, t, oldi;
 		
 		for (oldi = i, w = 1, k = base; /* nada */ ; k += base) {
 			if (inPos >= input_length)
 				return nil; // punycode_bad_input;
-			digit = decode_digit([self characterAtIndex:inPos++]);
+			unsigned digit = decode_digit([self characterAtIndex:inPos++]);
 			if (digit >= base)
 				return nil; // punycode_bad_input;
 			if (digit > (maxint - i) / w)
@@ -278,42 +227,18 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 		
 		bias = adapt(i - oldi, outLen + 1, oldi == 0);
 		
-		/* i was supposed to wrap around from out+1 to 0,   */
-		/* incrementing n each time, so we'll fix that now: */
-		
 		if (i / (outLen + 1) > maxint - n)
 			return nil; // punycode_overflow;
 		n += i / (outLen + 1);
 		i %= (outLen + 1);
 		
-		/* Insert n at position i of the output: */
-		
-		/* not needed for Punycode: */
-		/* if (decode_digit(n) <= base) return punycode_invalid_input; */
-		
-		if (case_flags) {
-			memmove(case_flags + i + 1, case_flags + i, outLen - i);
-			
-			/* Case of last character determines uppercase flag: */
-			case_flags[i] = flagged([self characterAtIndex:inPos - 1]);
-		}
-		
-		//memmove(output + i + 1, output + i, (outLen - i) * sizeof *output);
 		[utf32data replaceBytesInRange:NSMakeRange(i * sizeof(UTF32Char), 0) withBytes:&n length:sizeof(n)];
 	}
 	
-#if BYTE_ORDER == LITTLE_ENDIAN
 #if __has_feature(objc_arc)
-	return [[NSString alloc] initWithData:utf32data encoding:NSUTF32LittleEndianStringEncoding];
+	return [[NSString alloc] initWithData:utf32data encoding:UTF32_ENCODING];
 #else
-	return [[[NSString alloc] initWithData:utf32data encoding:NSUTF32LittleEndianStringEncoding] autorelease];
-#endif
-#else
-#if __has_feature(objc_arc)
-	return [[NSString alloc] initWithData:utf32data encoding:NSUTF32BigEndianStringEncoding]];
-#else
-	return [[[NSString alloc] initWithData:utf32data encoding:NSUTF32BigEndianStringEncoding] autorelease];
-#endif
+	return [[[NSString alloc] initWithData:utf32data encoding:UTF32_ENCODING] autorelease];
 #endif
 }
 
@@ -469,6 +394,10 @@ static unsigned adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 @end
 
 @implementation NSURL (PunycodeAdditions)
+
++ (NSURL *)URLWithUnicodeString:(NSString *)URLString {
+	return [NSURL URLWithString:[URLString encodedURLString]];
+}
 
 - (NSString *)decodedURLString {
 	return [[self absoluteString] decodedURLString];

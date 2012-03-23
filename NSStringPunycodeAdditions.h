@@ -3,7 +3,10 @@
 //  Punycode
 //
 //  Created by Wevah on 2005.11.02.
-//  Copyright 2005 Derailer. All rights reserved.
+//  Copyright 2005-2012 Derailer. All rights reserved.
+//
+//  Distributed under an MIT-style license; please
+//  see the included LICENSE file for details.
 //
 
 #import <Foundation/Foundation.h>
@@ -24,6 +27,7 @@
 
 @interface NSURL (PunycodeAdditions)
 
++ (NSURL *)URLWithUnicodeString:(NSString *)URLString;
 - (NSString *)decodedURLString;
 
 @end

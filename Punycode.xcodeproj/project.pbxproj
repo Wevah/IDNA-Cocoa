@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B2099A7D1471DE8600AC5387 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B2099A7C1471DE8600AC5387 /* LICENSE */; };
 		B255A55B1500C4800073DF21 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B255A55A1500C4800073DF21 /* SenTestingKit.framework */; };
-		B255A55D1500C4800073DF21 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B255A55C1500C4800073DF21 /* Cocoa.framework */; };
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B2BB228A14FB465D005FDEE8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B2BB228914FB465D005FDEE8 /* README.md */; };
@@ -56,8 +55,6 @@
 		B2099A7C1471DE8600AC5387 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B255A5591500C4800073DF21 /* PunycodeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B255A55A1500C4800073DF21 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B255A55C1500C4800073DF21 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		B255A55E1500C4800073DF21 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B255A5611500C4800073DF21 /* PunycodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PunycodeTests-Info.plist"; sourceTree = "<group>"; };
 		B255A5631500C4800073DF21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B255A5651500C4800073DF21 /* PunycodeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunycodeTests.h; sourceTree = "<group>"; };
@@ -78,7 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B255A55B1500C4800073DF21 /* SenTestingKit.framework in Frameworks */,
-				B255A55D1500C4800073DF21 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +113,6 @@
 			children = (
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
-				B255A55E1500C4800073DF21 /* CoreData.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -170,7 +165,6 @@
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				B255A55A1500C4800073DF21 /* SenTestingKit.framework */,
-				B255A55C1500C4800073DF21 /* Cocoa.framework */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -450,7 +444,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Punycode;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -479,7 +473,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Punycode;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -519,6 +513,7 @@
 				B255A56B1500C4800073DF21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		B2B33EA80A9B4534002D5B27 /* Build configuration list for PBXNativeTarget "PunyCocoa" */ = {
 			isa = XCConfigurationList;
