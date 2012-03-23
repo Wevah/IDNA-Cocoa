@@ -39,6 +39,8 @@ NSURL
 	
 	+ (NSURL *)URLWithUnicodeString:(NSString *)URLString;
 	
+Convenience method equivalent to `[NSURL URLWithString:[URLString encodedURLString]]`.
+	
 	- (NSString *)decodedURLString;
 
-Convenience method on NSURL. Equivalent to `[[anURL absoluteString] decodedURLString]`.
+Convenience method equivalent to `[[anURL absoluteString] decodedURLString]`.
