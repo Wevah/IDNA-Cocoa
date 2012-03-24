@@ -361,12 +361,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 - (NSString *)encodedURLString {
 	// We can't get the parts of an URL for an international domain name, so a custom method is used instead.
 	NSDictionary *urlParts = [self URLParts];
-	
-	NSString *path = [urlParts objectForKey:@"path"];
-	NSCharacterSet *nonASCII = [[NSCharacterSet characterSetWithRange:NSMakeRange(0, 0x7f)] invertedSet];
-									   
-	if ([path rangeOfCharacterFromSet:nonASCII].location != NSNotFound)
-		path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSString *path = [[urlParts objectForKey:@"path"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	
 	NSMutableString *ret = [NSMutableString stringWithFormat:@"%@%@", [urlParts objectForKey:@"scheme"], [urlParts objectForKey:@"delim"]];
 	if ([urlParts objectForKey:@"username"]) {
