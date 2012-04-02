@@ -306,7 +306,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 			if (![s isAtEnd])
 				[s scanCharactersFromSet:colonSlash intoString:&delim];
 			if (![s isAtEnd])
-				[s scanUpToString:@"/" intoString:&host];
+				[s scanUpToCharactersFromSet:colonSlash intoString:&host];
 		}
 	}
 	
