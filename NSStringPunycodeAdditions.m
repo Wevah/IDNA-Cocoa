@@ -49,7 +49,7 @@ static NSUInteger decode_digit(unsigned cp)
 
 static char encode_digit(unsigned d, int flag)
 {
-	return d + 22 + 75 * (d < 26) - ((flag != 0) << 5);
+	return (char)(d + 22 + 75 * (d < 26) - ((flag != 0) << 5));
 	/*  0..25 map to ASCII a..z or A..Z */
 	/* 26..35 map to ASCII 0..9         */
 }
@@ -116,7 +116,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 		
 	for (j = 0;  j < input_length;  ++j) {
 		if (basic(longchars[j])) {
-			[ret appendFormat:@"%C", longchars[j]];
+			[ret appendFormat:@"%C", (unichar)longchars[j]];
 			++outLen;
 		}
 	}
@@ -125,7 +125,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	NSUInteger h = b = outLen;
 	
 	if (b > 0)
-		[ret appendFormat:@"%C", delimiter];
+		[ret appendFormat:@"%C", (unichar)delimiter];
 	
 	/* Main encoding loop: */
 	
@@ -156,12 +156,12 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 						k >= bias + tmax ? tmax : k - bias;
 					if (q < t)
 						break;
-					[ret appendFormat:@"%C", encode_digit(t + (q - t) % (base - t), 0)];
+					[ret appendFormat:@"%C", (unichar)encode_digit(t + (q - t) % (base - t), 0)];
 					q = (q - t) / (base - t);
 				}
 				
-				[ret appendFormat:@"%C", encode_digit(q, 0)];
-				bias = adapt(delta, h + 1, h == b);
+				[ret appendFormat:@"%c", encode_digit(q, 0)];
+				bias = (unsigned)adapt(delta, (unsigned)h + 1, h == b);
 				delta = 0;
 				++h;
 			}
@@ -210,7 +210,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 		for (oldi = i, w = 1, k = base; /* nada */ ; k += base) {
 			if (inPos >= input_length)
 				return nil; // punycode_bad_input;
-			unsigned digit = decode_digit([self characterAtIndex:inPos++]);
+			unsigned digit = (unsigned)decode_digit([self characterAtIndex:inPos++]);
 			if (digit >= base)
 				return nil; // punycode_bad_input;
 			if (digit > (maxint - i) / w)
@@ -225,7 +225,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 			w *= (base - t);
 		}
 		
-		bias = adapt(i - oldi, outLen + 1, oldi == 0);
+		bias = adapt((unsigned)i - (unsigned)oldi, (unsigned)outLen + 1, oldi == 0);
 		
 		if (i / (outLen + 1) > maxint - n)
 			return nil; // punycode_overflow;
