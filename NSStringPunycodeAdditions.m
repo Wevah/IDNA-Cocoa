@@ -349,11 +349,11 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 								  nil];
 	
 	if (username)
-		[parts setObject:username forKey:@"username"];
+		parts[@"username"] = username;
 	if (password)
-		[parts setObject:password forKey:@"password"];
+		parts[@"password"] = password;
 	if (fragment)
-		[parts setObject:fragment forKey:@"fragment"];
+		parts[@"fragment"] = fragment;
 	
 	return parts;
 }
@@ -361,25 +361,25 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 - (NSString *)encodedURLString {
 	// We can't get the parts of an URL for an international domain name, so a custom method is used instead.
 	NSDictionary *urlParts = [self URLParts];
-	NSString *path = [urlParts objectForKey:@"path"];
+	NSString *path = urlParts[@"path"];
 	path = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)path, CFSTR("%"), NULL, kCFStringEncodingUTF8);
 	
 #if !__has_feature(objc_arc)
 	[path autorelease];
 #endif
 	
-	NSMutableString *ret = [NSMutableString stringWithFormat:@"%@%@", [urlParts objectForKey:@"scheme"], [urlParts objectForKey:@"delim"]];
-	if ([urlParts objectForKey:@"username"]) {
-		if ([urlParts objectForKey:@"password"])
-			[ret appendFormat:@"%@:%@@", [urlParts objectForKey:@"username"], [urlParts objectForKey:@"password"]];
+	NSMutableString *ret = [NSMutableString stringWithFormat:@"%@%@", urlParts[@"scheme"], urlParts[@"delim"]];
+	if (urlParts[@"username"]) {
+		if (urlParts[@"password"])
+			[ret appendFormat:@"%@:%@@", urlParts[@"username"], urlParts[@"password"]];
 		else
-			[ret appendFormat:@"%@@", [urlParts objectForKey:@"username"]];
+			[ret appendFormat:@"%@@", urlParts[@"username"]];
 	}
 	
-	[ret appendFormat:@"%@%@", [[urlParts objectForKey:@"host"] IDNAEncodedString], path];
+	[ret appendFormat:@"%@%@", [urlParts[@"host"] IDNAEncodedString], path];
 	
-	if ([urlParts objectForKey:@"fragment"])
-		[ret appendFormat:@"#%@", [urlParts objectForKey:@"fragment"]];
+	if (urlParts[@"fragment"])
+		[ret appendFormat:@"#%@", urlParts[@"fragment"]];
 			
 	return ret;
 }
@@ -387,10 +387,10 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 - (NSString *)decodedURLString {
 	NSDictionary *urlParts = [self URLParts];
 	
-	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@", [urlParts objectForKey:@"scheme"], [urlParts objectForKey:@"delim"], [[urlParts objectForKey:@"host"] IDNADecodedString], [[urlParts objectForKey:@"path"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], [urlParts[@"host"] IDNADecodedString], [urlParts[@"path"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 	
-	if ([urlParts objectForKey:@"fragment"])
-		ret = [ret stringByAppendingFormat:@"#%@", [urlParts objectForKey:@"fragment"]];
+	if (urlParts[@"fragment"])
+		ret = [ret stringByAppendingFormat:@"#%@", urlParts[@"fragment"]];
 	
 	return ret;
 }
