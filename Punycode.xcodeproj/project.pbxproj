@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B2099A7D1471DE8600AC5387 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B2099A7C1471DE8600AC5387 /* LICENSE */; };
-		B255A55B1500C4800073DF21 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B255A55A1500C4800073DF21 /* SenTestingKit.framework */; };
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B2BB228A14FB465D005FDEE8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B2BB228914FB465D005FDEE8 /* README.md */; };
@@ -53,8 +52,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Punycode_Prefix.h; sourceTree = "<group>"; };
 		B2099A7C1471DE8600AC5387 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		B255A5591500C4800073DF21 /* PunycodeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B255A55A1500C4800073DF21 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B255A5591500C4800073DF21 /* PunycodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B255A5611500C4800073DF21 /* PunycodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PunycodeTests-Info.plist"; sourceTree = "<group>"; };
 		B255A5631500C4800073DF21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B255A5651500C4800073DF21 /* PunycodeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunycodeTests.h; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B255A55B1500C4800073DF21 /* SenTestingKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				B2D4E9A208E0191800574ACD /* Punycode.app */,
-				B255A5591500C4800073DF21 /* PunycodeTests.octest */,
+				B255A5591500C4800073DF21 /* PunycodeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				B255A55A1500C4800073DF21 /* SenTestingKit.framework */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -222,8 +218,8 @@
 			);
 			name = PunycodeTests;
 			productName = PunycodeTests;
-			productReference = B255A5591500C4800073DF21 /* PunycodeTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = B255A5591500C4800073DF21 /* PunycodeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B2D4E99208E0191700574ACD /* PunyCocoa */ = {
 			isa = PBXNativeTarget;
@@ -395,7 +391,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -422,7 +417,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
