@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.summary          = "Punycode/IDNA category on NSString, based on RFC 3492, RFC 3490.
 ."
   s.description      = <<-DESC
-  A simple punycode/IDNA category on NSString, based on code and documentation from RFC 3492 and RFC 3490. Use this to convert internationalized domain names (IDN) from Unicode to ASCII.
+  A simple punycode/IDNA category on NSString, based on code and documentation from RFC 3492 and RFC 3490. Use this to convert internationalized domain names (IDN) between Unicode and ASCII.
   
   déjà.vu.example → xn--dj-kia8a.vu.example
    
