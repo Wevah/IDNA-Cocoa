@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = "https://github.com/Wevah/Punycode-Cocoa"
   s.license          = 'BSD'
-  s.authors          = { "Nate Weaver (Wevah)" => "wevah@derailer.org", "Jörg Bühmann" => "joergbuehmann@gmail.com" }
+  s.authors          = { "Nate Weaver (Wevah)" => "wevah@derailer.org" }
   s.source           = { :git => "https://github.com/Wevah/Punycode-Cocoa.git", :tag => s.version.to_s }
   s.requires_arc = true
   s.source_files = 'Pod/**/*'
