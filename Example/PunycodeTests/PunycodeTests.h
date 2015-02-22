@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Derailer. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface PunycodeTests : SenTestCase
+@interface PunycodeTests : XCTestCase
 
 @end

@@ -31,7 +31,7 @@
 						  @"例え": @"r8jz45g"};
 	
 	[dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-		STAssertTrue([[key punycodeEncodedString] isEqualToString:obj], @"%@ should encode to %@", key, obj);
+		XCTAssertTrue([[key punycodeEncodedString] isEqualToString:obj], @"%@ should encode to %@", key, obj);
 	}];
 }
 
@@ -41,7 +41,7 @@
 						  @"r8jz45g": @"例え"};
 	
 	[dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-		STAssertTrue([[key punycodeDecodedString] isEqualToString:obj], @"%@ should decode to %@", key, obj);
+		XCTAssertTrue([[key punycodeDecodedString] isEqualToString:obj], @"%@ should decode to %@", key, obj);
 	}];
 }
 
