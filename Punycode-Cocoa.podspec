@@ -9,19 +9,18 @@
 
 Pod::Spec.new do |s|
   s.name             = "Punycode-Cocoa"
-  s.version          = "1.0"
-  s.summary          = "Punycode/IDNA category on NSString, based on RFC 3492, RFC 3490.
-."
+  s.version          = "1.1"
+  s.summary          = "Punycode/IDNA category on NSString, based on RFC 3492, RFC 3490."
   s.description      = <<-DESC
   A simple punycode/IDNA category on NSString, based on code and documentation from RFC 3492 and RFC 3490. Use this to convert internationalized domain names (IDN) between Unicode and ASCII.
   
   déjà.vu.example → xn--dj-kia8a.vu.example
    
                        DESC
-  s.homepage         = "https://github.com/orkoden/Punycode-Cocoa"
+  s.homepage         = "https://github.com/Wevah/Punycode-Cocoa"
   s.license          = 'BSD'
-  s.author           = { "Jörg Bühmann" => "joergbuehmann@gmail.com" }
-  s.source           = { :git => "https://github.com/orkoden/Punycode-Cocoa.git", :tag => s.version.to_s }
+  s.authors          = { "Nate Weaver (Wevah)" => "wevah@derailer.org", "Jörg Bühmann" => "joergbuehmann@gmail.com" }
+  s.source           = { :git => "https://github.com/Wevah/Punycode-Cocoa.git", :tag => s.version.to_s }
   s.requires_arc = true
   s.source_files = 'Pod/**/*'
 end
