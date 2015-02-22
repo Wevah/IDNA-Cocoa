@@ -1,9 +1,9 @@
 Punycode Cocoa
 ==============
 
-v1.0 (2012)  
-by Nate Weaver (Wevah)  
-http://derailer.org/  
+v1.1 (2015)
+by Nate Weaver (Wevah)
+http://derailer.org/
 https://github.com/Wevah/Punycode-Cocoa
 
 A simple punycode/IDNA category on NSString, based on code and documentation from RFC 3492 and RFC 3490.
@@ -18,31 +18,35 @@ Methods
 NSString
 --------
 
-	- (NSString *)punycodeEncodedString;
-	- (NSString *)punycodeDecodedString;
-	
+	@property (readonly, copy)	NSString *punycodeEncodedString;
+	@property (readonly, copy)	NSString *punycodeDecodedString;
+
 Encodes or decodes a string to its punycode-encoded format.
 	
-	- (NSString *)IDNAEncodedString;
+	@property (readonly, copy) NSString *IDNAEncodedString;
 	
 If `self` contains non-ASCII, calls `-punycodeEncodedString` and prepends `xn--`.
 
-	- (NSString *)IDNADecodedString;
+	@property (readonly, copy) NSString *IDNADecodedString;
 
 Decodes a string returned by `-IDNAEncodedString`.
 
-	- (NSString *)encodedURLString;
-	- (NSString *)decodedURLString;
+	@property (readonly, copy) NSString *encodedURLString;
+	@property (readonly, copy) NSString *decodedURLString;
 	
 Performs encode/decode operations on each appropriate part (the domain bits) of an URL string.
 
 NSURL
 -----
 	
-	+ (NSURL *)URLWithUnicodeString:(NSString *)URLString;
+	+ (instancetype)URLWithUnicodeString:(NSString *)URLString;
 	
-Convenience method equivalent to `[NSURL URLWithString:[URLString encodedURLString]]`.
+Convenience method equivalent to `[NSURL URLWithString:URLString.encodedURLString]`.
 	
-	- (NSString *)decodedURLString;
+	@property (readonly, copy) NSString *decodedURLString;
 
-Convenience method equivalent to `[[anURL absoluteString] decodedURLString]`.
+Convenience property equivalent to `anURL.absoluteString.decodedURLString`.
+
+----
+
+© 2012-2015 Nate Weaver (Wevah)

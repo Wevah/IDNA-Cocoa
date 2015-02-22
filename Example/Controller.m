@@ -10,14 +10,21 @@
 #import "NSStringPunycodeAdditions.h"
 
 
+@interface Controller ()
+
+@property (weak)	IBOutlet NSTextField	*normalField;
+@property (weak)	IBOutlet NSTextField	*idnField;
+
+@end
+
 @implementation Controller
 
 - (IBAction)stringToIDNA:(id)sender {
-	[idnField setStringValue:[[sender stringValue] encodedURLString]];
+	self.idnField.stringValue = [sender stringValue].encodedURLString;
 }
 
 - (IBAction)stringFromIDNA:(id)sender {
-	[normalField setStringValue:[[sender stringValue] decodedURLString]];
+	self.normalField.stringValue = [sender stringValue].decodedURLString;
 }
 
 @end

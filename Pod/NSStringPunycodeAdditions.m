@@ -82,7 +82,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 @interface NSString (PunycodePrivate)
 
-- (NSDictionary *)URLParts;
+@property (readonly, copy) NSDictionary *URLParts;
 
 @end
 
@@ -181,7 +181,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	NSMutableData *utf32data = [NSMutableData data];
 	
 	/* Initialize the state: */
-	NSUInteger input_length = [self length];
+	NSUInteger input_length = self.length;
 	UTF32Char n = initial_n;
 	NSUInteger outLen = i = 0;
 	NSUInteger max_out = NSUIntegerMax;
@@ -243,16 +243,16 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 }
 
 - (NSString *)IDNAEncodedString {
-	NSCharacterSet *nonAscii = [[NSCharacterSet characterSetWithRange:NSMakeRange(1, 127)] invertedSet];
+	NSCharacterSet *nonAscii = [NSCharacterSet characterSetWithRange:NSMakeRange(1, 127)].invertedSet;
 	NSMutableString *ret = [NSMutableString string];
-	NSScanner *s = [NSScanner scannerWithString:[self precomposedStringWithCompatibilityMapping]];
+	NSScanner *s = [NSScanner scannerWithString:self.precomposedStringWithCompatibilityMapping];
 	NSCharacterSet *dotAt = [NSCharacterSet characterSetWithCharactersInString:@".@"];
 	NSString *input = nil;
 	
 	while (![s isAtEnd]) {
 		if ([s scanUpToCharactersFromSet:dotAt intoString:&input]) {
 			if ([input rangeOfCharacterFromSet:nonAscii].location != NSNotFound) {
-				[ret appendFormat:@"xn--%@", [input punycodeEncodedString]];
+				[ret appendFormat:@"xn--%@", input.punycodeEncodedString];
 			} else
 				[ret appendString:input];
 		}
@@ -272,8 +272,8 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	
 	while (![s isAtEnd]) {
 		if ([s scanUpToCharactersFromSet:dotAt intoString:&input]) {
-			if ([[input lowercaseString] hasPrefix:@"xn--"]) {
-				NSString *substr = [[input substringFromIndex:4] punycodeDecodedString];
+			if ([input.lowercaseString hasPrefix:@"xn--"]) {
+				NSString *substr = [input substringFromIndex:4].punycodeDecodedString;
 				
 				if (substr)
 					[ret appendString:substr];
@@ -290,7 +290,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 - (NSDictionary *)URLParts {
 	NSCharacterSet *colonSlash = [NSCharacterSet characterSetWithCharactersInString:@":/"];
-	NSScanner *s = [NSScanner scannerWithString:[self precomposedStringWithCompatibilityMapping]];
+	NSScanner *s = [NSScanner scannerWithString:self.precomposedStringWithCompatibilityMapping];
 	NSString *scheme = @"";
 	NSString *delim = @"";
 	NSString *username = nil;
@@ -300,7 +300,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	NSString *fragment = nil;
 	
 	if ([s scanUpToCharactersFromSet:colonSlash intoString:&host]) {
-		if (![s isAtEnd] && [self characterAtIndex:[s scanLocation]] == ':') {
+		if (!s.isAtEnd && [self characterAtIndex:s.scanLocation] == ':') {
 			scheme = host;
 			
 			if (![s isAtEnd])
@@ -360,7 +360,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 - (NSString *)encodedURLString {
 	// We can't get the parts of an URL for an international domain name, so a custom method is used instead.
-	NSDictionary *urlParts = [self URLParts];
+	NSDictionary *urlParts = self.URLParts;
 	NSString *path = urlParts[@"path"];
 	path = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)path, CFSTR("%"), NULL, kCFStringEncodingUTF8);
 	
@@ -385,7 +385,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 }
 
 - (NSString *)decodedURLString {
-	NSDictionary *urlParts = [self URLParts];
+	NSDictionary *urlParts = self.URLParts;
 	
 	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], [urlParts[@"host"] IDNADecodedString], [urlParts[@"path"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 	
@@ -400,11 +400,11 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 @implementation NSURL (PunycodeAdditions)
 
 + (NSURL *)URLWithUnicodeString:(NSString *)URLString {
-	return [NSURL URLWithString:[URLString encodedURLString]];
+	return [NSURL URLWithString:URLString.encodedURLString];
 }
 
 - (NSString *)decodedURLString {
-	return [[self absoluteString] decodedURLString];
+	return self.absoluteString.decodedURLString;
 }
 
 @end

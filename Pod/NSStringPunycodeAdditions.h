@@ -14,21 +14,21 @@
 
 @interface NSString (PunycodeAdditions)
 
-- (NSString *)punycodeEncodedString;
-- (NSString *)punycodeDecodedString;
+@property (readonly, copy)	NSString *punycodeEncodedString;
+@property (readonly, copy)	NSString *punycodeDecodedString;
 
-- (NSString *)IDNAEncodedString;
-- (NSString *)IDNADecodedString;
+@property (readonly, copy) NSString *IDNAEncodedString;
+@property (readonly, copy) NSString *IDNADecodedString;
 
 // These methods currently expect self to start with a valid scheme.
-- (NSString *)encodedURLString;
-- (NSString *)decodedURLString;
+@property (readonly, copy) NSString *encodedURLString;
+@property (readonly, copy) NSString *decodedURLString;
 
 @end
 
 @interface NSURL (PunycodeAdditions)
 
-+ (NSURL *)URLWithUnicodeString:(NSString *)URLString;
-- (NSString *)decodedURLString;
++ (instancetype)URLWithUnicodeString:(NSString *)URLString;
+@property (readonly, copy) NSString *decodedURLString;
 
 @end
