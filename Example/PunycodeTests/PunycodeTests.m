@@ -26,23 +26,66 @@
 }
 
 - (void)testPunycodeEncoding {
-	NSDictionary *dict = @{@"bücher": @"bcher-kva",
-						  @"президент": @"d1abbgf6aiiy",
-						  @"例え": @"r8jz45g"};
+	NSDictionary *dict = @{
+						   @"bücher":		@"bcher-kva",
+						   @"президент":	@"d1abbgf6aiiy",
+						   @"例え":			@"r8jz45g"
+						   };
 	
-	[dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-		XCTAssertTrue([[key punycodeEncodedString] isEqualToString:obj], @"%@ should encode to %@", key, obj);
+	[dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
+		XCTAssertTrue([key.punycodeEncodedString isEqualToString:obj], @"%@ should encode to %@", key, obj);
 	}];
 }
 
 - (void)testPunycodeDecoding {
-	NSDictionary *dict = @{@"bcher-kva": @"bücher",
-						  @"d1abbgf6aiiy": @"президент",
-						  @"r8jz45g": @"例え"};
+	NSDictionary *dict = @{
+						   @"bcher-kva":	@"bücher",
+						   @"d1abbgf6aiiy":	@"президент",
+						   @"r8jz45g":		@"例え"
+						   };
 	
-	[dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-		XCTAssertTrue([[key punycodeDecodedString] isEqualToString:obj], @"%@ should decode to %@", key, obj);
+	[dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
+		XCTAssertTrue([key.punycodeDecodedString isEqualToString:obj], @"%@ should decode to %@", key, obj);
 	}];
 }
+
+- (void)testIDNAEncoding {
+	NSDictionary *dict = @{
+						   @"http://www.bücher.ch/":		@"http://www.xn--bcher-kva.ch/",
+						   };
+	[dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
+		XCTAssertTrue([key.IDNAEncodedString isEqualToString:obj], @"%@ should encode to %@", key, obj);
+	}];
+}
+
+- (void)testIDNDecoding {
+	NSDictionary *dict = @{
+						   @"http://www.xn--bcher-kva.ch/":	@"http://www.bücher.ch/"
+						   };
+	[dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
+		XCTAssertTrue([key.IDNADecodedString isEqualToString:obj], @"%@ should decode to %@", key, obj);
+	}];
+}
+
+- (void)testFullURLEncoding {
+	NSDictionary *dict = @{
+						   @"http://www.bücher.ch/":		@"http://www.xn--bcher-kva.ch/",
+						   @"http://www.bücher.ch/bücher":	@"http://www.xn--bcher-kva.ch/b%C3%BCcher"
+						   };
+	[dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
+		XCTAssertTrue([key.encodedURLString isEqualToString:obj], @"%@ should encode to %@", key, obj);
+	}];
+}
+
+- (void)testFullURLDecoding {
+	NSDictionary *dict = @{
+						   @"http://www.xn--bcher-kva.ch/":				@"http://www.bücher.ch/",
+						   @"http://www.xn--bcher-kva.ch/b%C3%BCcher":	@"http://www.bücher.ch/bücher"
+						   };
+	[dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
+		XCTAssertTrue([key.decodedURLString isEqualToString:obj], @"%@ should encode to %@", key, obj);
+	}];
+}
+
 
 @end

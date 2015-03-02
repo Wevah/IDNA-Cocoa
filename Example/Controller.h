@@ -9,10 +9,7 @@
 #import <AppKit/AppKit.h>
 
 
-@interface Controller : NSWindowController {
-	IBOutlet NSTextField	*normalField;
-	IBOutlet NSTextField	*idnField;
-}
+@interface Controller : NSWindowController
 
 - (IBAction)stringToIDNA:(id)sender;
 - (IBAction)stringFromIDNA:(id)sender;
