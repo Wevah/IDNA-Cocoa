@@ -51,7 +51,7 @@
 
 - (void)testIDNAEncoding {
 	NSDictionary *dict = @{
-						   @"http://www.bücher.ch/":		@"http://www.xn--bcher-kva.ch/",
+						   @"http://www.bücher.ch/":	@"http://www.xn--bcher-kva.ch/",
 						   };
 	[dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
 		XCTAssertTrue([key.IDNAEncodedString isEqualToString:obj], @"%@ should encode to %@", key, obj);
