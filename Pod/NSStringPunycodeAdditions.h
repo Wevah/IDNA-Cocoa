@@ -19,7 +19,7 @@
  @abstract	Converts a Unicode string to its Punycode equivalent.
  @return	The equivalent punycode-encoded string.
  */
-@property (readonly, copy, nullable)	NSString *punycodeEncodedString;
+@property (readonly, copy, nonnull)	NSString *punycodeEncodedString;
 /*!
  @property
  @abstract	Converts a Punycode-encoded string to its Unicode equivalent.
@@ -33,7 +33,7 @@
  @return		The equivalent IDNA-encoded domain.
  @discussion	This will properly split domains on periods; e.g., “www.bücher.ch” becomes “www.xn--bcher-kva.ch”.
  */
-@property (readonly, copy, nullable) NSString *IDNAEncodedString;
+@property (readonly, copy, nonnull) NSString *IDNAEncodedString;
 /*!
  @property
  @abstract		Converts an IDNA-encoded domain to its Unicode equivalent.
