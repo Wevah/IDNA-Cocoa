@@ -399,7 +399,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 @implementation NSURL (PunycodeAdditions)
 
-+ (NSURL *)URLWithUnicodeString:(NSString *)URLString {
++ (instancetype)URLWithUnicodeString:(NSString *)URLString {
 	return [NSURL URLWithString:URLString.encodedURLString];
 }
 
