@@ -378,8 +378,11 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	
 	[ret appendFormat:@"%@%@", [urlParts[@"host"] IDNAEncodedString], path];
 	
-	if (urlParts[@"fragment"])
-		[ret appendFormat:@"#%@", urlParts[@"fragment"]];
+    NSString *fragment = urlParts[@"fragment"];
+    if (fragment) {
+        fragment = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)fragment, CFSTR("%"), NULL, kCFStringEncodingUTF8);
+        [ret appendFormat:@"#%@", fragment];
+    }
 			
 	return ret;
 }
