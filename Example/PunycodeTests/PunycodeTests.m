@@ -69,8 +69,9 @@
 
 - (void)testFullURLEncoding {
 	NSDictionary *dict = @{
-						   @"http://www.bücher.ch/":		@"http://www.xn--bcher-kva.ch/",
-						   @"http://www.bücher.ch/bücher":	@"http://www.xn--bcher-kva.ch/b%C3%BCcher"
+						   @"http://www.bücher.ch/":					@"http://www.xn--bcher-kva.ch/",
+						   @"http://www.bücher.ch/bücher":				@"http://www.xn--bcher-kva.ch/b%C3%BCcher",
+						   @"https://www.google.co.jp/webhp?foo#q=渋谷":	@"https://www.google.co.jp/webhp?foo#q=%E6%B8%8B%E8%B0%B7"
 						   };
 	[dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
 		XCTAssertTrue([key.encodedURLString isEqualToString:obj], @"%@ should encode to %@", key, obj);
@@ -79,8 +80,9 @@
 
 - (void)testFullURLDecoding {
 	NSDictionary *dict = @{
-						   @"http://www.xn--bcher-kva.ch/":				@"http://www.bücher.ch/",
-						   @"http://www.xn--bcher-kva.ch/b%C3%BCcher":	@"http://www.bücher.ch/bücher"
+						   @"http://www.xn--bcher-kva.ch/":								@"http://www.bücher.ch/",
+						   @"http://www.xn--bcher-kva.ch/b%C3%BCcher":					@"http://www.bücher.ch/bücher",
+						   @"https://www.google.co.jp/webhp?foo#q=%E6%B8%8B%E8%B0%B7":	@"https://www.google.co.jp/webhp?foo#q=渋谷"
 						   };
 	[dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
 		XCTAssertTrue([key.decodedURLString isEqualToString:obj], @"%@ should encode to %@", key, obj);
