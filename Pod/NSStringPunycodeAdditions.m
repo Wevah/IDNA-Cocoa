@@ -391,10 +391,13 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	NSDictionary *urlParts = self.URLParts;
 	
 	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], [urlParts[@"host"] IDNADecodedString], [urlParts[@"path"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-	
-	if (urlParts[@"fragment"])
-		ret = [ret stringByAppendingFormat:@"#%@", urlParts[@"fragment"]];
-	
+
+	NSString *fragment = urlParts[@"fragment"];
+	if (fragment) {
+		fragment = [fragment stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		ret = [ret stringByAppendingFormat:@"#%@", fragment];
+	}
+
 	return ret;
 }
 
