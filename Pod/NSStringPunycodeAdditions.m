@@ -362,12 +362,13 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	// We can't get the parts of an URL for an international domain name, so a custom method is used instead.
 	NSDictionary *urlParts = self.URLParts;
 	NSString *path = urlParts[@"path"];
-	path = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)path, CFSTR("%"), NULL, kCFStringEncodingUTF8);
-	
-#if !__has_feature(objc_arc)
-	[path autorelease];
-#endif
-	
+
+	// "path" here is really "path+query", so we're allowing '?' as well as '%'.
+	NSMutableCharacterSet *allowedCharacters = [[NSCharacterSet URLPathAllowedCharacterSet] mutableCopy];
+	[allowedCharacters addCharactersInRange:(NSRange){ '%', 1 }];
+	[allowedCharacters addCharactersInRange:(NSRange){ '?', 1 }];
+	path = [path stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+
 	NSMutableString *ret = [NSMutableString stringWithFormat:@"%@%@", urlParts[@"scheme"], urlParts[@"delim"]];
 	if (urlParts[@"username"]) {
 		if (urlParts[@"password"]) {
