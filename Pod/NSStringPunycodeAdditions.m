@@ -306,7 +306,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 			if (![s isAtEnd])
 				[s scanCharactersFromSet:colonSlash intoString:&delim];
 			if (![s isAtEnd])
-				[s scanUpToCharactersFromSet:colonSlash intoString:&host];
+				[s scanUpToString:@"/" intoString:&host];
 		}
 	}
 	
@@ -370,10 +370,12 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	
 	NSMutableString *ret = [NSMutableString stringWithFormat:@"%@%@", urlParts[@"scheme"], urlParts[@"delim"]];
 	if (urlParts[@"username"]) {
-		if (urlParts[@"password"])
-			[ret appendFormat:@"%@:%@@", urlParts[@"username"], urlParts[@"password"]];
-		else
-			[ret appendFormat:@"%@@", urlParts[@"username"]];
+		if (urlParts[@"password"]) {
+			[ret appendFormat:@"%@:%@@",
+			 [urlParts[@"username"] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLUserAllowedCharacterSet]],
+			 [urlParts[@"password"] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPasswordAllowedCharacterSet]]];
+		} else
+			[ret appendFormat:@"%@@", [urlParts[@"username"] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLUserAllowedCharacterSet]]];
 	}
 	
 	[ret appendFormat:@"%@%@", [urlParts[@"host"] IDNAEncodedString], path];
@@ -389,10 +391,23 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 - (NSString *)decodedURLString {
 	NSDictionary *urlParts = self.URLParts;
-	
-	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], [urlParts[@"host"] IDNADecodedString], [urlParts[@"path"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+
+	NSString *username = urlParts[@"username"];
+	NSString *password = urlParts[@"password"];
+	NSString *usernamePassword = nil;
+
+	if (username) {
+		if (password)
+			usernamePassword = [NSString stringWithFormat:@"%@:%@@",
+								username.stringByRemovingPercentEncoding, password.stringByRemovingPercentEncoding];
+		else
+			usernamePassword = [NSString stringWithFormat:@"%@@", username.stringByRemovingPercentEncoding];
+	}
+
+	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], usernamePassword ?: @"", [urlParts[@"host"] IDNADecodedString], [urlParts[@"path"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 
 	NSString *fragment = urlParts[@"fragment"];
+
 	if (fragment) {
 		fragment = [fragment stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		ret = [ret stringByAppendingFormat:@"#%@", fragment];
