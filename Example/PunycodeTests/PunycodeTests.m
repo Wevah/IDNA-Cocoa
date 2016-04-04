@@ -95,5 +95,9 @@
 	}];
 }
 
+- (void)testConvenienceMethods {
+	XCTAssertTrue([[NSURL URLWithUnicodeString:@"http://www.bücher.ch/"] isEqual:[NSURL URLWithString:@"http://www.xn--bcher-kva.ch/"]]);
+	XCTAssertTrue([[NSURL URLWithString:@"http://www.xn--bcher-kva.ch/"].decodedURLString isEqualToString:@"http://www.bücher.ch/"]);
+}
 
 @end
