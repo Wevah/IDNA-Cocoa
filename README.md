@@ -6,6 +6,8 @@ by Nate Weaver (Wevah)
 http://derailer.org/
 https://github.com/Wevah/Punycode-Cocoa
 
+[![Build Status](https://travis-ci.org/orkoden/Punycode-Cocoa.svg?branch=master)](https://travis-ci.org/orkoden/Punycode-Cocoa)
+
 A simple punycode/IDNA category on NSString, based on code and documentation from RFC 3492 and RFC 3490.
 
 Use this to convert internationalized domain names (IDN) between Unicode and ASCII.
