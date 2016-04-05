@@ -86,9 +86,9 @@
 						   @"http://www.xn--bcher-kva.ch/":								@"http://www.bücher.ch/",
 						   @"http://www.xn--bcher-kva.ch/b%C3%BCcher":					@"http://www.bücher.ch/bücher",
 						   @"https://www.google.co.jp/webhp?foo#q=%E6%B8%8B%E8%B0%B7":	@"https://www.google.co.jp/webhp?foo#q=渋谷",
-						   @"http://foo:bar@example.com/":	@"http://foo:bar@example.com/",
-						   @"http://f%C3%B6o:b%C3%A5r@example.com/": @"http://föo:bår@example.com/",
-						   @"http://f%C3%B6o@example.com/": @"http://föo@example.com/"
+						   @"http://foo:bar@example.com/":								@"http://foo:bar@example.com/",
+						   @"http://f%C3%B6o:b%C3%A5r@example.com/":					@"http://föo:bår@example.com/",
+						   @"http://f%C3%B6o@example.com/":								@"http://föo@example.com/"
 						   };
 	[dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
 		XCTAssertTrue([key.decodedURLString isEqualToString:obj], @"%@ should decode to %@; decoded to %@", key, obj, key.decodedURLString);
