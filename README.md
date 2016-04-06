@@ -1,7 +1,7 @@
 Punycode Cocoa
 ==============
 
-v1.1 (2015)
+v1.1.1 (2016)
 by Nate Weaver (Wevah)
 http://derailer.org/
 https://github.com/Wevah/Punycode-Cocoa
@@ -49,4 +49,4 @@ Convenience property equivalent to `anURL.absoluteString.decodedURLString`.
 
 ----
 
-© 2012-2015 Nate Weaver (Wevah)
+© 2012-2016 Nate Weaver (Wevah)
