@@ -11,6 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (PunycodeAdditions)
 
@@ -67,7 +68,7 @@
  @discussion	Equivalent to <tt>[NSURL URLWithString:URLString.encodedURLString]</tt>.
  @return		An encoded NSURL.
  */
-+ (nullable instancetype)URLWithUnicodeString:(nonnull NSString *)URLString;
++ (nullable instancetype)URLWithUnicodeString:(NSString *)URLString;
 /*!
  @property
  @abstract		Converts an NSURL to its IDNA- and percent-decoded form.
@@ -77,3 +78,5 @@
 @property (readonly, copy, nullable) NSString *decodedURLString;
 
 @end
+
+NS_ASSUME_NONNULL_END
