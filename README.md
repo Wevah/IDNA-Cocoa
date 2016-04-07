@@ -3,9 +3,9 @@ Punycode Cocoa
 
 [![Build Status](https://travis-ci.org/Wevah/Punycode-Cocoa.svg?branch=travis)](https://travis-ci.org/Wevah/Punycode-Cocoa)
 
-v1.1.1 (2016)
-by Nate Weaver (Wevah)
-http://derailer.org/
+v1.1.1 (2016)  
+by Nate Weaver (Wevah)  
+http://derailer.org/  
 https://github.com/Wevah/Punycode-Cocoa
 
 A simple punycode/IDNA category on NSString, based on code and documentation from RFC 3492 and RFC 3490.
@@ -20,32 +20,32 @@ Methods
 NSString
 --------
 
-	@property (readonly, copy)	NSString *punycodeEncodedString;
-	@property (readonly, copy)	NSString *punycodeDecodedString;
+	@property (readonly, copy, nullable)	NSString *punycodeEncodedString;
+	@property (readonly, copy, nullable)	NSString *punycodeDecodedString;
 
 Encodes or decodes a string to its punycode-encoded format.
 	
-	@property (readonly, copy) NSString *IDNAEncodedString;
+	@property (readonly, copy, nullable) NSString *IDNAEncodedString;
 	
 If `self` contains non-ASCII, calls `-punycodeEncodedString` and prepends `xn--`.
 
-	@property (readonly, copy) NSString *IDNADecodedString;
+	@property (readonly, copy, nullable) NSString *IDNADecodedString;
 
 Decodes a string returned by `-IDNAEncodedString`.
 
-	@property (readonly, copy) NSString *encodedURLString;
-	@property (readonly, copy) NSString *decodedURLString;
+	@property (readonly, copy, nullable) NSString *encodedURLString;
+	@property (readonly, copy, nullable) NSString *decodedURLString;
 	
 Performs encode/decode operations on each appropriate part (the domain bits) of an URL string.
 
 NSURL
 -----
 	
-	+ (instancetype)URLWithUnicodeString:(NSString *)URLString;
+	+ (instancetype nullable)URLWithUnicodeString:(NSString *)URLString;
 	
 Convenience method equivalent to `[NSURL URLWithString:URLString.encodedURLString]`.
 	
-	@property (readonly, copy) NSString *decodedURLString;
+	@property (readonly, copy, nullable) NSString *decodedURLString;
 
 Convenience property equivalent to `anURL.absoluteString.decodedURLString`.
 
