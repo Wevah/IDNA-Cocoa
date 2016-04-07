@@ -9,6 +9,12 @@
 #import "PunycodeTests.h"
 #import "NSStringPunycodeAdditions.h"
 
+@interface NSString (PunycodePrivate)
+
+@property (readonly, copy)	NSString		*stringByDeletingVariationSelectors;
+
+@end
+
 @implementation PunycodeTests
 
 - (void)setUp
@@ -98,6 +104,15 @@
 - (void)testConvenienceMethods {
 	XCTAssertTrue([[NSURL URLWithUnicodeString:@"http://www.bücher.ch/"] isEqual:[NSURL URLWithString:@"http://www.xn--bcher-kva.ch/"]]);
 	XCTAssertTrue([[NSURL URLWithString:@"http://www.xn--bcher-kva.ch/"].decodedURLString isEqualToString:@"http://www.bücher.ch/"]);
+}
+
+- (void)testVariationSelectorPerformance {
+	NSString *testString = @"ksfjlksfdjklfjfklfjkljskfljsklfjsl";
+	[self measureBlock:^{
+		for (NSUInteger i = 0; i < 100000; ++i) {
+			(void)testString.stringByDeletingVariationSelectors;
+		}
+	}];
 }
 
 @end

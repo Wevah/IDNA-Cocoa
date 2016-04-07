@@ -82,7 +82,8 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 @interface NSString (PunycodePrivate)
 
-@property (readonly, copy) NSDictionary *URLParts;
+@property (readonly, copy)	NSDictionary	*URLParts;
+@property (readonly, copy)	NSString		*stringByDeletingVariationSelectors;
 
 @end
 
@@ -104,11 +105,23 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	return [data bytes];
 }
 
+- (NSString *)stringByDeletingVariationSelectors {
+	static NSRegularExpression *regex;
+
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		regex = [NSRegularExpression regularExpressionWithPattern:@"[\uFE00-\uFE15]" options:0 error:nil];
+	});
+
+	return [regex stringByReplacingMatchesInString:self options:0 range:(NSRange){ .location = 0, .length = self.length} withTemplate:@""];
+}
+
 - (NSString *)punycodeEncodedString {
+	NSString *variationStripped = self.stringByDeletingVariationSelectors;
 	NSMutableString *ret = [NSMutableString string];
 	unsigned delta, outLen, bias, j, m, q, k, t;
 	NSUInteger input_length;
-	const UTF32Char *longchars = [self longCharactersWithCount:&input_length];	
+	const UTF32Char *longchars = [variationStripped longCharactersWithCount:&input_length];
 	
 	UTF32Char n = initial_n;
 	delta = outLen = 0;
@@ -252,7 +265,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	while (![s isAtEnd]) {
 		if ([s scanUpToCharactersFromSet:dotAt intoString:&input]) {
 			if ([input rangeOfCharacterFromSet:nonAscii].location != NSNotFound) {
-				[ret appendFormat:@"xn--%@", input.punycodeEncodedString];
+				[ret appendFormat:@"xn--%@", input.stringByDeletingVariationSelectors.punycodeEncodedString];
 			} else
 				[ret appendString:input];
 		}

@@ -3,7 +3,7 @@ Punycode Cocoa
 
 [![Build Status](https://travis-ci.org/Wevah/Punycode-Cocoa.svg?branch=master)](https://travis-ci.org/Wevah/Punycode-Cocoa)
 
-v1.1.1 (2016)  
+v1.2 (2016)  
 by Nate Weaver (Wevah)  
 http://derailer.org/  
 https://github.com/Wevah/Punycode-Cocoa
@@ -23,7 +23,7 @@ NSString
 	@property (readonly, copy, nullable)	NSString *punycodeEncodedString;
 	@property (readonly, copy, nullable)	NSString *punycodeDecodedString;
 
-Encodes or decodes a string to its punycode-encoded format.
+Encodes or decodes a string to its punycode-encoded format, stripping variation selectors (`U+FE00`–`U+FE15`).
 	
 	@property (readonly, copy, nullable) NSString *IDNAEncodedString;
 	
