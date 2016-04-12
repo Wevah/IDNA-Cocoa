@@ -396,7 +396,9 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	
     NSString *fragment = urlParts[@"fragment"];
     if (fragment) {
-        fragment = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)fragment, CFSTR("%"), NULL, kCFStringEncodingUTF8);
+		NSMutableCharacterSet *fragmentAllowedCharacters = [[NSCharacterSet URLFragmentAllowedCharacterSet] mutableCopy];
+		[fragmentAllowedCharacters addCharactersInRange:(NSRange) { '%' , 1 }];
+		fragment = [fragment stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
         [ret appendFormat:@"#%@", fragment];
     }
 			
@@ -418,12 +420,12 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 			usernamePassword = [NSString stringWithFormat:@"%@@", username.stringByRemovingPercentEncoding];
 	}
 
-	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], usernamePassword ?: @"", [urlParts[@"host"] IDNADecodedString], [urlParts[@"path"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], usernamePassword ?: @"", [urlParts[@"host"] IDNADecodedString], [urlParts[@"path"] stringByRemovingPercentEncoding]];
 
 	NSString *fragment = urlParts[@"fragment"];
 
 	if (fragment) {
-		fragment = [fragment stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		fragment = [fragment stringByRemovingPercentEncoding];
 		ret = [ret stringByAppendingFormat:@"#%@", fragment];
 	}
 
