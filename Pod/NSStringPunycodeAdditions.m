@@ -105,19 +105,19 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	return [data bytes];
 }
 
-- (NSString *)stringByDeletingVariationSelectors {
+- (NSString *)stringByDeletingIgnoredCharacters {
 	static NSRegularExpression *regex;
 
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		regex = [NSRegularExpression regularExpressionWithPattern:@"[\uFE00-\uFE0F]" options:0 error:nil];
+		regex = [NSRegularExpression regularExpressionWithPattern:@"[\u00AD\u034F\u1806\u180B\u180C\u180D\u200B\u200C\u200D\u2060\uFE00-\uFE0F\uFEFF]" options:0 error:nil];
 	});
 
 	return [regex stringByReplacingMatchesInString:self options:0 range:(NSRange){ .location = 0, .length = self.length} withTemplate:@""];
 }
 
 - (NSString *)punycodeEncodedString {
-	NSString *variationStripped = self.stringByDeletingVariationSelectors;
+	NSString *variationStripped = self.stringByDeletingIgnoredCharacters;
 	NSMutableString *ret = [NSMutableString string];
 	unsigned delta, outLen, bias, j, m, q, k, t;
 	NSUInteger input_length;
@@ -265,7 +265,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	while (![s isAtEnd]) {
 		if ([s scanUpToCharactersFromSet:dotAt intoString:&input]) {
 			if ([input rangeOfCharacterFromSet:nonAscii].location != NSNotFound) {
-				[ret appendFormat:@"xn--%@", input.stringByDeletingVariationSelectors.punycodeEncodedString];
+				[ret appendFormat:@"xn--%@", input.punycodeEncodedString];
 			} else
 				[ret appendString:input];
 		}
