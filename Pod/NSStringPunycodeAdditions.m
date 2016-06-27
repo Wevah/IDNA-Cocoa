@@ -110,7 +110,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		regex = [NSRegularExpression regularExpressionWithPattern:@"[\uFE00-\uFE15]" options:0 error:nil];
+		regex = [NSRegularExpression regularExpressionWithPattern:@"[\uFE00-\uFE0F]" options:0 error:nil];
 	});
 
 	return [regex stringByReplacingMatchesInString:self options:0 range:(NSRange){ .location = 0, .length = self.length} withTemplate:@""];
