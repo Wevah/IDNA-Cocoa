@@ -301,7 +301,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	return ret;
 }
 
-- (NSDictionary *)URLParts {
+- (NSDictionary<NSString *, NSString *> *)URLParts {
 	NSCharacterSet *colonSlash = [NSCharacterSet characterSetWithCharactersInString:@":/"];
 	NSScanner *s = [NSScanner scannerWithString:self.precomposedStringWithCompatibilityMapping];
 	NSString *scheme = @"";
@@ -406,7 +406,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 }
 
 - (NSString *)decodedURLString {
-	NSDictionary *urlParts = self.URLParts;
+	NSDictionary<NSString *, NSString *> *urlParts = self.URLParts;
 
 	NSString *username = urlParts[@"username"];
 	NSString *password = urlParts[@"password"];
@@ -420,7 +420,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 			usernamePassword = [NSString stringWithFormat:@"%@@", username.stringByRemovingPercentEncoding];
 	}
 
-	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], usernamePassword ?: @"", [urlParts[@"host"] IDNADecodedString], [urlParts[@"path"] stringByRemovingPercentEncoding]];
+	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], usernamePassword ?: @"", [urlParts[@"host"] IDNADecodedString], urlParts[@"path"].stringByRemovingPercentEncoding ?: @""];
 
 	NSString *fragment = urlParts[@"fragment"];
 
