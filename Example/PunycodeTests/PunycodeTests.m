@@ -11,7 +11,7 @@
 
 @interface NSString (PunycodePrivate)
 
-@property (readonly, copy)	NSString		*stringByDeletingVariationSelectors;
+@property (readonly, copy)	NSString		*stringByDeletingIgnoredCharacters;
 
 @end
 
@@ -113,7 +113,7 @@
 	NSString *testString = @"ksfjlksfdjklfjfklfjkljskfljsklfjsl";
 	[self measureBlock:^{
 		for (NSUInteger i = 0; i < 100000; ++i) {
-			(void)testString.stringByDeletingVariationSelectors;
+			(void)testString.stringByDeletingIgnoredCharacters;
 		}
 	}];
 }
