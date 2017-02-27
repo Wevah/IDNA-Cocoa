@@ -330,28 +330,23 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 		[s scanString:@"#" intoString:nil];
 		[s scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&fragment];
 	}
-	
-	NSCharacterSet *colonAt = [NSCharacterSet characterSetWithCharactersInString:@":@"];
-	
-	s = [NSScanner scannerWithString:host];
-	NSString *temp = nil;
-	
-	if ([s scanUpToCharactersFromSet:colonAt intoString:&temp]) {
-		if (![s isAtEnd]) {
-			username = temp;
-			
-			if ([host characterAtIndex:[s scanLocation]] == ':') {
-				[s scanCharactersFromSet:colonAt intoString:&temp];
-								
-				if (![s isAtEnd] && [s scanUpToCharactersFromSet:colonAt intoString:&temp])
-					password = temp;
-			}
-			
-			[s scanCharactersFromSet:colonAt intoString:nil];
-						
-			if (![s isAtEnd] && [s scanUpToCharactersFromSet:colonAt intoString:&temp])
-				host = temp;
+
+	NSArray<NSString *> *usernamePasswordHostPort = [host componentsSeparatedByString:@"@"];
+
+	switch (usernamePasswordHostPort.count) {
+		default: {
+			NSArray<NSString *> *usernamePassword = [usernamePasswordHostPort[0] componentsSeparatedByString:@":"];
+			username = usernamePassword[0];
+			password = usernamePassword.count > 1 ? usernamePassword[1] : nil;
+			host = usernamePasswordHostPort[1];
+			break;
 		}
+		case 1:
+			host = usernamePasswordHostPort[0];
+			break;
+		case 0:
+			// error
+			break;
 	}
 	
 	NSMutableDictionary *parts = [NSMutableDictionary dictionaryWithObjectsAndKeys:
@@ -398,7 +393,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
     if (fragment) {
 		NSMutableCharacterSet *fragmentAllowedCharacters = [[NSCharacterSet URLFragmentAllowedCharacterSet] mutableCopy];
 		[fragmentAllowedCharacters addCharactersInRange:(NSRange) { '%' , 1 }];
-		fragment = [fragment stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+		fragment = [fragment stringByAddingPercentEncodingWithAllowedCharacters:fragmentAllowedCharacters];
         [ret appendFormat:@"#%@", fragment];
     }
 			
