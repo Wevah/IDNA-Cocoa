@@ -303,6 +303,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 - (NSDictionary<NSString *, NSString *> *)URLParts {
 	NSCharacterSet *colonSlash = [NSCharacterSet characterSetWithCharactersInString:@":/"];
+	NSCharacterSet *slashQuestion = [NSCharacterSet characterSetWithCharactersInString:@"/?"];
 	NSScanner *s = [NSScanner scannerWithString:self.precomposedStringWithCompatibilityMapping];
 	NSString *scheme = @"";
 	NSString *delim = @"";
@@ -319,7 +320,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 			if (![s isAtEnd])
 				[s scanCharactersFromSet:colonSlash intoString:&delim];
 			if (![s isAtEnd])
-				[s scanUpToString:@"/" intoString:&host];
+				[s scanUpToCharactersFromSet:slashQuestion intoString:&host];
 		}
 	}
 	
