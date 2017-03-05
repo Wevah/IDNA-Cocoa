@@ -3,9 +3,9 @@ Punycode Cocoa
 
 [![Build Status](https://travis-ci.org/Wevah/Punycode-Cocoa.svg?branch=master)](https://travis-ci.org/Wevah/Punycode-Cocoa)
 
-v1.2.2 (2016)  
+v1.2.3 (2017)  
 by Nate Weaver (Wevah)  
-http://derailer.org/  
+https://derailer.org/  
 https://github.com/Wevah/Punycode-Cocoa
 
 A simple punycode/IDNA category on NSString, based on code and documentation from RFC 3492 and RFC 3490.
