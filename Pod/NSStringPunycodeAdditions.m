@@ -101,8 +101,8 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 - (const UTF32Char *)longCharactersWithCount:(NSUInteger *)count {
 	NSData *data = [self dataUsingEncoding:UTF32_ENCODING];
-	*count = [data length] / sizeof(UTF32Char);
-	return [data bytes];
+	*count = data.length / sizeof(UTF32Char);
+	return data.bytes;
 }
 
 - (NSString *)stringByDeletingIgnoredCharacters {
@@ -262,7 +262,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	NSCharacterSet *dotAt = [NSCharacterSet characterSetWithCharactersInString:@".@"];
 	NSString *input = nil;
 	
-	while (![s isAtEnd]) {
+	while (!s.atEnd) {
 		if ([s scanUpToCharactersFromSet:dotAt intoString:&input]) {
 			if ([input rangeOfCharacterFromSet:nonAscii].location != NSNotFound) {
 				[ret appendFormat:@"xn--%@", input.punycodeEncodedString];
@@ -283,7 +283,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	NSCharacterSet *dotAt = [NSCharacterSet characterSetWithCharactersInString:@".@"];
 	NSString *input = nil;
 	
-	while (![s isAtEnd]) {
+	while (!s.atEnd) {
 		if ([s scanUpToCharactersFromSet:dotAt intoString:&input]) {
 			if ([input.lowercaseString hasPrefix:@"xn--"]) {
 				NSString *substr = [input substringFromIndex:4].punycodeDecodedString;
@@ -317,17 +317,17 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 		if (!s.isAtEnd && [self characterAtIndex:s.scanLocation] == ':') {
 			scheme = host;
 			
-			if (![s isAtEnd])
+			if (!s.atEnd)
 				[s scanCharactersFromSet:colonSlash intoString:&delim];
-			if (![s isAtEnd])
+			if (!s.atEnd)
 				[s scanUpToCharactersFromSet:slashQuestion intoString:&host];
 		}
 	}
 	
-	if (![s isAtEnd])
+	if (!s.atEnd)
 		[s scanUpToString:@"#" intoString:&path];
 
-	if (![s isAtEnd]) {
+	if (!s.atEnd) {
 		[s scanString:@"#" intoString:nil];
 		[s scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&fragment];
 	}
@@ -416,12 +416,12 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 			usernamePassword = [NSString stringWithFormat:@"%@@", username.stringByRemovingPercentEncoding];
 	}
 
-	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], usernamePassword ?: @"", [urlParts[@"host"] IDNADecodedString], urlParts[@"path"].stringByRemovingPercentEncoding ?: @""];
+	NSString *ret = [NSString stringWithFormat:@"%@%@%@%@%@", urlParts[@"scheme"], urlParts[@"delim"], usernamePassword ?: @"", (urlParts[@"host"]).IDNADecodedString, urlParts[@"path"].stringByRemovingPercentEncoding ?: @""];
 
 	NSString *fragment = urlParts[@"fragment"];
 
 	if (fragment) {
-		fragment = [fragment stringByRemovingPercentEncoding];
+		fragment = fragment.stringByRemovingPercentEncoding;
 		ret = [ret stringByAppendingFormat:@"#%@", fragment];
 	}
 
