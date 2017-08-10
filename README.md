@@ -28,7 +28,7 @@ NSString
 	@property (readonly, copy, nullable)	NSString *punycodeEncodedString;
 	@property (readonly, copy, nullable)	NSString *punycodeDecodedString;
 
-Encodes or decodes a string to its punycode-encoded format, stripping variation selectors (`U+FE00`–`U+FE15`).
+Encodes or decodes a string to its punycode-encoded format, stripping variation selectors (`U+FE00`–`U+FE0F`).
 	
 	@property (readonly, copy, nullable) NSString *IDNAEncodedString;
 	
