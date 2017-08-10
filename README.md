@@ -46,7 +46,7 @@ Performs encode/decode operations on each appropriate part (the domain bits) of 
 NSURL
 -----
 	
-	+ (instancetype nullable)URLWithUnicodeString:(NSString *)URLString;
+	+ (nullable instancetype)URLWithUnicodeString:(NSString *)URLString;
 	
 Convenience method equivalent to `[NSURL URLWithString:URLString.encodedURLString]`.
 	
