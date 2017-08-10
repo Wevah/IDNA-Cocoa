@@ -3,7 +3,7 @@ Punycode Cocoa
 
 [![Build Status](https://travis-ci.org/Wevah/Punycode-Cocoa.svg?branch=master)](https://travis-ci.org/Wevah/Punycode-Cocoa)
 
-v1.2.3 (2017)  
+v1.3 (2017)  
 by Nate Weaver (Wevah)  
 https://derailer.org/  
 https://github.com/Wevah/Punycode-Cocoa
@@ -13,6 +13,11 @@ A simple punycode/IDNA category on NSString, based on code and documentation fro
 Use this to convert internationalized domain names (IDN) between Unicode and ASCII.
 
 To use in your own projects, all you need is `NSStringPunycodeAdditions.h/m`. This project includes a sample testing app.
+
+Macros
+------
+
+Define `PUNYCODE_COCOA_USE_WEBKIT` to have Punycode Cocoa methods call internal WebKit methods instead of the custom implementations. Useful if you're already linking against WebKit, or want additional homograph attack protection.
 
 Methods
 -------
