@@ -475,7 +475,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 + (instancetype)URLWithUnicodeString:(NSString *)URLString {
 #ifdef PUNYCODE_COCOA_USE_WEBKIT
-	return [NSURL _web_URLWithUserTypedString:URLString];
+	return [NSURL _webkit_URLWithUserTypedString:URLString];
 #else
 	return [NSURL URLWithString:URLString.encodedURLString];
 #endif
