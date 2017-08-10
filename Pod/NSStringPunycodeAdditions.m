@@ -11,6 +11,14 @@
 
 #import "NSStringPunycodeAdditions.h"
 
+#ifdef PUNYCODE_COCOA_USE_WEBKIT
+
+#import "WebNSURLExtras.h"
+
+#endif
+
+#ifndef PUNYCODE_COCOA_USE_WEBKIT
+
 // Encoding/decoding adapted/lifted from the example code in the IDNA Punycode spec (RFC 3492).
 // For some other stuff, see RFC 3490 (Internationalizing Domain Names in Applications)
 
@@ -80,6 +88,8 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	return k + (base - tmin + 1) * delta / (delta + skew);
 }
 
+#endif // PUNYCODE_COCOA_USE_WEBKIT
+
 @interface NSString (PunycodePrivate)
 
 @property (readonly, copy)	NSDictionary	*URLParts;
@@ -89,6 +99,19 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 @implementation NSString (PunycodeAdditions)
 
+
+#ifdef PUNYCODE_COCOA_USE_WEBKIT
+
+- (NSString *)punycodeEncodedString {
+	NSString *encodedHost = [self _web_encodeHostName];
+	return [encodedHost stringByReplacingOccurrencesOfString:@"xn--" withString:@"" options:NSAnchoredSearch range:(NSRange){ 0, encodedHost.length }];
+}
+
+- (NSString *)punycodeDecodedString {
+	return [[@"xn--" stringByAppendingString:self] _web_decodeHostName];
+}
+
+#else
 /*** Main encode function ***/
 
 #if BYTE_ORDER == LITTLE_ENDIAN
@@ -255,7 +278,12 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 #endif
 }
 
+#endif // PUNYCODE_COCOA_USE_WEBKIT
+
 - (NSString *)IDNAEncodedString {
+#ifdef PUNYCODE_COCOA_USE_WEBKIT
+	return [self _web_encodeHostName];
+#else
 	NSCharacterSet *nonAscii = [NSCharacterSet characterSetWithRange:NSMakeRange(1, 127)].invertedSet;
 	NSMutableString *ret = [NSMutableString string];
 	NSScanner *s = [NSScanner scannerWithString:self.precomposedStringWithCompatibilityMapping];
@@ -275,9 +303,13 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	}
 		
 	return ret;
+#endif
 }
 
 - (NSString *)IDNADecodedString {
+#ifdef PUNYCODE_COCOA_USE_WEBKIT
+	return [self _web_decodeHostName];
+#else
 	NSMutableString *ret = [NSMutableString string];
 	NSScanner *s = [NSScanner scannerWithString:self];
 	NSCharacterSet *dotAt = [NSCharacterSet characterSetWithCharactersInString:@".@"];
@@ -299,6 +331,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	}
 	
 	return ret;
+#endif
 }
 
 - (NSDictionary<NSString *, NSString *> *)URLParts {
@@ -368,6 +401,9 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 }
 
 - (NSString *)encodedURLString {
+#ifdef PUNYCODE_COCOA_USE_WEBKIT
+	return [NSURL _web_URLWithUserTypedString:self].absoluteString;
+#else
 	// We can't get the parts of an URL for an international domain name, so a custom method is used instead.
 	NSDictionary *urlParts = self.URLParts;
 	NSString *path = urlParts[@"path"];
@@ -399,9 +435,13 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
     }
 			
 	return ret;
+#endif
 }
 
 - (NSString *)decodedURLString {
+#ifdef PUNYCODE_COCOA_USE_WEBKIT
+	return [[NSURL URLWithString:self] _web_userVisibleString];
+#else
 	NSDictionary<NSString *, NSString *> *urlParts = self.URLParts;
 
 	NSString *username = urlParts[@"username"];
@@ -426,6 +466,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 	}
 
 	return ret;
+#endif
 }
 
 @end
@@ -433,11 +474,19 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 @implementation NSURL (PunycodeAdditions)
 
 + (instancetype)URLWithUnicodeString:(NSString *)URLString {
+#ifdef PUNYCODE_COCOA_USE_WEBKIT
+	return [NSURL _web_URLWithUserTypedString:URLString];
+#else
 	return [NSURL URLWithString:URLString.encodedURLString];
+#endif
 }
 
 - (NSString *)decodedURLString {
+#ifdef PUNYCODE_COCOA_USE_WEBKIT
+	return [self _web_userVisibleString];
+#else
 	return self.absoluteString.decodedURLString;
+#endif
 }
 
 @end
