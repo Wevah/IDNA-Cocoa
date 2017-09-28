@@ -203,7 +203,8 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 			}
 		}
 		
-		++delta, ++n;
+		++delta;
+		++n;
 	}
 	
 	return ret;
