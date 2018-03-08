@@ -20,7 +20,7 @@
 
 #import "unicode/uidna.h"
 
-#define HOST_NAME_BUFFER_LENGTH 2048 // Name and size from WebKit
+#define HOST_NAME_BUFFER_LENGTH 2048 // Name and size from WebKit.
 
 #endif
 
