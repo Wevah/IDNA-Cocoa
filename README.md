@@ -19,6 +19,8 @@ Macros
 
 Define `PUNYCODE_COCOA_USE_WEBKIT` to have Punycode Cocoa methods call internal WebKit methods instead of the custom implementations. Useful if you're already linking against WebKit, or want additional homograph attack protection. However, this probably won't be allowed on the App Store due to its use of private methods.
 
+Define `PUNYCODE_COCOA_USE_ICU` to use ICU (by default the system's ICU).
+
 Methods
 -------
 
