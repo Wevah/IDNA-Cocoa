@@ -11,6 +11,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define PUNYCODE_COCOA_USE_ICU 1
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (PunycodeAdditions)

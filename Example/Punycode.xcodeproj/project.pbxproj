@@ -11,6 +11,104 @@
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753811F3CE8B2002606DD /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
 		B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		B26D0B6C2051D73F009B1935 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B26D0B692051D26E009B1935 /* libicucore.A.dylib */; };
+		B26D0C972051D832009B1935 /* utf_old.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C362051D832009B1935 /* utf_old.h */; };
+		B26D0C982051D832009B1935 /* ubrk.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C372051D832009B1935 /* ubrk.h */; };
+		B26D0C992051D832009B1935 /* stringpiece.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C382051D832009B1935 /* stringpiece.h */; };
+		B26D0C9A2051D832009B1935 /* ucat.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C392051D832009B1935 /* ucat.h */; };
+		B26D0C9B2051D832009B1935 /* stringoptions.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3A2051D832009B1935 /* stringoptions.h */; };
+		B26D0C9C2051D832009B1935 /* ptypes.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3B2051D832009B1935 /* ptypes.h */; };
+		B26D0C9D2051D832009B1935 /* usetiter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3C2051D832009B1935 /* usetiter.h */; };
+		B26D0C9E2051D832009B1935 /* errorcode.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3D2051D832009B1935 /* errorcode.h */; };
+		B26D0C9F2051D832009B1935 /* dtintrv.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3E2051D832009B1935 /* dtintrv.h */; };
+		B26D0CA02051D832009B1935 /* ucurr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3F2051D832009B1935 /* ucurr.h */; };
+		B26D0CA12051D832009B1935 /* icuplug.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C402051D832009B1935 /* icuplug.h */; };
+		B26D0CA22051D832009B1935 /* utext.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C412051D832009B1935 /* utext.h */; };
+		B26D0CA32051D832009B1935 /* edits.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C422051D832009B1935 /* edits.h */; };
+		B26D0CA42051D832009B1935 /* parsepos.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C432051D832009B1935 /* parsepos.h */; };
+		B26D0CA52051D832009B1935 /* urep.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C442051D832009B1935 /* urep.h */; };
+		B26D0CA62051D832009B1935 /* utf32.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C452051D832009B1935 /* utf32.h */; };
+		B26D0CA72051D832009B1935 /* ustring.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C462051D832009B1935 /* ustring.h */; };
+		B26D0CA82051D832009B1935 /* ubiditransform.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C472051D832009B1935 /* ubiditransform.h */; };
+		B26D0CA92051D832009B1935 /* uenum.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C482051D832009B1935 /* uenum.h */; };
+		B26D0CAA2051D832009B1935 /* appendable.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C492051D832009B1935 /* appendable.h */; };
+		B26D0CAB2051D832009B1935 /* uset.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4A2051D832009B1935 /* uset.h */; };
+		B26D0CAC2051D832009B1935 /* casemap.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4B2051D832009B1935 /* casemap.h */; };
+		B26D0CAD2051D832009B1935 /* schriter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4C2051D832009B1935 /* schriter.h */; };
+		B26D0CAE2051D832009B1935 /* uldnames.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4D2051D832009B1935 /* uldnames.h */; };
+		B26D0CAF2051D832009B1935 /* uiter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4E2051D832009B1935 /* uiter.h */; };
+		B26D0CB02051D832009B1935 /* docmain.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4F2051D832009B1935 /* docmain.h */; };
+		B26D0CB12051D832009B1935 /* uniset.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C502051D832009B1935 /* uniset.h */; };
+		B26D0CB22051D832009B1935 /* udata.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C512051D832009B1935 /* udata.h */; };
+		B26D0CB32051D832009B1935 /* stringtriebuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C522051D832009B1935 /* stringtriebuilder.h */; };
+		B26D0CB42051D832009B1935 /* chariter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C532051D832009B1935 /* chariter.h */; };
+		B26D0CB52051D832009B1935 /* umisc.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C542051D832009B1935 /* umisc.h */; };
+		B26D0CB62051D832009B1935 /* uloc.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C552051D832009B1935 /* uloc.h */; };
+		B26D0CB72051D832009B1935 /* bytestriebuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C562051D832009B1935 /* bytestriebuilder.h */; };
+		B26D0CB82051D832009B1935 /* utrace.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C572051D832009B1935 /* utrace.h */; };
+		B26D0CB92051D832009B1935 /* locdspnm.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C582051D832009B1935 /* locdspnm.h */; };
+		B26D0CBA2051D832009B1935 /* uchriter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C592051D832009B1935 /* uchriter.h */; };
+		B26D0CBB2051D832009B1935 /* enumset.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5A2051D832009B1935 /* enumset.h */; };
+		B26D0CBC2051D832009B1935 /* utf.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5B2051D832009B1935 /* utf.h */; };
+		B26D0CBD2051D832009B1935 /* strenum.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5C2051D832009B1935 /* strenum.h */; };
+		B26D0CBE2051D832009B1935 /* ucnv_err.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5D2051D832009B1935 /* ucnv_err.h */; };
+		B26D0CBF2051D832009B1935 /* bytestrie.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5E2051D832009B1935 /* bytestrie.h */; };
+		B26D0CC02051D832009B1935 /* listformatter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5F2051D832009B1935 /* listformatter.h */; };
+		B26D0CC12051D832009B1935 /* uobject.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C602051D832009B1935 /* uobject.h */; };
+		B26D0CC22051D832009B1935 /* ures.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C612051D832009B1935 /* ures.h */; };
+		B26D0CC32051D832009B1935 /* normlzr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C622051D832009B1935 /* normlzr.h */; };
+		B26D0CC42051D832009B1935 /* usprep.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C632051D832009B1935 /* usprep.h */; };
+		B26D0CC52051D832009B1935 /* urename.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C642051D832009B1935 /* urename.h */; };
+		B26D0CC62051D832009B1935 /* caniter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C652051D832009B1935 /* caniter.h */; };
+		B26D0CC72051D832009B1935 /* ucharstrie.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C662051D832009B1935 /* ucharstrie.h */; };
+		B26D0CC82051D832009B1935 /* unistr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C672051D832009B1935 /* unistr.h */; };
+		B26D0CC92051D832009B1935 /* rbbi.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C682051D832009B1935 /* rbbi.h */; };
+		B26D0CCA2051D832009B1935 /* idna.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C692051D832009B1935 /* idna.h */; };
+		B26D0CCB2051D832009B1935 /* unorm2.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6A2051D832009B1935 /* unorm2.h */; };
+		B26D0CCC2051D832009B1935 /* dbbi.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6B2051D832009B1935 /* dbbi.h */; };
+		B26D0CCD2051D832009B1935 /* bytestream.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6C2051D832009B1935 /* bytestream.h */; };
+		B26D0CCE2051D832009B1935 /* uversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6D2051D832009B1935 /* uversion.h */; };
+		B26D0CCF2051D832009B1935 /* messagepattern.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6E2051D832009B1935 /* messagepattern.h */; };
+		B26D0CD02051D832009B1935 /* uidna.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6F2051D832009B1935 /* uidna.h */; };
+		B26D0CD12051D832009B1935 /* filteredbrk.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C702051D832009B1935 /* filteredbrk.h */; };
+		B26D0CD22051D832009B1935 /* char16ptr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C712051D832009B1935 /* char16ptr.h */; };
+		B26D0CD32051D832009B1935 /* symtable.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C722051D832009B1935 /* symtable.h */; };
+		B26D0CD42051D832009B1935 /* ucasemap.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C732051D832009B1935 /* ucasemap.h */; };
+		B26D0CD52051D832009B1935 /* udisplaycontext.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C742051D832009B1935 /* udisplaycontext.h */; };
+		B26D0CD62051D832009B1935 /* umachine.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C752051D832009B1935 /* umachine.h */; };
+		B26D0CD72051D832009B1935 /* ustringtrie.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C762051D832009B1935 /* ustringtrie.h */; };
+		B26D0CD82051D832009B1935 /* icudataver.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C772051D832009B1935 /* icudataver.h */; };
+		B26D0CD92051D832009B1935 /* uchar.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C782051D832009B1935 /* uchar.h */; };
+		B26D0CDA2051D832009B1935 /* unorm.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C792051D832009B1935 /* unorm.h */; };
+		B26D0CDB2051D832009B1935 /* ushape.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C7A2051D832009B1935 /* ushape.h */; };
+		B26D0CDC2051D832009B1935 /* unifunct.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C7B2051D832009B1935 /* unifunct.h */; };
+		B26D0CDD2051D832009B1935 /* simpleformatter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C7D2051D832009B1935 /* simpleformatter.h */; };
+		B26D0CDE2051D832009B1935 /* ucnv_cb.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C7E2051D832009B1935 /* ucnv_cb.h */; };
+		B26D0CDF2051D832009B1935 /* locid.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C7F2051D832009B1935 /* locid.h */; };
+		B26D0CE02051D832009B1935 /* resbund.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C802051D832009B1935 /* resbund.h */; };
+		B26D0CE12051D832009B1935 /* ubidi.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C812051D832009B1935 /* ubidi.h */; };
+		B26D0CE22051D832009B1935 /* uvernum.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C822051D832009B1935 /* uvernum.h */; };
+		B26D0CE32051D832009B1935 /* unimatch.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C832051D832009B1935 /* unimatch.h */; };
+		B26D0CE42051D832009B1935 /* ucnvsel.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C842051D832009B1935 /* ucnvsel.h */; };
+		B26D0CE52051D832009B1935 /* parseerr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C852051D832009B1935 /* parseerr.h */; };
+		B26D0CE62051D832009B1935 /* putil.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C862051D832009B1935 /* putil.h */; };
+		B26D0CE72051D832009B1935 /* normalizer2.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C872051D832009B1935 /* normalizer2.h */; };
+		B26D0CE82051D832009B1935 /* ucnv.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C882051D832009B1935 /* ucnv.h */; };
+		B26D0CE92051D832009B1935 /* ucharstriebuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C892051D832009B1935 /* ucharstriebuilder.h */; };
+		B26D0CEA2051D832009B1935 /* uconfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8A2051D832009B1935 /* uconfig.h */; };
+		B26D0CEB2051D832009B1935 /* utf16.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8B2051D832009B1935 /* utf16.h */; };
+		B26D0CEC2051D832009B1935 /* brkiter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8C2051D832009B1935 /* brkiter.h */; };
+		B26D0CED2051D832009B1935 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8D2051D832009B1935 /* platform.h */; };
+		B26D0CEE2051D832009B1935 /* rep.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8E2051D832009B1935 /* rep.h */; };
+		B26D0CEF2051D832009B1935 /* std_string.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8F2051D832009B1935 /* std_string.h */; };
+		B26D0CF02051D832009B1935 /* utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C902051D832009B1935 /* utf8.h */; };
+		B26D0CF12051D832009B1935 /* localpointer.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C912051D832009B1935 /* localpointer.h */; };
+		B26D0CF22051D832009B1935 /* uclean.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C922051D832009B1935 /* uclean.h */; };
+		B26D0CF32051D832009B1935 /* uscript.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C932051D832009B1935 /* uscript.h */; };
+		B26D0CF42051D832009B1935 /* utypes.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C942051D832009B1935 /* utypes.h */; };
+		B26D0CF52051D832009B1935 /* ulistformatter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C952051D832009B1935 /* ulistformatter.h */; };
+		B26D0CF62051D832009B1935 /* unifilt.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C962051D832009B1935 /* unifilt.h */; };
+		B26D0CF72051DA29009B1935 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B26D0B692051D26E009B1935 /* libicucore.A.dylib */; };
 		B2D4E99408E0191700574ACD /* Punycode_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */; };
 		B2D4E99608E0191700574ACD /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = B2CB4DCF07B158A600B4C504 /* Controller.h */; };
 		B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
@@ -33,6 +131,7 @@
 			isEditable = 1;
 			outputFiles = (
 			);
+			script = "";
 		};
 /* End PBXBuildRule section */
 
@@ -62,6 +161,103 @@
 		B255A5681500C4800073DF21 /* PunycodeTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PunycodeTests-Prefix.pch"; sourceTree = "<group>"; };
 		B25753801F3CE8B2002606DD /* WebNSURLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebNSURLExtras.h; path = ../Pod/WebNSURLExtras.h; sourceTree = "<group>"; };
 		B25753821F3CE9A9002606DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B26D0B692051D26E009B1935 /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = ../../../../../usr/lib/libicucore.A.dylib; sourceTree = "<group>"; };
+		B26D0C362051D832009B1935 /* utf_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf_old.h; sourceTree = "<group>"; };
+		B26D0C372051D832009B1935 /* ubrk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ubrk.h; sourceTree = "<group>"; };
+		B26D0C382051D832009B1935 /* stringpiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringpiece.h; sourceTree = "<group>"; };
+		B26D0C392051D832009B1935 /* ucat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucat.h; sourceTree = "<group>"; };
+		B26D0C3A2051D832009B1935 /* stringoptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringoptions.h; sourceTree = "<group>"; };
+		B26D0C3B2051D832009B1935 /* ptypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ptypes.h; sourceTree = "<group>"; };
+		B26D0C3C2051D832009B1935 /* usetiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usetiter.h; sourceTree = "<group>"; };
+		B26D0C3D2051D832009B1935 /* errorcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errorcode.h; sourceTree = "<group>"; };
+		B26D0C3E2051D832009B1935 /* dtintrv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dtintrv.h; sourceTree = "<group>"; };
+		B26D0C3F2051D832009B1935 /* ucurr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucurr.h; sourceTree = "<group>"; };
+		B26D0C402051D832009B1935 /* icuplug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icuplug.h; sourceTree = "<group>"; };
+		B26D0C412051D832009B1935 /* utext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utext.h; sourceTree = "<group>"; };
+		B26D0C422051D832009B1935 /* edits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edits.h; sourceTree = "<group>"; };
+		B26D0C432051D832009B1935 /* parsepos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parsepos.h; sourceTree = "<group>"; };
+		B26D0C442051D832009B1935 /* urep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = urep.h; sourceTree = "<group>"; };
+		B26D0C452051D832009B1935 /* utf32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf32.h; sourceTree = "<group>"; };
+		B26D0C462051D832009B1935 /* ustring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ustring.h; sourceTree = "<group>"; };
+		B26D0C472051D832009B1935 /* ubiditransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ubiditransform.h; sourceTree = "<group>"; };
+		B26D0C482051D832009B1935 /* uenum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uenum.h; sourceTree = "<group>"; };
+		B26D0C492051D832009B1935 /* appendable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appendable.h; sourceTree = "<group>"; };
+		B26D0C4A2051D832009B1935 /* uset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uset.h; sourceTree = "<group>"; };
+		B26D0C4B2051D832009B1935 /* casemap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = casemap.h; sourceTree = "<group>"; };
+		B26D0C4C2051D832009B1935 /* schriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = schriter.h; sourceTree = "<group>"; };
+		B26D0C4D2051D832009B1935 /* uldnames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uldnames.h; sourceTree = "<group>"; };
+		B26D0C4E2051D832009B1935 /* uiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uiter.h; sourceTree = "<group>"; };
+		B26D0C4F2051D832009B1935 /* docmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = docmain.h; sourceTree = "<group>"; };
+		B26D0C502051D832009B1935 /* uniset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uniset.h; sourceTree = "<group>"; };
+		B26D0C512051D832009B1935 /* udata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udata.h; sourceTree = "<group>"; };
+		B26D0C522051D832009B1935 /* stringtriebuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringtriebuilder.h; sourceTree = "<group>"; };
+		B26D0C532051D832009B1935 /* chariter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chariter.h; sourceTree = "<group>"; };
+		B26D0C542051D832009B1935 /* umisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = umisc.h; sourceTree = "<group>"; };
+		B26D0C552051D832009B1935 /* uloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uloc.h; sourceTree = "<group>"; };
+		B26D0C562051D832009B1935 /* bytestriebuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bytestriebuilder.h; sourceTree = "<group>"; };
+		B26D0C572051D832009B1935 /* utrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utrace.h; sourceTree = "<group>"; };
+		B26D0C582051D832009B1935 /* locdspnm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locdspnm.h; sourceTree = "<group>"; };
+		B26D0C592051D832009B1935 /* uchriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uchriter.h; sourceTree = "<group>"; };
+		B26D0C5A2051D832009B1935 /* enumset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enumset.h; sourceTree = "<group>"; };
+		B26D0C5B2051D832009B1935 /* utf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf.h; sourceTree = "<group>"; };
+		B26D0C5C2051D832009B1935 /* strenum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strenum.h; sourceTree = "<group>"; };
+		B26D0C5D2051D832009B1935 /* ucnv_err.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucnv_err.h; sourceTree = "<group>"; };
+		B26D0C5E2051D832009B1935 /* bytestrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bytestrie.h; sourceTree = "<group>"; };
+		B26D0C5F2051D832009B1935 /* listformatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = listformatter.h; sourceTree = "<group>"; };
+		B26D0C602051D832009B1935 /* uobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uobject.h; sourceTree = "<group>"; };
+		B26D0C612051D832009B1935 /* ures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ures.h; sourceTree = "<group>"; };
+		B26D0C622051D832009B1935 /* normlzr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = normlzr.h; sourceTree = "<group>"; };
+		B26D0C632051D832009B1935 /* usprep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usprep.h; sourceTree = "<group>"; };
+		B26D0C642051D832009B1935 /* urename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = urename.h; sourceTree = "<group>"; };
+		B26D0C652051D832009B1935 /* caniter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = caniter.h; sourceTree = "<group>"; };
+		B26D0C662051D832009B1935 /* ucharstrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucharstrie.h; sourceTree = "<group>"; };
+		B26D0C672051D832009B1935 /* unistr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unistr.h; sourceTree = "<group>"; };
+		B26D0C682051D832009B1935 /* rbbi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rbbi.h; sourceTree = "<group>"; };
+		B26D0C692051D832009B1935 /* idna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idna.h; sourceTree = "<group>"; };
+		B26D0C6A2051D832009B1935 /* unorm2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unorm2.h; sourceTree = "<group>"; };
+		B26D0C6B2051D832009B1935 /* dbbi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbbi.h; sourceTree = "<group>"; };
+		B26D0C6C2051D832009B1935 /* bytestream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bytestream.h; sourceTree = "<group>"; };
+		B26D0C6D2051D832009B1935 /* uversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uversion.h; sourceTree = "<group>"; };
+		B26D0C6E2051D832009B1935 /* messagepattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messagepattern.h; sourceTree = "<group>"; };
+		B26D0C6F2051D832009B1935 /* uidna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uidna.h; sourceTree = "<group>"; };
+		B26D0C702051D832009B1935 /* filteredbrk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filteredbrk.h; sourceTree = "<group>"; };
+		B26D0C712051D832009B1935 /* char16ptr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = char16ptr.h; sourceTree = "<group>"; };
+		B26D0C722051D832009B1935 /* symtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = symtable.h; sourceTree = "<group>"; };
+		B26D0C732051D832009B1935 /* ucasemap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucasemap.h; sourceTree = "<group>"; };
+		B26D0C742051D832009B1935 /* udisplaycontext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udisplaycontext.h; sourceTree = "<group>"; };
+		B26D0C752051D832009B1935 /* umachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = umachine.h; sourceTree = "<group>"; };
+		B26D0C762051D832009B1935 /* ustringtrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ustringtrie.h; sourceTree = "<group>"; };
+		B26D0C772051D832009B1935 /* icudataver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icudataver.h; sourceTree = "<group>"; };
+		B26D0C782051D832009B1935 /* uchar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uchar.h; sourceTree = "<group>"; };
+		B26D0C792051D832009B1935 /* unorm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unorm.h; sourceTree = "<group>"; };
+		B26D0C7A2051D832009B1935 /* ushape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ushape.h; sourceTree = "<group>"; };
+		B26D0C7B2051D832009B1935 /* unifunct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unifunct.h; sourceTree = "<group>"; };
+		B26D0C7D2051D832009B1935 /* simpleformatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simpleformatter.h; sourceTree = "<group>"; };
+		B26D0C7E2051D832009B1935 /* ucnv_cb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucnv_cb.h; sourceTree = "<group>"; };
+		B26D0C7F2051D832009B1935 /* locid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locid.h; sourceTree = "<group>"; };
+		B26D0C802051D832009B1935 /* resbund.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resbund.h; sourceTree = "<group>"; };
+		B26D0C812051D832009B1935 /* ubidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ubidi.h; sourceTree = "<group>"; };
+		B26D0C822051D832009B1935 /* uvernum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uvernum.h; sourceTree = "<group>"; };
+		B26D0C832051D832009B1935 /* unimatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unimatch.h; sourceTree = "<group>"; };
+		B26D0C842051D832009B1935 /* ucnvsel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucnvsel.h; sourceTree = "<group>"; };
+		B26D0C852051D832009B1935 /* parseerr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseerr.h; sourceTree = "<group>"; };
+		B26D0C862051D832009B1935 /* putil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = putil.h; sourceTree = "<group>"; };
+		B26D0C872051D832009B1935 /* normalizer2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = normalizer2.h; sourceTree = "<group>"; };
+		B26D0C882051D832009B1935 /* ucnv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucnv.h; sourceTree = "<group>"; };
+		B26D0C892051D832009B1935 /* ucharstriebuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucharstriebuilder.h; sourceTree = "<group>"; };
+		B26D0C8A2051D832009B1935 /* uconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uconfig.h; sourceTree = "<group>"; };
+		B26D0C8B2051D832009B1935 /* utf16.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf16.h; sourceTree = "<group>"; };
+		B26D0C8C2051D832009B1935 /* brkiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brkiter.h; sourceTree = "<group>"; };
+		B26D0C8D2051D832009B1935 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
+		B26D0C8E2051D832009B1935 /* rep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rep.h; sourceTree = "<group>"; };
+		B26D0C8F2051D832009B1935 /* std_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = std_string.h; sourceTree = "<group>"; };
+		B26D0C902051D832009B1935 /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8.h; sourceTree = "<group>"; };
+		B26D0C912051D832009B1935 /* localpointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = localpointer.h; sourceTree = "<group>"; };
+		B26D0C922051D832009B1935 /* uclean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uclean.h; sourceTree = "<group>"; };
+		B26D0C932051D832009B1935 /* uscript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uscript.h; sourceTree = "<group>"; };
+		B26D0C942051D832009B1935 /* utypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utypes.h; sourceTree = "<group>"; };
+		B26D0C952051D832009B1935 /* ulistformatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ulistformatter.h; sourceTree = "<group>"; };
+		B26D0C962051D832009B1935 /* unifilt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unifilt.h; sourceTree = "<group>"; };
 		B2CB4DCF07B158A600B4C504 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		B2CB4DD007B158A600B4C504 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 		B2D4E9A008E0191700574ACD /* Info-Punycode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Punycode.plist"; sourceTree = "<group>"; };
@@ -77,6 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26D0CF72051DA29009B1935 /* libicucore.A.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +281,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26D0B6C2051D73F009B1935 /* libicucore.A.dylib in Frameworks */,
 				B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */,
 				B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */,
 			);
@@ -100,6 +298,7 @@
 				B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */,
 				B2CB4DCF07B158A600B4C504 /* Controller.h */,
 				B2CB4DD007B158A600B4C504 /* Controller.m */,
+				B26D0C352051D832009B1935 /* unicode */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -168,6 +367,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B26D0B692051D26E009B1935 /* libicucore.A.dylib */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -194,6 +394,118 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B26D0C352051D832009B1935 /* unicode */ = {
+			isa = PBXGroup;
+			children = (
+				B26D0C362051D832009B1935 /* utf_old.h */,
+				B26D0C372051D832009B1935 /* ubrk.h */,
+				B26D0C382051D832009B1935 /* stringpiece.h */,
+				B26D0C392051D832009B1935 /* ucat.h */,
+				B26D0C3A2051D832009B1935 /* stringoptions.h */,
+				B26D0C3B2051D832009B1935 /* ptypes.h */,
+				B26D0C3C2051D832009B1935 /* usetiter.h */,
+				B26D0C3D2051D832009B1935 /* errorcode.h */,
+				B26D0C3E2051D832009B1935 /* dtintrv.h */,
+				B26D0C3F2051D832009B1935 /* ucurr.h */,
+				B26D0C402051D832009B1935 /* icuplug.h */,
+				B26D0C412051D832009B1935 /* utext.h */,
+				B26D0C422051D832009B1935 /* edits.h */,
+				B26D0C432051D832009B1935 /* parsepos.h */,
+				B26D0C442051D832009B1935 /* urep.h */,
+				B26D0C452051D832009B1935 /* utf32.h */,
+				B26D0C462051D832009B1935 /* ustring.h */,
+				B26D0C472051D832009B1935 /* ubiditransform.h */,
+				B26D0C482051D832009B1935 /* uenum.h */,
+				B26D0C492051D832009B1935 /* appendable.h */,
+				B26D0C4A2051D832009B1935 /* uset.h */,
+				B26D0C4B2051D832009B1935 /* casemap.h */,
+				B26D0C4C2051D832009B1935 /* schriter.h */,
+				B26D0C4D2051D832009B1935 /* uldnames.h */,
+				B26D0C4E2051D832009B1935 /* uiter.h */,
+				B26D0C4F2051D832009B1935 /* docmain.h */,
+				B26D0C502051D832009B1935 /* uniset.h */,
+				B26D0C512051D832009B1935 /* udata.h */,
+				B26D0C522051D832009B1935 /* stringtriebuilder.h */,
+				B26D0C532051D832009B1935 /* chariter.h */,
+				B26D0C542051D832009B1935 /* umisc.h */,
+				B26D0C552051D832009B1935 /* uloc.h */,
+				B26D0C562051D832009B1935 /* bytestriebuilder.h */,
+				B26D0C572051D832009B1935 /* utrace.h */,
+				B26D0C582051D832009B1935 /* locdspnm.h */,
+				B26D0C592051D832009B1935 /* uchriter.h */,
+				B26D0C5A2051D832009B1935 /* enumset.h */,
+				B26D0C5B2051D832009B1935 /* utf.h */,
+				B26D0C5C2051D832009B1935 /* strenum.h */,
+				B26D0C5D2051D832009B1935 /* ucnv_err.h */,
+				B26D0C5E2051D832009B1935 /* bytestrie.h */,
+				B26D0C5F2051D832009B1935 /* listformatter.h */,
+				B26D0C602051D832009B1935 /* uobject.h */,
+				B26D0C612051D832009B1935 /* ures.h */,
+				B26D0C622051D832009B1935 /* normlzr.h */,
+				B26D0C632051D832009B1935 /* usprep.h */,
+				B26D0C642051D832009B1935 /* urename.h */,
+				B26D0C652051D832009B1935 /* caniter.h */,
+				B26D0C662051D832009B1935 /* ucharstrie.h */,
+				B26D0C672051D832009B1935 /* unistr.h */,
+				B26D0C682051D832009B1935 /* rbbi.h */,
+				B26D0C692051D832009B1935 /* idna.h */,
+				B26D0C6A2051D832009B1935 /* unorm2.h */,
+				B26D0C6B2051D832009B1935 /* dbbi.h */,
+				B26D0C6C2051D832009B1935 /* bytestream.h */,
+				B26D0C6D2051D832009B1935 /* uversion.h */,
+				B26D0C6E2051D832009B1935 /* messagepattern.h */,
+				B26D0C6F2051D832009B1935 /* uidna.h */,
+				B26D0C702051D832009B1935 /* filteredbrk.h */,
+				B26D0C712051D832009B1935 /* char16ptr.h */,
+				B26D0C722051D832009B1935 /* symtable.h */,
+				B26D0C732051D832009B1935 /* ucasemap.h */,
+				B26D0C742051D832009B1935 /* udisplaycontext.h */,
+				B26D0C752051D832009B1935 /* umachine.h */,
+				B26D0C762051D832009B1935 /* ustringtrie.h */,
+				B26D0C772051D832009B1935 /* icudataver.h */,
+				B26D0C782051D832009B1935 /* uchar.h */,
+				B26D0C792051D832009B1935 /* unorm.h */,
+				B26D0C7A2051D832009B1935 /* ushape.h */,
+				B26D0C7B2051D832009B1935 /* unifunct.h */,
+				B26D0C7C2051D832009B1935 /* New Group */,
+				B26D0C7D2051D832009B1935 /* simpleformatter.h */,
+				B26D0C7E2051D832009B1935 /* ucnv_cb.h */,
+				B26D0C7F2051D832009B1935 /* locid.h */,
+				B26D0C802051D832009B1935 /* resbund.h */,
+				B26D0C812051D832009B1935 /* ubidi.h */,
+				B26D0C822051D832009B1935 /* uvernum.h */,
+				B26D0C832051D832009B1935 /* unimatch.h */,
+				B26D0C842051D832009B1935 /* ucnvsel.h */,
+				B26D0C852051D832009B1935 /* parseerr.h */,
+				B26D0C862051D832009B1935 /* putil.h */,
+				B26D0C872051D832009B1935 /* normalizer2.h */,
+				B26D0C882051D832009B1935 /* ucnv.h */,
+				B26D0C892051D832009B1935 /* ucharstriebuilder.h */,
+				B26D0C8A2051D832009B1935 /* uconfig.h */,
+				B26D0C8B2051D832009B1935 /* utf16.h */,
+				B26D0C8C2051D832009B1935 /* brkiter.h */,
+				B26D0C8D2051D832009B1935 /* platform.h */,
+				B26D0C8E2051D832009B1935 /* rep.h */,
+				B26D0C8F2051D832009B1935 /* std_string.h */,
+				B26D0C902051D832009B1935 /* utf8.h */,
+				B26D0C912051D832009B1935 /* localpointer.h */,
+				B26D0C922051D832009B1935 /* uclean.h */,
+				B26D0C932051D832009B1935 /* uscript.h */,
+				B26D0C942051D832009B1935 /* utypes.h */,
+				B26D0C952051D832009B1935 /* ulistformatter.h */,
+				B26D0C962051D832009B1935 /* unifilt.h */,
+			);
+			name = unicode;
+			path = ../Pod/unicode;
+			sourceTree = "<group>";
+		};
+		B26D0C7C2051D832009B1935 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -201,10 +513,106 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26D0CA72051D832009B1935 /* ustring.h in Headers */,
+				B26D0CAF2051D832009B1935 /* uiter.h in Headers */,
+				B26D0CF12051D832009B1935 /* localpointer.h in Headers */,
+				B26D0CD62051D832009B1935 /* umachine.h in Headers */,
+				B26D0CB82051D832009B1935 /* utrace.h in Headers */,
+				B26D0CE02051D832009B1935 /* resbund.h in Headers */,
+				B26D0CAE2051D832009B1935 /* uldnames.h in Headers */,
+				B26D0CE52051D832009B1935 /* parseerr.h in Headers */,
 				B2D4E99408E0191700574ACD /* Punycode_Prefix.h in Headers */,
+				B26D0CB02051D832009B1935 /* docmain.h in Headers */,
+				B26D0CBA2051D832009B1935 /* uchriter.h in Headers */,
+				B26D0CC42051D832009B1935 /* usprep.h in Headers */,
+				B26D0CF02051D832009B1935 /* utf8.h in Headers */,
+				B26D0C9D2051D832009B1935 /* usetiter.h in Headers */,
+				B26D0CF52051D832009B1935 /* ulistformatter.h in Headers */,
+				B26D0CCD2051D832009B1935 /* bytestream.h in Headers */,
+				B26D0C9C2051D832009B1935 /* ptypes.h in Headers */,
+				B26D0CF42051D832009B1935 /* utypes.h in Headers */,
+				B26D0CF62051D832009B1935 /* unifilt.h in Headers */,
+				B26D0CCE2051D832009B1935 /* uversion.h in Headers */,
+				B26D0CE62051D832009B1935 /* putil.h in Headers */,
+				B26D0CD32051D832009B1935 /* symtable.h in Headers */,
+				B26D0CB32051D832009B1935 /* stringtriebuilder.h in Headers */,
+				B26D0CB42051D832009B1935 /* chariter.h in Headers */,
+				B26D0CC02051D832009B1935 /* listformatter.h in Headers */,
+				B26D0CC32051D832009B1935 /* normlzr.h in Headers */,
+				B26D0CBD2051D832009B1935 /* strenum.h in Headers */,
+				B26D0CE82051D832009B1935 /* ucnv.h in Headers */,
+				B26D0CDE2051D832009B1935 /* ucnv_cb.h in Headers */,
+				B26D0C9A2051D832009B1935 /* ucat.h in Headers */,
+				B26D0CCA2051D832009B1935 /* idna.h in Headers */,
+				B26D0CE42051D832009B1935 /* ucnvsel.h in Headers */,
+				B26D0CAB2051D832009B1935 /* uset.h in Headers */,
+				B26D0CD02051D832009B1935 /* uidna.h in Headers */,
+				B26D0CE32051D832009B1935 /* unimatch.h in Headers */,
 				B2D4E99608E0191700574ACD /* Controller.h in Headers */,
+				B26D0CAA2051D832009B1935 /* appendable.h in Headers */,
+				B26D0CCB2051D832009B1935 /* unorm2.h in Headers */,
+				B26D0CE92051D832009B1935 /* ucharstriebuilder.h in Headers */,
+				B26D0CA12051D832009B1935 /* icuplug.h in Headers */,
+				B26D0CB22051D832009B1935 /* udata.h in Headers */,
+				B26D0CD42051D832009B1935 /* ucasemap.h in Headers */,
 				B301345E1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h in Headers */,
+				B26D0CBC2051D832009B1935 /* utf.h in Headers */,
+				B26D0CBF2051D832009B1935 /* bytestrie.h in Headers */,
+				B26D0CA52051D832009B1935 /* urep.h in Headers */,
+				B26D0CC62051D832009B1935 /* caniter.h in Headers */,
+				B26D0CC12051D832009B1935 /* uobject.h in Headers */,
+				B26D0CA22051D832009B1935 /* utext.h in Headers */,
+				B26D0CAD2051D832009B1935 /* schriter.h in Headers */,
+				B26D0CDF2051D832009B1935 /* locid.h in Headers */,
+				B26D0CA62051D832009B1935 /* utf32.h in Headers */,
+				B26D0CD92051D832009B1935 /* uchar.h in Headers */,
+				B26D0CC22051D832009B1935 /* ures.h in Headers */,
+				B26D0CDC2051D832009B1935 /* unifunct.h in Headers */,
+				B26D0CCC2051D832009B1935 /* dbbi.h in Headers */,
+				B26D0CC52051D832009B1935 /* urename.h in Headers */,
+				B26D0CBE2051D832009B1935 /* ucnv_err.h in Headers */,
+				B26D0CC72051D832009B1935 /* ucharstrie.h in Headers */,
+				B26D0CD72051D832009B1935 /* ustringtrie.h in Headers */,
+				B26D0CED2051D832009B1935 /* platform.h in Headers */,
+				B26D0CE22051D832009B1935 /* uvernum.h in Headers */,
+				B26D0C9B2051D832009B1935 /* stringoptions.h in Headers */,
+				B26D0CDB2051D832009B1935 /* ushape.h in Headers */,
+				B26D0CC82051D832009B1935 /* unistr.h in Headers */,
 				B25753811F3CE8B2002606DD /* WebNSURLExtras.h in Headers */,
+				B26D0CA92051D832009B1935 /* uenum.h in Headers */,
+				B26D0CBB2051D832009B1935 /* enumset.h in Headers */,
+				B26D0CD52051D832009B1935 /* udisplaycontext.h in Headers */,
+				B26D0CB62051D832009B1935 /* uloc.h in Headers */,
+				B26D0C982051D832009B1935 /* ubrk.h in Headers */,
+				B26D0CE72051D832009B1935 /* normalizer2.h in Headers */,
+				B26D0C992051D832009B1935 /* stringpiece.h in Headers */,
+				B26D0CDA2051D832009B1935 /* unorm.h in Headers */,
+				B26D0CCF2051D832009B1935 /* messagepattern.h in Headers */,
+				B26D0CA02051D832009B1935 /* ucurr.h in Headers */,
+				B26D0C9E2051D832009B1935 /* errorcode.h in Headers */,
+				B26D0CB52051D832009B1935 /* umisc.h in Headers */,
+				B26D0CA32051D832009B1935 /* edits.h in Headers */,
+				B26D0CEE2051D832009B1935 /* rep.h in Headers */,
+				B26D0CB92051D832009B1935 /* locdspnm.h in Headers */,
+				B26D0CEC2051D832009B1935 /* brkiter.h in Headers */,
+				B26D0CA42051D832009B1935 /* parsepos.h in Headers */,
+				B26D0CDD2051D832009B1935 /* simpleformatter.h in Headers */,
+				B26D0CF32051D832009B1935 /* uscript.h in Headers */,
+				B26D0CEB2051D832009B1935 /* utf16.h in Headers */,
+				B26D0CA82051D832009B1935 /* ubiditransform.h in Headers */,
+				B26D0C972051D832009B1935 /* utf_old.h in Headers */,
+				B26D0CD82051D832009B1935 /* icudataver.h in Headers */,
+				B26D0CC92051D832009B1935 /* rbbi.h in Headers */,
+				B26D0CF22051D832009B1935 /* uclean.h in Headers */,
+				B26D0CEF2051D832009B1935 /* std_string.h in Headers */,
+				B26D0CD12051D832009B1935 /* filteredbrk.h in Headers */,
+				B26D0CE12051D832009B1935 /* ubidi.h in Headers */,
+				B26D0CEA2051D832009B1935 /* uconfig.h in Headers */,
+				B26D0C9F2051D832009B1935 /* dtintrv.h in Headers */,
+				B26D0CD22051D832009B1935 /* char16ptr.h in Headers */,
+				B26D0CAC2051D832009B1935 /* casemap.h in Headers */,
+				B26D0CB72051D832009B1935 /* bytestriebuilder.h in Headers */,
+				B26D0CB12051D832009B1935 /* uniset.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +828,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -428,10 +835,8 @@
 				GCC_PREFIX_HEADER = Punycode_Prefix.h;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_USE_GCC3_PFE_SUPPORT = NO;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-Punycode.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
@@ -455,15 +860,12 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Punycode_Prefix.h;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_USE_GCC3_PFE_SUPPORT = NO;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-Punycode.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
@@ -510,6 +912,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../pod";
+				LIBRARY_SEARCH_PATHS = "/usr/lib/**";
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
@@ -542,6 +946,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../pod";
+				LIBRARY_SEARCH_PATHS = "/usr/lib/**";
 			};
 			name = Release;
 		};

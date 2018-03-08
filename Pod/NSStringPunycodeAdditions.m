@@ -9,15 +9,22 @@
 //  see the included LICENSE file for details.
 //
 
+
 #import "NSStringPunycodeAdditions.h"
 
-#ifdef PUNYCODE_COCOA_USE_WEBKIT
+#if defined(PUNYCODE_COCOA_USE_WEBKIT)
 
 #import "WebNSURLExtras.h"
 
+#elif defined(PUNYCODE_COCOA_USE_ICU)
+
+#import "unicode/uidna.h"
+
+#define HOST_NAME_BUFFER_LENGTH 2048 // Name and size from WebKit
+
 #endif
 
-#ifndef PUNYCODE_COCOA_USE_WEBKIT
+#if !defined(PUNYCODE_COCOA_USE_WEBKIT) && !defined(PUNYCODE_COCOA_USE_ICU)
 
 // Encoding/decoding adapted/lifted from the example code in the IDNA Punycode spec (RFC 3492).
 // For some other stuff, see RFC 3490 (Internationalizing Domain Names in Applications)
@@ -100,7 +107,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 @implementation NSString (PunycodeAdditions)
 
 
-#ifdef PUNYCODE_COCOA_USE_WEBKIT
+#if defined(PUNYCODE_COCOA_USE_WEBKIT)
 
 - (NSString *)punycodeEncodedString {
 	NSString *encodedHost = [self _web_encodeHostName];
@@ -109,6 +116,75 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 - (NSString *)punycodeDecodedString {
 	return [[@"xn--" stringByAppendingString:self] _web_decodeHostName];
+}
+
+#elif defined(PUNYCODE_COCOA_USE_ICU)
+
+static UIDNA *uidnaEncoder() {
+	static UIDNA *encoder;
+
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		UErrorCode err = U_ZERO_ERROR;
+		encoder = uidna_openUTS46(UIDNA_CHECK_BIDI | UIDNA_CHECK_CONTEXTJ | UIDNA_NONTRANSITIONAL_TO_UNICODE | UIDNA_NONTRANSITIONAL_TO_ASCII, &err);
+		NSLog(@"%d", err);
+	});
+
+	return encoder;
+}
+
+- (NSString *)punycodeEncodedString {
+	if (self.length == 0)
+		return @"";
+
+	if (self.length > HOST_NAME_BUFFER_LENGTH)
+		return nil;
+
+	UIDNA *encoder = uidnaEncoder();
+
+	UChar label[HOST_NAME_BUFFER_LENGTH];
+	UChar dest[HOST_NAME_BUFFER_LENGTH];
+
+	NSRange range = (NSRange){ 0, self.length };
+
+	[self getCharacters:label range:range];
+
+	UIDNAInfo info = UIDNA_INFO_INITIALIZER;
+	UErrorCode err = U_ZERO_ERROR;
+
+	int32_t numChars = uidna_labelToASCII(encoder, label, (int32_t)range.length, dest, HOST_NAME_BUFFER_LENGTH, &info, &err);
+
+	NSString *ret = [NSString stringWithCharacters:dest length:numChars];
+
+	ret = [ret stringByReplacingOccurrencesOfString:@"xn--" withString:@"" options:NSAnchoredSearch range:(NSRange){ 0, ret.length }];
+
+	return ret;
+}
+
+- (NSString *)punycodeDecodedString {
+	if (self.length == 0)
+		return @"";
+
+	if (self.length > HOST_NAME_BUFFER_LENGTH)
+		return nil;
+
+	NSString *newSelf = [@"xn--" stringByAppendingString:self];
+
+	UIDNA *encoder = uidnaEncoder();
+
+	UChar label[HOST_NAME_BUFFER_LENGTH];
+	UChar dest[HOST_NAME_BUFFER_LENGTH];
+
+	NSRange range = (NSRange){ 0, newSelf.length };
+
+	[newSelf getCharacters:label range:range];
+
+	UIDNAInfo info = UIDNA_INFO_INITIALIZER;
+	UErrorCode err = U_ZERO_ERROR;
+
+	int32_t numChars = uidna_labelToUnicode(encoder, label, (int32_t)range.length, dest, HOST_NAME_BUFFER_LENGTH, &info, &err);
+
+	return [NSString stringWithCharacters:dest length:numChars];
 }
 
 #else
@@ -282,8 +358,30 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 #endif // PUNYCODE_COCOA_USE_WEBKIT
 
 - (NSString *)IDNAEncodedString {
-#ifdef PUNYCODE_COCOA_USE_WEBKIT
+#if defined(PUNYCODE_COCOA_USE_WEBKIT)
 	return [self _web_encodeHostName];
+#elif defined(PUNYCODE_COCOA_USE_ICU)
+	if (self.length == 0)
+		return @"";
+
+	if (self.length > HOST_NAME_BUFFER_LENGTH)
+		return nil;
+
+	UIDNA *encoder = uidnaEncoder();
+
+	UChar name[HOST_NAME_BUFFER_LENGTH];
+	UChar dest[HOST_NAME_BUFFER_LENGTH];
+
+	NSRange range = (NSRange){ 0, self.length };
+
+	[self getCharacters:name range:range];
+
+	UIDNAInfo info = UIDNA_INFO_INITIALIZER;
+	UErrorCode err = U_ZERO_ERROR;
+
+	int32_t numChars = uidna_nameToASCII(encoder, name, (int32_t)range.length, dest, HOST_NAME_BUFFER_LENGTH, &info, &err);
+
+	return [NSString stringWithCharacters:dest length:numChars];
 #else
 	NSCharacterSet *nonAscii = [NSCharacterSet characterSetWithRange:NSMakeRange(1, 127)].invertedSet;
 	NSMutableString *ret = [NSMutableString string];
@@ -308,8 +406,30 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 }
 
 - (NSString *)IDNADecodedString {
-#ifdef PUNYCODE_COCOA_USE_WEBKIT
+#if defined(PUNYCODE_COCOA_USE_WEBKIT)
 	return [self _web_decodeHostName];
+#elif defined(PUNYCODE_COCOA_USE_ICU)
+	if (self.length == 0)
+		return @"";
+
+	if (self.length > HOST_NAME_BUFFER_LENGTH)
+		return nil;
+
+	UIDNA *encoder = uidnaEncoder();
+
+	UChar name[HOST_NAME_BUFFER_LENGTH];
+	UChar dest[HOST_NAME_BUFFER_LENGTH];
+
+	NSRange range = (NSRange){ 0, self.length };
+
+	[self getCharacters:name range:range];
+
+	UIDNAInfo info = UIDNA_INFO_INITIALIZER;
+	UErrorCode err = U_ZERO_ERROR;
+
+	int32_t numChars = uidna_nameToUnicode(encoder, name, (int32_t)range.length, dest, HOST_NAME_BUFFER_LENGTH, &info, &err);
+
+	return [NSString stringWithCharacters:dest length:numChars];
 #else
 	NSMutableString *ret = [NSMutableString string];
 	NSScanner *s = [NSScanner scannerWithString:self];
@@ -402,7 +522,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 }
 
 - (NSString *)encodedURLString {
-#ifdef PUNYCODE_COCOA_USE_WEBKIT
+#if defined(PUNYCODE_COCOA_USE_WEBKIT)
 	return [NSURL _web_URLWithUserTypedString:self].absoluteString;
 #else
 	// We can't get the parts of an URL for an international domain name, so a custom method is used instead.
@@ -440,7 +560,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 }
 
 - (NSString *)decodedURLString {
-#ifdef PUNYCODE_COCOA_USE_WEBKIT
+#if defined(PUNYCODE_COCOA_USE_WEBKIT)
 	return [[NSURL URLWithString:self] _web_userVisibleString];
 #else
 	NSDictionary<NSString *, NSString *> *urlParts = self.URLParts;
@@ -475,7 +595,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 @implementation NSURL (PunycodeAdditions)
 
 + (instancetype)URLWithUnicodeString:(NSString *)URLString {
-#ifdef PUNYCODE_COCOA_USE_WEBKIT
+#if defined(PUNYCODE_COCOA_USE_WEBKIT)
 	return [NSURL _webkit_URLWithUserTypedString:URLString];
 #else
 	return [NSURL URLWithString:URLString.encodedURLString];
@@ -483,7 +603,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 }
 
 - (NSString *)decodedURLString {
-#ifdef PUNYCODE_COCOA_USE_WEBKIT
+#if defined(PUNYCODE_COCOA_USE_WEBKIT)
 	return [self _web_userVisibleString];
 #else
 	return self.absoluteString.decodedURLString;

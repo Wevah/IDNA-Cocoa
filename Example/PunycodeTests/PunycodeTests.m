@@ -111,7 +111,7 @@
 	XCTAssertTrue([[NSURL URLWithString:@"http://www.xn--bcher-kva.ch/"].decodedURLString isEqualToString:@"http://www.bücher.ch/"]);
 }
 
-#ifndef PUNYCODE_COCOA_USE_WEBKIT
+#if !defined(PUNYCODE_COCOA_USE_WEBKIT) && !defined(PUNYCODE_COCOA_USE_ICU)
 - (void)testVariationSelectorPerformance {
 	NSString *testString = @"ksfjlksfdjklfjfklfjkljskfljsklfjsl";
 	[self measureBlock:^{
