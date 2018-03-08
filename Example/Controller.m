@@ -19,6 +19,18 @@
 
 @implementation Controller
 
+- (void)awakeFromNib {
+#if PUNYCODE_COCOA_USE_WEBKIT
+#	define PUNYCODE_COCOA_LIBNAME @"WebKit"
+#elif PUNYCODE_COCOA_USE_ICU
+#	define PUNYCODE_COCOA_LIBNAME @"ICU"
+#else
+#	define PUNYCODE_COCOA_LIBNAME @"custom"
+#endif
+
+	self.window.title = [NSString stringWithFormat:@"%@ (%@)", self.window.title, PUNYCODE_COCOA_LIBNAME];
+}
+
 - (IBAction)stringToIDNA:(id)sender {
 	self.idnField.stringValue = [sender stringValue].encodedURLString;
 }
