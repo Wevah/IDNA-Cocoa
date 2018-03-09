@@ -17,19 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @property
- @abstract	Converts a Unicode string to its Punycode equivalent.
- @return	The equivalent punycode-encoded string.
- */
-@property (readonly, copy, nullable)	NSString *punycodeEncodedString;
-/*!
- @property
- @abstract	Converts a Punycode-encoded string to its Unicode equivalent.
- @return	The equivalent Unicode string, or <tt>nil</tt> if <tt>self</tt> is not a valid Punycode-encoded string.
- */
-@property (readonly, copy, nullable)	NSString *punycodeDecodedString;
-
-/*!
- @property
  @abstract		Converts a Unicode domain to its encoded equivalent.
  @return		The equivalent IDNA-encoded domain.
  @discussion	This will properly split domains on periods; e.g., “www.bücher.ch” becomes “www.xn--bcher-kva.ch”.

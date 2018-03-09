@@ -107,18 +107,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 @implementation NSString (PunycodeAdditions)
 
 
-#if defined(PUNYCODE_COCOA_USE_WEBKIT)
-
-- (NSString *)punycodeEncodedString {
-	NSString *encodedHost = [self _web_encodeHostName];
-	return [encodedHost stringByReplacingOccurrencesOfString:@"xn--" withString:@"" options:NSAnchoredSearch range:(NSRange){ 0, encodedHost.length }];
-}
-
-- (NSString *)punycodeDecodedString {
-	return [[@"xn--" stringByAppendingString:self] _web_decodeHostName];
-}
-
-#elif defined(PUNYCODE_COCOA_USE_ICU)
+#if defined(PUNYCODE_COCOA_USE_ICU)
 
 static UIDNA *uidnaEncoder() {
 	static UIDNA *encoder;
@@ -133,61 +122,8 @@ static UIDNA *uidnaEncoder() {
 	return encoder;
 }
 
-- (NSString *)punycodeEncodedString {
-	if (self.length == 0)
-		return @"";
+#elif !defined(PUNYCODE_COCOA_USE_WEBKIT)
 
-	if (self.length > HOST_NAME_BUFFER_LENGTH)
-		return nil;
-
-	UIDNA *encoder = uidnaEncoder();
-
-	UChar label[HOST_NAME_BUFFER_LENGTH];
-	UChar dest[HOST_NAME_BUFFER_LENGTH];
-
-	NSRange range = (NSRange){ 0, self.length };
-
-	[self getCharacters:label range:range];
-
-	UIDNAInfo info = UIDNA_INFO_INITIALIZER;
-	UErrorCode err = U_ZERO_ERROR;
-
-	int32_t numChars = uidna_labelToASCII(encoder, label, (int32_t)range.length, dest, HOST_NAME_BUFFER_LENGTH, &info, &err);
-
-	NSString *ret = [NSString stringWithCharacters:dest length:numChars];
-
-	ret = [ret stringByReplacingOccurrencesOfString:@"xn--" withString:@"" options:NSAnchoredSearch range:(NSRange){ 0, ret.length }];
-
-	return ret;
-}
-
-- (NSString *)punycodeDecodedString {
-	if (self.length == 0)
-		return @"";
-
-	if (self.length > HOST_NAME_BUFFER_LENGTH)
-		return nil;
-
-	NSString *newSelf = [@"xn--" stringByAppendingString:self];
-
-	UIDNA *encoder = uidnaEncoder();
-
-	UChar label[HOST_NAME_BUFFER_LENGTH];
-	UChar dest[HOST_NAME_BUFFER_LENGTH];
-
-	NSRange range = (NSRange){ 0, newSelf.length };
-
-	[newSelf getCharacters:label range:range];
-
-	UIDNAInfo info = UIDNA_INFO_INITIALIZER;
-	UErrorCode err = U_ZERO_ERROR;
-
-	int32_t numChars = uidna_labelToUnicode(encoder, label, (int32_t)range.length, dest, HOST_NAME_BUFFER_LENGTH, &info, &err);
-
-	return [NSString stringWithCharacters:dest length:numChars];
-}
-
-#else
 /*** Main encode function ***/
 
 #if BYTE_ORDER == LITTLE_ENDIAN

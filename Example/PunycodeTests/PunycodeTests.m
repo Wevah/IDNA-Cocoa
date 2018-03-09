@@ -12,6 +12,8 @@
 @interface NSString (PunycodePrivate)
 
 @property (readonly, copy)	NSString		*stringByDeletingIgnoredCharacters;
+@property (readonly, copy)	NSString		*punycodeEncodedString;
+@property (readonly, copy)	NSString		*punycodeDecodedString;
 
 @end
 
@@ -31,6 +33,8 @@
     [super tearDown];
 }
 
+#if !defined(PUNYCODE_COCOA_USE_WEBKIT) && !defined(PUNYCODE_COCOA_USE_ICU)
+
 - (void)testPunycodeEncoding {
 	NSDictionary *dict = @{
 						   @"bücher":		@"bcher-kva",
@@ -46,10 +50,8 @@
 - (void)testPunycodeDecoding {
 	NSDictionary *dict = @{
 						   @"bcher-kva":	@"bücher",
-#ifndef PUNYCODE_COCOA_USE_WEBKIT
 						    // WebKit sanitizes cyrillic and only allows it with a correct TLD to prevent homograph attacks.
 						   @"d1abbgf6aiiy":	@"президент",
-#endif
 						   @"r8jz45g":		@"例え"
 						   };
 	
@@ -57,6 +59,7 @@
 		XCTAssertTrue([key.punycodeDecodedString isEqualToString:obj], @"%@ should decode to %@; decoded to %@", key, obj, key.punycodeDecodedString);
 	}];
 }
+#endif
 
 - (void)testIDNAEncoding {
 	NSDictionary *dict = @{
