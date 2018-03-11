@@ -11,7 +11,6 @@
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753811F3CE8B2002606DD /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
 		B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		B26D0B6C2051D73F009B1935 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B26D0B692051D26E009B1935 /* libicucore.A.dylib */; };
 		B26D0C972051D832009B1935 /* utf_old.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C362051D832009B1935 /* utf_old.h */; };
 		B26D0C982051D832009B1935 /* ubrk.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C372051D832009B1935 /* ubrk.h */; };
 		B26D0C992051D832009B1935 /* stringpiece.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C382051D832009B1935 /* stringpiece.h */; };
@@ -108,7 +107,7 @@
 		B26D0CF42051D832009B1935 /* utypes.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C942051D832009B1935 /* utypes.h */; };
 		B26D0CF52051D832009B1935 /* ulistformatter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C952051D832009B1935 /* ulistformatter.h */; };
 		B26D0CF62051D832009B1935 /* unifilt.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C962051D832009B1935 /* unifilt.h */; };
-		B26D0CF72051DA29009B1935 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B26D0B692051D26E009B1935 /* libicucore.A.dylib */; };
+		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; };
 		B2D4E99408E0191700574ACD /* Punycode_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */; };
 		B2D4E99608E0191700574ACD /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = B2CB4DCF07B158A600B4C504 /* Controller.h */; };
 		B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
@@ -161,7 +160,6 @@
 		B255A5681500C4800073DF21 /* PunycodeTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PunycodeTests-Prefix.pch"; sourceTree = "<group>"; };
 		B25753801F3CE8B2002606DD /* WebNSURLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebNSURLExtras.h; path = ../Pod/WebNSURLExtras.h; sourceTree = "<group>"; };
 		B25753821F3CE9A9002606DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		B26D0B692051D26E009B1935 /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = ../../../../../usr/lib/libicucore.A.dylib; sourceTree = "<group>"; };
 		B26D0C362051D832009B1935 /* utf_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf_old.h; sourceTree = "<group>"; };
 		B26D0C372051D832009B1935 /* ubrk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ubrk.h; sourceTree = "<group>"; };
 		B26D0C382051D832009B1935 /* stringpiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringpiece.h; sourceTree = "<group>"; };
@@ -258,6 +256,7 @@
 		B26D0C942051D832009B1935 /* utypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utypes.h; sourceTree = "<group>"; };
 		B26D0C952051D832009B1935 /* ulistformatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ulistformatter.h; sourceTree = "<group>"; };
 		B26D0C962051D832009B1935 /* unifilt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unifilt.h; sourceTree = "<group>"; };
+		B26FA03C2055425C00CD6AF1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B2CB4DCF07B158A600B4C504 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		B2CB4DD007B158A600B4C504 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 		B2D4E9A008E0191700574ACD /* Info-Punycode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Punycode.plist"; sourceTree = "<group>"; };
@@ -273,7 +272,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B26D0CF72051DA29009B1935 /* libicucore.A.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B26D0B6C2051D73F009B1935 /* libicucore.A.dylib in Frameworks */,
+				B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */,
 				B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */,
 				B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */,
 			);
@@ -306,6 +304,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B26FA03C2055425C00CD6AF1 /* libicucore.tbd */,
 				B25753821F3CE9A9002606DD /* WebKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -367,7 +366,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B26D0B692051D26E009B1935 /* libicucore.A.dylib */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -829,9 +827,12 @@
 				GCC_USE_GCC3_PFE_SUPPORT = NO;
 				INFOPLIST_FILE = "Info-Punycode.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
 				PRODUCT_NAME = Punycode;
 				SDKROOT = macosx;
@@ -858,9 +859,12 @@
 				GCC_USE_GCC3_PFE_SUPPORT = NO;
 				INFOPLIST_FILE = "Info-Punycode.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
 				PRODUCT_NAME = Punycode;
 				SDKROOT = macosx;
