@@ -23,28 +23,35 @@ Define `PUNYCODE_COCOA_USE_ICU` to use ICU (by default the system's ICU). Using 
 
 ### NSString
 
-``` objc
+```objc
 @property (readonly, copy, nullable) NSString *IDNAEncodedString;
 ```
 	
 If `self` contains non-ASCII, encodes the string as Punycode and prepends `xn--`.
 
-	@property (readonly, copy, nullable) NSString *IDNADecodedString;
-
+```objc
+@property (readonly, copy, nullable) NSString *IDNADecodedString;
+```
 Decodes a string returned by `-IDNAEncodedString`.
 
-	@property (readonly, copy, nullable) NSString *encodedURLString;
-	@property (readonly, copy, nullable) NSString *decodedURLString;
-	
+```objc
+@property (readonly, copy, nullable) NSString *encodedURLString;
+@property (readonly, copy, nullable) NSString *decodedURLString;
+```
+
 Performs encode/decode operations on each appropriate part (the domain bits) of an URL string.
 
 ### NSURL
-	
-	+ (nullable instancetype)URLWithUnicodeString:(NSString *)URLString;
-	
+
+```objc
++ (nullable instancetype)URLWithUnicodeString:(NSString *)URLString;
+```
+
 Convenience method equivalent to `[NSURL URLWithString:URLString.encodedURLString]`.
-	
-	@property (readonly, copy, nullable) NSString *decodedURLString;
+
+```objc
+@property (readonly, copy, nullable) NSString *decodedURLString;
+```
 
 Convenience property equivalent to `anURL.absoluteString.decodedURLString`.
 
