@@ -23,8 +23,8 @@ Define `PUNYCODE_COCOA_USE_ICU` to use ICU (by default the system's ICU). Using 
 
 ### NSString
 
-```objc
-	@property (readonly, copy, nullable) NSString *IDNAEncodedString;
+```objectivec
+@property (readonly, copy, nullable) NSString *IDNAEncodedString;
 ```
 	
 If `self` contains non-ASCII, encodes the string as Punycode and prepends `xn--`.
