@@ -48,4 +48,4 @@ Convenience property equivalent to `anURL.absoluteString.decodedURLString`.
 
 ----
 
-© 2012–2018 Nate Weaver (Wevah)
+© 2012–2019 Nate Weaver (Wevah)
