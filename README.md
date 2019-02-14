@@ -23,7 +23,7 @@ Define `PUNYCODE_COCOA_USE_ICU` to use ICU (by default the system's ICU). Using 
 
 ### NSString
 
-```objectivec
+```objecdsafakljalkg
 @property (readonly, copy, nullable) NSString *IDNAEncodedString;
 ```
 	
