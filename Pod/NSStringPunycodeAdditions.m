@@ -145,7 +145,7 @@ static UIDNA *uidnaEncoder() {
 
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		regex = [NSRegularExpression regularExpressionWithPattern:@"[\u00AD\u034F\u1806\u180B\u180C\u180D\u200B\u200C\u200D\u2060\uFE00-\uFE0F\uFEFF]" options:0 error:nil];
+		regex = [[NSRegularExpression alloc] initWithPattern:@"[\u00AD\u034F\u1806\u180B\u180C\u180D\u200B\u200C\u200D\u2060\uFE00-\uFE0F\uFEFF]" options:0 error:nil];
 	});
 
 	return [regex stringByReplacingMatchesInString:self options:0 range:(NSRange){ .location = 0, .length = self.length} withTemplate:@""];
