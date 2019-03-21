@@ -470,6 +470,9 @@ static UIDNA *uidnaEncoder() {
 	[allowedCharacters addCharactersInRange:(NSRange){ '%', 1 }];
 	[allowedCharacters addCharactersInRange:(NSRange){ '?', 1 }];
 	path = [path stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+#if !__has_feature(objc_arc)
+	[allowedCharacters release];
+#endif
 
 	NSMutableString *ret = [NSMutableString stringWithFormat:@"%@%@", urlParts[@"scheme"], urlParts[@"delim"]];
 	if (urlParts[@"username"]) {
@@ -488,6 +491,9 @@ static UIDNA *uidnaEncoder() {
 		NSMutableCharacterSet *fragmentAllowedCharacters = [[NSCharacterSet URLFragmentAllowedCharacterSet] mutableCopy];
 		[fragmentAllowedCharacters addCharactersInRange:(NSRange) { '%' , 1 }];
 		fragment = [fragment stringByAddingPercentEncodingWithAllowedCharacters:fragmentAllowedCharacters];
+#if !__has_feature(objc_arc)
+		[fragmentAllowedCharacters release];
+#endif
         [ret appendFormat:@"#%@", fragment];
     }
 			
