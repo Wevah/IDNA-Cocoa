@@ -7,6 +7,115 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B241068E22450B860014E4D0 /* ustring.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C462051D832009B1935 /* ustring.h */; };
+		B241068F22450B860014E4D0 /* uiter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4E2051D832009B1935 /* uiter.h */; };
+		B241069022450B860014E4D0 /* localpointer.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C912051D832009B1935 /* localpointer.h */; };
+		B241069122450B860014E4D0 /* umachine.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C752051D832009B1935 /* umachine.h */; };
+		B241069222450B860014E4D0 /* utrace.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C572051D832009B1935 /* utrace.h */; };
+		B241069322450B860014E4D0 /* resbund.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C802051D832009B1935 /* resbund.h */; };
+		B241069422450B860014E4D0 /* uldnames.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4D2051D832009B1935 /* uldnames.h */; };
+		B241069522450B860014E4D0 /* parseerr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C852051D832009B1935 /* parseerr.h */; };
+		B241069622450B860014E4D0 /* Punycode_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */; };
+		B241069722450B860014E4D0 /* docmain.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4F2051D832009B1935 /* docmain.h */; };
+		B241069822450B860014E4D0 /* uchriter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C592051D832009B1935 /* uchriter.h */; };
+		B241069922450B860014E4D0 /* usprep.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C632051D832009B1935 /* usprep.h */; };
+		B241069A22450B860014E4D0 /* utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C902051D832009B1935 /* utf8.h */; };
+		B241069B22450B860014E4D0 /* usetiter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3C2051D832009B1935 /* usetiter.h */; };
+		B241069C22450B860014E4D0 /* ulistformatter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C952051D832009B1935 /* ulistformatter.h */; };
+		B241069D22450B860014E4D0 /* bytestream.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6C2051D832009B1935 /* bytestream.h */; };
+		B241069E22450B860014E4D0 /* ptypes.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3B2051D832009B1935 /* ptypes.h */; };
+		B241069F22450B860014E4D0 /* utypes.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C942051D832009B1935 /* utypes.h */; };
+		B24106A022450B860014E4D0 /* unifilt.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C962051D832009B1935 /* unifilt.h */; };
+		B24106A122450B860014E4D0 /* uversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6D2051D832009B1935 /* uversion.h */; };
+		B24106A222450B860014E4D0 /* putil.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C862051D832009B1935 /* putil.h */; };
+		B24106A322450B860014E4D0 /* symtable.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C722051D832009B1935 /* symtable.h */; };
+		B24106A422450B860014E4D0 /* stringtriebuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C522051D832009B1935 /* stringtriebuilder.h */; };
+		B24106A522450B860014E4D0 /* chariter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C532051D832009B1935 /* chariter.h */; };
+		B24106A622450B860014E4D0 /* listformatter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5F2051D832009B1935 /* listformatter.h */; };
+		B24106A722450B860014E4D0 /* normlzr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C622051D832009B1935 /* normlzr.h */; };
+		B24106A822450B860014E4D0 /* strenum.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5C2051D832009B1935 /* strenum.h */; };
+		B24106A922450B860014E4D0 /* ucnv.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C882051D832009B1935 /* ucnv.h */; };
+		B24106AA22450B860014E4D0 /* ucnv_cb.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C7E2051D832009B1935 /* ucnv_cb.h */; };
+		B24106AB22450B860014E4D0 /* ucat.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C392051D832009B1935 /* ucat.h */; };
+		B24106AC22450B860014E4D0 /* idna.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C692051D832009B1935 /* idna.h */; };
+		B24106AD22450B860014E4D0 /* ucnvsel.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C842051D832009B1935 /* ucnvsel.h */; };
+		B24106AE22450B860014E4D0 /* uset.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4A2051D832009B1935 /* uset.h */; };
+		B24106AF22450B860014E4D0 /* uidna.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6F2051D832009B1935 /* uidna.h */; };
+		B24106B022450B860014E4D0 /* unimatch.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C832051D832009B1935 /* unimatch.h */; };
+		B24106B122450B860014E4D0 /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = B2CB4DCF07B158A600B4C504 /* Controller.h */; };
+		B24106B222450B860014E4D0 /* appendable.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C492051D832009B1935 /* appendable.h */; };
+		B24106B322450B860014E4D0 /* unorm2.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6A2051D832009B1935 /* unorm2.h */; };
+		B24106B422450B860014E4D0 /* ucharstriebuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C892051D832009B1935 /* ucharstriebuilder.h */; };
+		B24106B522450B860014E4D0 /* icuplug.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C402051D832009B1935 /* icuplug.h */; };
+		B24106B622450B860014E4D0 /* udata.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C512051D832009B1935 /* udata.h */; };
+		B24106B722450B860014E4D0 /* ucasemap.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C732051D832009B1935 /* ucasemap.h */; };
+		B24106B822450B860014E4D0 /* NSStringPunycodeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */; };
+		B24106B922450B860014E4D0 /* utf.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5B2051D832009B1935 /* utf.h */; };
+		B24106BA22450B860014E4D0 /* bytestrie.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5E2051D832009B1935 /* bytestrie.h */; };
+		B24106BB22450B860014E4D0 /* urep.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C442051D832009B1935 /* urep.h */; };
+		B24106BC22450B860014E4D0 /* caniter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C652051D832009B1935 /* caniter.h */; };
+		B24106BD22450B860014E4D0 /* uobject.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C602051D832009B1935 /* uobject.h */; };
+		B24106BE22450B860014E4D0 /* utext.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C412051D832009B1935 /* utext.h */; };
+		B24106BF22450B860014E4D0 /* schriter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4C2051D832009B1935 /* schriter.h */; };
+		B24106C022450B860014E4D0 /* locid.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C7F2051D832009B1935 /* locid.h */; };
+		B24106C122450B860014E4D0 /* utf32.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C452051D832009B1935 /* utf32.h */; };
+		B24106C222450B860014E4D0 /* uchar.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C782051D832009B1935 /* uchar.h */; };
+		B24106C322450B860014E4D0 /* ures.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C612051D832009B1935 /* ures.h */; };
+		B24106C422450B860014E4D0 /* unifunct.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C7B2051D832009B1935 /* unifunct.h */; };
+		B24106C522450B860014E4D0 /* dbbi.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6B2051D832009B1935 /* dbbi.h */; };
+		B24106C622450B860014E4D0 /* urename.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C642051D832009B1935 /* urename.h */; };
+		B24106C722450B860014E4D0 /* ucnv_err.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5D2051D832009B1935 /* ucnv_err.h */; };
+		B24106C822450B860014E4D0 /* ucharstrie.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C662051D832009B1935 /* ucharstrie.h */; };
+		B24106C922450B860014E4D0 /* ustringtrie.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C762051D832009B1935 /* ustringtrie.h */; };
+		B24106CA22450B860014E4D0 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8D2051D832009B1935 /* platform.h */; };
+		B24106CB22450B860014E4D0 /* uvernum.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C822051D832009B1935 /* uvernum.h */; };
+		B24106CC22450B860014E4D0 /* stringoptions.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3A2051D832009B1935 /* stringoptions.h */; };
+		B24106CD22450B860014E4D0 /* ushape.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C7A2051D832009B1935 /* ushape.h */; };
+		B24106CE22450B860014E4D0 /* unistr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C672051D832009B1935 /* unistr.h */; };
+		B24106CF22450B860014E4D0 /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
+		B24106D022450B860014E4D0 /* uenum.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C482051D832009B1935 /* uenum.h */; };
+		B24106D122450B860014E4D0 /* enumset.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5A2051D832009B1935 /* enumset.h */; };
+		B24106D222450B860014E4D0 /* udisplaycontext.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C742051D832009B1935 /* udisplaycontext.h */; };
+		B24106D322450B860014E4D0 /* uloc.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C552051D832009B1935 /* uloc.h */; };
+		B24106D422450B860014E4D0 /* ubrk.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C372051D832009B1935 /* ubrk.h */; };
+		B24106D522450B860014E4D0 /* normalizer2.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C872051D832009B1935 /* normalizer2.h */; };
+		B24106D622450B860014E4D0 /* stringpiece.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C382051D832009B1935 /* stringpiece.h */; };
+		B24106D722450B860014E4D0 /* unorm.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C792051D832009B1935 /* unorm.h */; };
+		B24106D822450B860014E4D0 /* messagepattern.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6E2051D832009B1935 /* messagepattern.h */; };
+		B24106D922450B860014E4D0 /* ucurr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3F2051D832009B1935 /* ucurr.h */; };
+		B24106DA22450B860014E4D0 /* errorcode.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3D2051D832009B1935 /* errorcode.h */; };
+		B24106DB22450B860014E4D0 /* umisc.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C542051D832009B1935 /* umisc.h */; };
+		B24106DC22450B860014E4D0 /* edits.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C422051D832009B1935 /* edits.h */; };
+		B24106DD22450B860014E4D0 /* rep.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8E2051D832009B1935 /* rep.h */; };
+		B24106DE22450B860014E4D0 /* locdspnm.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C582051D832009B1935 /* locdspnm.h */; };
+		B24106DF22450B860014E4D0 /* brkiter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8C2051D832009B1935 /* brkiter.h */; };
+		B24106E022450B860014E4D0 /* parsepos.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C432051D832009B1935 /* parsepos.h */; };
+		B24106E122450B860014E4D0 /* simpleformatter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C7D2051D832009B1935 /* simpleformatter.h */; };
+		B24106E222450B860014E4D0 /* uscript.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C932051D832009B1935 /* uscript.h */; };
+		B24106E322450B860014E4D0 /* utf16.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8B2051D832009B1935 /* utf16.h */; };
+		B24106E422450B860014E4D0 /* ubiditransform.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C472051D832009B1935 /* ubiditransform.h */; };
+		B24106E522450B860014E4D0 /* utf_old.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C362051D832009B1935 /* utf_old.h */; };
+		B24106E622450B860014E4D0 /* icudataver.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C772051D832009B1935 /* icudataver.h */; };
+		B24106E722450B860014E4D0 /* rbbi.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C682051D832009B1935 /* rbbi.h */; };
+		B24106E822450B860014E4D0 /* uclean.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C922051D832009B1935 /* uclean.h */; };
+		B24106E922450B860014E4D0 /* std_string.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8F2051D832009B1935 /* std_string.h */; };
+		B24106EA22450B860014E4D0 /* filteredbrk.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C702051D832009B1935 /* filteredbrk.h */; };
+		B24106EB22450B860014E4D0 /* ubidi.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C812051D832009B1935 /* ubidi.h */; };
+		B24106EC22450B860014E4D0 /* uconfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8A2051D832009B1935 /* uconfig.h */; };
+		B24106ED22450B860014E4D0 /* dtintrv.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3E2051D832009B1935 /* dtintrv.h */; };
+		B24106EE22450B860014E4D0 /* char16ptr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C712051D832009B1935 /* char16ptr.h */; };
+		B24106EF22450B860014E4D0 /* casemap.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4B2051D832009B1935 /* casemap.h */; };
+		B24106F022450B860014E4D0 /* bytestriebuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C562051D832009B1935 /* bytestriebuilder.h */; };
+		B24106F122450B860014E4D0 /* uniset.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C502051D832009B1935 /* uniset.h */; };
+		B24106F322450B860014E4D0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
+		B24106F422450B860014E4D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		B24106F522450B860014E4D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
+		B24106F722450B860014E4D0 /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B24106F822450B860014E4D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		B24106F922450B860014E4D0 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CB4DD007B158A600B4C504 /* Controller.m */; };
+		B24106FB22450B860014E4D0 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; };
+		B24106FC22450B860014E4D0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		B24106FD22450B860014E4D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753811F3CE8B2002606DD /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
@@ -123,6 +232,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
+		B24106FE22450B860014E4D0 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc;
+			fileType = sourcecode.c;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "";
+		};
 		B2D4E9A108E0191800574ACD /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.gcc;
@@ -152,6 +270,7 @@
 		32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Punycode_Prefix.h; sourceTree = "<group>"; };
 		B23AAC60221511F300A450E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B23AAC62221511FE00A450E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B241070222450B860014E4D0 /* PunyCocoa MRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa MRR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B255A5591500C4800073DF21 /* PunycodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B255A5611500C4800073DF21 /* PunycodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PunycodeTests-Info.plist"; sourceTree = "<group>"; };
 		B255A5631500C4800073DF21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -268,6 +387,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B24106FA22450B860014E4D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B24106FB22450B860014E4D0 /* libicucore.tbd in Frameworks */,
+				B24106FC22450B860014E4D0 /* WebKit.framework in Frameworks */,
+				B24106FD22450B860014E4D0 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B255A5551500C4800073DF21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +454,7 @@
 			children = (
 				B2D4E9A208E0191800574ACD /* Punycode.app */,
 				B255A5591500C4800073DF21 /* PunycodeTests.xctest */,
+				B241070222450B860014E4D0 /* PunyCocoa MRR.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -499,6 +629,113 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		B241068D22450B860014E4D0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B241068E22450B860014E4D0 /* ustring.h in Headers */,
+				B241068F22450B860014E4D0 /* uiter.h in Headers */,
+				B241069022450B860014E4D0 /* localpointer.h in Headers */,
+				B241069122450B860014E4D0 /* umachine.h in Headers */,
+				B241069222450B860014E4D0 /* utrace.h in Headers */,
+				B241069322450B860014E4D0 /* resbund.h in Headers */,
+				B241069422450B860014E4D0 /* uldnames.h in Headers */,
+				B241069522450B860014E4D0 /* parseerr.h in Headers */,
+				B241069622450B860014E4D0 /* Punycode_Prefix.h in Headers */,
+				B241069722450B860014E4D0 /* docmain.h in Headers */,
+				B241069822450B860014E4D0 /* uchriter.h in Headers */,
+				B241069922450B860014E4D0 /* usprep.h in Headers */,
+				B241069A22450B860014E4D0 /* utf8.h in Headers */,
+				B241069B22450B860014E4D0 /* usetiter.h in Headers */,
+				B241069C22450B860014E4D0 /* ulistformatter.h in Headers */,
+				B241069D22450B860014E4D0 /* bytestream.h in Headers */,
+				B241069E22450B860014E4D0 /* ptypes.h in Headers */,
+				B241069F22450B860014E4D0 /* utypes.h in Headers */,
+				B24106A022450B860014E4D0 /* unifilt.h in Headers */,
+				B24106A122450B860014E4D0 /* uversion.h in Headers */,
+				B24106A222450B860014E4D0 /* putil.h in Headers */,
+				B24106A322450B860014E4D0 /* symtable.h in Headers */,
+				B24106A422450B860014E4D0 /* stringtriebuilder.h in Headers */,
+				B24106A522450B860014E4D0 /* chariter.h in Headers */,
+				B24106A622450B860014E4D0 /* listformatter.h in Headers */,
+				B24106A722450B860014E4D0 /* normlzr.h in Headers */,
+				B24106A822450B860014E4D0 /* strenum.h in Headers */,
+				B24106A922450B860014E4D0 /* ucnv.h in Headers */,
+				B24106AA22450B860014E4D0 /* ucnv_cb.h in Headers */,
+				B24106AB22450B860014E4D0 /* ucat.h in Headers */,
+				B24106AC22450B860014E4D0 /* idna.h in Headers */,
+				B24106AD22450B860014E4D0 /* ucnvsel.h in Headers */,
+				B24106AE22450B860014E4D0 /* uset.h in Headers */,
+				B24106AF22450B860014E4D0 /* uidna.h in Headers */,
+				B24106B022450B860014E4D0 /* unimatch.h in Headers */,
+				B24106B122450B860014E4D0 /* Controller.h in Headers */,
+				B24106B222450B860014E4D0 /* appendable.h in Headers */,
+				B24106B322450B860014E4D0 /* unorm2.h in Headers */,
+				B24106B422450B860014E4D0 /* ucharstriebuilder.h in Headers */,
+				B24106B522450B860014E4D0 /* icuplug.h in Headers */,
+				B24106B622450B860014E4D0 /* udata.h in Headers */,
+				B24106B722450B860014E4D0 /* ucasemap.h in Headers */,
+				B24106B822450B860014E4D0 /* NSStringPunycodeAdditions.h in Headers */,
+				B24106B922450B860014E4D0 /* utf.h in Headers */,
+				B24106BA22450B860014E4D0 /* bytestrie.h in Headers */,
+				B24106BB22450B860014E4D0 /* urep.h in Headers */,
+				B24106BC22450B860014E4D0 /* caniter.h in Headers */,
+				B24106BD22450B860014E4D0 /* uobject.h in Headers */,
+				B24106BE22450B860014E4D0 /* utext.h in Headers */,
+				B24106BF22450B860014E4D0 /* schriter.h in Headers */,
+				B24106C022450B860014E4D0 /* locid.h in Headers */,
+				B24106C122450B860014E4D0 /* utf32.h in Headers */,
+				B24106C222450B860014E4D0 /* uchar.h in Headers */,
+				B24106C322450B860014E4D0 /* ures.h in Headers */,
+				B24106C422450B860014E4D0 /* unifunct.h in Headers */,
+				B24106C522450B860014E4D0 /* dbbi.h in Headers */,
+				B24106C622450B860014E4D0 /* urename.h in Headers */,
+				B24106C722450B860014E4D0 /* ucnv_err.h in Headers */,
+				B24106C822450B860014E4D0 /* ucharstrie.h in Headers */,
+				B24106C922450B860014E4D0 /* ustringtrie.h in Headers */,
+				B24106CA22450B860014E4D0 /* platform.h in Headers */,
+				B24106CB22450B860014E4D0 /* uvernum.h in Headers */,
+				B24106CC22450B860014E4D0 /* stringoptions.h in Headers */,
+				B24106CD22450B860014E4D0 /* ushape.h in Headers */,
+				B24106CE22450B860014E4D0 /* unistr.h in Headers */,
+				B24106CF22450B860014E4D0 /* WebNSURLExtras.h in Headers */,
+				B24106D022450B860014E4D0 /* uenum.h in Headers */,
+				B24106D122450B860014E4D0 /* enumset.h in Headers */,
+				B24106D222450B860014E4D0 /* udisplaycontext.h in Headers */,
+				B24106D322450B860014E4D0 /* uloc.h in Headers */,
+				B24106D422450B860014E4D0 /* ubrk.h in Headers */,
+				B24106D522450B860014E4D0 /* normalizer2.h in Headers */,
+				B24106D622450B860014E4D0 /* stringpiece.h in Headers */,
+				B24106D722450B860014E4D0 /* unorm.h in Headers */,
+				B24106D822450B860014E4D0 /* messagepattern.h in Headers */,
+				B24106D922450B860014E4D0 /* ucurr.h in Headers */,
+				B24106DA22450B860014E4D0 /* errorcode.h in Headers */,
+				B24106DB22450B860014E4D0 /* umisc.h in Headers */,
+				B24106DC22450B860014E4D0 /* edits.h in Headers */,
+				B24106DD22450B860014E4D0 /* rep.h in Headers */,
+				B24106DE22450B860014E4D0 /* locdspnm.h in Headers */,
+				B24106DF22450B860014E4D0 /* brkiter.h in Headers */,
+				B24106E022450B860014E4D0 /* parsepos.h in Headers */,
+				B24106E122450B860014E4D0 /* simpleformatter.h in Headers */,
+				B24106E222450B860014E4D0 /* uscript.h in Headers */,
+				B24106E322450B860014E4D0 /* utf16.h in Headers */,
+				B24106E422450B860014E4D0 /* ubiditransform.h in Headers */,
+				B24106E522450B860014E4D0 /* utf_old.h in Headers */,
+				B24106E622450B860014E4D0 /* icudataver.h in Headers */,
+				B24106E722450B860014E4D0 /* rbbi.h in Headers */,
+				B24106E822450B860014E4D0 /* uclean.h in Headers */,
+				B24106E922450B860014E4D0 /* std_string.h in Headers */,
+				B24106EA22450B860014E4D0 /* filteredbrk.h in Headers */,
+				B24106EB22450B860014E4D0 /* ubidi.h in Headers */,
+				B24106EC22450B860014E4D0 /* uconfig.h in Headers */,
+				B24106ED22450B860014E4D0 /* dtintrv.h in Headers */,
+				B24106EE22450B860014E4D0 /* char16ptr.h in Headers */,
+				B24106EF22450B860014E4D0 /* casemap.h in Headers */,
+				B24106F022450B860014E4D0 /* bytestriebuilder.h in Headers */,
+				B24106F122450B860014E4D0 /* uniset.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2D4E99308E0191700574ACD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -609,6 +846,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B241068C22450B860014E4D0 /* PunyCocoa MRR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B24106FF22450B860014E4D0 /* Build configuration list for PBXNativeTarget "PunyCocoa MRR" */;
+			buildPhases = (
+				B241068D22450B860014E4D0 /* Headers */,
+				B24106F222450B860014E4D0 /* Resources */,
+				B24106F622450B860014E4D0 /* Sources */,
+				B24106FA22450B860014E4D0 /* Frameworks */,
+			);
+			buildRules = (
+				B24106FE22450B860014E4D0 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = "PunyCocoa MRR";
+			productInstallPath = "$(HOME)/Applications";
+			productName = Punycode;
+			productReference = B241070222450B860014E4D0 /* PunyCocoa MRR.app */;
+			productType = "com.apple.product-type.application";
+		};
 		B255A5581500C4800073DF21 /* PunycodeTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B255A5691500C4800073DF21 /* Build configuration list for PBXNativeTarget "PunycodeTests" */;
@@ -670,11 +927,22 @@
 			targets = (
 				B2D4E99208E0191700574ACD /* PunyCocoa */,
 				B255A5581500C4800073DF21 /* PunycodeTests */,
+				B241068C22450B860014E4D0 /* PunyCocoa MRR */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B24106F222450B860014E4D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B24106F322450B860014E4D0 /* MainMenu.xib in Resources */,
+				B24106F422450B860014E4D0 /* InfoPlist.strings in Resources */,
+				B24106F522450B860014E4D0 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B255A5561500C4800073DF21 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -697,6 +965,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B24106F622450B860014E4D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B24106F722450B860014E4D0 /* NSStringPunycodeAdditions.m in Sources */,
+				B24106F822450B860014E4D0 /* main.m in Sources */,
+				B24106F922450B860014E4D0 /* Controller.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B255A5541500C4800073DF21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -754,6 +1032,65 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B241070022450B860014E4D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Punycode_Prefix.h;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = "Info-Punycode.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B241070122450B860014E4D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Punycode_Prefix.h;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = "Info-Punycode.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		B255A56A1500C4800073DF21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -949,6 +1286,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B24106FF22450B860014E4D0 /* Build configuration list for PBXNativeTarget "PunyCocoa MRR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B241070022450B860014E4D0 /* Debug */,
+				B241070122450B860014E4D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		B255A5691500C4800073DF21 /* Build configuration list for PBXNativeTarget "PunycodeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
