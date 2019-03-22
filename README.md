@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Wevah/Punycode-Cocoa.svg?branch=master)](https://travis-ci.org/Wevah/Punycode-Cocoa)
 
-v2.0 (2018)
+v2.0 (2019)
 by Nate Weaver (Wevah)  
 https://derailer.org/  
 https://github.com/Wevah/Punycode-Cocoa
