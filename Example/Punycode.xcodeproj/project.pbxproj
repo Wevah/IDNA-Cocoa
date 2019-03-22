@@ -835,7 +835,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
 				PRODUCT_NAME = Punycode;
 				SDKROOT = macosx;
-				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -864,7 +863,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
 				PRODUCT_NAME = Punycode;
 				SDKROOT = macosx;
-				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
