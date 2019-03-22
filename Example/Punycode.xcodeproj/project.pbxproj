@@ -926,8 +926,8 @@
 			projectRoot = "";
 			targets = (
 				B2D4E99208E0191700574ACD /* PunyCocoa */,
-				B255A5581500C4800073DF21 /* PunycodeTests */,
 				B241068C22450B860014E4D0 /* PunyCocoa MRR */,
+				B255A5581500C4800073DF21 /* PunycodeTests */,
 			);
 		};
 /* End PBXProject section */
