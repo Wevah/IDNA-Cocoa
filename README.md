@@ -44,7 +44,7 @@ Convenience method equivalent to `[NSURL URLWithString:URLString.encodedURLStrin
 	
 	@property (readonly, copy, nullable) NSString *decodedURLString;
 
-Convenience property equivalent to `anURL.absoluteString.decodedURLString`.
+Convenience property equivalent to `someURL.absoluteString.decodedURLString`.
 
 ----
 
