@@ -15,7 +15,6 @@
 		B241069322450B860014E4D0 /* resbund.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C802051D832009B1935 /* resbund.h */; };
 		B241069422450B860014E4D0 /* uldnames.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4D2051D832009B1935 /* uldnames.h */; };
 		B241069522450B860014E4D0 /* parseerr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C852051D832009B1935 /* parseerr.h */; };
-		B241069622450B860014E4D0 /* Punycode_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */; };
 		B241069722450B860014E4D0 /* docmain.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C4F2051D832009B1935 /* docmain.h */; };
 		B241069822450B860014E4D0 /* uchriter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C592051D832009B1935 /* uchriter.h */; };
 		B241069922450B860014E4D0 /* usprep.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C632051D832009B1935 /* usprep.h */; };
@@ -218,7 +217,6 @@
 		B26D0CF62051D832009B1935 /* unifilt.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C962051D832009B1935 /* unifilt.h */; };
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; };
 		B29EC65A228102E000478825 /* Info-Punycode.plist in Sources */ = {isa = PBXBuildFile; fileRef = B2CB4DD007B158A600B4C504 /* Info-Punycode.plist */; };
-		B2D4E99408E0191700574ACD /* Punycode_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */; };
 		B2D4E99608E0191700574ACD /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = B2CB4DCF07B158A600B4C504 /* Controller.h */; };
 		B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -268,7 +266,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Punycode_Prefix.h; sourceTree = "<group>"; };
 		B23AAC60221511F300A450E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B23AAC62221511FE00A450E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B241070222450B860014E4D0 /* PunyCocoa MRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa MRR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,7 +274,6 @@
 		B255A5631500C4800073DF21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B255A5651500C4800073DF21 /* PunycodeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunycodeTests.h; sourceTree = "<group>"; };
 		B255A5661500C4800073DF21 /* PunycodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PunycodeTests.m; sourceTree = "<group>"; };
-		B255A5681500C4800073DF21 /* PunycodeTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PunycodeTests-Prefix.pch"; sourceTree = "<group>"; };
 		B25753801F3CE8B2002606DD /* WebNSURLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebNSURLExtras.h; sourceTree = "<group>"; };
 		B25753821F3CE9A9002606DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B26D0C362051D832009B1935 /* utf_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf_old.h; sourceTree = "<group>"; };
@@ -454,20 +450,11 @@
 				B30134621A964E2600AF6C4E /* README.md */,
 				B29EC659228102AE00478825 /* Shared */,
 				B29EC65B228102E300478825 /* Mac */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				B255A55F1500C4800073DF21 /* PunycodeTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
 			name = Punycode;
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */,
-			);
-			name = "Other Sources";
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
@@ -505,7 +492,6 @@
 			children = (
 				B255A5611500C4800073DF21 /* PunycodeTests-Info.plist */,
 				B255A5621500C4800073DF21 /* InfoPlist.strings */,
-				B255A5681500C4800073DF21 /* PunycodeTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -650,7 +636,6 @@
 				B241069322450B860014E4D0 /* resbund.h in Headers */,
 				B241069422450B860014E4D0 /* uldnames.h in Headers */,
 				B241069522450B860014E4D0 /* parseerr.h in Headers */,
-				B241069622450B860014E4D0 /* Punycode_Prefix.h in Headers */,
 				B241069722450B860014E4D0 /* docmain.h in Headers */,
 				B241069822450B860014E4D0 /* uchriter.h in Headers */,
 				B241069922450B860014E4D0 /* usprep.h in Headers */,
@@ -757,7 +742,6 @@
 				B26D0CE02051D832009B1935 /* resbund.h in Headers */,
 				B26D0CAE2051D832009B1935 /* uldnames.h in Headers */,
 				B26D0CE52051D832009B1935 /* parseerr.h in Headers */,
-				B2D4E99408E0191700574ACD /* Punycode_Prefix.h in Headers */,
 				B26D0CB02051D832009B1935 /* docmain.h in Headers */,
 				B26D0CBA2051D832009B1935 /* uchriter.h in Headers */,
 				B26D0CC42051D832009B1935 /* usprep.h in Headers */,
@@ -1054,7 +1038,6 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Punycode_Prefix.h;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Info-Punycode.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -1082,7 +1065,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Punycode_Prefix.h;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Info-Punycode.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -1116,7 +1098,6 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PunycodeTests/PunycodeTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1148,7 +1129,6 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PunycodeTests/PunycodeTests-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -1172,7 +1152,6 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Punycode_Prefix.h;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Info-Punycode.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -1200,7 +1179,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Punycode_Prefix.h;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Info-Punycode.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
