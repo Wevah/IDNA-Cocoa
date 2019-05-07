@@ -112,7 +112,7 @@
 		B24106F522450B860014E4D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
 		B24106F722450B860014E4D0 /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B24106F822450B860014E4D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		B24106F922450B860014E4D0 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CB4DD007B158A600B4C504 /* Controller.m */; };
+		B24106F922450B860014E4D0 /* Info-Punycode.plist in Sources */ = {isa = PBXBuildFile; fileRef = B2CB4DD007B158A600B4C504 /* Info-Punycode.plist */; };
 		B24106FB22450B860014E4D0 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; };
 		B24106FC22450B860014E4D0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B24106FD22450B860014E4D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -217,12 +217,13 @@
 		B26D0CF52051D832009B1935 /* ulistformatter.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C952051D832009B1935 /* ulistformatter.h */; };
 		B26D0CF62051D832009B1935 /* unifilt.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C962051D832009B1935 /* unifilt.h */; };
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; };
+		B29EC65A228102E000478825 /* Info-Punycode.plist in Sources */ = {isa = PBXBuildFile; fileRef = B2CB4DD007B158A600B4C504 /* Info-Punycode.plist */; };
 		B2D4E99408E0191700574ACD /* Punycode_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */; };
 		B2D4E99608E0191700574ACD /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = B2CB4DCF07B158A600B4C504 /* Controller.h */; };
 		B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B2D4E99B08E0191700574ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		B2D4E99D08E0191700574ACD /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CB4DD007B158A600B4C504 /* Controller.m */; };
+		B2D4E99D08E0191700574ACD /* Info-Punycode.plist in Sources */ = {isa = PBXBuildFile; fileRef = B2CB4DD007B158A600B4C504 /* Info-Punycode.plist */; };
 		B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B301345E1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */; };
 		B301345F1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */; };
@@ -277,7 +278,7 @@
 		B255A5651500C4800073DF21 /* PunycodeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunycodeTests.h; sourceTree = "<group>"; };
 		B255A5661500C4800073DF21 /* PunycodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PunycodeTests.m; sourceTree = "<group>"; };
 		B255A5681500C4800073DF21 /* PunycodeTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PunycodeTests-Prefix.pch"; sourceTree = "<group>"; };
-		B25753801F3CE8B2002606DD /* WebNSURLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebNSURLExtras.h; path = ../Pod/WebNSURLExtras.h; sourceTree = "<group>"; };
+		B25753801F3CE8B2002606DD /* WebNSURLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebNSURLExtras.h; sourceTree = "<group>"; };
 		B25753821F3CE9A9002606DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B26D0C362051D832009B1935 /* utf_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf_old.h; sourceTree = "<group>"; };
 		B26D0C372051D832009B1935 /* ubrk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ubrk.h; sourceTree = "<group>"; };
@@ -377,11 +378,11 @@
 		B26D0C962051D832009B1935 /* unifilt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unifilt.h; sourceTree = "<group>"; };
 		B26FA03C2055425C00CD6AF1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B2CB4DCF07B158A600B4C504 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
-		B2CB4DD007B158A600B4C504 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
-		B2D4E9A008E0191700574ACD /* Info-Punycode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Punycode.plist"; sourceTree = "<group>"; };
+		B2CB4DD007B158A600B4C504 /* Info-Punycode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Punycode.plist"; sourceTree = "<group>"; };
+		B2D4E9A008E0191700574ACD /* Info-Punycode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Punycode.plist"; path = "Mac/Info-Punycode.plist"; sourceTree = "<group>"; };
 		B2D4E9A208E0191800574ACD /* Punycode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punycode.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringPunycodeAdditions.h; path = ../Pod/NSStringPunycodeAdditions.h; sourceTree = "<group>"; };
-		B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringPunycodeAdditions.m; path = ../Pod/NSStringPunycodeAdditions.m; sourceTree = "<group>"; };
+		B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringPunycodeAdditions.h; sourceTree = "<group>"; };
+		B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPunycodeAdditions.m; sourceTree = "<group>"; };
 		B30134611A964E2600AF6C4E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B30134621A964E2600AF6C4E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -417,19 +418,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				B25753801F3CE8B2002606DD /* WebNSURLExtras.h */,
-				B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */,
-				B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */,
-				B2CB4DCF07B158A600B4C504 /* Controller.h */,
-				B2CB4DD007B158A600B4C504 /* Controller.m */,
-				B26D0C352051D832009B1935 /* unicode */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,9 +452,9 @@
 			children = (
 				B30134611A964E2600AF6C4E /* LICENSE */,
 				B30134621A964E2600AF6C4E /* README.md */,
-				080E96DDFE201D6D7F000001 /* Classes */,
+				B29EC659228102AE00478825 /* Shared */,
+				B29EC65B228102E300478825 /* Mac */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
 				B255A55F1500C4800073DF21 /* PunycodeTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -478,7 +466,6 @@
 			isa = PBXGroup;
 			children = (
 				32CA4F630368D1EE00C91783 /* Punycode_Prefix.h */,
-				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -491,6 +478,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -622,8 +610,29 @@
 				B26D0C822051D832009B1935 /* uvernum.h */,
 				B26D0C6D2051D832009B1935 /* uversion.h */,
 			);
-			name = unicode;
-			path = ../Pod/unicode;
+			path = unicode;
+			sourceTree = "<group>";
+		};
+		B29EC659228102AE00478825 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B25753801F3CE8B2002606DD /* WebNSURLExtras.h */,
+				B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */,
+				B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */,
+				B26D0C352051D832009B1935 /* unicode */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B29EC65B228102E300478825 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				B2CB4DCF07B158A600B4C504 /* Controller.h */,
+				B2CB4DD007B158A600B4C504 /* Info-Punycode.plist */,
+			);
+			path = Mac;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -971,7 +980,7 @@
 			files = (
 				B24106F722450B860014E4D0 /* NSStringPunycodeAdditions.m in Sources */,
 				B24106F822450B860014E4D0 /* main.m in Sources */,
-				B24106F922450B860014E4D0 /* Controller.m in Sources */,
+				B24106F922450B860014E4D0 /* Info-Punycode.plist in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,6 +990,7 @@
 			files = (
 				B30134601A964E1E00AF6C4E /* NSStringPunycodeAdditions.m in Sources */,
 				B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */,
+				B29EC65A228102E000478825 /* Info-Punycode.plist in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,7 +1000,7 @@
 			files = (
 				B301345F1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m in Sources */,
 				B2D4E99B08E0191700574ACD /* main.m in Sources */,
-				B2D4E99D08E0191700574ACD /* Controller.m in Sources */,
+				B2D4E99D08E0191700574ACD /* Info-Punycode.plist in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1011,6 +1021,7 @@
 				B23AAC60221511F300A450E5 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = Mac;
 			sourceTree = "<group>";
 		};
 		29B97318FDCFA39411CA2CEA /* MainMenu.xib */ = {
@@ -1019,6 +1030,7 @@
 				B23AAC62221511FE00A450E5 /* Base */,
 			);
 			name = MainMenu.xib;
+			path = Mac;
 			sourceTree = "<group>";
 		};
 		B255A5621500C4800073DF21 /* InfoPlist.strings */ = {
