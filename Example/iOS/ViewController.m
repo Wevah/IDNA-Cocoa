@@ -6,8 +6,12 @@
 //
 
 #import "ViewController.h"
+#import "NSStringPunycodeAdditions.h"
 
 @interface ViewController ()
+
+@property (weak)	IBOutlet	UITextField	*unicodeField;
+@property (weak)	IBOutlet	UITextField	*idnaField;
 
 @end
 
@@ -18,5 +22,14 @@
 	// Do any additional setup after loading the view.
 }
 
+- (IBAction)convertFromUnicode:(UITextField *)sender {
+	NSString *str = sender.text;
+	self.idnaField.text = str.encodedURLString;
+}
+
+- (IBAction)convertFromIDNA:(UITextField *)sender {
+	NSString *str = sender.text;
+	self.unicodeField.text = str.decodedURLString;
+}
 
 @end

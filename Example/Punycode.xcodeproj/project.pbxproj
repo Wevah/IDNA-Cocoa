@@ -48,7 +48,6 @@
 		B24106B522450B860014E4D0 /* icuplug.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C402051D832009B1935 /* icuplug.h */; };
 		B24106B622450B860014E4D0 /* udata.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C512051D832009B1935 /* udata.h */; };
 		B24106B722450B860014E4D0 /* ucasemap.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C732051D832009B1935 /* ucasemap.h */; };
-		B24106B822450B860014E4D0 /* NSStringPunycodeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */; };
 		B24106B922450B860014E4D0 /* utf.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5B2051D832009B1935 /* utf.h */; };
 		B24106BA22450B860014E4D0 /* bytestrie.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5E2051D832009B1935 /* bytestrie.h */; };
 		B24106BB22450B860014E4D0 /* urep.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C442051D832009B1935 /* urep.h */; };
@@ -120,6 +119,8 @@
 		B2552E2822B134680015B473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2722B134680015B473 /* Assets.xcassets */; };
 		B2552E2B22B134680015B473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2922B134680015B473 /* LaunchScreen.storyboard */; };
 		B2552E2E22B134680015B473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2D22B134680015B473 /* main.m */; };
+		B2552E3222B134C40015B473 /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */; };
+		B2552E3322B134CE0015B473 /* NSStringPunycodeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */; };
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753811F3CE8B2002606DD /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
@@ -669,6 +670,7 @@
 				B241068E22450B860014E4D0 /* ustring.h in Headers */,
 				B241068F22450B860014E4D0 /* uiter.h in Headers */,
 				B241069022450B860014E4D0 /* localpointer.h in Headers */,
+				B2552E3322B134CE0015B473 /* NSStringPunycodeAdditions.h in Headers */,
 				B241069122450B860014E4D0 /* umachine.h in Headers */,
 				B241069222450B860014E4D0 /* utrace.h in Headers */,
 				B241069322450B860014E4D0 /* resbund.h in Headers */,
@@ -707,7 +709,6 @@
 				B24106B522450B860014E4D0 /* icuplug.h in Headers */,
 				B24106B622450B860014E4D0 /* udata.h in Headers */,
 				B24106B722450B860014E4D0 /* ucasemap.h in Headers */,
-				B24106B822450B860014E4D0 /* NSStringPunycodeAdditions.h in Headers */,
 				B24106B922450B860014E4D0 /* utf.h in Headers */,
 				B24106BA22450B860014E4D0 /* bytestrie.h in Headers */,
 				B24106BB22450B860014E4D0 /* urep.h in Headers */,
@@ -1044,6 +1045,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2552E3222B134C40015B473 /* NSStringPunycodeAdditions.m in Sources */,
 				B2552E2322B134650015B473 /* ViewController.m in Sources */,
 				B2552E2E22B134680015B473 /* main.m in Sources */,
 				B2552E2022B134650015B473 /* AppDelegate.m in Sources */,
@@ -1210,7 +1212,7 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = PunyCocoaTouch/Info.plist;
+				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -1246,7 +1248,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = PunyCocoaTouch/Info.plist;
+				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
