@@ -388,8 +388,7 @@
 		B26D0C962051D832009B1935 /* unifilt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unifilt.h; sourceTree = "<group>"; };
 		B26FA03C2055425C00CD6AF1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B2CB4DCF07B158A600B4C504 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
-		B2CB4DD007B158A600B4C504 /* Info-Punycode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Punycode.plist"; sourceTree = "<group>"; };
-		B2D4E9A008E0191700574ACD /* Info-Punycode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Punycode.plist"; path = "Mac/Info-Punycode.plist"; sourceTree = "<group>"; };
+		B2D4E9A008E0191700574ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mac/Info.plist; sourceTree = "<group>"; };
 		B2D4E9A208E0191800574ACD /* PunyCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunyCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringPunycodeAdditions.h; sourceTree = "<group>"; };
 		B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPunycodeAdditions.m; sourceTree = "<group>"; };
@@ -483,7 +482,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B2D4E9A008E0191700574ACD /* Info-Punycode.plist */,
+				B2D4E9A008E0191700574ACD /* Info.plist */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.xib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 			);
@@ -655,7 +654,6 @@
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				B2CB4DCF07B158A600B4C504 /* Controller.h */,
-				B2CB4DD007B158A600B4C504 /* Info-Punycode.plist */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -1137,7 +1135,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "Mac/Info-Punycode.plist";
+				INFOPLIST_FILE = Mac/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1164,7 +1162,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "Mac/Info-Punycode.plist";
+				INFOPLIST_FILE = Mac/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1329,7 +1327,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "Mac/Info-Punycode.plist";
+				INFOPLIST_FILE = Mac/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1356,7 +1354,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "Mac/Info-Punycode.plist";
+				INFOPLIST_FILE = Mac/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
