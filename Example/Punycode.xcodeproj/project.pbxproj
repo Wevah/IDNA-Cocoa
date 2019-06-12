@@ -121,6 +121,8 @@
 		B2552E2E22B134680015B473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2D22B134680015B473 /* main.m */; };
 		B2552E3222B134C40015B473 /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */; };
 		B2552E3322B134CE0015B473 /* NSStringPunycodeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */; };
+		B2552E3522B13CBC0015B473 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E3422B13CBC0015B473 /* Controller.m */; };
+		B2552E3622B13CBC0015B473 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E3422B13CBC0015B473 /* Controller.m */; };
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753811F3CE8B2002606DD /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
@@ -283,6 +285,7 @@
 		B2552E2A22B134680015B473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2552E2C22B134680015B473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2552E2D22B134680015B473 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B2552E3422B13CBC0015B473 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 		B255A5591500C4800073DF21 /* PunycodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B255A5611500C4800073DF21 /* PunycodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PunycodeTests-Info.plist"; sourceTree = "<group>"; };
 		B255A5631500C4800073DF21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -654,6 +657,7 @@
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				B2CB4DCF07B158A600B4C504 /* Controller.h */,
+				B2552E3422B13CBC0015B473 /* Controller.m */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -1036,6 +1040,7 @@
 			files = (
 				B24106F722450B860014E4D0 /* NSStringPunycodeAdditions.m in Sources */,
 				B24106F822450B860014E4D0 /* main.m in Sources */,
+				B2552E3622B13CBC0015B473 /* Controller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,6 +1070,7 @@
 			files = (
 				B301345F1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m in Sources */,
 				B2D4E99B08E0191700574ACD /* main.m in Sources */,
+				B2552E3522B13CBC0015B473 /* Controller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
