@@ -114,6 +114,12 @@
 		B24106FB22450B860014E4D0 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; };
 		B24106FC22450B860014E4D0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B24106FD22450B860014E4D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		B2552E2022B134650015B473 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E1F22B134650015B473 /* AppDelegate.m */; };
+		B2552E2322B134650015B473 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2222B134650015B473 /* ViewController.m */; };
+		B2552E2622B134650015B473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2422B134650015B473 /* Main.storyboard */; };
+		B2552E2822B134680015B473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2722B134680015B473 /* Assets.xcassets */; };
+		B2552E2B22B134680015B473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2922B134680015B473 /* LaunchScreen.storyboard */; };
+		B2552E2E22B134680015B473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2D22B134680015B473 /* main.m */; };
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753811F3CE8B2002606DD /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
@@ -266,6 +272,16 @@
 		B23AAC60221511F300A450E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B23AAC62221511FE00A450E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B241070222450B860014E4D0 /* PunyCocoa MRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa MRR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2552E1C22B134650015B473 /* PunyCocoaTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunyCocoaTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2552E1E22B134650015B473 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B2552E1F22B134650015B473 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B2552E2122B134650015B473 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B2552E2222B134650015B473 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B2552E2522B134650015B473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2552E2722B134680015B473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B2552E2A22B134680015B473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B2552E2C22B134680015B473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2552E2D22B134680015B473 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B255A5591500C4800073DF21 /* PunycodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B255A5611500C4800073DF21 /* PunycodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PunycodeTests-Info.plist"; sourceTree = "<group>"; };
 		B255A5631500C4800073DF21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -391,6 +407,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2552E1922B134650015B473 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B255A5551500C4800073DF21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -436,6 +459,7 @@
 				B2D4E9A208E0191800574ACD /* PunyCocoa.app */,
 				B241070222450B860014E4D0 /* PunyCocoa MRR.app */,
 				B255A5591500C4800073DF21 /* PunycodeTests.xctest */,
+				B2552E1C22B134650015B473 /* PunyCocoaTouch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -448,6 +472,7 @@
 				B29EC659228102AE00478825 /* Shared */,
 				B29EC65B228102E300478825 /* Mac */,
 				B255A55F1500C4800073DF21 /* PunycodeTests */,
+				B2552E1D22B134650015B473 /* iOS */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -472,6 +497,22 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2552E1D22B134650015B473 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B2552E1E22B134650015B473 /* AppDelegate.h */,
+				B2552E1F22B134650015B473 /* AppDelegate.m */,
+				B2552E2122B134650015B473 /* ViewController.h */,
+				B2552E2222B134650015B473 /* ViewController.m */,
+				B2552E2422B134650015B473 /* Main.storyboard */,
+				B2552E2722B134680015B473 /* Assets.xcassets */,
+				B2552E2922B134680015B473 /* LaunchScreen.storyboard */,
+				B2552E2C22B134680015B473 /* Info.plist */,
+				B2552E2D22B134680015B473 /* main.m */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 		B255A55F1500C4800073DF21 /* PunycodeTests */ = {
@@ -856,6 +897,23 @@
 			productReference = B241070222450B860014E4D0 /* PunyCocoa MRR.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B2552E1B22B134650015B473 /* PunyCocoaTouch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2552E3122B134680015B473 /* Build configuration list for PBXNativeTarget "PunyCocoaTouch" */;
+			buildPhases = (
+				B2552E1822B134650015B473 /* Sources */,
+				B2552E1922B134650015B473 /* Frameworks */,
+				B2552E1A22B134650015B473 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PunyCocoaTouch;
+			productName = PunyCocoaTouch;
+			productReference = B2552E1C22B134650015B473 /* PunyCocoaTouch.app */;
+			productType = "com.apple.product-type.application";
+		};
 		B255A5581500C4800073DF21 /* PunycodeTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B255A5691500C4800073DF21 /* Build configuration list for PBXNativeTarget "PunycodeTests" */;
@@ -902,6 +960,13 @@
 			attributes = {
 				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					B2552E1B22B134650015B473 = {
+						CreatedOnToolsVersion = 10.2.1;
+						DevelopmentTeam = M72QZ9W58G;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = B2B33EAC0A9B4534002D5B27 /* Build configuration list for PBXProject "Punycode" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -917,6 +982,7 @@
 			targets = (
 				B2D4E99208E0191700574ACD /* PunyCocoa */,
 				B241068C22450B860014E4D0 /* PunyCocoa MRR */,
+				B2552E1B22B134650015B473 /* PunyCocoaTouch */,
 				B255A5581500C4800073DF21 /* PunycodeTests */,
 			);
 		};
@@ -930,6 +996,16 @@
 				B24106F322450B860014E4D0 /* MainMenu.xib in Resources */,
 				B24106F422450B860014E4D0 /* InfoPlist.strings in Resources */,
 				B24106F522450B860014E4D0 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2552E1A22B134650015B473 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2552E2B22B134680015B473 /* LaunchScreen.storyboard in Resources */,
+				B2552E2822B134680015B473 /* Assets.xcassets in Resources */,
+				B2552E2622B134650015B473 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,6 +1037,16 @@
 			files = (
 				B24106F722450B860014E4D0 /* NSStringPunycodeAdditions.m in Sources */,
 				B24106F822450B860014E4D0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2552E1822B134650015B473 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2552E2322B134650015B473 /* ViewController.m in Sources */,
+				B2552E2E22B134680015B473 /* main.m in Sources */,
+				B2552E2022B134650015B473 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,6 +1095,22 @@
 			);
 			name = MainMenu.xib;
 			path = Mac;
+			sourceTree = "<group>";
+		};
+		B2552E2422B134650015B473 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2552E2522B134650015B473 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B2552E2922B134680015B473 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2552E2A22B134680015B473 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		B255A5621500C4800073DF21 /* InfoPlist.strings */ = {
@@ -1076,6 +1178,84 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B2552E2F22B134680015B473 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = PunyCocoaTouch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoaTouch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2552E3022B134680015B473 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = PunyCocoaTouch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoaTouch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1275,6 +1455,15 @@
 			buildConfigurations = (
 				B241070022450B860014E4D0 /* Debug */,
 				B241070122450B860014E4D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B2552E3122B134680015B473 /* Build configuration list for PBXNativeTarget "PunyCocoaTouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2552E2F22B134680015B473 /* Debug */,
+				B2552E3022B134680015B473 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
