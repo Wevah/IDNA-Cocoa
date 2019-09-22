@@ -33,14 +33,14 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  @property
  @abstract		Converts a Unicode URL string to its encoded equivalent.
- @discussion	This method currently expects <tt>self</tt> to start with a valid scheme (e.g., "http:").
+ @discussion	This method currently expects \c self to start with a valid scheme (e.g., "http:").
  @return		The equivalent IDNA- and percent-encoded URL string.
  */
 @property (readonly, copy, nullable) NSString *encodedURLString;
 /*!
  @property
  @abstract		Converts an encoded URL string to its Unicode equivalent.
- @discussion	This method currently expects <tt>self</tt> to start with a valid scheme (e.g., "http:").
+ @discussion	This method currently expects \c self to start with a valid scheme (e.g., "http:").
  @return		The equivalent Unicode URL string.
  */
 @property (readonly, copy, nullable) NSString *decodedURLString;
@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSURL (PunycodeAdditions)
 
 /*!
- @property
+ @method
  @abstract		Initializes an URL with a Unicode URL string.
  @discussion	Equivalent to <tt>[NSURL URLWithString:URLString.encodedURLString]</tt>.
  @return		An encoded NSURL.
