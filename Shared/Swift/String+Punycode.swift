@@ -329,11 +329,14 @@ private extension String {
 
 				if delim.hasPrefix(":") {
 					scheme = hostOrScheme
+
+					if !s.isAtEnd {
+						host = s.scanUpToCharacters(from: slashQuestion)!
+					}
+				} else {
+					host = hostOrScheme
 				}
 
-				if !s.isAtEnd {
-					host = s.scanUpToCharacters(from: slashQuestion)!
-				}
 			} else {
 				host = hostOrScheme
 			}
