@@ -24,6 +24,13 @@
 
 #endif
 
+
+#if __has_feature(objc_arc)
+#define PUNYCODE_COCOA_AUTORELEASE(x) x
+#else
+#define PUNYCODE_COCOA_AUTORELEASE(x) [x autorelease]
+#endif
+
 #if !defined(PUNYCODE_COCOA_USE_WEBKIT) && !defined(PUNYCODE_COCOA_USE_ICU)
 
 // Encoding/decoding adapted/lifted from the example code in the IDNA Punycode spec (RFC 3492).
@@ -286,11 +293,7 @@ static UIDNA *uidnaEncoder() {
 		[utf32data replaceBytesInRange:NSMakeRange(i * sizeof(UTF32Char), 0) withBytes:&n length:sizeof(n)];
 	}
 	
-#if __has_feature(objc_arc)
-	return [[NSString alloc] initWithData:utf32data encoding:UTF32_ENCODING];
-#else
-	return [[[NSString alloc] initWithData:utf32data encoding:UTF32_ENCODING] autorelease];
-#endif
+	return PUNYCODE_COCOA_AUTORELEASE([[NSString alloc] initWithData:utf32data encoding:UTF32_ENCODING]);
 }
 
 #endif // PUNYCODE_COCOA_USE_WEBKIT
