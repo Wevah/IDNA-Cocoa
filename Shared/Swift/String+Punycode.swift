@@ -368,13 +368,16 @@ private extension String {
 }
 
 public extension URL {
-//	init?(unicodeString: String) {
-//
-//	}
-//
-//	var decodedURLString: String? {
-//
-//	}
+
+	init?(unicodeString: String) {
+		guard let encodedString = unicodeString.encodedURLString else { return nil }
+		self.init(string: encodedString)
+	}
+
+	var decodedURLString: String? {
+		return self.absoluteString.decodedURLString
+	}
+
 }
 
 private enum Punycode {
