@@ -200,7 +200,7 @@ private extension String {
 							break
 						}
 
-						let encodedDigit = Punycode.encodeDigit(t + (q - t) % (Punycode.base - t), flag: 0)
+						let encodedDigit = Punycode.encodeDigit(t + (q - t) % (Punycode.base - t), flag: false)
 
 						result.unicodeScalars.append(UnicodeScalar(encodedDigit)!)
 						q = (q - t) / (Punycode.base - t)
@@ -208,7 +208,7 @@ private extension String {
 						k += Punycode.base
 					}
 
-					result.unicodeScalars.append(UnicodeScalar(Punycode.encodeDigit(q, flag: 0))!)
+					result.unicodeScalars.append(UnicodeScalar(Punycode.encodeDigit(q, flag: false))!)
 					bias = Punycode.adapt(delta: delta, numPoints: h + 1, firstTime: h == b)
 					delta = 0
 					h += 1
@@ -395,8 +395,8 @@ private enum Punycode {
 			cp - 97 < 26 ? cp - 97 : Self.base
 	}
 
-	static func encodeDigit(_ d: UInt32, flag: Int) -> UInt32 {
-		return d + 22 + 75 * (d < 26 ? 1 : 0) - ((flag != 0 ? 1 : 0) << 5)
+	static func encodeDigit(_ d: UInt32, flag: Bool) -> UInt32 {
+		return d + 22 + 75 * (d < 26 ? 1 : 0) - ((flag ? 1 : 0) << 5)
 	}
 
 	static let maxint = UInt32.max
