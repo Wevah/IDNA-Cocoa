@@ -396,7 +396,7 @@ private enum Punycode {
 	}
 
 	static func encodeDigit(_ d: UInt32, flag: Bool) -> UInt32 {
-		return d + 22 + 75 * (d < 26 ? 1 : 0) - ((flag ? 1 : 0) << 5)
+		return d + 22 + 75 * UInt32(d < 26 ? 1 : 0) - ((flag ? 1 : 0) << 5)
 	}
 
 	static let maxint = UInt32.max
