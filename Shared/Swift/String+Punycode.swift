@@ -336,7 +336,6 @@ private extension String {
 				} else {
 					host = hostOrScheme
 				}
-
 			} else {
 				host = hostOrScheme
 			}
