@@ -204,6 +204,8 @@ private extension String {
 
 						result.unicodeScalars.append(UnicodeScalar(encodedDigit)!)
 						q = (q - t) / (Punycode.base - t)
+
+						k += Punycode.base
 					}
 
 					result.unicodeScalars.append(UnicodeScalar(Punycode.encodeDigit(q, flag: 0))!)
