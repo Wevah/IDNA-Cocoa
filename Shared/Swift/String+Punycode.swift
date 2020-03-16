@@ -281,7 +281,7 @@ private extension String {
 
 				i += digit * w
 				t = k <= bias ? Punycode.tmin :
-					(k >= bias + Punycode.tmax ? Punycode.tmax : k - bias)
+					k >= bias + Punycode.tmax ? Punycode.tmax : k - bias
 
 				if digit < t {
 					break
