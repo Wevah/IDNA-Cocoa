@@ -228,7 +228,6 @@ private extension String {
 		var n = Punycode.initialN
 		var outLen: UInt32 = 0
 		var i: UInt32 = 0
-		//var maxOut = UInt32.max
 		var bias = Punycode.initialBias
 
 
@@ -240,10 +239,6 @@ private extension String {
 				break
 			}
 		}
-
-//		if b > maxOut {
-//			return nil // big output
-//		}
 
 		for j in scalars.indices {
 			if j >= b {
@@ -426,10 +421,6 @@ fileprivate enum Punycode {
 
 		delta = firstTime ? delta / Self.damp : delta >> 1;
 		delta += delta / numPoints
-
-//		for (k = 0; delta > ((base - tmin) * tmax) / 2; k += base) {
-//			delta /= Self.base - Self.tmin
-//		}
 
 		var k: UInt32 = 0
 
