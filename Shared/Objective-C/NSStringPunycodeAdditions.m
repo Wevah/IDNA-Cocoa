@@ -409,7 +409,7 @@ static UIDNA *uidnaEncoder() {
 	NSString *fragment = nil;
 	
 	if ([s scanUpToCharactersFromSet:colonSlash intoString:&host]) {
-		if (!s.isAtEnd && [s scanCharactersFromSet:colonSlash intoString:&delim]) {
+		if ([s scanCharactersFromSet:colonSlash intoString:&delim]) {
 
 			if ([delim hasPrefix:@":"]) {
 				scheme = host;
