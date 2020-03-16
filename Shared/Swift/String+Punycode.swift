@@ -317,10 +317,10 @@ private extension String {
 		let s = Scanner(string: self.precomposedStringWithCompatibilityMapping)
 		var scheme = ""
 		var delim = ""
-		var username: String? = nil
-		var password: String? = nil
 		var host = ""
 		var path = ""
+		var username: String? = nil
+		var password: String? = nil
 		var fragment: String? = nil
 
 		if let hostOrScheme = s.scanUpToCharacters(from: colonSlash) {

@@ -402,10 +402,10 @@ static UIDNA *uidnaEncoder() {
 	NSScanner *s = [NSScanner scannerWithString:self.precomposedStringWithCompatibilityMapping];
 	NSString *scheme = @"";
 	NSString *delim = @"";
-	NSString *username = nil;
-	NSString *password = nil;
 	NSString *host = @"";
 	NSString *path = @"";
+	NSString *username = nil;
+	NSString *password = nil;
 	NSString *fragment = nil;
 	
 	if ([s scanUpToCharactersFromSet:colonSlash intoString:&host]) {
