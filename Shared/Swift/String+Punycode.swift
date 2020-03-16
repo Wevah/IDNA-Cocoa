@@ -377,7 +377,7 @@ public extension URL {
 //	}
 }
 
-fileprivate enum Punycode {
+private enum Punycode {
 	static let base = UInt32(36)
 	static let tmin = UInt32(1)
 	static let tmax = UInt32(26)
