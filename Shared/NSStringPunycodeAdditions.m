@@ -116,7 +116,9 @@ static UIDNA *uidnaEncoder() {
 	dispatch_once(&onceToken, ^{
 		UErrorCode err = U_ZERO_ERROR;
 		encoder = uidna_openUTS46(UIDNA_CHECK_BIDI | UIDNA_CHECK_CONTEXTJ | UIDNA_NONTRANSITIONAL_TO_UNICODE | UIDNA_NONTRANSITIONAL_TO_ASCII, &err);
-		NSLog(@"%d", err);
+
+		if (U_FAILURE(err))
+			NSLog(@"%d", err);
 	});
 
 	return encoder;
