@@ -63,26 +63,26 @@ public extension String {
 
 	var encodedURLString: String? {
 		let urlParts = self.urlParts
-		var path = urlParts["path"]
+		var pathAndQuery = urlParts.pathAndQuery
 
 		var allowedCharacters = CharacterSet.urlPathAllowed
 		allowedCharacters.insert(charactersIn: "%")
 		allowedCharacters.insert(charactersIn: "?")
-		path = path?.addingPercentEncoding(withAllowedCharacters: allowedCharacters) ?? ""
+		pathAndQuery = pathAndQuery.addingPercentEncoding(withAllowedCharacters: allowedCharacters) ?? ""
 
-		var result = "\(urlParts["scheme", default: ""])\(urlParts["delim", default: ""])"
+		var result = "\(urlParts.scheme)\(urlParts.delim)"
 
-		if let username = urlParts["username"] {
-			if let password = urlParts["password"] {
+		if let username = urlParts.username?.addingPercentEncoding(withAllowedCharacters: .urlUserAllowed) {
+			if let password = urlParts.password?.addingPercentEncoding(withAllowedCharacters: .urlPasswordAllowed) {
 				result.append("\(username):\(password)@")
 			} else {
 				result.append("\(username)@")
 			}
 		}
 
-		result.append("\(urlParts["host"]?.idnaEncoded ?? "")\(path ?? "")")
+		result.append("\(urlParts.host.idnaEncoded ?? "")\(pathAndQuery )")
 
-		if var fragment = urlParts["fragment"] {
+		if var fragment = urlParts.fragment {
 			var fragmentAlloweCharacters = CharacterSet.urlFragmentAllowed
 			fragmentAlloweCharacters.insert(charactersIn: "%")
 			fragment = fragment.addingPercentEncoding(withAllowedCharacters: fragmentAlloweCharacters) ?? ""
@@ -97,17 +97,17 @@ public extension String {
 		let urlParts = self.urlParts
 		var usernamePassword = ""
 
-		if let username = urlParts["username"] {
-			if let password = urlParts["password"] {
+		if let username = urlParts.username?.removingPercentEncoding {
+			if let password = urlParts.password?.removingPercentEncoding {
 				usernamePassword = "\(username):\(password)@"
 			} else {
 				usernamePassword = "\(username)@"
 			}
 		}
 
-		var result = "\(urlParts["scheme", default: ""])\(urlParts["delim", default: ""])\(usernamePassword)\(urlParts["host"]?.idnaDecoded ?? "")\(urlParts["path"]?.removingPercentEncoding ?? "")"
+		var result = "\(urlParts.scheme)\(urlParts.delim)\(usernamePassword)\(urlParts.host.idnaDecoded ?? "")\(urlParts.pathAndQuery.removingPercentEncoding ?? "")"
 
-		if let fragment = urlParts["fragment"]?.removingPercentEncoding {
+		if let fragment = urlParts.fragment?.removingPercentEncoding {
 			result.append("#\(fragment)")
 		}
 
@@ -309,7 +309,7 @@ private extension String {
 		return result
 	}
 
-	var urlParts: [String: String] {
+	var urlParts: URLParts {
 		let colonSlash = CharacterSet(charactersIn: ":/")
 		let slashQuestion = CharacterSet(charactersIn: "/?")
 		let s = Scanner(string: self.precomposedStringWithCompatibilityMapping)
@@ -360,26 +360,7 @@ private extension String {
 				host = usernamePasswordHostPort[1]
 		}
 
-		var parts = [
-			"scheme": scheme,
-			"delim": delim,
-			"host": host,
-			"path": path,
-		]
-
-		if username != nil {
-			parts["username"] = username!
-		}
-
-		if password != nil {
-			parts["password"] = password!
-		}
-
-		if fragment != nil {
-			parts["fragment"] = fragment!
-		}
-
-		return parts
+		return URLParts(scheme: scheme, delim: delim, host: host, pathAndQuery: path, username: username, password: password, fragment: fragment)
 	}
 
 }
@@ -431,4 +412,15 @@ fileprivate enum Punycode {
 
 		return k + (Self.base - Self.tmin + 1) * delta / (delta + Self.skew);
 	}
+}
+
+private struct URLParts {
+	var scheme: String
+	var delim: String
+	var host: String
+	var pathAndQuery: String
+
+	var username: String?
+	var password: String?
+	var fragment: String?
 }
