@@ -1518,6 +1518,7 @@
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../pod";
 				LIBRARY_SEARCH_PATHS = "/usr/lib/**";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=100";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
@@ -1554,6 +1555,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../pod";
 				LIBRARY_SEARCH_PATHS = "/usr/lib/**";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=100";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
