@@ -242,16 +242,12 @@ static UIDNA *uidnaEncoder() {
 	NSUInteger input_length = self.length;
 	UTF32Char n = initial_n;
 	NSUInteger outLen = i = 0;
-	NSUInteger max_out = NSUIntegerMax;
 	NSUInteger bias = initial_bias;
 	
 	for (b = j = 0;  j < input_length;  ++j)
 		if (delim([self characterAtIndex:j]))
 			b = j;
-	
-	if (b > max_out)
-		return nil; //punycode_big_output;
-	
+		
 	for (j = 0;  j < b;  ++j) {
 		UTF32Char c = (UTF32Char)[self characterAtIndex:j];
 		
