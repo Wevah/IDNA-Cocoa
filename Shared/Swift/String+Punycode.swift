@@ -177,15 +177,13 @@ private extension String {
 	private var punycodeEncoded: String? {
 		let variationStripped = self.deletingIgnoredCharacters
 		var result = ""
-		var delta: UInt32 = 0, outLen: UInt32 = 0, bias: UInt32 = 0
-		var m: UInt32 = 0, q: UInt32 = 0, k: UInt32 = 0, t: UInt32 = 0
 		let scalars = variationStripped.unicodeScalars
 		let inputLength = scalars.count
 
 		var n = Punycode.initialN
-		delta = 0
-		outLen = 0
-		bias = Punycode.initialBias
+		var delta: UInt32 = 0
+		var outLen: UInt32 = 0
+		var bias = Punycode.initialBias
 
 		for scalar in scalars {
 			if scalar.isASCII {
@@ -204,7 +202,7 @@ private extension String {
 		// Main encoding loop:
 
 		while h < inputLength {
-			m = UInt32.max
+			var m = UInt32.max
 
 			for c in scalars {
 				if c.value >= n && c.value < m {
@@ -230,11 +228,11 @@ private extension String {
 				}
 
 				if c.value == n {
-					q = delta
-					k = Punycode.base
+					var q = delta
+					var k = Punycode.base
 
 					while true {
-						t = k <= bias ? Punycode.tmin :
+						let t = k <= bias ? Punycode.tmin :
 							k >= bias + Punycode.tmax ? Punycode.tmax : k - bias
 
 						if q < t {
@@ -273,7 +271,6 @@ private extension String {
 		var i: UInt32 = 0
 		var bias = Punycode.initialBias
 
-
 		var b = scalars.startIndex
 
 		for j in scalars.indices {
@@ -305,7 +302,6 @@ private extension String {
 
 			var k = Punycode.base
 			var w: UInt32 = 1
-			var t: UInt32
 			let oldi = i
 
 			while true {
@@ -321,7 +317,7 @@ private extension String {
 				if digit > (UInt32.max - i) / w { return nil } // overflow
 
 				i += digit * w
-				t = k <= bias ? Punycode.tmin :
+				let t = k <= bias ? Punycode.tmin :
 					k >= bias + Punycode.tmax ? Punycode.tmax : k - bias
 
 				if digit < t {
