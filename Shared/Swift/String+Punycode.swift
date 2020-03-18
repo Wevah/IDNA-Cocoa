@@ -9,6 +9,11 @@ import Foundation
 
 public extension String {
 
+
+	/// The IDNA-encoded representation of a Unicode domain.
+	///
+	/// This will properly split domains on periods; e.g.,
+	/// "www.bücher.ch" becomes "www.xn--bcher-kva.ch".
 	var idnaEncoded: String? {
 		let nonASCII = CharacterSet(charactersIn: UnicodeScalar(0)...UnicodeScalar(127)).inverted
 		var result = ""
@@ -36,6 +41,10 @@ public extension String {
 		return result
 	}
 
+	/// The Unicode representation of an IDNA-encoded domain.
+	///
+	/// This will properly split domains on periods; e.g.,
+	/// "www.xn--bcher-kva.ch" becomes "www.bücher.ch".
 	var idnaDecoded: String? {
 		var result = ""
 		let s = Scanner(string: self)
@@ -61,6 +70,8 @@ public extension String {
 		return result
 	}
 
+
+	/// The IDNA- and percent-encoded representation of a URL string.
 	var encodedURLString: String? {
 		let urlParts = self.urlParts
 		var pathAndQuery = urlParts.pathAndQuery
@@ -93,6 +104,7 @@ public extension String {
 		return result
 	}
 
+	/// The Unicode representation of an IDNA- and percent-encoded URL string.
 	var decodedURLString: String? {
 		let urlParts = self.urlParts
 		var usernamePassword = ""
@@ -112,6 +124,35 @@ public extension String {
 		}
 
 		return result
+	}
+
+}
+
+public extension URL {
+
+	/// Initializes a URL with a Unicode URL string.
+	///
+	/// If `unicodeString` can be successfully encoded, equivalent to
+	///
+	/// ```
+	/// URL(string: unicodeString.encodedURLString!)
+	/// ```
+	///
+	/// - Parameter unicodeString: The unicode URL string with which to create a URL.
+	init?(unicodeString: String) {
+		guard let encodedString = unicodeString.encodedURLString else { return nil }
+		self.init(string: encodedString)
+	}
+
+	/// The IDNA- and percent-decoded representation of the URL.
+	///
+	/// Equivalent to
+	///
+	///	```
+	/// self.absoluteString.decodedURLString
+	/// ```
+	var decodedURLString: String? {
+		return self.absoluteString.decodedURLString
 	}
 
 }
@@ -365,19 +406,6 @@ private extension String {
 		}
 
 		return URLParts(scheme: scheme, delim: delim, host: host, pathAndQuery: path, username: username, password: password, fragment: fragment)
-	}
-
-}
-
-public extension URL {
-
-	init?(unicodeString: String) {
-		guard let encodedString = unicodeString.encodedURLString else { return nil }
-		self.init(string: encodedString)
-	}
-
-	var decodedURLString: String? {
-		return self.absoluteString.decodedURLString
 	}
 
 }
