@@ -9,7 +9,6 @@ import Foundation
 
 public extension String {
 
-
 	/// The IDNA-encoded representation of a Unicode domain.
 	///
 	/// This will properly split domains on periods; e.g.,
