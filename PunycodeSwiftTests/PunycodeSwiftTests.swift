@@ -24,8 +24,8 @@ class PunycodeSwiftTests: XCTestCase {
 	func testIDNDecoding() {
 		let dict = [
 			"http://www.xn--bcher-kva.ch/":	"http://www.bücher.ch/",
-			"xn--d1abbgf6aiiy": "президент",
-			"xn--r8jz45g": "例え"
+			"xn--d1abbgf6aiiy":				"президент",
+			"xn--r8jz45g": 					"例え"
 		]
 
 		for (key, value) in dict {
@@ -35,12 +35,12 @@ class PunycodeSwiftTests: XCTestCase {
 
 	func testFullURLEncoding() {
 		let dict = [
-			"http://www.bücher.ch/":					"http://www.xn--bcher-kva.ch/",
-			"http://www.bücher.ch/bücher":				"http://www.xn--bcher-kva.ch/b%C3%BCcher",
-			"https://www.google.co.jp/webhp?foo#q=渋谷":	"https://www.google.co.jp/webhp?foo#q=%E6%B8%8B%E8%B0%B7",
+			"http://www.bücher.ch/":						"http://www.xn--bcher-kva.ch/",
+			"http://www.bücher.ch/bücher":					"http://www.xn--bcher-kva.ch/b%C3%BCcher",
+			"https://www.google.co.jp/webhp?foo#q=渋谷":		"https://www.google.co.jp/webhp?foo#q=%E6%B8%8B%E8%B0%B7",
 			"https://www.google.co.jp/webhp?foo#q=%20渋谷":	"https://www.google.co.jp/webhp?foo#q=%20%E6%B8%8B%E8%B0%B7",
-			"http://localhost:3000":					"http://localhost:3000",
-			"http://localhost?fü":						"http://localhost?f%C3%BC"
+			"http://localhost:3000":						"http://localhost:3000",
+			"http://localhost?fü":							"http://localhost?f%C3%BC"
 		]
 
 		for (key, value) in dict {
