@@ -98,7 +98,7 @@ public extension String {
 			fragmentAlloweCharacters.insert(charactersIn: "%")
 			fragment = fragment.addingPercentEncoding(withAllowedCharacters: fragmentAlloweCharacters) ?? ""
 
-			result.append(fragment)
+			result.append("#\(fragment)")
 		}
 
 		return result
@@ -159,7 +159,7 @@ public extension URL {
 
 private extension String {
 
-	private var deletingIgnoredCharacters: String {
+	var deletingIgnoredCharacters: String {
 		var ignoredCharacters = CharacterSet(charactersIn: "\u{00AD}\u{034F}\u{1806}\u{180B}\u{180C}\u{180D}\u{200B}\u{200C}\u{200D}\u{2060}\u{FEFF}")
 		ignoredCharacters.insert(charactersIn: UnicodeScalar(0xFE00)!...UnicodeScalar(0xFE0F)!)
 
@@ -174,7 +174,7 @@ private extension String {
 		return result
 	}
 
-	private var punycodeEncoded: String? {
+	var punycodeEncoded: String? {
 		let variationStripped = self.deletingIgnoredCharacters
 		var result = ""
 		let scalars = variationStripped.unicodeScalars
@@ -261,7 +261,7 @@ private extension String {
 		return result
 	}
 
-	private var punycodeDecoded: String? {
+	var punycodeDecoded: String? {
 		var result = ""
 		let scalars = self.unicodeScalars
 
