@@ -113,6 +113,8 @@
 		B24106FB22450B860014E4D0 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; };
 		B24106FC22450B860014E4D0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B24106FD22450B860014E4D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		B245857A2423206100CC75A4 /* PunycodeSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */; };
+		B245857F2423214300CC75A4 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B2552E2022B134650015B473 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E1F22B134650015B473 /* AppDelegate.m */; };
 		B2552E2322B134650015B473 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2222B134650015B473 /* ViewController.m */; };
 		B2552E2622B134650015B473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2422B134650015B473 /* Main.storyboard */; };
@@ -284,6 +286,9 @@
 		B23AAC60221511F300A450E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B23AAC62221511FE00A450E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B241070222450B860014E4D0 /* PunyCocoa MRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa MRR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B24585772423206100CC75A4 /* PunycodeSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunycodeSwiftTests.swift; sourceTree = "<group>"; };
+		B245857B2423206100CC75A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2552E1C22B134650015B473 /* PunyCocoaTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunyCocoaTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2552E1E22B134650015B473 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B2552E1F22B134650015B473 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -428,6 +433,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B24585742423206100CC75A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2552E1922B134650015B473 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -489,6 +501,7 @@
 				B255A5591500C4800073DF21 /* PunycodeTests.xctest */,
 				B2552E1C22B134650015B473 /* PunyCocoaTouch.app */,
 				B2C3DD42241FECF200484850 /* PunyCocoa Swift.app */,
+				B24585772423206100CC75A4 /* PunycodeSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -501,8 +514,9 @@
 				B29EC659228102AE00478825 /* Shared */,
 				B29EC65B228102E300478825 /* Mac */,
 				B2C3DD43241FECF200484850 /* Mac (Swift) */,
-				B255A55F1500C4800073DF21 /* PunycodeTests */,
 				B2552E1D22B134650015B473 /* iOS */,
+				B255A55F1500C4800073DF21 /* PunycodeTests */,
+				B24585782423206100CC75A4 /* PunycodeSwiftTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				B2C3DD3A241FEC7F00484850 /* PunyCocoa copy-Info.plist */,
@@ -528,6 +542,15 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B24585782423206100CC75A4 /* PunycodeSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */,
+				B245857B2423206100CC75A4 /* Info.plist */,
+			);
+			path = PunycodeSwiftTests;
 			sourceTree = "<group>";
 		};
 		B2552E1D22B134650015B473 /* iOS */ = {
@@ -958,6 +981,23 @@
 			productReference = B241070222450B860014E4D0 /* PunyCocoa MRR.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B24585762423206100CC75A4 /* PunycodeSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B245857C2423206100CC75A4 /* Build configuration list for PBXNativeTarget "PunycodeSwiftTests" */;
+			buildPhases = (
+				B24585732423206100CC75A4 /* Sources */,
+				B24585742423206100CC75A4 /* Frameworks */,
+				B24585752423206100CC75A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PunycodeSwiftTests;
+			productName = PunycodeSwiftTests;
+			productReference = B24585772423206100CC75A4 /* PunycodeSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B2552E1B22B134650015B473 /* PunyCocoaTouch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2552E3122B134680015B473 /* Build configuration list for PBXNativeTarget "PunyCocoaTouch" */;
@@ -1040,6 +1080,11 @@
 				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 1100;
 				TargetAttributes = {
+					B24585762423206100CC75A4 = {
+						CreatedOnToolsVersion = 11.3.1;
+						DevelopmentTeam = M72QZ9W58G;
+						ProvisioningStyle = Automatic;
+					};
 					B2552E1B22B134650015B473 = {
 						CreatedOnToolsVersion = 10.2.1;
 						DevelopmentTeam = M72QZ9W58G;
@@ -1069,6 +1114,7 @@
 				B241068C22450B860014E4D0 /* PunyCocoa MRR */,
 				B2552E1B22B134650015B473 /* PunyCocoaTouch */,
 				B255A5581500C4800073DF21 /* PunycodeTests */,
+				B24585762423206100CC75A4 /* PunycodeSwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1081,6 +1127,13 @@
 				B24106F322450B860014E4D0 /* MainMenu.xib in Resources */,
 				B24106F422450B860014E4D0 /* InfoPlist.strings in Resources */,
 				B24106F522450B860014E4D0 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B24585752423206100CC75A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1132,6 +1185,15 @@
 				B24106F722450B860014E4D0 /* NSStringPunycodeAdditions.m in Sources */,
 				B24106F822450B860014E4D0 /* main.m in Sources */,
 				B2552E3622B13CBC0015B473 /* Controller.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B24585732423206100CC75A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B245857A2423206100CC75A4 /* PunycodeSwiftTests.swift in Sources */,
+				B245857F2423214300CC75A4 /* String+Punycode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1287,6 +1349,84 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B245857D2423206100CC75A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = PunycodeSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunycodeSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B245857E2423206100CC75A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = PunycodeSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunycodeSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1652,6 +1792,15 @@
 			buildConfigurations = (
 				B241070022450B860014E4D0 /* Debug */,
 				B241070122450B860014E4D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B245857C2423206100CC75A4 /* Build configuration list for PBXNativeTarget "PunycodeSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B245857D2423206100CC75A4 /* Debug */,
+				B245857E2423206100CC75A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
