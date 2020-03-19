@@ -12,6 +12,8 @@ class PunycodeSwiftTests: XCTestCase {
 	func testIDNAEncoding() {
 		let dict = [
 			"http://www.bücher.ch/":	"http://www.xn--bcher-kva.ch/",
+			"президент":				"xn--d1abbgf6aiiy",
+			"例え":						"xn--r8jz45g"
 		]
 
 		for (key, value) in dict {
@@ -21,7 +23,9 @@ class PunycodeSwiftTests: XCTestCase {
 
 	func testIDNDecoding() {
 		let dict = [
-			"http://www.xn--bcher-kva.ch/":	"http://www.bücher.ch/"
+			"http://www.xn--bcher-kva.ch/":	"http://www.bücher.ch/",
+			"xn--d1abbgf6aiiy": "президент",
+			"xn--r8jz45g": "例え"
 		]
 
 		for (key, value) in dict {
