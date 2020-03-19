@@ -7,13 +7,15 @@ by Nate Weaver (Wevah)
 https://derailer.org/  
 https://github.com/Wevah/Punycode-Cocoa
 
-A simple punycode/IDNA category on String and NSString, based on code and documentation from RFC 3492 and RFC 3490.
+A simple punycode/IDNA String extension and NSString category, based on code and documentation from RFC 3492 and RFC 3490.
 
 Use this to convert internationalized domain names (IDN) between Unicode and ASCII.
 
 To use in your own projects, all you need is `String+Punycode.swift` or `NSStringPunycodeAdditions.h/m`. This project includes a sample testing app.
 
 The Objective-C `NSStringPunycodeAdditions` files are compatible with both ARC and Manual Retain Release modes.
+
+Note that these API currently don't do homograph detection.
 
 ## Macros (Objective-C only)
 
