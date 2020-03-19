@@ -25,55 +25,78 @@ Define `PUNYCODE_COCOA_USE_ICU` to use ICU (by default the system's ICU). Using 
 
 ### String/NSString
 
+###### Swift:
 ```swift
 var idnaEncoded: String? { get }
 ```
+
+###### Objective-C:
 ```objc
 @property (readonly, copy, nullable) NSString *IDNAEncodedString;
 ```
-	
+
 If `self` contains non-ASCII, encodes the string's domain components as Punycode and prepends `xn--` to the transformed components.
 
+-----
+
+###### Swift:
 ```swift
 var idnaDecoded: String? { get }
 ```
+
+###### Objective-C:
 ```objc
 @property (readonly, copy, nullable) NSString *IDNADecodedString;
 ```
 
 Decodes a string returned by `idnaEncoded`/`-IDNAEncodedString`.
 
+-----
+
+###### Swift:
 ```swift
 var encodedURLString: String? { get }
 var decodedURLString: String? { get }
 ```
+
+###### Objective-C:
 ```objc
 @property (readonly, copy, nullable) NSString *encodedURLString;
 @property (readonly, copy, nullable) NSString *decodedURLString;
 ```
-	
+
 Performs Punycode encode/decode operations on each appropriate part (the domain bits) of an URL string, and URL encodes/decodes the path/query/fragment.
+
+-----
 
 ### URL/NSURL
 
+###### Swift:
 ```swift
 init?(unicodeString: String)
 ```
+
+###### Objective-C:
 ```objc
 + (nullable instancetype)URLWithUnicodeString:(NSString *)URLString;
 ```
 	
 Convenience initializer equivalent to `URL(string: unicodeString.encodedURLString)`/ `[NSURL URLWithString:URLString.encodedURLString]`.
 
-```objc
+-----
+
+###### Swift:
+```swift
 var decodedURLString: String? { get }
 ```
+
+###### Objective-C:
 ```objc
 @property (readonly, copy, nullable) NSString *decodedURLString;
 ```
 
 Convenience property equivalent to `someURL.absoluteString.decodedURLString`.
 
-----
+-----
 
 © 2012–2020 Nate Weaver (Wevah)
