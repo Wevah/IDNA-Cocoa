@@ -160,13 +160,10 @@ public extension URL {
 private extension String {
 
 	var deletingIgnoredCharacters: String {
-		var ignoredCharacters = CharacterSet(charactersIn: "\u{00AD}\u{034F}\u{1806}\u{180B}\u{180C}\u{180D}\u{200B}\u{200C}\u{200D}\u{2060}\u{FEFF}")
-		ignoredCharacters.insert(charactersIn: UnicodeScalar(0xFE00)!...UnicodeScalar(0xFE0F)!)
-
 		var result = ""
 
 		for cp in self.unicodeScalars {
-			if !ignoredCharacters.contains(cp) {
+			if !Punycode.ignoredCharacters.contains(cp) {
 				result.unicodeScalars.append(cp)
 			}
 		}
@@ -415,6 +412,13 @@ private enum Punycode {
 	static let initialBias = UInt32(72)
 	static let initialN = UInt32(0x80)
 	static let delimiter: Character = "-"
+
+	/// RFC 3454, section 3.1.
+	static let ignoredCharacters: CharacterSet = {
+		var ignoredCharacters = CharacterSet(charactersIn: "\u{00AD}\u{034F}\u{1806}\u{180B}\u{180C}\u{180D}\u{200B}\u{200C}\u{200D}\u{2060}\u{FEFF}")
+		ignoredCharacters.insert(charactersIn: UnicodeScalar(0xFE00)!...UnicodeScalar(0xFE0F)!)
+		return ignoredCharacters
+	}()
 
 	static func decodeDigit(_ cp: UInt32) -> UInt32 {
 		return cp - 48 < 10 ? cp - 22 : cp - 65 < 26 ? cp - 65 :
