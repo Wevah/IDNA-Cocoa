@@ -1,5 +1,5 @@
 language: objective-c
 xcode_project: Example/Punycode.xcodeproj
 xcode_scheme: PunyCocoa
-osx_image: xcode7.3
-script: xctool -project Example/Punycode.xcodeproj -scheme PunyCocoa build
+osx_image: xcode11.3
+script: xctool -project ExamplePunycode.xcodeproj -scheme PunyCocoa build
