@@ -11,9 +11,9 @@ A simple punycode/IDNA String extension and NSString category, based on code and
 
 Use this to convert internationalized domain names (IDN) between Unicode and ASCII.
 
-To use in your own projects, all you need is `String+Punycode.swift` or `NSStringPunycodeAdditions.h/m`. This project includes a sample testing app.
+To use in your own projects, all you need is `String+Punycode.swift` or `NSString+Punycode.h/m`. This project includes a sample testing app.
 
-The Objective-C `NSStringPunycodeAdditions` files are compatible with both ARC and Manual Retain Release modes.
+The Objective-C `NSString+Punycode` files are compatible with both ARC and Manual Retain Release modes.
 
 Note that these API currently don't do homograph detection.
 
@@ -21,7 +21,7 @@ Note that these API currently don't do homograph detection.
 
 Define `PUNYCODE_COCOA_USE_WEBKIT` to have Punycode Cocoa methods call internal WebKit methods instead of the custom implementations. Useful if you're already linking against WebKit, or want additional homograph attack protection. However, this probably won't be allowed on the App Store due to its use of private methods.
 
-Define `PUNYCODE_COCOA_USE_ICU` to use ICU (by default the system's ICU). Using the system ICU may get your app rejected if you intend put it on the App Store. Compiling and bundling your own ICU libs (from http://sute.icu-project.org/) is almost certainly allowed, though you will want to build NSStringPunycodeAdditions with the headers from your downloaded library/source.
+Define `PUNYCODE_COCOA_USE_ICU` to use ICU (by default the system's ICU). Using the system ICU may get your app rejected if you intend put it on the App Store. Compiling and bundling your own ICU libs (from http://sute.icu-project.org/) is almost certainly allowed, though you will want to build NSString+Punycode with the headers from your downloaded library/source.
 
 ## Interface
 

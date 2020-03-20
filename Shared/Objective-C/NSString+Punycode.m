@@ -1,5 +1,5 @@
 //
-//  NSStringPunycodeAdditions.m
+//  NSString+Punycode.m
 //  Punycode
 //
 //  Created by Wevah on 2005.11.02.
@@ -10,7 +10,7 @@
 //
 
 
-#import "NSStringPunycodeAdditions.h"
+#import "NSString+Punycode.h"
 
 #if defined(PUNYCODE_COCOA_USE_WEBKIT)
 
@@ -111,7 +111,7 @@ static NSUInteger adapt(unsigned delta, unsigned numpoints, BOOL firsttime) {
 
 @end
 
-@implementation NSString (PunycodeAdditions)
+@implementation NSString (Punycode)
 
 
 #if defined(PUNYCODE_COCOA_USE_ICU)
@@ -538,7 +538,7 @@ static UIDNA *uidnaEncoder() {
 
 @end
 
-@implementation NSURL (PunycodeAdditions)
+@implementation NSURL (Punycode)
 
 + (instancetype)URLWithUnicodeString:(NSString *)URLString {
 #if defined(PUNYCODE_COCOA_USE_WEBKIT)

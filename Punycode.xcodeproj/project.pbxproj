@@ -108,7 +108,7 @@
 		B24106F322450B860014E4D0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		B24106F422450B860014E4D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B24106F522450B860014E4D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
-		B24106F722450B860014E4D0 /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B24106F722450B860014E4D0 /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B24106F822450B860014E4D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		B24106FB22450B860014E4D0 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; };
 		B24106FC22450B860014E4D0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -121,8 +121,8 @@
 		B2552E2822B134680015B473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2722B134680015B473 /* Assets.xcassets */; };
 		B2552E2B22B134680015B473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2922B134680015B473 /* LaunchScreen.storyboard */; };
 		B2552E2E22B134680015B473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2D22B134680015B473 /* main.m */; };
-		B2552E3222B134C40015B473 /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */; };
-		B2552E3322B134CE0015B473 /* NSStringPunycodeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */; };
+		B2552E3222B134C40015B473 /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
+		B2552E3322B134CE0015B473 /* NSString+Punycode.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSString+Punycode.h */; };
 		B2552E3522B13CBC0015B473 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E3422B13CBC0015B473 /* Controller.m */; };
 		B2552E3622B13CBC0015B473 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E3422B13CBC0015B473 /* Controller.m */; };
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
@@ -236,9 +236,9 @@
 		B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B2D4E99B08E0191700574ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		B301345E1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */; };
-		B301345F1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */; };
-		B30134601A964E1E00AF6C4E /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */; };
+		B301345E1A964E1E00AF6C4E /* NSString+Punycode.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSString+Punycode.h */; };
+		B301345F1A964E1E00AF6C4E /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
+		B30134601A964E1E00AF6C4E /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
 		B30134631A964E2600AF6C4E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
 		B30134641A964E2600AF6C4E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
 /* End PBXBuildFile section */
@@ -416,8 +416,8 @@
 		B2CB4DCF07B158A600B4C504 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		B2D4E9A008E0191700574ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mac/Info.plist; sourceTree = "<group>"; };
 		B2D4E9A208E0191800574ACD /* PunyCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunyCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringPunycodeAdditions.h; sourceTree = "<group>"; };
-		B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPunycodeAdditions.m; sourceTree = "<group>"; };
+		B301345C1A964E1E00AF6C4E /* NSString+Punycode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Punycode.h"; sourceTree = "<group>"; };
+		B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Punycode.m"; sourceTree = "<group>"; };
 		B30134611A964E2600AF6C4E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B30134621A964E2600AF6C4E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -716,8 +716,8 @@
 		B2C3DCBF241FE92F00484850 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
-				B301345C1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h */,
-				B301345D1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m */,
+				B301345C1A964E1E00AF6C4E /* NSString+Punycode.h */,
+				B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */,
 			);
 			path = "Objective-C";
 			sourceTree = "<group>";
@@ -753,7 +753,7 @@
 				B241068E22450B860014E4D0 /* ustring.h in Headers */,
 				B241068F22450B860014E4D0 /* uiter.h in Headers */,
 				B241069022450B860014E4D0 /* localpointer.h in Headers */,
-				B2552E3322B134CE0015B473 /* NSStringPunycodeAdditions.h in Headers */,
+				B2552E3322B134CE0015B473 /* NSString+Punycode.h in Headers */,
 				B241069122450B860014E4D0 /* umachine.h in Headers */,
 				B241069222450B860014E4D0 /* utrace.h in Headers */,
 				B241069322450B860014E4D0 /* resbund.h in Headers */,
@@ -897,7 +897,7 @@
 				B26D0CA12051D832009B1935 /* icuplug.h in Headers */,
 				B26D0CB22051D832009B1935 /* udata.h in Headers */,
 				B26D0CD42051D832009B1935 /* ucasemap.h in Headers */,
-				B301345E1A964E1E00AF6C4E /* NSStringPunycodeAdditions.h in Headers */,
+				B301345E1A964E1E00AF6C4E /* NSString+Punycode.h in Headers */,
 				B26D0CBC2051D832009B1935 /* utf.h in Headers */,
 				B26D0CBF2051D832009B1935 /* bytestrie.h in Headers */,
 				B26D0CA52051D832009B1935 /* urep.h in Headers */,
@@ -1182,7 +1182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B24106F722450B860014E4D0 /* NSStringPunycodeAdditions.m in Sources */,
+				B24106F722450B860014E4D0 /* NSString+Punycode.m in Sources */,
 				B24106F822450B860014E4D0 /* main.m in Sources */,
 				B2552E3622B13CBC0015B473 /* Controller.m in Sources */,
 			);
@@ -1201,7 +1201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2552E3222B134C40015B473 /* NSStringPunycodeAdditions.m in Sources */,
+				B2552E3222B134C40015B473 /* NSString+Punycode.m in Sources */,
 				B2552E2322B134650015B473 /* ViewController.m in Sources */,
 				B2552E2E22B134680015B473 /* main.m in Sources */,
 				B2552E2022B134650015B473 /* AppDelegate.m in Sources */,
@@ -1212,7 +1212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B30134601A964E1E00AF6C4E /* NSStringPunycodeAdditions.m in Sources */,
+				B30134601A964E1E00AF6C4E /* NSString+Punycode.m in Sources */,
 				B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1231,7 +1231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B301345F1A964E1E00AF6C4E /* NSStringPunycodeAdditions.m in Sources */,
+				B301345F1A964E1E00AF6C4E /* NSString+Punycode.m in Sources */,
 				B2D4E99B08E0191700574ACD /* main.m in Sources */,
 				B2552E3522B13CBC0015B473 /* Controller.m in Sources */,
 			);

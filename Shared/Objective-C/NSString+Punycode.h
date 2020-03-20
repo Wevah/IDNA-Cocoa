@@ -1,5 +1,5 @@
 //
-//  NSStringPunycodeAdditions.h
+//  NSString+Punycode.h
 //  Punycode
 //
 //  Created by Wevah on 2005.11.02.
@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (PunycodeAdditions)
+@interface NSString (Punycode)
 
 /*!
  @property
@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface NSURL (PunycodeAdditions)
+@interface NSURL (Punycode)
 
 /*!
  @method

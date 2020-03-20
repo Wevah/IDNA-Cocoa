@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-#import "NSStringPunycodeAdditions.h"
+#import "NSString+Punycode.h"
 
 @interface ViewController ()
 

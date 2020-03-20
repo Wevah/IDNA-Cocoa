@@ -7,7 +7,7 @@
 //
 
 #import "PunycodeTests.h"
-#import "NSStringPunycodeAdditions.h"
+#import "NSString+Punycode.h"
 
 @interface NSString (PunycodePrivate)
 
