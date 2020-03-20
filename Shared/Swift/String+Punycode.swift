@@ -20,7 +20,7 @@ public extension String {
 		let dotAt = CharacterSet(charactersIn: ".@")
 
 		while !s.isAtEnd {
-			if let input = s.scanUpToCharacters(from: dotAt) {
+			if let input = s.shimScanUpToCharacters(from: dotAt) {
 				if input.rangeOfCharacter(from: nonASCII) != nil {
 					result.append("xn--")
 
@@ -32,7 +32,7 @@ public extension String {
 				}
 			}
 
-			if let input = s.scanCharacters(from: dotAt) {
+			if let input = s.shimScanCharacters(from: dotAt) {
 				result.append(input)
 			}
 		}
@@ -50,7 +50,7 @@ public extension String {
 		let dotAt = CharacterSet(charactersIn: ".@")
 
 		while !s.isAtEnd {
-			if let input = s.scanUpToCharacters(from: dotAt) {
+			if let input = s.shimScanUpToCharacters(from: dotAt) {
 				if input.lowercased().hasPrefix("xn--") {
 					let start = input.index(input.startIndex, offsetBy: 4)
 					if let substr = String(input[start...]).punycodeDecoded {
@@ -61,7 +61,7 @@ public extension String {
 				}
 			}
 
-			if let input = s.scanCharacters(from: dotAt) {
+			if let input = s.shimScanCharacters(from: dotAt) {
 				result.append(input)
 			}
 		}
@@ -356,15 +356,15 @@ private extension String {
 		var password: String? = nil
 		var fragment: String? = nil
 
-		if let hostOrScheme = s.scanUpToCharacters(from: colonSlash) {
+		if let hostOrScheme = s.shimScanUpToCharacters(from: colonSlash) {
 			if !s.isAtEnd {
-				delim = s.scanCharacters(from: colonSlash)!
+				delim = s.shimScanCharacters(from: colonSlash)!
 
 				if delim.hasPrefix(":") {
 					scheme = hostOrScheme
 
 					if !s.isAtEnd {
-						host = s.scanUpToCharacters(from: slashQuestion)!
+						host = s.shimScanUpToCharacters(from: slashQuestion)!
 					}
 				} else {
 					host = hostOrScheme
@@ -375,12 +375,12 @@ private extension String {
 		}
 
 		if !s.isAtEnd {
-			path = s.scanUpToString("#")!
+			path = s.shimScanUpToString("#")!
 		}
 
 		if !s.isAtEnd {
-			let _ = s.scanString("#")
-			fragment = s.scanUpToCharacters(from: .newlines)!
+			let _ = s.shimScanString("#")
+			fragment = s.shimScanUpToCharacters(from: .newlines)!
 		}
 
 		let usernamePasswordHostPort = host.components(separatedBy: "@")
@@ -457,4 +457,50 @@ private struct URLParts {
 	var username: String?
 	var password: String?
 	var fragment: String?
+}
+
+// Wrapper functions for < 10.15 compatibility
+// TODO: Remove when support for < 10.15 is dropped.
+private extension Scanner {
+
+	func shimScanUpToCharacters(from set: CharacterSet) -> String? {
+		if #available(macOS 10.15, iOS 13.0, *) {
+			return self.scanUpToCharacters(from: set)
+		} else {
+			var str: NSString?
+			self.scanUpToCharacters(from: set, into: &str)
+			return str as String?
+		}
+	}
+
+	func shimScanCharacters(from set: CharacterSet) -> String? {
+		if #available(macOS 10.15, iOS 13.0, *) {
+			return self.scanCharacters(from: set)
+		} else {
+			var str: NSString?
+			self.scanCharacters(from: set, into: &str)
+			return str as String?
+		}
+	}
+
+	func shimScanUpToString(_ substring: String) -> String? {
+		if #available(macOS 10.15, iOS 13.0, *) {
+			return self.scanUpToString(substring)
+		} else {
+			var str: NSString?
+			self.scanUpTo(substring, into: &str)
+			return str as String?
+		}
+	}
+
+	func shimScanString(_ searchString: String) -> String? {
+		if #available(macOS 10.15, iOS 13.0, *) {
+			return self.scanString(searchString)
+		} else {
+			var str: NSString?
+			self.scanString(searchString, into: &str)
+			return str as String?
+		}
+	}
+
 }
