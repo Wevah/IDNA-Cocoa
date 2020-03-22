@@ -1,5 +1,4 @@
 language: objective-c
-xcode_project: Example/Punycode.xcodeproj
+xcode_project: Punycode.xcodeproj
 xcode_scheme: PunyCocoa
 osx_image: xcode11.3
-script: xcodebuild build -project Punycode.xcodeproj -scheme PunyCocoa
