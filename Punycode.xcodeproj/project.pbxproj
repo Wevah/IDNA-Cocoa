@@ -7,23 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B241069022450B860014E4D0 /* localpointer.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C912051D832009B1935 /* localpointer.h */; };
-		B241069122450B860014E4D0 /* umachine.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C752051D832009B1935 /* umachine.h */; };
-		B241069522450B860014E4D0 /* parseerr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C852051D832009B1935 /* parseerr.h */; };
-		B241069A22450B860014E4D0 /* utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C902051D832009B1935 /* utf8.h */; };
-		B241069E22450B860014E4D0 /* ptypes.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3B2051D832009B1935 /* ptypes.h */; };
-		B241069F22450B860014E4D0 /* utypes.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C942051D832009B1935 /* utypes.h */; };
-		B24106A122450B860014E4D0 /* uversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6D2051D832009B1935 /* uversion.h */; };
-		B24106AF22450B860014E4D0 /* uidna.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6F2051D832009B1935 /* uidna.h */; };
 		B24106B122450B860014E4D0 /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = B2CB4DCF07B158A600B4C504 /* Controller.h */; };
-		B24106B922450B860014E4D0 /* utf.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5B2051D832009B1935 /* utf.h */; };
-		B24106C622450B860014E4D0 /* urename.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C642051D832009B1935 /* urename.h */; };
-		B24106CA22450B860014E4D0 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8D2051D832009B1935 /* platform.h */; };
-		B24106CB22450B860014E4D0 /* uvernum.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C822051D832009B1935 /* uvernum.h */; };
 		B24106CF22450B860014E4D0 /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
-		B24106E322450B860014E4D0 /* utf16.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8B2051D832009B1935 /* utf16.h */; };
-		B24106E522450B860014E4D0 /* utf_old.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C362051D832009B1935 /* utf_old.h */; };
-		B24106EC22450B860014E4D0 /* uconfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8A2051D832009B1935 /* uconfig.h */; };
 		B24106F322450B860014E4D0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		B24106F422450B860014E4D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B24106F522450B860014E4D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
@@ -47,21 +32,6 @@
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		B26D0C972051D832009B1935 /* utf_old.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C362051D832009B1935 /* utf_old.h */; };
-		B26D0C9C2051D832009B1935 /* ptypes.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C3B2051D832009B1935 /* ptypes.h */; };
-		B26D0CBC2051D832009B1935 /* utf.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C5B2051D832009B1935 /* utf.h */; };
-		B26D0CC52051D832009B1935 /* urename.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C642051D832009B1935 /* urename.h */; };
-		B26D0CCE2051D832009B1935 /* uversion.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6D2051D832009B1935 /* uversion.h */; };
-		B26D0CD02051D832009B1935 /* uidna.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C6F2051D832009B1935 /* uidna.h */; };
-		B26D0CD62051D832009B1935 /* umachine.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C752051D832009B1935 /* umachine.h */; };
-		B26D0CE22051D832009B1935 /* uvernum.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C822051D832009B1935 /* uvernum.h */; };
-		B26D0CE52051D832009B1935 /* parseerr.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C852051D832009B1935 /* parseerr.h */; };
-		B26D0CEA2051D832009B1935 /* uconfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8A2051D832009B1935 /* uconfig.h */; };
-		B26D0CEB2051D832009B1935 /* utf16.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8B2051D832009B1935 /* utf16.h */; };
-		B26D0CED2051D832009B1935 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C8D2051D832009B1935 /* platform.h */; };
-		B26D0CF02051D832009B1935 /* utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C902051D832009B1935 /* utf8.h */; };
-		B26D0CF12051D832009B1935 /* localpointer.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C912051D832009B1935 /* localpointer.h */; };
-		B26D0CF42051D832009B1935 /* utypes.h in Headers */ = {isa = PBXBuildFile; fileRef = B26D0C942051D832009B1935 /* utypes.h */; };
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B2C3DD3B241FEC9800484850 /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
 		B2C3DD45241FECF200484850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DD44241FECF200484850 /* AppDelegate.swift */; };
@@ -147,21 +117,6 @@
 		B255A5661500C4800073DF21 /* PunycodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PunycodeTests.m; sourceTree = "<group>"; };
 		B25753801F3CE8B2002606DD /* WebNSURLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebNSURLExtras.h; sourceTree = "<group>"; };
 		B25753821F3CE9A9002606DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		B26D0C362051D832009B1935 /* utf_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf_old.h; sourceTree = "<group>"; };
-		B26D0C3B2051D832009B1935 /* ptypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ptypes.h; sourceTree = "<group>"; };
-		B26D0C5B2051D832009B1935 /* utf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf.h; sourceTree = "<group>"; };
-		B26D0C642051D832009B1935 /* urename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = urename.h; sourceTree = "<group>"; };
-		B26D0C6D2051D832009B1935 /* uversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uversion.h; sourceTree = "<group>"; };
-		B26D0C6F2051D832009B1935 /* uidna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uidna.h; sourceTree = "<group>"; };
-		B26D0C752051D832009B1935 /* umachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = umachine.h; sourceTree = "<group>"; };
-		B26D0C822051D832009B1935 /* uvernum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uvernum.h; sourceTree = "<group>"; };
-		B26D0C852051D832009B1935 /* parseerr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseerr.h; sourceTree = "<group>"; };
-		B26D0C8A2051D832009B1935 /* uconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uconfig.h; sourceTree = "<group>"; };
-		B26D0C8B2051D832009B1935 /* utf16.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf16.h; sourceTree = "<group>"; };
-		B26D0C8D2051D832009B1935 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
-		B26D0C902051D832009B1935 /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8.h; sourceTree = "<group>"; };
-		B26D0C912051D832009B1935 /* localpointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = localpointer.h; sourceTree = "<group>"; };
-		B26D0C942051D832009B1935 /* utypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utypes.h; sourceTree = "<group>"; };
 		B26FA03C2055425C00CD6AF1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B2C3DCC1241FE95B00484850 /* String+Punycode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Punycode.swift"; sourceTree = "<group>"; };
 		B2C3DD3A241FEC7F00484850 /* PunyCocoa copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PunyCocoa copy-Info.plist"; path = "/Users/wevah/Projects/Punycode-Cocoa/PunyCocoa copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -172,6 +127,7 @@
 		B2C3DD4C241FECF400484850 /* PunyCocoa_Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PunyCocoa_Swift.entitlements; sourceTree = "<group>"; };
 		B2C3DD52241FEDC800484850 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		B2C3DD54241FEDF900484850 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		B2C59E7224278AF400183346 /* uidna-min.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uidna-min.h"; sourceTree = "<group>"; };
 		B2CB4DCF07B158A600B4C504 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		B2D4B71B2425903000B72AC6 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/libicucore.tbd; sourceTree = DEVELOPER_DIR; };
 		B2D4E9A008E0191700574ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mac/Info.plist; sourceTree = "<group>"; };
@@ -351,35 +307,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B26D0C352051D832009B1935 /* unicode */ = {
-			isa = PBXGroup;
-			children = (
-				B26D0C912051D832009B1935 /* localpointer.h */,
-				B26D0C852051D832009B1935 /* parseerr.h */,
-				B26D0C8D2051D832009B1935 /* platform.h */,
-				B26D0C3B2051D832009B1935 /* ptypes.h */,
-				B26D0C8A2051D832009B1935 /* uconfig.h */,
-				B26D0C6F2051D832009B1935 /* uidna.h */,
-				B26D0C752051D832009B1935 /* umachine.h */,
-				B26D0C642051D832009B1935 /* urename.h */,
-				B26D0C362051D832009B1935 /* utf_old.h */,
-				B26D0C5B2051D832009B1935 /* utf.h */,
-				B26D0C902051D832009B1935 /* utf8.h */,
-				B26D0C8B2051D832009B1935 /* utf16.h */,
-				B26D0C942051D832009B1935 /* utypes.h */,
-				B26D0C822051D832009B1935 /* uvernum.h */,
-				B26D0C6D2051D832009B1935 /* uversion.h */,
-			);
-			path = unicode;
-			sourceTree = "<group>";
-		};
 		B29EC659228102AE00478825 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				B25753801F3CE8B2002606DD /* WebNSURLExtras.h */,
 				B2C3DCC0241FE94400484850 /* Swift */,
 				B2C3DCBF241FE92F00484850 /* Objective-C */,
-				B26D0C352051D832009B1935 /* unicode */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -400,6 +333,7 @@
 			children = (
 				B301345C1A964E1E00AF6C4E /* NSString+Punycode.h */,
 				B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */,
+				B2C59E7224278AF400183346 /* uidna-min.h */,
 			);
 			path = "Objective-C";
 			sourceTree = "<group>";
@@ -432,24 +366,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B241069022450B860014E4D0 /* localpointer.h in Headers */,
 				B2552E3322B134CE0015B473 /* NSString+Punycode.h in Headers */,
-				B241069122450B860014E4D0 /* umachine.h in Headers */,
-				B241069522450B860014E4D0 /* parseerr.h in Headers */,
-				B241069A22450B860014E4D0 /* utf8.h in Headers */,
-				B241069E22450B860014E4D0 /* ptypes.h in Headers */,
-				B241069F22450B860014E4D0 /* utypes.h in Headers */,
-				B24106A122450B860014E4D0 /* uversion.h in Headers */,
-				B24106AF22450B860014E4D0 /* uidna.h in Headers */,
 				B24106B122450B860014E4D0 /* Controller.h in Headers */,
-				B24106B922450B860014E4D0 /* utf.h in Headers */,
-				B24106C622450B860014E4D0 /* urename.h in Headers */,
-				B24106CA22450B860014E4D0 /* platform.h in Headers */,
-				B24106CB22450B860014E4D0 /* uvernum.h in Headers */,
 				B24106CF22450B860014E4D0 /* WebNSURLExtras.h in Headers */,
-				B24106E322450B860014E4D0 /* utf16.h in Headers */,
-				B24106E522450B860014E4D0 /* utf_old.h in Headers */,
-				B24106EC22450B860014E4D0 /* uconfig.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,24 +376,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B26D0CF12051D832009B1935 /* localpointer.h in Headers */,
-				B26D0CD62051D832009B1935 /* umachine.h in Headers */,
-				B26D0CE52051D832009B1935 /* parseerr.h in Headers */,
-				B26D0CF02051D832009B1935 /* utf8.h in Headers */,
-				B26D0C9C2051D832009B1935 /* ptypes.h in Headers */,
-				B26D0CF42051D832009B1935 /* utypes.h in Headers */,
-				B26D0CCE2051D832009B1935 /* uversion.h in Headers */,
-				B26D0CD02051D832009B1935 /* uidna.h in Headers */,
 				B2D4E99608E0191700574ACD /* Controller.h in Headers */,
 				B301345E1A964E1E00AF6C4E /* NSString+Punycode.h in Headers */,
-				B26D0CBC2051D832009B1935 /* utf.h in Headers */,
-				B26D0CC52051D832009B1935 /* urename.h in Headers */,
-				B26D0CED2051D832009B1935 /* platform.h in Headers */,
-				B26D0CE22051D832009B1935 /* uvernum.h in Headers */,
 				B2C3DD3B241FEC9800484850 /* WebNSURLExtras.h in Headers */,
-				B26D0CEB2051D832009B1935 /* utf16.h in Headers */,
-				B26D0C972051D832009B1935 /* utf_old.h in Headers */,
-				B26D0CEA2051D832009B1935 /* uconfig.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

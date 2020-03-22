@@ -18,8 +18,8 @@
 
 #elif defined(PUNYCODE_COCOA_USE_ICU)
 
-#import "unicode/uidna.h"
-
+//#import "unicode/uidna.h"
+#import "uidna-min.h"
 #define HOST_NAME_BUFFER_LENGTH 2048 // Name and size from WebKit.
 
 #endif
