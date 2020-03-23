@@ -71,7 +71,7 @@ static NSUInteger decode_digit(unsigned cp)
 
 static char encode_digit(unsigned d, int flag)
 {
-	return (char)(d + 22 + 75 * (d < 26) - ((flag != 0) << 5));
+	return (char)(d + 22 + 75 * (d < 26) - ((unsigned)(flag != 0) << 5));
 	/*  0..25 map to ASCII a..z or A..Z */
 	/* 26..35 map to ASCII 0..9         */
 }
