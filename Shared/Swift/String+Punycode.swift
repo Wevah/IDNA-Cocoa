@@ -154,6 +154,22 @@ public extension URL {
 		return self.absoluteString.decodedURLString
 	}
 
+
+	/// Initializes a URL from a relative Unicode string and a base URL.
+	/// - Parameters:
+	///   - unicodeString: The URL string with which to initialize the NSURL object. `unicodeString` is interpreted relative to `baseURL`.
+	///   - url: The base URL for the URL object
+	init?(unicodeString: String, relativeTo url: URL?) {
+		let parts = unicodeString.urlParts
+
+		if !parts.scheme.isEmpty {
+			guard let encodedString = unicodeString.encodedURLString else { return nil }
+			self.init(string: encodedString, relativeTo: url)
+		}
+
+		self.init(string: unicodeString, relativeTo: url)
+	}
+
 }
 
 private extension String {

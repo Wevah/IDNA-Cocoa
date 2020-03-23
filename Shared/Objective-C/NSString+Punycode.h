@@ -64,6 +64,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (readonly, copy, nullable) NSString *decodedURLString;
 
+/*!
+ @method
+ @abstract		Creates a URL from a relative Unicode string and a base URL.
+ @return		An encoded URL.
+ */
++ (nullable instancetype)URLWithUnicodeString:(NSString *)URLString relativeToURL:(nullable NSURL *)baseURL;
+
 @end
 
 NS_ASSUME_NONNULL_END
