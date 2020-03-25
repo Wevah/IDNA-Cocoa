@@ -388,6 +388,12 @@ private extension String {
 			} else {
 				host = hostOrScheme
 			}
+		} else if let maybeDelim = s.shimScanString("//") {
+			delim = maybeDelim
+
+			if let maybeHost = s.shimScanUpToCharacters(from: slashQuestion) {
+				host = maybeHost
+			}
 		}
 
 		if !s.isAtEnd {

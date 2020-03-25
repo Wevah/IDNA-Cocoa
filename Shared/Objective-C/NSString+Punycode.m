@@ -416,6 +416,10 @@ static UIDNA *uidnaEncoder() {
 					host = @"";
 			}
 		}
+	} else if ([s scanString:@"//" intoString:&delim]) {
+		if (!s.isAtEnd) {
+			[s scanUpToCharactersFromSet:slashQuestion intoString:&host];
+		}
 	}
 	
 	if (!s.atEnd)

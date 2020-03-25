@@ -67,4 +67,9 @@ class PunycodeSwiftTests: XCTestCase {
 		XCTAssertEqual(URL(string:"http://www.xn--bcher-kva.ch/")!.decodedURLString, "http://www.bücher.ch/");
 	}
 
+	func testRelativeEncoding() {
+		XCTAssertEqual("/bücher".encodedURLString, "/b%C3%BCcher")
+		XCTAssertEqual("//bücher".encodedURLString, "//xn--bcher-kva")
+		XCTAssertEqual("///bücher".encodedURLString, "///b%C3%BCcher")
+	}
 }
