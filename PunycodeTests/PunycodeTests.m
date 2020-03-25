@@ -130,6 +130,7 @@
 	XCTAssertEqualObjects(@"/bücher".encodedURLString, @"/b%C3%BCcher");
 	XCTAssertEqualObjects(@"//bücher".encodedURLString, @"//xn--bcher-kva");
 	XCTAssertEqualObjects(@"///bücher".encodedURLString, @"///b%C3%BCcher");
+	XCTAssertEqualObjects(@"//bücher/bücher".encodedURLString, @"//xn--bcher-kva/b%C3%BCcher");
 }
 
 @end

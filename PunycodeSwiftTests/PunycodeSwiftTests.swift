@@ -71,5 +71,6 @@ class PunycodeSwiftTests: XCTestCase {
 		XCTAssertEqual("/bücher".encodedURLString, "/b%C3%BCcher")
 		XCTAssertEqual("//bücher".encodedURLString, "//xn--bcher-kva")
 		XCTAssertEqual("///bücher".encodedURLString, "///b%C3%BCcher")
+		XCTAssertEqual("//bücher/bücher".encodedURLString, "//xn--bcher-kva/b%C3%BCcher");
 	}
 }
