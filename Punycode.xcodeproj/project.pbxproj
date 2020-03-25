@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B24106B122450B860014E4D0 /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = B2CB4DCF07B158A600B4C504 /* Controller.h */; };
-		B24106CF22450B860014E4D0 /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
 		B24106F322450B860014E4D0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		B24106F422450B860014E4D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B24106F522450B860014E4D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
@@ -26,14 +24,12 @@
 		B2552E2B22B134680015B473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2922B134680015B473 /* LaunchScreen.storyboard */; };
 		B2552E2E22B134680015B473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2D22B134680015B473 /* main.m */; };
 		B2552E3222B134C40015B473 /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
-		B2552E3322B134CE0015B473 /* NSString+Punycode.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSString+Punycode.h */; };
 		B2552E3522B13CBC0015B473 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E3422B13CBC0015B473 /* Controller.m */; };
 		B2552E3622B13CBC0015B473 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E3422B13CBC0015B473 /* Controller.m */; };
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B2C3DD3B241FEC9800484850 /* WebNSURLExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = B25753801F3CE8B2002606DD /* WebNSURLExtras.h */; };
 		B2C3DD45241FECF200484850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DD44241FECF200484850 /* AppDelegate.swift */; };
 		B2C3DD47241FECF400484850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C3DD46241FECF400484850 /* Assets.xcassets */; };
 		B2C3DD50241FED0900484850 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
@@ -41,12 +37,10 @@
 		B2C3DD56241FEE5A00484850 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C3DD52241FEDC800484850 /* MainMenu.xib */; };
 		B2D4B71A2425902800B72AC6 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
 		B2D4B71C2425903000B72AC6 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4B71B2425903000B72AC6 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B2D4E99608E0191700574ACD /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = B2CB4DCF07B158A600B4C504 /* Controller.h */; };
 		B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B2D4E99B08E0191700574ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		B301345E1A964E1E00AF6C4E /* NSString+Punycode.h in Headers */ = {isa = PBXBuildFile; fileRef = B301345C1A964E1E00AF6C4E /* NSString+Punycode.h */; };
 		B301345F1A964E1E00AF6C4E /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
 		B30134601A964E1E00AF6C4E /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
 		B30134631A964E2600AF6C4E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
@@ -361,35 +355,11 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		B241068D22450B860014E4D0 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2552E3322B134CE0015B473 /* NSString+Punycode.h in Headers */,
-				B24106B122450B860014E4D0 /* Controller.h in Headers */,
-				B24106CF22450B860014E4D0 /* WebNSURLExtras.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B2D4E99308E0191700574ACD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2D4E99608E0191700574ACD /* Controller.h in Headers */,
-				B301345E1A964E1E00AF6C4E /* NSString+Punycode.h in Headers */,
-				B2C3DD3B241FEC9800484850 /* WebNSURLExtras.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		B241068C22450B860014E4D0 /* PunyCocoa MRR */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B24106FF22450B860014E4D0 /* Build configuration list for PBXNativeTarget "PunyCocoa MRR" */;
 			buildPhases = (
-				B241068D22450B860014E4D0 /* Headers */,
 				B24106F222450B860014E4D0 /* Resources */,
 				B24106F622450B860014E4D0 /* Sources */,
 				B24106FA22450B860014E4D0 /* Frameworks */,
@@ -478,7 +448,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2B33EA80A9B4534002D5B27 /* Build configuration list for PBXNativeTarget "PunyCocoa" */;
 			buildPhases = (
-				B2D4E99308E0191700574ACD /* Headers */,
 				B2D4E99708E0191700574ACD /* Resources */,
 				B2D4E99A08E0191700574ACD /* Sources */,
 				B2D4E99E08E0191700574ACD /* Frameworks */,
