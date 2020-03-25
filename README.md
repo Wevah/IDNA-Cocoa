@@ -101,4 +101,18 @@ Convenience property equivalent to `someURL.absoluteString.decodedURLString`.
 
 -----
 
+##### Swift:
+```swift
+init?(unicodeString: String, relativeTo url: URL?) {
+```
+
+##### Objective-C: 
+```objc
++ (nullable instancetype)URLWithUnicodeString:(NSString *)URLString relativeToURL:(nullable NSURL *)baseURL;
+```
+
+Convenience initializer for creating a URL from a Unicode string, relative to another URL.
+
+-----
+
 © 2012–2020 Nate Weaver (Wevah)
