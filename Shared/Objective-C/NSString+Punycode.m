@@ -318,7 +318,7 @@ static UIDNA *uidnaEncoder() {
 
 	int32_t numChars = uidna_nameToASCII(encoder, name, (int32_t)range.length, dest, HOST_NAME_BUFFER_LENGTH, &info, &err);
 
-	return [NSString stringWithCharacters:dest length:numChars];
+	return [NSString stringWithCharacters:dest length:(NSUInteger)numChars];
 #else
 	NSCharacterSet *nonAscii = [NSCharacterSet characterSetWithRange:NSMakeRange(1, 127)].invertedSet;
 	NSMutableString *ret = [NSMutableString string];
@@ -366,7 +366,7 @@ static UIDNA *uidnaEncoder() {
 
 	int32_t numChars = uidna_nameToUnicode(encoder, name, (int32_t)range.length, dest, HOST_NAME_BUFFER_LENGTH, &info, &err);
 
-	return [NSString stringWithCharacters:dest length:numChars];
+	return [NSString stringWithCharacters:dest length:(NSUInteger)numChars];
 #else
 	NSMutableString *ret = [NSMutableString string];
 	NSScanner *s = [NSScanner scannerWithString:self];
