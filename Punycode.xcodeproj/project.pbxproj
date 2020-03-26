@@ -305,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				B25753801F3CE8B2002606DD /* WebNSURLExtras.h */,
+				B2C59E7224278AF400183346 /* uidna-min.h */,
 				B2C3DCC0241FE94400484850 /* Swift */,
 				B2C3DCBF241FE92F00484850 /* Objective-C */,
 			);
@@ -327,7 +328,6 @@
 			children = (
 				B301345C1A964E1E00AF6C4E /* NSString+Punycode.h */,
 				B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */,
-				B2C59E7224278AF400183346 /* uidna-min.h */,
 			);
 			path = "Objective-C";
 			sourceTree = "<group>";
