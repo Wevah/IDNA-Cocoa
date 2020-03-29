@@ -16,7 +16,15 @@ public extension String {
 	var idnaEncoded: String? {
 		let nonASCII = CharacterSet(charactersIn: UnicodeScalar(0)...UnicodeScalar(127)).inverted
 		var result = ""
-		let s = Scanner(string: self.precomposedStringWithCompatibilityMapping)
+		let mapped: String
+
+		do {
+			mapped = try self.mapUTS46()
+		} catch {
+			return nil
+		}
+
+		let s = Scanner(string: mapped)
 		let dotAt = CharacterSet(charactersIn: ".@")
 
 		while !s.isAtEnd {
@@ -363,7 +371,7 @@ private extension String {
 	var urlParts: URLParts {
 		let colonSlash = CharacterSet(charactersIn: ":/")
 		let slashQuestion = CharacterSet(charactersIn: "/?")
-		let s = Scanner(string: self.precomposedStringWithCompatibilityMapping)
+		let s = Scanner(string: self)
 		var scheme = ""
 		var delim = ""
 		var host = ""
@@ -422,6 +430,31 @@ private extension String {
 		return URLParts(scheme: scheme, delim: delim, host: host, pathAndQuery: path, username: username, password: password, fragment: fragment)
 	}
 
+	enum UTS46MapError: Error {
+		case disallowedCodepoint(scalar: UnicodeScalar)
+	}
+
+	func mapUTS46() throws -> String {
+		var result = ""
+
+		mainLoop: for scalar in self.unicodeScalars {
+			for range in UTS46.disallowedCharacters {
+				if range.contains(scalar.value) {
+					throw UTS46MapError.disallowedCodepoint(scalar: scalar)
+				}
+			}
+
+			if let mapped = UTS46.characterMap[scalar.value] {
+				for mappedScalar in mapped {
+					result.unicodeScalars.append(UnicodeScalar(mappedScalar)!)
+				}
+			} else {
+				result.unicodeScalars.append(scalar)
+			}
+		}
+
+		return result
+	}
 }
 
 private enum Punycode {
