@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,7 @@
 		B24106FC22450B860014E4D0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B24106FD22450B860014E4D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B245857A2423206100CC75A4 /* PunycodeSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */; };
-		B245857F2423214300CC75A4 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
+		B24AAF0E24363D0C003DD346 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B2552E2022B134650015B473 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E1F22B134650015B473 /* AppDelegate.m */; };
 		B2552E2322B134650015B473 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2222B134650015B473 /* ViewController.m */; };
 		B2552E2622B134650015B473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2422B134650015B473 /* Main.storyboard */; };
@@ -30,13 +30,14 @@
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B2AF210724313283009F5EE7 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
+		B2AF21092431376E009F5EE7 /* uts46.xz in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46.xz */; };
 		B2B4F3D0242EB79E00CC752F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4F3CF242EB79E00CC752F /* main.swift */; };
 		B2C3DD45241FECF200484850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DD44241FECF200484850 /* AppDelegate.swift */; };
 		B2C3DD47241FECF400484850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C3DD46241FECF400484850 /* Assets.xcassets */; };
-		B2C3DD50241FED0900484850 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B2C3DD55241FEDF900484850 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DD54241FEDF900484850 /* Controller.swift */; };
 		B2C3DD56241FEE5A00484850 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C3DD52241FEDC800484850 /* MainMenu.xib */; };
-		B2CF9C68243070F900A23B4E /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4F3D4242ECD1C00CC752F /* UTS46.swift */; };
+		B2CF9C6B2430728800A23B4E /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = B2CF9C6A2430728800A23B4E /* ArgumentParser */; };
 		B2D4B71A2425902800B72AC6 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
 		B2D4B71C2425903000B72AC6 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4B71B2425903000B72AC6 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
@@ -82,6 +83,13 @@
 			remoteGlobalIDString = B2D4E99208E0191700574ACD;
 			remoteInfo = PunyCocoa;
 		};
+		B2D14AF02435801000F324B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2C3DD41241FECF200484850;
+			remoteInfo = "PunyCocoa Swift";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -126,9 +134,10 @@
 		B25753801F3CE8B2002606DD /* WebNSURLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebNSURLExtras.h; sourceTree = "<group>"; };
 		B25753821F3CE9A9002606DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B26FA03C2055425C00CD6AF1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		B2AF210624313283009F5EE7 /* UTS46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTS46.swift; sourceTree = "<group>"; };
+		B2AF21082431376E009F5EE7 /* uts46.xz */ = {isa = PBXFileReference; lastKnownFileType = file; path = uts46.xz; sourceTree = "<group>"; };
 		B2B4F3CD242EB79E00CC752F /* icumap2code */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = icumap2code; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B4F3CF242EB79E00CC752F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		B2B4F3D4242ECD1C00CC752F /* UTS46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTS46.swift; sourceTree = "<group>"; };
 		B2C3DCC1241FE95B00484850 /* String+Punycode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Punycode.swift"; sourceTree = "<group>"; };
 		B2C3DD3A241FEC7F00484850 /* PunyCocoa copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PunyCocoa copy-Info.plist"; path = "/Users/wevah/Projects/Punycode-Cocoa/PunyCocoa copy-Info.plist"; sourceTree = "<absolute>"; };
 		B2C3DD42241FECF200484850 /* PunyCocoa Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2CF9C6B2430728800A23B4E /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +342,7 @@
 			children = (
 				B25753801F3CE8B2002606DD /* WebNSURLExtras.h */,
 				B2C59E7224278AF400183346 /* uidna-min.h */,
+				B2AF21082431376E009F5EE7 /* uts46.xz */,
 				B2C3DCC0241FE94400484850 /* Swift */,
 				B2C3DCBF241FE92F00484850 /* Objective-C */,
 			);
@@ -370,7 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				B2C3DCC1241FE95B00484850 /* String+Punycode.swift */,
-				B2B4F3D4242ECD1C00CC752F /* UTS46.swift */,
+				B2AF210624313283009F5EE7 /* UTS46.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -421,6 +432,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B2D14AF12435801000F324B6 /* PBXTargetDependency */,
 			);
 			name = PunycodeSwiftTests;
 			productName = PunycodeSwiftTests;
@@ -475,6 +487,9 @@
 			dependencies = (
 			);
 			name = icumap2code;
+			packageProductDependencies = (
+				B2CF9C6A2430728800A23B4E /* ArgumentParser */,
+			);
 			productName = icumap2code;
 			productReference = B2B4F3CD242EB79E00CC752F /* icumap2code */;
 			productType = "com.apple.product-type.tool";
@@ -528,6 +543,7 @@
 					B24585762423206100CC75A4 = {
 						CreatedOnToolsVersion = 11.3.1;
 						ProvisioningStyle = Automatic;
+						TestTargetID = B2C3DD41241FECF200484850;
 					};
 					B2552E1B22B134650015B473 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -561,6 +577,9 @@
 				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Punycode */;
+			packageReferences = (
+				B2CF9C692430728800A23B4E /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -618,6 +637,7 @@
 			files = (
 				B2C3DD47241FECF400484850 /* Assets.xcassets in Resources */,
 				B2C3DD56241FEE5A00484850 /* MainMenu.xib in Resources */,
+				B2AF21092431376E009F5EE7 /* uts46.xz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,7 +669,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B245857A2423206100CC75A4 /* PunycodeSwiftTests.swift in Sources */,
-				B245857F2423214300CC75A4 /* String+Punycode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,10 +704,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2CF9C68243070F900A23B4E /* UTS46.swift in Sources */,
+				B2AF210724313283009F5EE7 /* UTS46.swift in Sources */,
+				B24AAF0E24363D0C003DD346 /* String+Punycode.swift in Sources */,
 				B2C3DD55241FEDF900484850 /* Controller.swift in Sources */,
 				B2C3DD45241FECF200484850 /* AppDelegate.swift in Sources */,
-				B2C3DD50241FED0900484850 /* String+Punycode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,6 +728,11 @@
 			isa = PBXTargetDependency;
 			target = B2D4E99208E0191700574ACD /* PunyCocoa */;
 			targetProxy = B255A56C1500C53E0073DF21 /* PBXContainerItemProxy */;
+		};
+		B2D14AF12435801000F324B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2C3DD41241FECF200484850 /* PunyCocoa Swift */;
+			targetProxy = B2D14AF02435801000F324B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -763,8 +787,10 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -779,6 +805,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -794,8 +821,10 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Mac/Info.plist;
@@ -807,6 +836,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -820,6 +850,7 @@
 		B245857D2423206100CC75A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -836,7 +867,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = M72QZ9W58G;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -847,7 +878,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = PunycodeSwiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -857,12 +892,14 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PunyCocoa Swift.app/Contents/MacOS/PunyCocoa Swift";
 			};
 			name = Debug;
 		};
 		B245857E2423206100CC75A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -879,21 +916,27 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = M72QZ9W58G;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = PunycodeSwiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunycodeSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PunyCocoa Swift.app/Contents/MacOS/PunyCocoa Swift";
 			};
 			name = Release;
 		};
@@ -928,7 +971,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoaTouch;
@@ -964,7 +1010,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoaTouch;
@@ -1283,8 +1332,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				ENABLE_HARDENED_RUNTIME = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1295,7 +1344,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Mac (Swift)/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1329,14 +1381,17 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Mac (Swift)/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1423,6 +1478,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2CF9C692430728800A23B4E /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:apple/swift-argument-parser.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2CF9C6A2430728800A23B4E /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2CF9C692430728800A23B4E /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }

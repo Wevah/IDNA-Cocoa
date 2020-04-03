@@ -6,8 +6,22 @@
 //
 
 import XCTest
+@testable import PunyCocoa_Swift
 
 class PunycodeSwiftTests: XCTestCase {
+
+//	static override func setUp() {
+//		guard UTS46.characterMap.isEmpty else { return }
+//
+//		if let blobURL = Bundle(for: self).url(forResource: "uts46", withExtension: "xz") {
+//			do {
+//				try UTS46.load(from: blobURL, compression: .lzma)
+//			} catch {
+//				print("error: \(error)")
+//			}
+//		}
+//
+//	}
 
 	func testIDNAEncoding() {
 		let dict = [
@@ -72,5 +86,22 @@ class PunycodeSwiftTests: XCTestCase {
 		XCTAssertEqual("//bücher".encodedURLString, "//xn--bcher-kva")
 		XCTAssertEqual("///bücher".encodedURLString, "///b%C3%BCcher")
 		XCTAssertEqual("//bücher/bücher".encodedURLString, "//xn--bcher-kva/b%C3%BCcher");
+	}
+
+	func testNormalizedEncoding() {
+		// u + combining umlaut should convert to u-with-umlaut
+		let utf8: [UInt8] = [0x75, 0xcc, 0x88]
+		let str = String(bytes: utf8, encoding: .utf8)
+		XCTAssertEqual(str?.encodedURLString, "xn--tda")
+	}
+
+	func testInvalidCodepoints() {
+		XCTAssertNil("a⒈com".encodedURLString)
+	}
+
+	func testInvalidDecoding() {
+		XCTAssertNil("xn--u-ccb.com".decodedURLString)
+		XCTAssertNil("xn--0.pt".decodedURLString)
+		XCTAssertNil("xn--a-ecp.ru".decodedURLString)
 	}
 }

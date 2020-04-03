@@ -6,108 +6,244 @@
 //
 
 import Foundation
+import ArgumentParser
+import Compression
+import Darwin
 
-if CommandLine.arguments.count < 2 {
-	exit(EXIT_FAILURE)
-}
 
-enum Language {
-	case swift
-	case objc
-}
+/// Output file format. Codepoints are stored UTF-8-encoded.
+///
+///     [marker][data]...
+///
+///	If marker is `characterMap`:
+///
+///	    [codepoint][mapped-codepoint ...][null] ...
+///
+///	If marker is `disallowedCharacters` or `ignoredCharacters`:
+///
+///	    [start-codepoint][end-codepoint] ...
+///
+///	If marker is `joiningTypes`:
+///
+///		[type][[start-codepoint][end-codepoint] ...]
+///
+///	I.e., disallowed and ignored character blocks should always have even length, not including the marker.
+struct ICUMap2Code: ParsableCommand {
+	static let configuration = CommandConfiguration(commandName: "icumap2code", abstract: "Convert UTS#46 and joiner type map files to a compact binary format.")
 
-let language = Language.swift
+	@Option(name: .shortAndLong, help: "Output ompression mode; default is uncompressed.\nSupported values are 'lzfse', 'lz4', 'lzma', and 'zlib'.")
+	var compression: NSData.CompressionAlgorithm?
 
-let file = URL(fileURLWithPath: CommandLine.arguments[1])
+	@Flag(name: .shortAndLong, help: "Verbose output (on STDERR).")
+	var verbose: Bool
 
-guard let text = try? String(contentsOf: file) else { exit(EXIT_FAILURE) }
+	@Option(name: .shortAndLong, help: "uts46.txt input file.")
+	var uts46: String?
 
-var characterMapString = "\tstatic let characterMap: [UInt32: [UInt32]] = [\n"
-var disallowedCharactersString = "\tstatic let disallowedCharacters: [ClosedRange<UInt32>] = [\n"
+	@Option(name: .shortAndLong, help: "Joiner type input file.")
+	var joiners: String?
 
-let scanner = Scanner(string: text)
-
-while !scanner.isAtEnd {
-	guard let fromStart = scanner.scanInt64(representation: .hexadecimal) else {
-		let _ = scanner.scanUpToString("\n")
-		continue
+	enum Marker {
+		static let characterMap = UInt8.max
+		static let ignoredCharacters = UInt8.max - 1
+		static let disallowedCharacters = UInt8.max - 2
+		static let joiningTypes = UInt8.max - 3
+		static let sequenceTerminator: UInt8 = 0
 	}
 
-	var fromEnd = fromStart
+	func run() throws {
 
-	if scanner.scanString("..") != nil {
-		guard let temp = scanner.scanInt64(representation: .hexadecimal) else {
-			let _ = scanner.scanUpToString("\n")
-			continue
+		var outputData = Data()
+
+		if let path = uts46 {
+			try outputData.append(self.convertICU46Map(from: path))
 		}
 
-		fromEnd = temp
-	}
-
-	guard scanner.scanString(">") != nil else {
-		let _ = scanner.scanUpToString("\n")
-		continue
-	}
-
-	var to = Array<Int64>()
-
-	var isDisallowed = false
-
-	while let scanned = scanner.scanInt64(representation: .hexadecimal) {
-		if scanned == 0xFFFD {
-			isDisallowed = true
-			break
+		if let path = joiners {
+			try outputData.append(self.convertDerivedJoiningType(from: path))
 		}
 
-		to.append(scanned)
+		if let compression = compression {
+			outputData = try (outputData as NSData).compressed(using: compression) as Data
+		}
+
+
+		FileHandle.standardOutput.write(outputData)
 	}
+}
 
-	let comment: String
+extension Scanner {
 
-	if scanner.scanString("#") != nil {
-		comment = scanner.scanUpToString("\n") ?? ""
-	} else {
-		comment = ""
+	/// Scans a range of the form `hex[..hex]`.
+	func scanHexRange() -> ClosedRange<Int>? {
+		guard let start = self.scanInt(representation: .hexadecimal) else { return nil }
+
+		var end = start
+
+		if self.scanString("..") != nil {
+			guard let temp = self.scanInt(representation: .hexadecimal) else { return nil }
+
+			end = temp
+		}
+
+		return start...end
 	}
+}
 
-	switch language {
-		case .swift:
-			if !isDisallowed {
-				let mappedTo = to.map {
-					return "0x\(String(format: "%X", $0))"
+private extension ICUMap2Code {
+
+	func convertICU46Map(from path: String) throws -> Data {
+		var outputData = Data()
+
+		guard let text = try? String(contentsOfFile: path) else {
+			print("Couldn't read from '\(path)'")
+			throw ExitCode(ENOENT)
+		}
+
+		var characterMap = [UInt32: String]()
+		var ignoredCharacters = ""
+		var disallowedCharacters = ""
+
+		let scanner = Scanner(string: text)
+
+		while !scanner.isAtEnd {
+			defer { let _ = scanner.scanUpToCharacters(from: .newlines) }
+
+			guard let range = scanner.scanHexRange() else { continue }
+
+			guard scanner.scanString(">") != nil else {
+				continue
+			}
+
+			var mapped = ""
+
+			var isDisallowed = false
+
+			while let scanned = scanner.scanInt(representation: .hexadecimal) {
+				if scanned == 0xFFFD {
+					isDisallowed = true
+					break
 				}
 
-				for codepoint in fromStart...fromEnd {
-					let fromString = String(format: "%X", codepoint)
-					characterMapString += "\t\t0x\(fromString): [\(mappedTo.joined(separator: ", "))], // \(comment)\n"
-				}
+				mapped.unicodeScalars.append(UnicodeScalar(scanned)!)
+			}
+
+			let isIgnored = mapped.count == 0
+
+			if isDisallowed {
+				disallowedCharacters.unicodeScalars.append(UnicodeScalar(range.lowerBound)!)
+				disallowedCharacters.unicodeScalars.append(UnicodeScalar(range.upperBound)!)
+			} else if isIgnored {
+				ignoredCharacters.unicodeScalars.append(UnicodeScalar(range.lowerBound)!)
+				ignoredCharacters.unicodeScalars.append(UnicodeScalar(range.upperBound)!)
 			} else {
-				let rangeStr = "\t\t0x\(String(format: "%X", fromStart))...0x\(String(format: "%X", fromEnd))"
-
-				disallowedCharactersString += "\(rangeStr), // \(comment)\n"
+				for codepoint in range {
+					characterMap[UInt32(codepoint)] = mapped
+				}
 			}
+		}
 
-		case .objc:
-			let mappedTo = to.map {
-				return "@(0x\(String(format: "%X", $0)))"
+		outputData.append(contentsOf: [Marker.characterMap])
+
+		for key in characterMap.keys.sorted() {
+			outputData.append(contentsOf: key.utf8)
+
+			let value = characterMap[key]!
+			outputData.append(contentsOf: value.utf8)
+			outputData.append(contentsOf: [0])
+		}
+
+		if verbose {
+			fputs("Current output size: \(outputData.count)\n", stderr)
+		}
+
+		if ignoredCharacters.count != 0 && ignoredCharacters.unicodeScalars.count % 2 == 0 {
+			outputData.append(contentsOf: [Marker.ignoredCharacters])
+			outputData.append(contentsOf: ignoredCharacters.utf8)
+
+			if verbose {
+				fputs("Ignored bounds data size: \(ignoredCharacters.utf8.count)\n", stderr)
 			}
+		}
 
-			characterMapString += "\t@(0x\(String(format: "%X", fromStart))): @[\(mappedTo.joined(separator: ", "))], // \(comment)\n"
+		if disallowedCharacters.count != 0 && disallowedCharacters.unicodeScalars.count % 2 == 0  {
+			outputData.append(contentsOf: [Marker.disallowedCharacters])
+			outputData.append(contentsOf: disallowedCharacters.utf8)
 
+			if verbose {
+				fputs("Disallowed bounds data size: \(disallowedCharacters.utf8.count)\n", stderr)
+			}
+		}
+
+		return outputData
+
+	}
+
+	func convertDerivedJoiningType(from path: String) throws -> Data {
+		var outputData = Data()
+
+		guard let text = try? String(contentsOfFile: path) else {
+			print("Couldn't read from '\(path)'")
+			throw ExitCode(ENOENT)
+		}
+
+		let scanner = Scanner(string: text)
+
+		var map: [Character: String] = ["C": "", "D": "", "L": "", "R": "", "T": ""]
+
+		let joiningTypeCharacters = CharacterSet(charactersIn: "CDRLT")
+
+		while !scanner.isAtEnd {
+			defer { let _ = scanner.scanUpToCharacters(from: .newlines) }
+
+			guard let range = scanner.scanHexRange() else { continue }
+
+			guard let _ = scanner.scanString(";") else { continue }
+
+			guard let joiningType = scanner.scanCharacters(from: joiningTypeCharacters),
+				joiningType.count == 1 else { continue }
+
+			map[joiningType.first!]?.unicodeScalars.append(UnicodeScalar(range.lowerBound)!)
+			map[joiningType.first!]?.unicodeScalars.append(UnicodeScalar(range.upperBound)!)
+		}
+
+		outputData.append(contentsOf: [Marker.joiningTypes])
+
+		for type in map.keys.sorted() {
+			outputData.append(contentsOf: type.utf8)
+			outputData.append(contentsOf: map[type]!.utf8)
+		}
+
+		return outputData
+	}
+
+}
+
+extension NSData.CompressionAlgorithm: ExpressibleByArgument {
+	public init?(argument: String) {
+		switch argument {
+			case "lz4":
+				self = .lz4
+			case "zlib":
+				self = .zlib
+			case "lzfse":
+				self = .lzfse
+			case "lzma":
+				self = .lzma
+			default:
+				return nil
+		}
 	}
 }
 
+extension UInt32 {
 
-switch language {
-	case .swift:
-		characterMapString += "\t]"
-		disallowedCharactersString += "\t]"
+	var utf8: [UInt8] {
+		let scalar = UnicodeScalar(self)!
+		return [UInt8](scalar.utf8)
+	}
 
-		print("enum UTS46 {\n")
-		print(characterMapString)
-		print()
-		print(disallowedCharactersString)
-		print("\n}")
-	case .objc:
-		print("}")
 }
+
+ICUMap2Code.main()
+

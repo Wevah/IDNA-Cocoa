@@ -24,7 +24,7 @@ public extension String {
 			return nil
 		}
 
-		let s = Scanner(string: mapped)
+		let s = Scanner(string: mapped.precomposedStringWithCanonicalMapping)
 		let dotAt = CharacterSet(charactersIn: ".@")
 
 		while !s.isAtEnd {
@@ -62,6 +62,7 @@ public extension String {
 				if input.lowercased().hasPrefix("xn--") {
 					let start = input.index(input.startIndex, offsetBy: 4)
 					if let substr = String(input[start...]).punycodeDecoded {
+						guard String(substr).isValidLabel else { return nil }
 						result.append(substr)
 					}
 				} else {
@@ -98,7 +99,9 @@ public extension String {
 			}
 		}
 
-		result.append("\(urlParts.host.idnaEncoded ?? "")\(pathAndQuery )")
+		guard let host = urlParts.host.idnaEncoded else { return nil }
+
+		result.append("\(host)\(pathAndQuery )")
 
 		if var fragment = urlParts.fragment {
 			var fragmentAlloweCharacters = CharacterSet.urlFragmentAllowed
@@ -124,7 +127,9 @@ public extension String {
 			}
 		}
 
-		var result = "\(urlParts.scheme)\(urlParts.delim)\(usernamePassword)\(urlParts.host.idnaDecoded ?? "")\(urlParts.pathAndQuery.removingPercentEncoding ?? "")"
+		guard let host = urlParts.host.idnaDecoded else { return nil }
+
+		var result = "\(urlParts.scheme)\(urlParts.delim)\(usernamePassword)\(host)\(urlParts.pathAndQuery.removingPercentEncoding ?? "")"
 
 		if let fragment = urlParts.fragment?.removingPercentEncoding {
 			result.append("#\(fragment)")
@@ -182,22 +187,13 @@ public extension URL {
 
 private extension String {
 
-	var deletingIgnoredCharacters: String {
-		var result = ""
-
-		for cp in self.unicodeScalars {
-			if !Punycode.ignoredCharacters.contains(cp) {
-				result.unicodeScalars.append(cp)
-			}
-		}
-
-		return result
-	}
-
+	/// Punycode-encodes a string.
+	///
+	/// Returns `nil` on error.
+	/// - Todo: Throw errors on failure instead of returning `nil`.
 	var punycodeEncoded: String? {
-		let variationStripped = self.deletingIgnoredCharacters
 		var result = ""
-		let scalars = variationStripped.unicodeScalars
+		let scalars = self.unicodeScalars
 		let inputLength = scalars.count
 
 		var n = Punycode.initialN
@@ -281,6 +277,10 @@ private extension String {
 		return result
 	}
 
+	/// Punycode-decodes a string.
+	///
+	/// Returns `nil` on error.
+	/// - Todo: Throw errors on failure instead of returning `nil`.
 	var punycodeDecoded: String? {
 		var result = ""
 		let scalars = self.unicodeScalars
@@ -431,23 +431,28 @@ private extension String {
 	}
 
 	enum UTS46MapError: Error {
+		/// A disallowed codepoint was found in the string.
 		case disallowedCodepoint(scalar: UnicodeScalar)
 	}
 
+	/// Perform a single-pass mapping using UTS #46.
+	///
+	/// - Returns: The mapped string.
+	/// - Throws: `UTS46MapError`
 	func mapUTS46() throws -> String {
 		var result = ""
 
-		mainLoop: for scalar in self.unicodeScalars {
-			for range in UTS46.disallowedCharacters {
-				if range.contains(scalar.value) {
-					throw UTS46MapError.disallowedCodepoint(scalar: scalar)
-				}
+		for scalar in self.unicodeScalars {
+			if UTS46.disallowedCharacters.contains(scalar) {
+				throw UTS46MapError.disallowedCodepoint(scalar: scalar)
+			}
+
+			if UTS46.ignoredCharacters.contains(scalar) {
+				continue
 			}
 
 			if let mapped = UTS46.characterMap[scalar.value] {
-				for mappedScalar in mapped {
-					result.unicodeScalars.append(UnicodeScalar(mappedScalar)!)
-				}
+				result.append(mapped)
 			} else {
 				result.unicodeScalars.append(scalar)
 			}
@@ -455,6 +460,17 @@ private extension String {
 
 		return result
 	}
+
+	var isValidLabel: Bool {
+		guard self.precomposedStringWithCanonicalMapping.unicodeScalars.elementsEqual(self.unicodeScalars) else { return false }
+
+		if let category = self.unicodeScalars.first?.properties.generalCategory {
+			if category == .nonspacingMark || category == .spacingMark || category == .enclosingMark { return false }
+		}
+
+		return true
+	}
+
 }
 
 private enum Punycode {
@@ -466,13 +482,6 @@ private enum Punycode {
 	static let initialBias = UInt32(72)
 	static let initialN = UInt32(0x80)
 	static let delimiter: Character = "-"
-
-	/// RFC 3454, section 3.1.
-	static let ignoredCharacters: CharacterSet = {
-		var ignoredCharacters = CharacterSet(charactersIn: "\u{00AD}\u{034F}\u{1806}\u{180B}\u{180C}\u{180D}\u{200B}\u{200C}\u{200D}\u{2060}\u{FEFF}")
-		ignoredCharacters.insert(charactersIn: UnicodeScalar(0xFE00)!...UnicodeScalar(0xFE0F)!)
-		return ignoredCharacters
-	}()
 
 	static func decodeDigit(_ cp: UInt32) -> UInt32 {
 		return cp - 48 < 10 ? cp - 22 : cp - 65 < 26 ? cp - 65 :
