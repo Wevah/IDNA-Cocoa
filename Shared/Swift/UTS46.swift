@@ -13,15 +13,25 @@ enum UTS46 {
 	private(set) static var characterMap: [UInt32: String] = [:]
 	private(set) static var ignoredCharacters: CharacterSet = []
 	private(set) static var disallowedCharacters: CharacterSet = []
+	private(set) static var joiningTypes = [UInt32: JoiningType]()
 
 	private enum Marker {
 		static let characterMap = UInt8.max
 		static let ignoredCharacters = UInt8.max - 1
 		static let disallowedCharacters = UInt8.max - 2
+		static let joiningTypes = UInt8.max - 3
 
 		static let min = UInt8.max - 10 // No valid UTF-8 byte can fall here.
 
 		static let sequenceTerminator: UInt8 = 0
+	}
+
+	enum JoiningType: Character {
+		case causing = "C"
+		case dual = "D"
+		case right = "R"
+		case left = "L"
+		case transparent = "T"
 	}
 
 	enum UTS46Error: Error {
@@ -62,6 +72,8 @@ enum UTS46 {
 					index = parseIgnoredCharacters(from: data, start: index)
 				case Marker.disallowedCharacters:
 					index = parseDisallowedCharacters(from: data, start: index)
+				case Marker.joiningTypes:
+					index = parseJoiningTypes(from: data, start: index)
 				default:
 					throw UTS46Error.badMarker
 			}
@@ -183,5 +195,33 @@ enum UTS46 {
 		return index
 	}
 
+	static func parseJoiningTypes(from data: Data, start: Int) -> Int {
+		var index = start
+
+		main: while index < data.count, data[index] < Marker.min {
+			var accumulator = Data()
+
+			while index < data.count {
+				if data[index] > Marker.min { break main }
+				accumulator.append(data[index])
+
+				index += 1
+			}
+
+			let str = String(data: accumulator, encoding: .utf8)!
+
+			var type: JoiningType?
+
+			for scalar in str.unicodeScalars {
+				if scalar.isASCII {
+					type = JoiningType(rawValue: Character(scalar))
+				} else if let type = type {
+					joiningTypes[scalar.value] = type
+				}
+			}
+		}
+
+		return index
+	}
 
 }
