@@ -61,10 +61,9 @@ public extension String {
 			if let input = s.shimScanUpToCharacters(from: dotAt) {
 				if input.lowercased().hasPrefix("xn--") {
 					let start = input.index(input.startIndex, offsetBy: 4)
-					if let substr = String(input[start...]).punycodeDecoded {
-						guard String(substr).isValidLabel else { return nil }
-						result.append(substr)
-					}
+					guard let substr = String(input[start...]).punycodeDecoded else { return nil }
+					guard String(substr).isValidLabel else { return nil }
+					result.append(substr)
 				} else {
 					result.append(input)
 				}
@@ -463,6 +462,8 @@ private extension String {
 
 	var isValidLabel: Bool {
 		guard self.precomposedStringWithCanonicalMapping.unicodeScalars.elementsEqual(self.unicodeScalars) else { return false }
+
+		guard (try? self.mapUTS46()) != nil else { return false }
 
 		if let category = self.unicodeScalars.first?.properties.generalCategory {
 			if category == .nonspacingMark || category == .spacingMark || category == .enclosingMark { return false }
