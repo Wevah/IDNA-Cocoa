@@ -145,9 +145,25 @@ enum UTS46 {
 		return index
 	}
 
+	private static func parseRanges(from: String) -> [ClosedRange<UnicodeScalar>]? {
+		guard from.unicodeScalars.count % 2 == 0 else { return nil }
+
+		var ranges = [ClosedRange<UnicodeScalar>]()
+		var first: UnicodeScalar? = nil
+
+		for (index, scalar) in from.unicodeScalars.enumerated() {
+			if index % 2 == 0 {
+				first = scalar
+			} else if let first = first {
+				ranges.append(first...scalar)
+			}
+		}
+
+		return ranges
+	}
+
 	static func parseCharacterSet(from data: Data, start: Int) -> (index: Int, charset: CharacterSet?) {
 		var index = start
-		var charset = CharacterSet()
 		var accumulator = Data()
 
 		while index < data.count, data[index] < Marker.min {
@@ -157,18 +173,14 @@ enum UTS46 {
 
 		let str = String(data: accumulator, encoding: .utf8)!
 
-		guard str.unicodeScalars.count % 2 == 0 else {
+		guard let ranges = parseRanges(from: str) else {
 			return (index: index, charset: nil)
 		}
 
-		var first: UnicodeScalar? = nil
+		var charset = CharacterSet()
 
-		for (index, scalar) in str.unicodeScalars.enumerated() {
-			if index % 2 == 0 {
-				first = scalar
-			} else if let first = first {
-				charset.insert(charactersIn: first...scalar)
-			}
+		for range in ranges {
+			charset.insert(charactersIn: range)
 		}
 
 		return (index: index, charset: charset)
