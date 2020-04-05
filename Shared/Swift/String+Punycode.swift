@@ -29,7 +29,7 @@ public extension String {
 
 		while !s.isAtEnd {
 			if let input = s.shimScanUpToCharacters(from: dotAt) {
-				if !input.hasValidJoiners { return nil }
+				if !input.isValidLabel { return nil }
 
 				if input.rangeOfCharacter(from: nonASCII) != nil {
 					result.append("xn--")
@@ -64,7 +64,6 @@ public extension String {
 				if input.lowercased().hasPrefix("xn--") {
 					let start = input.index(input.startIndex, offsetBy: 4)
 					guard let substr = String(input[start...]).punycodeDecoded else { return nil }
-					// if !substr.hasValidJoiners { return nil }
 					guard String(substr).isValidLabel else { return nil }
 					result.append(substr)
 				} else {
@@ -472,7 +471,7 @@ private extension String {
 			if category == .nonspacingMark || category == .spacingMark || category == .enclosingMark { return false }
 		}
 
-		return true
+		return self.hasValidJoiners
 	}
 
 	/// Whether a string's joiners (if any) are valid according to IDNA 2008 CONTEXTJ.
