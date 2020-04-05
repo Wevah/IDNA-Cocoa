@@ -29,6 +29,8 @@ public extension String {
 
 		while !s.isAtEnd {
 			if let input = s.shimScanUpToCharacters(from: dotAt) {
+				if !input.hasValidJoiners { return nil }
+
 				if input.rangeOfCharacter(from: nonASCII) != nil {
 					result.append("xn--")
 
@@ -62,6 +64,7 @@ public extension String {
 				if input.lowercased().hasPrefix("xn--") {
 					let start = input.index(input.startIndex, offsetBy: 4)
 					guard let substr = String(input[start...]).punycodeDecoded else { return nil }
+					// if !substr.hasValidJoiners { return nil }
 					guard String(substr).isValidLabel else { return nil }
 					result.append(substr)
 				} else {
@@ -467,6 +470,72 @@ private extension String {
 
 		if let category = self.unicodeScalars.first?.properties.generalCategory {
 			if category == .nonspacingMark || category == .spacingMark || category == .enclosingMark { return false }
+		}
+
+		return true
+	}
+
+	/// Whether a string's joiners (if any) are valid according to IDNA 2008 CONTEXTJ.
+	///
+	/// See [RFC 5892, Appendix A.1 and A.2](https://tools.ietf.org/html/rfc5892#appendix-A).
+	var hasValidJoiners: Bool {
+		let scalars = self.unicodeScalars
+
+		for index in scalars.indices {
+			let scalar = scalars[index]
+
+			if scalar.value == 0x200C { // Zero-width non-joiner
+				if index == scalars.indices.first { return false }
+
+				var subindex = scalars.index(before: index)
+				var previous = scalars[subindex]
+
+				if previous.properties.canonicalCombiningClass == .virama { continue }
+
+				while true {
+					guard let joiningType = UTS46.joiningTypes[previous.value] else { return false }
+
+					if joiningType == .transparent {
+						if subindex == scalars.startIndex {
+							return false
+						}
+
+						subindex = scalars.index(before: subindex)
+						previous = scalars[subindex]
+					} else if joiningType == .dual || joiningType == .left {
+						break
+					} else {
+						return false
+					}
+				}
+
+				subindex = scalars.index(after: index)
+				var next = scalars[subindex]
+
+				while true {
+					if subindex == scalars.endIndex {
+						return false
+					}
+
+					guard let joiningType = UTS46.joiningTypes[next.value] else { return false }
+
+					if joiningType == .transparent {
+						subindex = scalars.index(after: index)
+						next = scalars[subindex]
+					} else if joiningType == .right || joiningType == .dual {
+						break
+					} else {
+						return false
+					}
+				}
+			} else if scalar.value == 0x200D { // Zero-width joiner
+				if index == scalars.startIndex { return false }
+
+				let subindex = scalars.index(before: index)
+				let previous = scalars[subindex]
+
+				if previous.properties.canonicalCombiningClass != .virama { return false }
+			}
 		}
 
 		return true

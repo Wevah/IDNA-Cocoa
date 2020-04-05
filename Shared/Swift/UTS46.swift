@@ -77,8 +77,8 @@ enum UTS46 {
 				default:
 					throw UTS46Error.badMarker
 			}
-
 		}
+
 	}
 
 	private static func decompress(data: Data, algorithm: CompressionAlgorithm?) -> Data? {
@@ -209,6 +209,7 @@ enum UTS46 {
 
 	static func parseJoiningTypes(from data: Data, start: Int) -> Int {
 		var index = start
+		joiningTypes.removeAll()
 
 		main: while index < data.count, data[index] < Marker.min {
 			var accumulator = Data()
@@ -223,12 +224,21 @@ enum UTS46 {
 			let str = String(data: accumulator, encoding: .utf8)!
 
 			var type: JoiningType?
+			var first: UnicodeScalar? = nil
 
 			for scalar in str.unicodeScalars {
 				if scalar.isASCII {
 					type = JoiningType(rawValue: Character(scalar))
 				} else if let type = type {
-					joiningTypes[scalar.value] = type
+					if first == nil {
+						first = scalar
+					} else {
+						for value in first!.value...scalar.value {
+							joiningTypes[value] = type
+						}
+
+						first = nil
+					}
 				}
 			}
 		}
