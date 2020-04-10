@@ -64,7 +64,7 @@ public extension String {
 				if input.lowercased().hasPrefix("xn--") {
 					let start = input.index(input.startIndex, offsetBy: 4)
 					guard let substr = String(input[start...]).punycodeDecoded else { return nil }
-					guard String(substr).isValidLabel else { return nil }
+					guard substr.isValidLabel else { return nil }
 					result.append(substr)
 				} else {
 					result.append(input)
