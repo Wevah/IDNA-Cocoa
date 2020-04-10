@@ -474,7 +474,7 @@ private extension String {
 		return self.hasValidJoiners
 	}
 
-	/// Whether a string's joiners (if any) are valid according to IDNA 2008 CONTEXTJ.
+	/// Whether a string's joiners (if any) are valid according to IDNA 2008 ContextJ.
 	///
 	/// See [RFC 5892, Appendix A.1 and A.2](https://tools.ietf.org/html/rfc5892#appendix-A).
 	var hasValidJoiners: Bool {
