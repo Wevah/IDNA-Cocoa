@@ -54,10 +54,6 @@ enum UTS46 {
 			throw UTS46Error.decompressionError
 		}
 
-		if data.count % 4 != 0 {
-			throw UTS46Error.badSize
-		}
-
 		var index = 0
 
 		while index < data.count {
