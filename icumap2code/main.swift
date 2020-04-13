@@ -31,17 +31,20 @@ import Darwin
 struct ICUMap2Code: ParsableCommand {
 	static let configuration = CommandConfiguration(commandName: "icumap2code", abstract: "Convert UTS#46 and joiner type map files to a compact binary format.")
 
-	@Option(name: .shortAndLong, help: "Output ompression mode; default is uncompressed.\nSupported values are 'lzfse', 'lz4', 'lzma', and 'zlib'.")
+	@Option(name: [.customLong("compress"), .short], help: ArgumentHelp("Output compression mode.", discussion: "Default is uncompressed. Supported values are 'lzfse', 'lz4', 'lzma', and 'zlib'.", valueName: "mode"))
 	var compression: NSData.CompressionAlgorithm?
 
 	@Flag(name: .shortAndLong, help: "Verbose output (on STDERR).")
 	var verbose: Bool
 
-	@Option(name: .shortAndLong, help: "uts46.txt input file.")
-	var uts46: String?
+	@Option(name: [.customLong("uts46"), .short], help: ArgumentHelp("uts46.txt input file.", valueName: "file"))
+	var uts46File: String?
 
-	@Option(name: .shortAndLong, help: "Joiner type input file.")
-	var joiners: String?
+	@Option(name: [.customLong("joiners"), .short], help: ArgumentHelp("Joiner type input file.", valueName: "file"))
+	var joinersFile: String?
+
+	@Option(name: [.customLong("output"), .short], help: ArgumentHelp("The output file.", discussion: "If no file is specified, outputs to stdout.", valueName: "file"))
+	var outputFile: String?
 
 	enum Marker {
 		static let characterMap = UInt8.max
@@ -51,24 +54,51 @@ struct ICUMap2Code: ParsableCommand {
 		static let sequenceTerminator: UInt8 = 0
 	}
 
-	func run() throws {
+	func header(compression: NSData.CompressionAlgorithm?) -> [UInt8] {
+		let compressionByte: UInt8
 
-		var outputData = Data()
-
-		if let path = uts46 {
-			try outputData.append(self.convertICU46Map(from: path))
+		if let compression = compression {
+			compressionByte = UInt8(compression.rawValue + 1)
+		} else {
+			compressionByte = 0
 		}
 
-		if let path = joiners {
-			try outputData.append(self.convertDerivedJoiningType(from: path))
+		// UTS46\0{version}{compression}
+		let version: UInt8 = 1
+		return [0x55, 0x54, 0x53, 0x34, 0x36, 0x00, version, compressionByte]
+	}
+
+	func run() throws {
+
+		var mapData = Data()
+
+		if let path = uts46File {
+			try mapData.append(self.convertICU46Map(from: path))
+		}
+
+		if let path = joinersFile {
+			try mapData.append(self.convertDerivedJoiningType(from: path))
 		}
 
 		if let compression = compression {
-			outputData = try (outputData as NSData).compressed(using: compression) as Data
+			mapData = try (mapData as NSData).compressed(using: compression) as Data
 		}
 
+		var outputData = Data()
+		outputData.reserveCapacity(8 + 4 + mapData.count)
+		outputData.append(contentsOf: header(compression: compression))
 
-		FileHandle.standardOutput.write(outputData)
+		var crc = mapData.crc32.littleEndian
+		let crcData = Data(bytes: &crc, count: MemoryLayout.stride(ofValue: crc))
+		outputData.append(crcData)
+		outputData.append(mapData)
+
+		if let outputFile = outputFile {
+			let url = URL.init(fileURLWithPath: outputFile)
+			try outputData.write(to: url)
+		} else {
+			FileHandle.standardOutput.write(outputData)
+		}
 	}
 }
 
