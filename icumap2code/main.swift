@@ -13,7 +13,27 @@ import Darwin
 
 /// Output file format. Codepoints are stored UTF-8-encoded.
 ///
-///     [marker][data]...
+/// All multibyte integers are little-endian.
+///
+/// Header:
+///
+///     +--------------+----------+---------+-------------+---------+
+///     | 5 bytes      | 1 byte   | 1 byte  | 1 byte      | 4 bytes |
+///     +--------------+----------+---------+-------------+---------+
+/// 	| magic number | reserved | version | compression | crc32   |
+///     +--------------+----------+---------+-------------+---------+
+///
+/// - `magic number`: `"UTS46"` (`0x55 0x54 0x53 0x34 0x36`).
+/// - `reserved`: Currently zero.
+/// - `version`: format version (1 byte; currently `0x01`).
+/// - `compression`: compression mode of the data (1 byte).
+/// - `crc32`: CRC32 of the (possibly compressed) data.
+///
+/// Data is a collection of data blocks of the format
+///
+///     [marker][section data] ...
+///
+/// Section data formats:
 ///
 ///	If marker is `characterMap`:
 ///
@@ -21,13 +41,17 @@ import Darwin
 ///
 ///	If marker is `disallowedCharacters` or `ignoredCharacters`:
 ///
-///	    [start-codepoint][end-codepoint] ...
+///	    [codepoint-range] ...
 ///
 ///	If marker is `joiningTypes`:
 ///
-///		[type][[start-codepoint][end-codepoint] ...]
+///		[type][[codepoint-range] ...]
 ///
-///	I.e., disallowed and ignored character blocks should always have even length, not including the marker.
+///	where `type` is one of `C`, `D`, `L`, `R`, or `T`.
+///
+///	`codepoint-range`: two codepoints, marking the first and last codepoints of a
+///	closed range. Single-codepoint ranges have the same start and end codepoint.
+///
 struct ICUMap2Code: ParsableCommand {
 	static let configuration = CommandConfiguration(commandName: "icumap2code", abstract: "Convert UTS#46 and joiner type map files to a compact binary format.")
 
