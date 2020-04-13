@@ -104,4 +104,9 @@ class PunycodeSwiftTests: XCTestCase {
 		XCTAssertNil("xn--0.pt".decodedURLString)
 		XCTAssertNil("xn--a-ecp.ru".decodedURLString)
 	}
+
+	func testCRC32() {
+		let data = "foo".data(using: .utf8)!
+		XCTAssertEqual(data.crc32, 0x8c736521)
+	}
 }

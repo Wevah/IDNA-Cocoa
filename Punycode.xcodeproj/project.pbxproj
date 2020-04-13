@@ -30,6 +30,8 @@
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B27409C92443E45B00E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
+		B27409CA2443F66900E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B2AF210724313283009F5EE7 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B2AF21092431376E009F5EE7 /* uts46.xz in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46.xz */; };
 		B2B4F3D0242EB79E00CC752F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4F3CF242EB79E00CC752F /* main.swift */; };
@@ -134,6 +136,7 @@
 		B25753801F3CE8B2002606DD /* WebNSURLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebNSURLExtras.h; sourceTree = "<group>"; };
 		B25753821F3CE9A9002606DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B26FA03C2055425C00CD6AF1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		B27409C82443E45B00E567E7 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		B2AF210624313283009F5EE7 /* UTS46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTS46.swift; sourceTree = "<group>"; };
 		B2AF21082431376E009F5EE7 /* uts46.xz */ = {isa = PBXFileReference; lastKnownFileType = file; path = uts46.xz; sourceTree = "<group>"; };
 		B2B4F3CD242EB79E00CC752F /* icumap2code */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = icumap2code; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -382,6 +385,7 @@
 			children = (
 				B2C3DCC1241FE95B00484850 /* String+Punycode.swift */,
 				B2AF210624313283009F5EE7 /* UTS46.swift */,
+				B27409C82443E45B00E567E7 /* Data+Extensions.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -697,6 +701,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B4F3D0242EB79E00CC752F /* main.swift in Sources */,
+				B27409CA2443F66900E567E7 /* Data+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +713,7 @@
 				B24AAF0E24363D0C003DD346 /* String+Punycode.swift in Sources */,
 				B2C3DD55241FEDF900484850 /* Controller.swift in Sources */,
 				B2C3DD45241FECF200484850 /* AppDelegate.swift in Sources */,
+				B27409C92443E45B00E567E7 /* Data+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
