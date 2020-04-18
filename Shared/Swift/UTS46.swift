@@ -51,7 +51,9 @@ class UTS46 {
 		case zlib = 3
 	}
 
-	struct Header: RawRepresentable, CustomDebugStringConvertible {
+	private struct Header: RawRepresentable, CustomDebugStringConvertible {
+		typealias RawValue = [UInt8]
+
 		var rawValue: [UInt8] {
 			return Self.signature + [UInt8(0), version, flags.rawValue]
 		}
@@ -59,7 +61,7 @@ class UTS46 {
 		private static let compressionMask: UInt8 = 0x07
 		private static let signature: [UInt8] = Array("UTS#46".utf8)
 
-		struct Flags: RawRepresentable {
+		private struct Flags: RawRepresentable {
 			var rawValue: UInt8 {
 				return (hasCRC ? hasCRCMask : 0) | UInt8(compression != nil ? compression!.rawValue + 1 : 0)
 			}
@@ -86,7 +88,7 @@ class UTS46 {
 		}
 
 		let version: UInt8
-		var flags: Flags
+		private var flags: Flags
 		var hasCRC: Bool { flags.hasCRC }
 		var compression: CompressionAlgorithm? { flags.compression }
 		var dataOffset: Int { 8 + (flags.hasCRC ? 4 : 0) }
@@ -122,7 +124,7 @@ class UTS46 {
 
 		guard header.version == 1 else { throw UTS46Error.unknownDataVersion }
 
-		let offset = 8 + (header.hasCRC ? 4 : 0)
+		let offset = header.dataOffset
 
 		guard fileData.count > offset else { throw UTS46Error.badSize }
 
