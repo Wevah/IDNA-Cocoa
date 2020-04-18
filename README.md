@@ -15,6 +15,8 @@ To use in your own projects, all you need is `String+Punycode.swift` or `NSStrin
 
 The Objective-C `NSString+Punycode` files are compatible with both ARC and Manual Retain Release modes.
 
+**Note:** The Objective-C implementation currently on `master` is pretty out-of-date, but the Swift version will have appropriate  `@objc` extensions while I update the Objective-C code.
+
 Note that these API currently don't do homograph detection.
 
 ## Macros (Objective-C only)
