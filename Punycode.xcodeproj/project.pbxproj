@@ -29,6 +29,7 @@
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		B265ED11244B94E50038CB55 /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B27409C92443E45B00E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B27409CA2443F66900E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
@@ -135,6 +136,7 @@
 		B255A5661500C4800073DF21 /* PunycodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PunycodeTests.m; sourceTree = "<group>"; };
 		B25753801F3CE8B2002606DD /* WebNSURLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebNSURLExtras.h; sourceTree = "<group>"; };
 		B25753821F3CE9A9002606DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B265ED10244B94E50038CB55 /* NSString+IDNA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+IDNA.swift"; sourceTree = "<group>"; };
 		B26FA03C2055425C00CD6AF1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B27409C82443E45B00E567E7 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		B2AF210624313283009F5EE7 /* UTS46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTS46.swift; sourceTree = "<group>"; };
@@ -262,10 +264,10 @@
 				B30134611A964E2600AF6C4E /* LICENSE */,
 				B30134621A964E2600AF6C4E /* README.md */,
 				B29EC659228102AE00478825 /* Shared */,
+				B2B4F3CE242EB79E00CC752F /* icumap2code */,
 				B29EC65B228102E300478825 /* Mac */,
 				B2C3DD43241FECF200484850 /* Mac (Swift) */,
 				B2552E1D22B134650015B473 /* iOS */,
-				B2B4F3CE242EB79E00CC752F /* icumap2code */,
 				B255A55F1500C4800073DF21 /* PunycodeTests */,
 				B24585782423206100CC75A4 /* PunycodeSwiftTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -386,6 +388,7 @@
 				B2C3DCC1241FE95B00484850 /* String+Punycode.swift */,
 				B2AF210624313283009F5EE7 /* UTS46.swift */,
 				B27409C82443E45B00E567E7 /* Data+Extensions.swift */,
+				B265ED10244B94E50038CB55 /* NSString+IDNA.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2AF210724313283009F5EE7 /* UTS46.swift in Sources */,
+				B265ED11244B94E50038CB55 /* NSString+IDNA.swift in Sources */,
 				B24AAF0E24363D0C003DD346 /* String+Punycode.swift in Sources */,
 				B2C3DD55241FEDF900484850 /* Controller.swift in Sources */,
 				B2C3DD45241FECF200484850 /* AppDelegate.swift in Sources */,
