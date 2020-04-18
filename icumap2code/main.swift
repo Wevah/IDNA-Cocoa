@@ -17,17 +17,29 @@ import Darwin
 ///
 /// Header:
 ///
-///     +--------------+----------+---------+-------------+---------+
-///     | 5 bytes      | 1 byte   | 1 byte  | 1 byte      | 4 bytes |
-///     +--------------+----------+---------+-------------+---------+
-/// 	| magic number | reserved | version | compression | crc32   |
-///     +--------------+----------+---------+-------------+---------+
+///     +--------------+---------+---------+---------+
+///     | 6 bytes      | 1 byte  | 1 byte  | 4 bytes |
+///     +--------------+---------+---------+---------+
+/// 	| magic number | version | flags   | crc32   |
+///     +--------------+---------+---------+---------+
 ///
-/// - `magic number`: `"UTS46"` (`0x55 0x54 0x53 0x34 0x36`).
-/// - `reserved`: Currently zero.
+/// - `magic number`: `"UTS#46"` (`0x55 0x54 0x53 0x23 0x34 0x36`).
 /// - `version`: format version (1 byte; currently `0x01`).
-/// - `compression`: compression mode of the data (1 byte).
-/// - `crc32`: CRC32 of the (possibly compressed) data.
+/// - `flags`: Bitfield:
+///
+///       +-----+-----+-----+-----+-----+-----+-----+-----+
+///       |  7  |  6  |  5  |  4  |  3  |  2  |  1  |  0  |
+///       +-----+-----+-----+-----+-----+-----+-----+-----+
+///       | currently unused      | crc | compression     |
+///       +-----+-----+-----+-----+-----+-----+-----+-----+
+///
+///     - `crc`: Contains a CRC32 of the data after the header.
+///     - `compression`: compression mode of the data.
+///       Currently identical to NSData's compression constants + 1:
+///       0 = no compression, 1 = LZFSE, etc.
+///
+/// - `crc32`: CRC32 of the (possibly compressed) data. Implementations can skip
+///   parsing this unless data integrity is an issue.
 ///
 /// Data is a collection of data blocks of the format
 ///
@@ -78,18 +90,69 @@ struct ICUMap2Code: ParsableCommand {
 		static let sequenceTerminator: UInt8 = 0
 	}
 
+	struct Header: RawRepresentable {
+		var rawValue: [UInt8] {
+			return Self.signature + [UInt8(0), version, flags.rawValue]
+		}
+
+		private static let compressionMask: UInt8 = 0x07
+		private static let signature: [UInt8] = Array("UTF46".utf8) // "UTS46"
+
+		struct Flags: RawRepresentable {
+			var rawValue: UInt8 {
+				return (hasCRC ? hasCRCMask : 0) | UInt8(compression != nil ? compression!.rawValue + 1 : 0)
+			}
+
+			var hasCRC: Bool
+			var compression: NSData.CompressionAlgorithm?
+
+			private let hasCRCMask: UInt8 = 1 << 3
+			private let compressionMask: UInt8 = 0x7
+
+			init(rawValue: UInt8) {
+				hasCRC = rawValue & hasCRCMask != 0
+				let compressionBits = rawValue & compressionMask
+
+				if (1...4).contains(compressionBits) {
+					compression = NSData.CompressionAlgorithm(rawValue: Int(compressionBits) - 1)
+				}
+			}
+
+			init(compression: NSData.CompressionAlgorithm? = nil, hasCRC: Bool = false) {
+				self.compression = compression
+				self.hasCRC = hasCRC
+			}
+		}
+
+		let version: UInt8
+		var flags: Flags
+
+		init?(rawValue: [UInt8]) {
+			guard rawValue.count == 8 else { return nil }
+			guard rawValue[0..<5].elementsEqual(Self.signature) else { return nil }
+
+			version = rawValue[6]
+			flags = Flags(rawValue: rawValue[7])
+		}
+
+		init(compression: NSData.CompressionAlgorithm? = nil, hasCRC: Bool = false) {
+			self.version = 1
+			self.flags = Flags(compression: compression, hasCRC: hasCRC)
+		}
+	}
+
 	func header(compression: NSData.CompressionAlgorithm?) -> [UInt8] {
-		let compressionByte: UInt8
+		let flags: UInt8
 
 		if let compression = compression {
-			compressionByte = UInt8(compression.rawValue + 1)
+			flags = UInt8(compression.rawValue + 1)
 		} else {
-			compressionByte = 0
+			flags = 0
 		}
 
 		// UTS46\0{version}{compression}
 		let version: UInt8 = 1
-		return [0x55, 0x54, 0x53, 0x34, 0x36, 0x00, version, compressionByte]
+		return [0x55, 0x54, 0x53, 0x34, 0x36, 0x00, version, flags]
 	}
 
 	func run() throws {
@@ -300,4 +363,3 @@ extension UInt32 {
 }
 
 ICUMap2Code.main()
-
