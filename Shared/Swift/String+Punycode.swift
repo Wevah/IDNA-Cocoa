@@ -557,8 +557,8 @@ private enum Punycode {
 	static let delimiter: Character = "-"
 
 	static func decodeDigit(_ cp: UInt32) -> UInt32 {
-		return cp - 48 < 10 ? cp - 22 : cp - 65 < 26 ? cp - 65 :
-			cp - 97 < 26 ? cp - 97 : Self.base
+		return cp &- 48 < 10 ? cp &- 22 : cp &- 65 < 26 ? cp &- 65 :
+			cp &- 97 < 26 ? cp &- 97 : Self.base
 	}
 
 	static func encodeDigit(_ d: UInt32, flag: Bool) -> UInt32 {
