@@ -11,7 +11,7 @@ A simple punycode/IDNA String extension and NSString category, based on code and
 
 Use this to convert internationalized domain names (IDN) between Unicode and ASCII.
 
-To use in your own projects, all you need is `String+Punycode.swift` or `NSString+Punycode.h/m`. This project includes a sample testing app.
+To use in your own projects, you need to include everything in the `Shared/Swift` folder, and make sure the `uts46` data file is copied to your application's `Resources` folder.
 
 The Objective-C `NSString+Punycode` files are compatible with both ARC and Manual Retain Release modes.
 
