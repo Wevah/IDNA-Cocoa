@@ -34,7 +34,7 @@
 		B27409C92443E45B00E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B27409CA2443F66900E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B2AF210724313283009F5EE7 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
-		B2AF21092431376E009F5EE7 /* uts46.xz in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46.xz */; };
+		B2AF21092431376E009F5EE7 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
 		B2B4F3D0242EB79E00CC752F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4F3CF242EB79E00CC752F /* main.swift */; };
 		B2C3DD45241FECF200484850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DD44241FECF200484850 /* AppDelegate.swift */; };
 		B2C3DD47241FECF400484850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C3DD46241FECF400484850 /* Assets.xcassets */; };
@@ -140,7 +140,7 @@
 		B26FA03C2055425C00CD6AF1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B27409C82443E45B00E567E7 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		B2AF210624313283009F5EE7 /* UTS46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTS46.swift; sourceTree = "<group>"; };
-		B2AF21082431376E009F5EE7 /* uts46.xz */ = {isa = PBXFileReference; lastKnownFileType = file; path = uts46.xz; sourceTree = "<group>"; };
+		B2AF21082431376E009F5EE7 /* uts46 */ = {isa = PBXFileReference; lastKnownFileType = file; path = uts46; sourceTree = "<group>"; };
 		B2B4F3CD242EB79E00CC752F /* icumap2code */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = icumap2code; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B4F3CF242EB79E00CC752F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B2C3DCC1241FE95B00484850 /* String+Punycode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Punycode.swift"; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 			children = (
 				B25753801F3CE8B2002606DD /* WebNSURLExtras.h */,
 				B2C59E7224278AF400183346 /* uidna-min.h */,
-				B2AF21082431376E009F5EE7 /* uts46.xz */,
+				B2AF21082431376E009F5EE7 /* uts46 */,
 				B2C3DCC0241FE94400484850 /* Swift */,
 				B2C3DCBF241FE92F00484850 /* Objective-C */,
 			);
@@ -644,7 +644,7 @@
 			files = (
 				B2C3DD47241FECF400484850 /* Assets.xcassets in Resources */,
 				B2C3DD56241FEE5A00484850 /* MainMenu.xib in Resources */,
-				B2AF21092431376E009F5EE7 /* uts46.xz in Resources */,
+				B2AF21092431376E009F5EE7 /* uts46 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

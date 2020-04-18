@@ -441,6 +441,8 @@ private extension String {
 	/// - Returns: The mapped string.
 	/// - Throws: `UTS46MapError`
 	func mapUTS46() throws -> String {
+		try! UTS46.loadIfNecessary()
+
 		var result = ""
 
 		for scalar in self.unicodeScalars {
@@ -478,6 +480,8 @@ private extension String {
 	///
 	/// See [RFC 5892, Appendix A.1 and A.2](https://tools.ietf.org/html/rfc5892#appendix-A).
 	var hasValidJoiners: Bool {
+		try! UTS46.loadIfNecessary()
+		
 		let scalars = self.unicodeScalars
 
 		for index in scalars.indices {
