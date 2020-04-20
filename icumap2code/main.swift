@@ -64,8 +64,6 @@ import Darwin
 ///	closed range. Single-codepoint ranges have the same start and end codepoint.
 ///
 struct ICUMap2Code: ParsableCommand {
-	typealias CompressionAlgorithm = NSData.CompressionAlgorithm
-
 	static let configuration = CommandConfiguration(commandName: "icumap2code", abstract: "Convert UTS#46 and joiner type map files to a compact binary format.")
 
 	@Option(name: [.customLong("compress"), .short], help: ArgumentHelp("Output compression mode.", discussion: "Default is uncompressed. Supported values are 'lzfse', 'lz4', 'lzma', and 'zlib'.", valueName: "mode"))
@@ -91,21 +89,32 @@ struct ICUMap2Code: ParsableCommand {
 		static let sequenceTerminator: UInt8 = 0
 	}
 
-	struct Header: RawRepresentable {
+	/// Identical values to `NSData.CompressionAlgorithm + 1`.
+	enum CompressionAlgorithm: UInt8 {
+		case none = 0
+		case lzfse = 1
+		case lz4 = 2
+		case lzma = 3
+		case zlib = 4
+	}
+
+	private struct Header: RawRepresentable, CustomDebugStringConvertible {
+		typealias RawValue = [UInt8]
+
 		var rawValue: [UInt8] {
-			return Self.signature + [version, flags.rawValue]
+			return Self.signature + [UInt8(0), version, flags.rawValue]
 		}
 
 		private static let compressionMask: UInt8 = 0x07
 		private static let signature: [UInt8] = Array("UTS#46".utf8)
 
-		struct Flags: RawRepresentable {
+		private struct Flags: RawRepresentable {
 			var rawValue: UInt8 {
-				return (hasCRC ? hasCRCMask : 0) | UInt8(compression != nil ? compression!.rawValue + 1 : 0)
+				return (hasCRC ? hasCRCMask : 0) | compression.rawValue
 			}
 
 			var hasCRC: Bool
-			var compression: NSData.CompressionAlgorithm?
+			var compression: CompressionAlgorithm
 
 			private let hasCRCMask: UInt8 = 1 << 3
 			private let compressionMask: UInt8 = 0x7
@@ -114,33 +123,37 @@ struct ICUMap2Code: ParsableCommand {
 				hasCRC = rawValue & hasCRCMask != 0
 				let compressionBits = rawValue & compressionMask
 
-				if (1...4).contains(compressionBits) {
-					compression = CompressionAlgorithm(rawValue: Int(compressionBits) - 1)
-				}
+				compression = CompressionAlgorithm(rawValue: compressionBits) ?? .none
 			}
 
-			init(compression: CompressionAlgorithm? = nil, hasCRC: Bool = false) {
+			init(compression: CompressionAlgorithm = .none, hasCRC: Bool = false) {
 				self.compression = compression
 				self.hasCRC = hasCRC
 			}
 		}
 
 		let version: UInt8
-		var flags: Flags
+		private var flags: Flags
+		var hasCRC: Bool { flags.hasCRC }
+		var compression: CompressionAlgorithm { flags.compression }
+		var dataOffset: Int { 8 + (flags.hasCRC ? 4 : 0) }
 
-		init?(rawValue: [UInt8]) {
+		init?<T: DataProtocol>(rawValue: T) where T.Index == Int {
 			guard rawValue.count == 8 else { return nil }
-			guard rawValue[0..<5].elementsEqual(Self.signature) else { return nil }
+			guard rawValue.prefix(Self.signature.count).elementsEqual(Self.signature) else { return nil }
 
 			version = rawValue[6]
 			flags = Flags(rawValue: rawValue[7])
 		}
 
-		init(compression: CompressionAlgorithm? = nil, hasCRC: Bool = false) {
+		init(compression: CompressionAlgorithm = .none, hasCRC: Bool = false) {
 			self.version = 1
 			self.flags = Flags(compression: compression, hasCRC: hasCRC)
 		}
+
+		var debugDescription: String { "has CRC: \(hasCRC); compression: \(String(describing: compression))" }
 	}
+
 
 	func run() throws {
 
@@ -155,7 +168,8 @@ struct ICUMap2Code: ParsableCommand {
 		}
 
 		if let compression = compression {
-			mapData = try (mapData as NSData).compressed(using: compression) as Data
+			let nsDataCompression = NSData.CompressionAlgorithm(rawValue: Int(compression.rawValue) - 1)!
+			mapData = try (mapData as NSData).compressed(using: nsDataCompression) as Data
 		}
 
 		var outputData = Data()
