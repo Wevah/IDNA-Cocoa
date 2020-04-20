@@ -43,12 +43,13 @@ class UTS46 {
 		case unknownDataVersion
 	}
 
-	/// Identical values to `NSData.CompressionAlgorithm`.
-	enum CompressionAlgorithm: Int {
-		case lzfse = 0
-		case lz4 = 1
-		case lzma = 2
-		case zlib = 3
+	/// Identical values to `NSData.CompressionAlgorithm + 1`.
+	enum CompressionAlgorithm: UInt8 {
+		case none = 0
+		case lzfse = 1
+		case lz4 = 2
+		case lzma = 3
+		case zlib = 4
 	}
 
 	private struct Header: RawRepresentable, CustomDebugStringConvertible {
@@ -63,11 +64,11 @@ class UTS46 {
 
 		private struct Flags: RawRepresentable {
 			var rawValue: UInt8 {
-				return (hasCRC ? hasCRCMask : 0) | UInt8(compression != nil ? compression!.rawValue + 1 : 0)
+				return (hasCRC ? hasCRCMask : 0) | compression.rawValue
 			}
 
 			var hasCRC: Bool
-			var compression: CompressionAlgorithm?
+			var compression: CompressionAlgorithm
 
 			private let hasCRCMask: UInt8 = 1 << 3
 			private let compressionMask: UInt8 = 0x7
@@ -76,12 +77,10 @@ class UTS46 {
 				hasCRC = rawValue & hasCRCMask != 0
 				let compressionBits = rawValue & compressionMask
 
-				if (1...4).contains(compressionBits) {
-					compression = CompressionAlgorithm(rawValue: Int(compressionBits) - 1)
-				}
+				compression = CompressionAlgorithm(rawValue: compressionBits) ?? .none
 			}
 
-			init(compression: CompressionAlgorithm? = nil, hasCRC: Bool = false) {
+			init(compression: CompressionAlgorithm = .none, hasCRC: Bool = false) {
 				self.compression = compression
 				self.hasCRC = hasCRC
 			}
@@ -90,7 +89,7 @@ class UTS46 {
 		let version: UInt8
 		private var flags: Flags
 		var hasCRC: Bool { flags.hasCRC }
-		var compression: CompressionAlgorithm? { flags.compression }
+		var compression: CompressionAlgorithm { flags.compression }
 		var dataOffset: Int { 8 + (flags.hasCRC ? 4 : 0) }
 
 		init?<T: DataProtocol>(rawValue: T) where T.Index == Int {
@@ -101,12 +100,12 @@ class UTS46 {
 			flags = Flags(rawValue: rawValue[7])
 		}
 
-		init(compression: CompressionAlgorithm? = nil, hasCRC: Bool = false) {
+		init(compression: CompressionAlgorithm = .none, hasCRC: Bool = false) {
 			self.version = 1
 			self.flags = Flags(compression: compression, hasCRC: hasCRC)
 		}
 
-		var debugDescription: String { "has CRC: \(hasCRC); compression: \(compression != nil ? String(describing: compression!) : "none")" }
+		var debugDescription: String { "has CRC: \(hasCRC); compression: \(String(describing: compression))" }
 	}
 
 	private static func parseHeader(from data: Data) throws -> Header? {
