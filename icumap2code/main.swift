@@ -72,9 +72,11 @@ struct ICUMap2Code: ParsableCommand {
 	@Flag(name: .shortAndLong, help: "Verbose output (on STDERR).")
 	var verbose: Bool
 
+	/// ucs46.txt
 	@Option(name: [.customLong("uts46"), .short], help: ArgumentHelp("uts46.txt input file.", valueName: "file"))
 	var uts46File: String?
 
+	/// DerivedJoiningType.txt
 	@Option(name: [.customLong("joiners"), .short], help: ArgumentHelp("Joiner type input file.", valueName: "file"))
 	var joinersFile: String?
 
