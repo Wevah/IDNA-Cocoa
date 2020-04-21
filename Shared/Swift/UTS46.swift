@@ -96,8 +96,8 @@ class UTS46 {
 			guard rawValue.count == 8 else { return nil }
 			guard rawValue.prefix(Self.signature.count).elementsEqual(Self.signature) else { return nil }
 
-			version = rawValue[6]
-			flags = Flags(rawValue: rawValue[7])
+			version = rawValue[rawValue.index(rawValue.startIndex, offsetBy: 6)]
+			flags = Flags(rawValue: rawValue[rawValue.index(rawValue.startIndex, offsetBy: 7)])
 		}
 
 		init(compression: CompressionAlgorithm = .none, hasCRC: Bool = false) {
