@@ -108,6 +108,10 @@ class UTS46 {
 		var debugDescription: String { "has CRC: \(hasCRC); compression: \(String(describing: compression))" }
 	}
 
+}
+
+extension UTS46 {
+
 	private static func parseHeader(from data: Data) throws -> Header? {
 		let headerData = data.prefix(8)
 
