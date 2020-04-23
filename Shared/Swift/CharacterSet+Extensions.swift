@@ -11,7 +11,7 @@ extension CharacterSet {
 
 	/// Convert a character set to a string with character range pairs of the form
 	/// `[start][end] ...`
-	func convertedToRangeString() -> String {
+	func rangeStringData() -> Data {
 		var str = String()
 
 		var startChar: UnicodeScalar?
@@ -35,7 +35,7 @@ extension CharacterSet {
 			}
 		}
 
-		return str
+		return str.data(using: .utf8)!
 	}
 
 }
