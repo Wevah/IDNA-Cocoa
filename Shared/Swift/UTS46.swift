@@ -50,6 +50,22 @@ class UTS46 {
 		case lz4 = 2
 		case lzma = 3
 		case zlib = 4
+
+		var rawAlgorithm: compression_algorithm? {
+			switch self {
+				case .lzfse:
+					return COMPRESSION_LZFSE
+				case .lz4:
+					return COMPRESSION_LZ4
+				case .lzma:
+					return COMPRESSION_LZMA
+				case .zlib:
+					return COMPRESSION_ZLIB
+				default:
+					return nil
+			}
+
+		}
 	}
 
 	private struct Header: RawRepresentable, CustomDebugStringConvertible {
@@ -170,20 +186,7 @@ extension UTS46 {
 
 	private static func decompress(data: Data, algorithm: CompressionAlgorithm?) -> Data? {
 
-		var rawAlgorithm: compression_algorithm
-
-		switch algorithm {
-			case .lzfse:
-				rawAlgorithm = COMPRESSION_LZFSE
-			case .lz4:
-				rawAlgorithm = COMPRESSION_LZ4
-			case .lzma:
-				rawAlgorithm = COMPRESSION_LZMA
-			case .zlib:
-				rawAlgorithm = COMPRESSION_ZLIB
-			default:
-				return data
-		}
+		guard let rawAlgorithm = algorithm?.rawAlgorithm else { return data }
 
 		let capacity = 100_000
 		let destinationBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: capacity)
