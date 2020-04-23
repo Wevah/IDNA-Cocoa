@@ -9,28 +9,39 @@ import Foundation
 
 extension CharacterSet {
 
-	/// Convert a character set to a string with character range pairs of the form
+	/// Convert a character set to UTF-8 data with character range pairs of the form
 	/// `[start][end] ...`
+	///
+	/// Example:
+	/// ```
+	/// let charset = CharacterSet(charactersIn: "abcdefgwxyz")
+	///
+	/// let data = charset.rangeStringData()
+	/// // data is "agwz" (UTF-8 encoded)
+	/// ```
 	func rangeStringData() -> Data {
 		var str = String()
 
 		var startChar: UnicodeScalar?
 		var lastChar: UnicodeScalar?
 
-		for i in 0...0x10FFFF {
-			if let c = UnicodeScalar(i) {
-				if self.contains(c) {
-					if startChar == nil {
-						startChar = c
+		// Skip surrogate codepoints
+		for range in [0...0xD7FF, 0xE000...0x10FFFF] {
+			for i in range {
+				if let c = UnicodeScalar(i) {
+					if self.contains(c) {
+						if startChar == nil {
+							startChar = c
+						}
+
+						lastChar = c
+					} else if let start = startChar, let last = lastChar {
+						str.unicodeScalars.append(start)
+						str.unicodeScalars.append(last)
+
+						startChar = nil
+						lastChar = nil
 					}
-
-					lastChar = c
-				} else if let start = startChar, let last = lastChar {
-					str.unicodeScalars.append(start)
-					str.unicodeScalars.append(last)
-
-					startChar = nil
-					lastChar = nil
 				}
 			}
 		}
