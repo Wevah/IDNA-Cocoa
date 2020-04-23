@@ -72,7 +72,9 @@ class UTS46 {
 		typealias RawValue = [UInt8]
 
 		var rawValue: [UInt8] {
-			return Self.signature + [UInt8(0), version, flags.rawValue]
+			let value = Self.signature + [version, flags.rawValue]
+			assert(value.count == 8)
+			return value
 		}
 
 		private static let compressionMask: UInt8 = 0x07
