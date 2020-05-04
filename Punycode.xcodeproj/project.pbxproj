@@ -15,6 +15,9 @@
 		B24106FB22450B860014E4D0 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; };
 		B24106FC22450B860014E4D0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B24106FD22450B860014E4D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		B244BE892460CCE800FBA17F /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
+		B244BE8A2460CD2800FBA17F /* CharacterSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */; };
+		B244BE8B2460CD2A00FBA17F /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
 		B245857A2423206100CC75A4 /* PunycodeSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */; };
 		B24AAF0E24363D0C003DD346 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B2552E2022B134650015B473 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E1F22B134650015B473 /* AppDelegate.m */; };
@@ -709,7 +712,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B244BE8A2460CD2800FBA17F /* CharacterSet+Extensions.swift in Sources */,
+				B244BE8B2460CD2A00FBA17F /* Scanner+Extensions.swift in Sources */,
 				B2B4F3D0242EB79E00CC752F /* main.swift in Sources */,
+				B244BE892460CCE800FBA17F /* UTS46.swift in Sources */,
 				B27409CA2443F66900E567E7 /* Data+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
