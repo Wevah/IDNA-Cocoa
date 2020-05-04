@@ -488,7 +488,7 @@ extension UTS46 {
 		return data
 	}
 
-	static func data(compression: CompressionAlgorithm = .none, includeCRC: Bool = true) -> Data? {
+	static func data(compression: CompressionAlgorithm = .none, includeCRC: Bool = true) throws -> Data {
 		var outputData = Data()
 
 		var data = self.characterMapData() + self.disallowedCharactersData() + self.ignoredCharactersData() + self.joiningTypesData()
@@ -497,12 +497,12 @@ extension UTS46 {
 			let capacity = 100_000
 			let destinationBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: capacity)
 
-			let compressed = data.withUnsafeBytes { (rawBuffer) -> Data? in
+			let compressed = try data.withUnsafeBytes { (rawBuffer) -> Data? in
 				let bound = rawBuffer.bindMemory(to: UInt8.self)
 				let encodedCount = compression_decode_buffer(destinationBuffer, capacity, bound.baseAddress!, rawBuffer.count, nil, rawAlgorithm)
 
 				if encodedCount == 0 {
-					return nil
+					throw UTS46Error.compressionError
 				}
 
 				return Data(bytes: destinationBuffer, count: encodedCount)
@@ -528,7 +528,7 @@ extension UTS46 {
 	}
 
 	static func write(to fileHandle: FileHandle, compression: CompressionAlgorithm = .none) throws {
-		guard let data = self.data(compression: compression) else { throw UTS46Error.compressionError }
+		let data = try self.data(compression: compression)
 
 		if #available(macOS 10.15, iOS 13.0, *) {
 			try fileHandle.write(contentsOf: data)
@@ -538,7 +538,7 @@ extension UTS46 {
 	}
 
 	static func write(to url: URL, compression: CompressionAlgorithm = .none) throws {
-		guard let data = self.data(compression: compression) else { throw UTS46Error.compressionError }
+		let data = try self.data(compression: compression)
 		try data.write(to: url)
 	}
 
