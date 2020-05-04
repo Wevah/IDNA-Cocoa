@@ -66,8 +66,8 @@ import Darwin
 struct ICUMap2Code: ParsableCommand {
 	static let configuration = CommandConfiguration(commandName: "icumap2code", abstract: "Convert UTS#46 and joiner type map files to a compact binary format.")
 
-	@Option(name: [.customLong("compress"), .short], help: ArgumentHelp("Output compression mode.", discussion: "Default is uncompressed. Supported values are 'lzfse', 'lz4', 'lzma', and 'zlib'.", valueName: "mode"))
-	var compression: CompressionAlgorithm?
+	@Option(name: [.customLong("compress"), .short], default: CompressionAlgorithm.none, help: ArgumentHelp("Output compression mode.", discussion: "Default is uncompressed. Supported values are 'lzfse', 'lz4', 'lzma', and 'zlib'.", valueName: "mode"))
+	var compression: CompressionAlgorithm
 
 	@Flag(name: .shortAndLong, help: "Verbose output (on STDERR).")
 	var verbose: Bool
@@ -169,7 +169,7 @@ struct ICUMap2Code: ParsableCommand {
 			try mapData.append(self.convertDerivedJoiningType(from: path))
 		}
 
-		if let compression = compression {
+		if compression != .none {
 			let nsDataCompression = NSData.CompressionAlgorithm(rawValue: Int(compression.rawValue) - 1)!
 			mapData = try (mapData as NSData).compressed(using: nsDataCompression) as Data
 		}
