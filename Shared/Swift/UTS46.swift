@@ -414,7 +414,6 @@ extension UTS46 {
 			guard let joiningType = scanner.shimScanCharacters(from: joiningTypeCharacters),
 				joiningType.count == 1 else { continue }
 
-
 			for codepoint in range {
 				joiningTypes[UInt32(codepoint)] = JoiningType(rawValue: joiningType.first!)!
 			}
@@ -455,7 +454,7 @@ extension UTS46 {
 			var firstScalar: UnicodeScalar? = nil
 			var lastScalar: UnicodeScalar? = nil
 
-			for scalar in $0.unicodeScalars {
+			for scalar in $0.unicodeScalars.sorted() {
 				if firstScalar == nil {
 					firstScalar = scalar
 				} else if let first = firstScalar, let last = lastScalar {
@@ -499,7 +498,7 @@ extension UTS46 {
 
 			let compressed = try data.withUnsafeBytes { (rawBuffer) -> Data? in
 				let bound = rawBuffer.bindMemory(to: UInt8.self)
-				let encodedCount = compression_decode_buffer(destinationBuffer, capacity, bound.baseAddress!, rawBuffer.count, nil, rawAlgorithm)
+				let encodedCount = compression_encode_buffer(destinationBuffer, capacity, bound.baseAddress!, rawBuffer.count, nil, rawAlgorithm)
 
 				if encodedCount == 0 {
 					throw UTS46Error.compressionError
