@@ -85,9 +85,6 @@ struct ICUMap2Code: ParsableCommand {
 
 
 	func run() throws {
-
-		print(FileManager.default.currentDirectoryPath)
-
 		if let path = uts46File {
 			try UTS46.readCharacterMap(fromTextFile: URL(fileURLWithPath: path))
 		}
