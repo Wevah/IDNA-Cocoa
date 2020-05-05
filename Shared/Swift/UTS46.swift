@@ -530,6 +530,10 @@ extension UTS46 {
 		return outputData
 	}
 
+}
+
+extension UTS46 {
+
 	static func write(to fileHandle: FileHandle, compression: CompressionAlgorithm = .none) throws {
 		let data = try self.data(compression: compression)
 
