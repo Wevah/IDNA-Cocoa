@@ -494,7 +494,11 @@ extension UTS46 {
 	static func data(compression: CompressionAlgorithm = .none, includeCRC: Bool = true) throws -> Data {
 		var outputData = Data()
 
-		var data = self.characterMapData() + self.disallowedCharactersData() + self.ignoredCharactersData() + self.joiningTypesData()
+		var data = Data()
+		data.append(self.characterMapData())
+		data.append(self.disallowedCharactersData())
+		data.append(self.ignoredCharactersData())
+		data.append(self.joiningTypesData())
 
 		if let rawAlgorithm = compression.rawAlgorithm {
 			let capacity = 100_000
