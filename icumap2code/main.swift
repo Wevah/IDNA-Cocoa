@@ -7,8 +7,6 @@
 
 import Foundation
 import ArgumentParser
-import Compression
-import Darwin
 
 /// Output file format. Codepoints are stored UTF-8-encoded.
 ///
@@ -35,12 +33,17 @@ import Darwin
 ///     - `crc`: Contains a CRC32 of the data after the header.
 ///     - `compression`: compression mode of the data.
 ///       Currently identical to NSData's compression constants + 1:
-///       0 = no compression, 1 = LZFSE, etc.
+///
+///       - 0: no compression
+///       - 1: LZFSE
+///       - 2: LZ4
+///       - 3: LZMA
+///       - 4: ZLIB
 ///
 /// - `crc32`: CRC32 of the (possibly compressed) data. Implementations can skip
 ///   parsing this unless data integrity is an issue.
 ///
-/// Data is a collection of data blocks of the format
+/// The data section is a collection of data blocks of the format
 ///
 ///     [marker][section data] ...
 ///
@@ -64,7 +67,7 @@ import Darwin
 ///	closed range. Single-codepoint ranges have the same start and end codepoint.
 ///
 struct ICUMap2Code: ParsableCommand {
-	static let configuration = CommandConfiguration(commandName: "icumap2code", abstract: "Convert UTS#46 and joiner type map files to a compact binary format.")
+	static let configuration = CommandConfiguration(commandName: "icumap2code", abstract: "Convert UTS#46 and joiner type map files to a compact binary format.", version: "1.0 (v10)")
 
 	@Option(name: [.customLong("compress"), .short], default: UTS46.CompressionAlgorithm.none, help: ArgumentHelp("Output compression mode.", discussion: "Default is uncompressed. Supported values are 'lzfse', 'lz4', 'lzma', and 'zlib'.", valueName: "mode"))
 	var compression: UTS46.CompressionAlgorithm
