@@ -423,6 +423,8 @@ extension UTS46 {
 	private static func characterMapData() -> Data {
 		var data = Data()
 
+		data.append(Marker.characterMap)
+
 		for key in characterMap.keys.sorted() {
 			data.append(contentsOf: key.utf8)
 
@@ -435,11 +437,11 @@ extension UTS46 {
 	}
 
 	private static func disallowedCharactersData() -> Data {
-		return disallowedCharacters.rangeStringData()
+		return [Marker.disallowedCharacters] + disallowedCharacters.rangeStringData()
 	}
 
 	private static func ignoredCharactersData() -> Data {
-		return ignoredCharacters.rangeStringData()
+		return [Marker.ignoredCharacters] + ignoredCharacters.rangeStringData()
 	}
 
 	private static func joiningTypesData() -> Data {
@@ -478,6 +480,8 @@ extension UTS46 {
 		}
 
 		var data = Data()
+
+		data.append(Marker.joiningTypes)
 
 		for type in reverseMap.keys.sorted() {
 			data.append(contentsOf: type.utf8)
