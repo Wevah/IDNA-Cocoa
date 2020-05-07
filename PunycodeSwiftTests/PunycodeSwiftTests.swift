@@ -10,19 +10,6 @@ import XCTest
 
 class PunycodeSwiftTests: XCTestCase {
 
-//	static override func setUp() {
-//		guard UTS46.characterMap.isEmpty else { return }
-//
-//		if let blobURL = Bundle(for: self).url(forResource: "uts46", withExtension: "xz") {
-//			do {
-//				try UTS46.load(from: blobURL, compression: .lzma)
-//			} catch {
-//				print("error: \(error)")
-//			}
-//		}
-//
-//	}
-
 	func testIDNAEncoding() {
 		let dict = [
 			"http://www.bücher.ch/":	"http://www.xn--bcher-kva.ch/",
