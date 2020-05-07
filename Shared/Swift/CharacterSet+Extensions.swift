@@ -12,12 +12,14 @@ extension CharacterSet {
 	/// Convert a character set to UTF-8 data with character range pairs of the form
 	/// `[start][end] ...`
 	///
+	/// Ranges of length 1 will use the same character for start and end.
+	/// 
 	/// Example:
 	/// ```
-	/// let charset = CharacterSet(charactersIn: "abcdefgwxyz")
+	/// let charset = CharacterSet(charactersIn: "abcdefgmwxyz")
 	///
 	/// let data = charset.rangeStringData()
-	/// // data is "agwz" (UTF-8 encoded)
+	/// // data is "agmmwz" (UTF-8 encoded)
 	/// ```
 	func rangeStringData() -> Data {
 		var str = String()
