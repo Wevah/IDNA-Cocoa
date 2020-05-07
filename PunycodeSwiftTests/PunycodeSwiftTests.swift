@@ -109,4 +109,10 @@ class PunycodeSwiftTests: XCTestCase {
 		let data = "foo".data(using: .utf8)!
 		XCTAssertEqual(data.crc32, 0x8c736521)
 	}
+
+	func testRangeStringData() {
+		let charset = CharacterSet(charactersIn: "abcdefgmwxyz")
+		let rangeData = charset.rangeStringData()
+		XCTAssertEqual(rangeData, "agmmwz".data(using: .utf8)!)
+	}
 }
