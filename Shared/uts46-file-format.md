@@ -4,7 +4,11 @@ Codepoints are stored UTF-8-encoded.
 
 All multibyte integers are little-endian.
 
-Header:
+| 8 or 12 bytes     | ...           |
+|-------------------|---------------|
+| [Header](#header) | [Data](#data) |
+
+## Header
 
 | 6 bytes      | 1 byte  | 1 byte | 4 bytes? |
 |--------------|---------|--------|---------|
@@ -12,8 +16,10 @@ Header:
 
 - `magic number`: `"UTS#46"` (`0x55 0x54 0x53 0x23 0x34 0x36`).
 - `version`: format version (1 byte; currently `0x01`).
-- `flags`: Bitfield:
+- `flags`: See [Flags](#flags) below
+- `optional crc`: A CRC32 of the data section if `flags` has the `has crc` bit set.
 
+### Flags [flags]
 <table>
 <thead>
 <tr>
@@ -36,7 +42,13 @@ Header:
 </tbody>
 </table>
 
-- `crc?`: If 1, there will be a CRC32 of the data section after the header.
+<!-- 
+| 7 |  6  |  5  |  4  |    3    |  2  |  1  |  0  |
+|-------------------------------------------------|
+| unused           |||| has crc | compression   |||
+ -->
+
+- `has crc`: If 1, there will be a CRC32 of the data section after the header.
 - `compression`: compression mode of the data.
 	Currently identical to NSData's compression constants + 1:
 	
@@ -46,7 +58,7 @@ Header:
 		- 3: LZMA
 		- 4: ZLIB
 		
-- `optional crc`: A CRC32 of the data section if the `has crc` bit is set.
+## Data Section [data]
 
 The data section is a collection of data blocks of the format
 
