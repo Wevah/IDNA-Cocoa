@@ -61,21 +61,21 @@ All multibyte integers are little-endian.
 		
 ## Data
 
-The data section is a collection of data blocks of the format
+The data section is a (possibly-compressed; see [Flags](#flags)) collection of data blocks of the format
 
 	[marker][section data] ...
 
 Section data formats:
 
-If marker is `characterMap`:
+If marker is `characterMap` (`0xFF`):
 
 	[codepoint][mapped-codepoint ...][null] ...
 
-If marker is `disallowedCharacters` or `ignoredCharacters`:
+If marker is `ignoredCharacters` (`0xFE`) or `disallowedCharacters` (`0xFD`):
 
 	[codepoint-range] ...
 
-If marker is `joiningTypes`:
+If marker is `joiningTypes` (`0xFC`):
 
 ```
 [type][[codepoint-range] ...]
