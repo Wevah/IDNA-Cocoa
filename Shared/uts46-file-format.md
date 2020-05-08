@@ -19,7 +19,8 @@ All multibyte integers are little-endian.
 - `flags`: See [Flags](#flags) below
 - `optional crc`: A CRC32 of the data section if `flags` has the `has crc` bit set.
 
-### Flags [flags]
+### Flags
+
 <table>
 <thead>
 <tr>
@@ -58,7 +59,7 @@ All multibyte integers are little-endian.
 		- 3: LZMA
 		- 4: ZLIB
 		
-## Data Section [data]
+## Data
 
 The data section is a collection of data blocks of the format
 
