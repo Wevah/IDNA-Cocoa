@@ -7,16 +7,34 @@ All multibyte integers are little-endian.
 Header:
 
 | 6 bytes      | 1 byte  | 1 byte | 4 bytes? |
-|--------------+---------+--------|---------|
+|--------------|---------|--------|---------|
 | magic number | version | flags  | optional crc
 
 - `magic number`: `"UTS#46"` (`0x55 0x54 0x53 0x23 0x34 0x36`).
 - `version`: format version (1 byte; currently `0x01`).
 - `flags`: Bitfield:
 
-| 7 |  6  |  5  |  4  |  3  |  2  |  1  |  0  |
-|---------------------------------------------|
-| unused           |||| has crc | compression   |||
+<table>
+<thead>
+<tr>
+	<th> 7 </th>
+	<th> 6 </th>
+	<th> 5 </th>
+	<th> 4 </th>
+	<th> 3 </th>
+	<th> 2 </th>
+	<th> 1 </th>
+	<th> 0 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td colspan="4"> unused   </td>
+	<td> has crc </td>
+	<td colspan="3"> compression </td>
+</tr>
+</tbody>
+</table>
 
 - `crc?`: If 1, there will be a CRC32 of the data section after the header.
 - `compression`: compression mode of the data.
