@@ -356,6 +356,7 @@
 				B25753801F3CE8B2002606DD /* WebNSURLExtras.h */,
 				B2C59E7224278AF400183346 /* uidna-min.h */,
 				B2AF21082431376E009F5EE7 /* uts46 */,
+				B299C5B12464CD1F001F811B /* uts46-file-format.md */,
 				B2C3DCC0241FE94400484850 /* Swift */,
 				B2C3DCBF241FE92F00484850 /* Objective-C */,
 			);
@@ -399,7 +400,6 @@
 				B27409C82443E45B00E567E7 /* Data+Extensions.swift */,
 				B265ED10244B94E50038CB55 /* NSString+IDNA.swift */,
 				B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */,
-				B299C5B12464CD1F001F811B /* uts46-file-format.md */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
