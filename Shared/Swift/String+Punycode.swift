@@ -439,7 +439,7 @@ private extension String {
 	/// Perform a single-pass mapping using UTS #46.
 	///
 	/// - Returns: The mapped string.
-	/// - Throws: `UTS46MapError`
+	/// - Throws: `UTS46Error`.
 	func mapUTS46() throws -> String {
 		try! UTS46.loadIfNecessary()
 
