@@ -120,7 +120,7 @@ extension UTS46 {
 		guard from.unicodeScalars.count % 2 == 0 else { return nil }
 
 		var ranges = [ClosedRange<UnicodeScalar>]()
-		var first: UnicodeScalar? = nil
+		var first: UnicodeScalar?
 
 		for (index, scalar) in from.unicodeScalars.enumerated() {
 			if index % 2 == 0 {
@@ -156,7 +156,6 @@ extension UTS46 {
 
 		return (index: index, charset: charset)
 	}
-
 
 	static func parseIgnoredCharacters(from data: Data, start: Int) -> Int {
 		let (index, charset) = parseCharacterSet(from: data, start: start)
@@ -195,7 +194,7 @@ extension UTS46 {
 			let str = String(data: accumulator, encoding: .utf8)!
 
 			var type: JoiningType?
-			var first: UnicodeScalar? = nil
+			var first: UnicodeScalar?
 
 			for scalar in str.unicodeScalars {
 				if scalar.isASCII {
@@ -218,4 +217,3 @@ extension UTS46 {
 	}
 
 }
-

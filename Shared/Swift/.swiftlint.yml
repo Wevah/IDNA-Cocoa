@@ -1,0 +1,12 @@
+switch_case_alignment:
+    indented_cases: true
+    
+trailing_whitespace:
+    ignores_empty_lines: true
+    
+disabled_rules:
+    - line_length
+    - identifier_name
+    - nesting
+    - file_length
+    - force_try

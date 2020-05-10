@@ -79,7 +79,6 @@ public extension String {
 		return result
 	}
 
-
 	/// The IDNA- and percent-encoded representation of a URL string.
 	var encodedURLString: String? {
 		let urlParts = self.urlParts
@@ -168,7 +167,6 @@ public extension URL {
 		return self.absoluteString.decodedURLString
 	}
 
-
 	/// Initializes a URL from a relative Unicode string and a base URL.
 	/// - Parameters:
 	///   - unicodeString: The URL string with which to initialize the NSURL object. `unicodeString` is interpreted relative to `baseURL`.
@@ -202,11 +200,9 @@ private extension String {
 		var outLen: UInt32 = 0
 		var bias = Punycode.initialBias
 
-		for scalar in scalars {
-			if scalar.isASCII {
-				result.unicodeScalars.append(scalar)
-				outLen += 1
-			}
+		for scalar in scalars where scalar.isASCII {
+			result.unicodeScalars.append(scalar)
+			outLen += 1
 		}
 
 		let b: UInt32 = outLen
@@ -377,9 +373,9 @@ private extension String {
 		var delim = ""
 		var host = ""
 		var path = ""
-		var username: String? = nil
-		var password: String? = nil
-		var fragment: String? = nil
+		var username: String?
+		var password: String?
+		var fragment: String?
 
 		if let hostOrScheme = s.shimScanUpToCharacters(from: colonSlash) {
 			if !s.isAtEnd {
@@ -410,7 +406,7 @@ private extension String {
 		}
 
 		if !s.isAtEnd {
-			let _ = s.shimScanString("#")
+			_ = s.shimScanString("#")
 			fragment = s.shimScanUpToCharacters(from: .newlines)!
 		}
 
@@ -441,7 +437,7 @@ private extension String {
 	/// - Returns: The mapped string.
 	/// - Throws: `UTS46Error`.
 	func mapUTS46() throws -> String {
-		try! UTS46.loadIfNecessary()
+		try UTS46.loadIfNecessary()
 
 		var result = ""
 
@@ -571,7 +567,7 @@ private enum Punycode {
 
 		var delta = delta
 
-		delta = firstTime ? delta / Self.damp : delta >> 1;
+		delta = firstTime ? delta / Self.damp : delta >> 1
 		delta += delta / numPoints
 
 		var k: UInt32 = 0
@@ -581,7 +577,7 @@ private enum Punycode {
 			k += Self.base
 		}
 
-		return k + (Self.base - Self.tmin + 1) * delta / (delta + Self.skew);
+		return k + (Self.base - Self.tmin + 1) * delta / (delta + Self.skew)
 	}
 }
 

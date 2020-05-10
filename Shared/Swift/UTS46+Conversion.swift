@@ -24,7 +24,7 @@ extension UTS46 {
 		let scanner = Scanner(string: text)
 
 		while !scanner.isAtEnd {
-			defer { let _ = scanner.shimScanUpToCharacters(from: .newlines) }
+			defer { _ = scanner.shimScanUpToCharacters(from: .newlines) }
 
 			guard let range = scanner.scanHexRange() else { continue }
 
@@ -73,11 +73,11 @@ extension UTS46 {
 		let joiningTypeCharacters = CharacterSet(charactersIn: "CDRLT")
 
 		while !scanner.isAtEnd {
-			defer { let _ = scanner.shimScanUpToCharacters(from: .newlines) }
+			defer { _ = scanner.shimScanUpToCharacters(from: .newlines) }
 
 			guard let range = scanner.scanHexRange() else { continue }
 
-			guard let _ = scanner.shimScanString(";") else { continue }
+			guard scanner.shimScanString(";") != nil else { continue }
 
 			guard let joiningType = scanner.shimScanCharacters(from: joiningTypeCharacters),
 				joiningType.count == 1 else { continue }
@@ -121,8 +121,8 @@ extension UTS46 {
 
 		reverseMap = reverseMap.mapValues {
 			var str = ""
-			var firstScalar: UnicodeScalar? = nil
-			var lastScalar: UnicodeScalar? = nil
+			var firstScalar: UnicodeScalar?
+			var lastScalar: UnicodeScalar?
 
 			for scalar in $0.unicodeScalars.sorted() {
 				if firstScalar == nil {

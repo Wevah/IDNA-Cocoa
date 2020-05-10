@@ -13,7 +13,7 @@ extension CharacterSet {
 	/// `[start][end] ...`
 	///
 	/// Ranges of length 1 will use the same character for start and end.
-	/// 
+	///
 	/// Example:
 	/// ```
 	/// let charset = CharacterSet(charactersIn: "abcdefgmwxyz")
