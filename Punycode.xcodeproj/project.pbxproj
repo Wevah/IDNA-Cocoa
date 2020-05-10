@@ -32,7 +32,6 @@
 		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
 		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		B25AEA6D244D8CEC0009E982 /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
 		B265ED11244B94E50038CB55 /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B27409C92443E45B00E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
@@ -40,6 +39,8 @@
 		B2AF210724313283009F5EE7 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B2AF21092431376E009F5EE7 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
 		B2B4F3D0242EB79E00CC752F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4F3CF242EB79E00CC752F /* main.swift */; };
+		B2BAC3D12468BE5F0014124A /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
+		B2BAC3D42468BF800014124A /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
 		B2C3DD45241FECF200484850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DD44241FECF200484850 /* AppDelegate.swift */; };
 		B2C3DD47241FECF400484850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C3DD46241FECF400484850 /* Assets.xcassets */; };
 		B2C3DD55241FEDF900484850 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DD54241FEDF900484850 /* Controller.swift */; };
@@ -48,11 +49,9 @@
 		B2C8FD6524661FC2006DF2D9 /* PunycodeCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C8FD5E24661FC2006DF2D9 /* PunycodeCocoa.framework */; };
 		B2C8FD6624661FC2006DF2D9 /* PunycodeCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2C8FD5E24661FC2006DF2D9 /* PunycodeCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2C8FD6B24661FDD006DF2D9 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
-		B2C8FD6C24661FDD006DF2D9 /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
 		B2C8FD6D24661FDD006DF2D9 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B2C8FD6E24661FDD006DF2D9 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B2C8FD6F24661FDD006DF2D9 /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
-		B2C8FD7024661FDD006DF2D9 /* CharacterSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */; };
 		B2C8FD7124662094006DF2D9 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
 		B2C8FD7324663ECC006DF2D9 /* UTS46+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7224663ECC006DF2D9 /* UTS46+Conversion.swift */; };
 		B2C8FD7624663F5B006DF2D9 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
@@ -64,7 +63,6 @@
 		B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B2D4E99B08E0191700574ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		B2D853CA244E42ED004B697E /* CharacterSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */; };
 		B301345F1A964E1E00AF6C4E /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
 		B30134601A964E1E00AF6C4E /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
 		B30134631A964E2600AF6C4E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
@@ -827,12 +825,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2BAC3D42468BF800014124A /* Scanner+Extensions.swift in Sources */,
 				B2AF210724313283009F5EE7 /* UTS46.swift in Sources */,
 				B265ED11244B94E50038CB55 /* NSString+IDNA.swift in Sources */,
 				B24AAF0E24363D0C003DD346 /* String+Punycode.swift in Sources */,
 				B2C3DD55241FEDF900484850 /* Controller.swift in Sources */,
-				B2D853CA244E42ED004B697E /* CharacterSet+Extensions.swift in Sources */,
-				B25AEA6D244D8CEC0009E982 /* Scanner+Extensions.swift in Sources */,
 				B2C8FD7624663F5B006DF2D9 /* UTS46+Loading.swift in Sources */,
 				B2C3DD45241FECF200484850 /* AppDelegate.swift in Sources */,
 				B27409C92443E45B00E567E7 /* Data+Extensions.swift in Sources */,
@@ -843,10 +840,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2C8FD6C24661FDD006DF2D9 /* Scanner+Extensions.swift in Sources */,
 				B2C8FD6F24661FDD006DF2D9 /* NSString+IDNA.swift in Sources */,
-				B2C8FD7024661FDD006DF2D9 /* CharacterSet+Extensions.swift in Sources */,
 				B2C8FD6E24661FDD006DF2D9 /* Data+Extensions.swift in Sources */,
+				B2BAC3D12468BE5F0014124A /* Scanner+Extensions.swift in Sources */,
 				B2C8FD6D24661FDD006DF2D9 /* UTS46.swift in Sources */,
 				B2C8FD7724663FB8006DF2D9 /* UTS46+Loading.swift in Sources */,
 				B2C8FD6B24661FDD006DF2D9 /* String+Punycode.swift in Sources */,
