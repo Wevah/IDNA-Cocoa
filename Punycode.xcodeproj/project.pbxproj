@@ -36,6 +36,7 @@
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B27409C92443E45B00E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B27409CA2443F66900E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
+		B2A4B164246A146E00ED32EB /* PunycodeCocoaTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A4B162246A146E00ED32EB /* PunycodeCocoaTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2AF210724313283009F5EE7 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B2AF21092431376E009F5EE7 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
 		B2B4F3D0242EB79E00CC752F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4F3CF242EB79E00CC752F /* main.swift */; };
@@ -176,6 +177,9 @@
 		B26FA03C2055425C00CD6AF1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B27409C82443E45B00E567E7 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		B299C5B12464CD1F001F811B /* uts46-file-format.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "uts46-file-format.md"; sourceTree = "<group>"; };
+		B2A4B160246A146E00ED32EB /* PunycodeCocoaTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PunycodeCocoaTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2A4B162246A146E00ED32EB /* PunycodeCocoaTouch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunycodeCocoaTouch.h; sourceTree = "<group>"; };
+		B2A4B163246A146E00ED32EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2AF210624313283009F5EE7 /* UTS46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTS46.swift; sourceTree = "<group>"; };
 		B2AF21082431376E009F5EE7 /* uts46 */ = {isa = PBXFileReference; lastKnownFileType = file; path = uts46; sourceTree = "<group>"; };
 		B2B4F3CD242EB79E00CC752F /* icumap2code */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = icumap2code; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +241,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2D4B71A2425902800B72AC6 /* libicucore.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2A4B15D246A146E00ED32EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +317,7 @@
 				B24585772423206100CC75A4 /* PunycodeSwiftTests.xctest */,
 				B2B4F3CD242EB79E00CC752F /* icumap2code */,
 				B2C8FD5E24661FC2006DF2D9 /* PunycodeCocoa.framework */,
+				B2A4B160246A146E00ED32EB /* PunycodeCocoaTouch.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,6 +335,7 @@
 				B255A55F1500C4800073DF21 /* PunycodeTests */,
 				B24585782423206100CC75A4 /* PunycodeSwiftTests */,
 				B2C8FD5F24661FC2006DF2D9 /* PunycodeCocoa */,
+				B2A4B161246A146E00ED32EB /* PunycodeCocoaTouch */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				B2C3DD3A241FEC7F00484850 /* PunyCocoa copy-Info.plist */,
@@ -419,6 +432,15 @@
 			path = Mac;
 			sourceTree = "<group>";
 		};
+		B2A4B161246A146E00ED32EB /* PunycodeCocoaTouch */ = {
+			isa = PBXGroup;
+			children = (
+				B2A4B162246A146E00ED32EB /* PunycodeCocoaTouch.h */,
+				B2A4B163246A146E00ED32EB /* Info.plist */,
+			);
+			path = PunycodeCocoaTouch;
+			sourceTree = "<group>";
+		};
 		B2B4F3CE242EB79E00CC752F /* icumap2code */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +498,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		B2A4B15B246A146E00ED32EB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2A4B164246A146E00ED32EB /* PunycodeCocoaTouch.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2C8FD5924661FC2006DF2D9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -558,6 +588,24 @@
 			productName = PunycodeTests;
 			productReference = B255A5591500C4800073DF21 /* PunycodeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B2A4B15F246A146E00ED32EB /* PunycodeCocoaTouch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2A4B167246A146E00ED32EB /* Build configuration list for PBXNativeTarget "PunycodeCocoaTouch" */;
+			buildPhases = (
+				B2A4B15B246A146E00ED32EB /* Headers */,
+				B2A4B15C246A146E00ED32EB /* Sources */,
+				B2A4B15D246A146E00ED32EB /* Frameworks */,
+				B2A4B15E246A146E00ED32EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PunycodeCocoaTouch;
+			productName = PunycodeCocoaTouch;
+			productReference = B2A4B160246A146E00ED32EB /* PunycodeCocoaTouch.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		B2B4F3CC242EB79E00CC752F /* icumap2code */ = {
 			isa = PBXNativeTarget;
@@ -658,6 +706,9 @@
 					B255A5581500C4800073DF21 = {
 						ProvisioningStyle = Automatic;
 					};
+					B2A4B15F246A146E00ED32EB = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 					B2B4F3CC242EB79E00CC752F = {
 						CreatedOnToolsVersion = 11.4;
 						DevelopmentTeam = M72QZ9W58G;
@@ -699,6 +750,7 @@
 				B24585762423206100CC75A4 /* PunycodeSwiftTests */,
 				B2B4F3CC242EB79E00CC752F /* icumap2code */,
 				B2C8FD5D24661FC2006DF2D9 /* PunycodeCocoa */,
+				B2A4B15F246A146E00ED32EB /* PunycodeCocoaTouch */,
 			);
 		};
 /* End PBXProject section */
@@ -737,6 +789,13 @@
 			files = (
 				B30134641A964E2600AF6C4E /* LICENSE in Resources */,
 				B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2A4B15E246A146E00ED32EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,6 +866,13 @@
 			files = (
 				B30134601A964E1E00AF6C4E /* NSString+Punycode.m in Sources */,
 				B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2A4B15C246A146E00ED32EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1231,6 +1297,111 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		B2A4B165246A146E00ED32EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = PunycodeCocoaTouch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunycodeCocoaTouch;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B2A4B166246A146E00ED32EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = PunycodeCocoaTouch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunycodeCocoaTouch;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1700,6 +1871,15 @@
 			buildConfigurations = (
 				B255A56A1500C4800073DF21 /* Debug */,
 				B255A56B1500C4800073DF21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B2A4B167246A146E00ED32EB /* Build configuration list for PBXNativeTarget "PunycodeCocoaTouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2A4B165246A146E00ED32EB /* Debug */,
+				B2A4B166246A146E00ED32EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
