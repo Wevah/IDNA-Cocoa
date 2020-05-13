@@ -37,6 +37,12 @@
 		B27409C92443E45B00E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B27409CA2443F66900E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B2A4B164246A146E00ED32EB /* PunycodeCocoaTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A4B162246A146E00ED32EB /* PunycodeCocoaTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2A4B168246A14EB00ED32EB /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
+		B2A4B169246A14EB00ED32EB /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
+		B2A4B16A246A14EB00ED32EB /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
+		B2A4B16B246A14EB00ED32EB /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
+		B2A4B16C246A14EB00ED32EB /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
+		B2A4B16D246A14EB00ED32EB /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
 		B2AF210724313283009F5EE7 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B2AF21092431376E009F5EE7 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
 		B2B4F3D0242EB79E00CC752F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4F3CF242EB79E00CC752F /* main.swift */; };
@@ -873,6 +879,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2A4B169246A14EB00ED32EB /* Scanner+Extensions.swift in Sources */,
+				B2A4B16D246A14EB00ED32EB /* NSString+IDNA.swift in Sources */,
+				B2A4B16B246A14EB00ED32EB /* UTS46+Loading.swift in Sources */,
+				B2A4B16A246A14EB00ED32EB /* UTS46.swift in Sources */,
+				B2A4B168246A14EB00ED32EB /* String+Punycode.swift in Sources */,
+				B2A4B16C246A14EB00ED32EB /* Data+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1303,6 +1315,7 @@
 		B2A4B165246A146E00ED32EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1358,6 +1371,7 @@
 		B2A4B166246A146E00ED32EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1395,7 +1409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunycodeCocoaTouch;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1732,6 +1746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1789,6 +1804,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1828,7 +1844,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunycodeCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
