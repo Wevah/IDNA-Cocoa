@@ -169,7 +169,7 @@ extension UTS46 {
 		data.append(self.joiningTypesData())
 
 		if let rawAlgorithm = compression.rawAlgorithm {
-			let capacity = 100_000
+			let capacity = 131_072 // 128 KB
 			let destinationBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: capacity)
 
 			let compressed = try data.withUnsafeBytes { (rawBuffer) -> Data? in

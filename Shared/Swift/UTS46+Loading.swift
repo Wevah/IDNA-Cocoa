@@ -70,14 +70,14 @@ extension UTS46 {
 
 		guard let rawAlgorithm = algorithm?.rawAlgorithm else { return data }
 
-		let capacity = 100_000
+		let capacity = 131_072 // 128 KB
 		let destinationBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: capacity)
 
 		let decompressed = data.withUnsafeBytes { (rawBuffer) -> Data? in
 			let bound = rawBuffer.bindMemory(to: UInt8.self)
 			let decodedCount = compression_decode_buffer(destinationBuffer, capacity, bound.baseAddress!, rawBuffer.count, nil, rawAlgorithm)
 
-			if decodedCount == 0 {
+			if decodedCount == 0 || decodedCount == capacity {
 				return nil
 			}
 
