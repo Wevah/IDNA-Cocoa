@@ -49,7 +49,7 @@ All multibyte integers are little-endian.
 | unused           |||| has crc | compression   |||
  -->
 
-- `has crc`: If 1, there will be a CRC32 of the data section after the header.
+- `has crc`: If set, there will be a CRC32 of the data section at the end of the header.
 - `compression`: compression mode of the data.
 	Currently identical to NSData's compression constants + 1:
 	
