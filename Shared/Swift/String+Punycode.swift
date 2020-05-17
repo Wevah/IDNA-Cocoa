@@ -14,15 +14,10 @@ public extension String {
 	/// This will properly split domains on periods; e.g.,
 	/// "www.bücher.ch" becomes "www.xn--bcher-kva.ch".
 	var idnaEncoded: String? {
+		guard let mapped = try? self.mapUTS46() else { return nil }
+
 		let nonASCII = CharacterSet(charactersIn: UnicodeScalar(0)...UnicodeScalar(127)).inverted
 		var result = ""
-		let mapped: String
-
-		do {
-			mapped = try self.mapUTS46()
-		} catch {
-			return nil
-		}
 
 		let s = Scanner(string: mapped.precomposedStringWithCanonicalMapping)
 		let dotAt = CharacterSet(charactersIn: ".@")
