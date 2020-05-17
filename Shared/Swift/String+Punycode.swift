@@ -63,7 +63,7 @@ public extension String {
 			if let input = s.shimScanUpToCharacters(from: dotAt) {
 				if input.lowercased().hasPrefix("xn--") {
 					let start = input.index(input.startIndex, offsetBy: 4)
-					guard let substr = String(input[start...]).punycodeDecoded else { return nil }
+					guard let substr = input[start...].punycodeDecoded else { return nil }
 					guard substr.isValidLabel else { return nil }
 					result.append(substr)
 				} else {
@@ -184,7 +184,7 @@ public extension URL {
 
 }
 
-private extension String {
+private extension StringProtocol {
 
 	/// Punycode-encodes a string.
 	///
@@ -364,6 +364,10 @@ private extension String {
 
 		return result
 	}
+
+}
+
+private extension String {
 
 	var urlParts: URLParts {
 		let colonSlash = CharacterSet(charactersIn: ":/")
