@@ -51,7 +51,7 @@ All multibyte integers are little-endian.
 
 - `has crc`: If set, there will be a CRC32 of the data section at the end of the header.
 - `compression`: compression mode of the data.
-	Currently identical to NSData's compression constants + 1:
+	Currently identical to NSData’s [compression constants](https://developer.apple.com/documentation/foundation/nsdata/compressionalgorithm) + 1:
 	
 		- 0: no compression
 		- 1: LZFSE
