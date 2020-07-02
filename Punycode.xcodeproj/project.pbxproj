@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B23CBE6224AE05C400F98F35 /* Scanner+ConversionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CBE6024AE05B100F98F35 /* Scanner+ConversionExtensions.swift */; };
 		B24106F322450B860014E4D0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		B24106F422450B860014E4D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B24106F522450B860014E4D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
@@ -156,6 +157,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		B23AAC60221511F300A450E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B23AAC62221511FE00A450E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B23CBE6024AE05B100F98F35 /* Scanner+ConversionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scanner+ConversionExtensions.swift"; sourceTree = "<group>"; };
 		B241070222450B860014E4D0 /* PunyCocoa MRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa MRR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24585772423206100CC75A4 /* PunycodeSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunycodeSwiftTests.swift; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				B2AF210624313283009F5EE7 /* UTS46.swift */,
 				B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */,
 				B2C8FD7224663ECC006DF2D9 /* UTS46+Conversion.swift */,
+				B23CBE6024AE05B100F98F35 /* Scanner+ConversionExtensions.swift */,
 				B27409C82443E45B00E567E7 /* Data+Extensions.swift */,
 				B265ED10244B94E50038CB55 /* NSString+IDNA.swift */,
 				B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */,
@@ -898,6 +901,7 @@
 				B2B4F3D0242EB79E00CC752F /* main.swift in Sources */,
 				B244BE892460CCE800FBA17F /* UTS46.swift in Sources */,
 				B27409CA2443F66900E567E7 /* Data+Extensions.swift in Sources */,
+				B23CBE6224AE05C400F98F35 /* Scanner+ConversionExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
