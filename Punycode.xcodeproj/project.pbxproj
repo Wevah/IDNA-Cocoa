@@ -178,7 +178,7 @@
 		B2CB4DCF07B158A600B4C504 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		B2D4B71B2425903000B72AC6 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/libicucore.tbd; sourceTree = DEVELOPER_DIR; };
 		B2D4E9A008E0191700574ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mac/Info.plist; sourceTree = "<group>"; };
-		B2D4E9A208E0191800574ACD /* PunyCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunyCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2D4E9A208E0191800574ACD /* PunyCocoa ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extensions.swift"; sourceTree = "<group>"; };
 		B30134611A964E2600AF6C4E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B30134621A964E2600AF6C4E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B2D4E9A208E0191800574ACD /* PunyCocoa.app */,
+				B2D4E9A208E0191800574ACD /* PunyCocoa ObjC.app */,
 				B255A5591500C4800073DF21 /* PunycodeTests.xctest */,
 				B2552E1C22B134650015B473 /* PunyCocoaTouch.app */,
 				B2C3DD42241FECF200484850 /* PunyCocoa Swift.app */,
@@ -575,9 +575,9 @@
 			productReference = B2C8FD5E24661FC2006DF2D9 /* PunycodeCocoa.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B2D4E99208E0191700574ACD /* PunyCocoa */ = {
+		B2D4E99208E0191700574ACD /* PunyCocoa ObjC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2B33EA80A9B4534002D5B27 /* Build configuration list for PBXNativeTarget "PunyCocoa" */;
+			buildConfigurationList = B2B33EA80A9B4534002D5B27 /* Build configuration list for PBXNativeTarget "PunyCocoa ObjC" */;
 			buildPhases = (
 				B2D4E99708E0191700574ACD /* Resources */,
 				B2D4E99A08E0191700574ACD /* Sources */,
@@ -590,10 +590,10 @@
 			dependencies = (
 				B2C8FD6424661FC2006DF2D9 /* PBXTargetDependency */,
 			);
-			name = PunyCocoa;
+			name = "PunyCocoa ObjC";
 			productInstallPath = "$(HOME)/Applications";
 			productName = Punycode;
-			productReference = B2D4E9A208E0191800574ACD /* PunyCocoa.app */;
+			productReference = B2D4E9A208E0191800574ACD /* PunyCocoa ObjC.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -655,7 +655,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B2D4E99208E0191700574ACD /* PunyCocoa */,
+				B2D4E99208E0191700574ACD /* PunyCocoa ObjC */,
 				B2C3DD41241FECF200484850 /* PunyCocoa Swift */,
 				B2552E1B22B134650015B473 /* PunyCocoaTouch */,
 				B255A5581500C4800073DF21 /* PunycodeTests */,
@@ -826,7 +826,7 @@
 /* Begin PBXTargetDependency section */
 		B255A56D1500C53E0073DF21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B2D4E99208E0191700574ACD /* PunyCocoa */;
+			target = B2D4E99208E0191700574ACD /* PunyCocoa ObjC */;
 			targetProxy = B255A56C1500C53E0073DF21 /* PBXContainerItemProxy */;
 		};
 		B2C8FD6424661FC2006DF2D9 /* PBXTargetDependency */ = {
@@ -1700,7 +1700,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		B2B33EA80A9B4534002D5B27 /* Build configuration list for PBXNativeTarget "PunyCocoa" */ = {
+		B2B33EA80A9B4534002D5B27 /* Build configuration list for PBXNativeTarget "PunyCocoa ObjC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2B33EA90A9B4534002D5B27 /* Debug */,

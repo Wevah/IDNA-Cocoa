@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B2D4E99208E0191700574ACD"
-               BuildableName = "PunyCocoa.app"
-               BlueprintName = "PunyCocoa"
+               BuildableName = "PunyCocoa ObjC.app"
+               BlueprintName = "PunyCocoa ObjC"
                ReferencedContainer = "container:Punycode.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B2D4E99208E0191700574ACD"
-            BuildableName = "PunyCocoa.app"
-            BlueprintName = "PunyCocoa"
+            BuildableName = "PunyCocoa ObjC.app"
+            BlueprintName = "PunyCocoa ObjC"
             ReferencedContainer = "container:Punycode.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -79,8 +79,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B2D4E99208E0191700574ACD"
-            BuildableName = "PunyCocoa.app"
-            BlueprintName = "PunyCocoa"
+            BuildableName = "PunyCocoa ObjC.app"
+            BlueprintName = "PunyCocoa ObjC"
             ReferencedContainer = "container:Punycode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -96,8 +96,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B2D4E99208E0191700574ACD"
-            BuildableName = "PunyCocoa.app"
-            BlueprintName = "PunyCocoa"
+            BuildableName = "PunyCocoa ObjC.app"
+            BlueprintName = "PunyCocoa ObjC"
             ReferencedContainer = "container:Punycode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
