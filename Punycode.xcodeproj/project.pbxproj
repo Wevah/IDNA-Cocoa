@@ -292,7 +292,7 @@
 				B30134621A964E2600AF6C4E /* README.md */,
 				B29EC659228102AE00478825 /* Shared */,
 				B2B4F3CE242EB79E00CC752F /* icumap2code */,
-				B29EC65B228102E300478825 /* Mac */,
+				B29EC65B228102E300478825 /* Mac (ObjC) */,
 				B2C3DD43241FECF200484850 /* Mac (Swift) */,
 				B2552E1D22B134650015B473 /* iOS */,
 				B24585782423206100CC75A4 /* PunycodeSwiftTests */,
@@ -361,7 +361,7 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		B29EC65B228102E300478825 /* Mac */ = {
+		B29EC65B228102E300478825 /* Mac (ObjC) */ = {
 			isa = PBXGroup;
 			children = (
 				29B97316FDCFA39411CA2CEA /* main.m */,
@@ -369,7 +369,7 @@
 				B2552E3422B13CBC0015B473 /* Controller.m */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 			);
-			path = Mac;
+			path = "Mac (ObjC)";
 			sourceTree = "<group>";
 		};
 		B2A4B161246A146E00ED32EB /* PunycodeCocoaTouch */ = {
