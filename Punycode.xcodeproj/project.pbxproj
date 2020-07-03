@@ -8,14 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B23CBE6224AE05C400F98F35 /* Scanner+ConversionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CBE6024AE05B100F98F35 /* Scanner+ConversionExtensions.swift */; };
-		B24106F322450B860014E4D0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
-		B24106F422450B860014E4D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
-		B24106F522450B860014E4D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
-		B24106F722450B860014E4D0 /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B24106F822450B860014E4D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		B24106FB22450B860014E4D0 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; };
-		B24106FC22450B860014E4D0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		B24106FD22450B860014E4D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B244BE892460CCE800FBA17F /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B244BE8A2460CD2800FBA17F /* CharacterSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */; };
 		B244BE8B2460CD2A00FBA17F /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
@@ -27,11 +19,7 @@
 		B2552E2822B134680015B473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2722B134680015B473 /* Assets.xcassets */; };
 		B2552E2B22B134680015B473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2922B134680015B473 /* LaunchScreen.storyboard */; };
 		B2552E2E22B134680015B473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2D22B134680015B473 /* main.m */; };
-		B2552E3222B134C40015B473 /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
 		B2552E3522B13CBC0015B473 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E3422B13CBC0015B473 /* Controller.m */; };
-		B2552E3622B13CBC0015B473 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E3422B13CBC0015B473 /* Controller.m */; };
-		B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B255A5621500C4800073DF21 /* InfoPlist.strings */; };
-		B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255A5661500C4800073DF21 /* PunycodeTests.m */; };
 		B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B265ED11244B94E50038CB55 /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -72,24 +60,11 @@
 		B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B2D4E99B08E0191700574ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		B301345F1A964E1E00AF6C4E /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
-		B30134601A964E1E00AF6C4E /* NSString+Punycode.m in Sources */ = {isa = PBXBuildFile; fileRef = B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */; };
 		B30134631A964E2600AF6C4E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
 		B30134641A964E2600AF6C4E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
-		B24106FE22450B860014E4D0 /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.gcc;
-			fileType = sourcecode.c;
-			inputFiles = (
-			);
-			isEditable = 1;
-			outputFiles = (
-			);
-			script = "";
-		};
 		B2D4E9A108E0191800574ACD /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.gcc;
@@ -158,7 +133,6 @@
 		B23AAC60221511F300A450E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B23AAC62221511FE00A450E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B23CBE6024AE05B100F98F35 /* Scanner+ConversionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scanner+ConversionExtensions.swift"; sourceTree = "<group>"; };
-		B241070222450B860014E4D0 /* PunyCocoa MRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa MRR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24585772423206100CC75A4 /* PunycodeSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunycodeSwiftTests.swift; sourceTree = "<group>"; };
 		B245857B2423206100CC75A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,11 +148,6 @@
 		B2552E2D22B134680015B473 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B2552E3422B13CBC0015B473 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 		B255A5591500C4800073DF21 /* PunycodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B255A5611500C4800073DF21 /* PunycodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PunycodeTests-Info.plist"; sourceTree = "<group>"; };
-		B255A5631500C4800073DF21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B255A5651500C4800073DF21 /* PunycodeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunycodeTests.h; sourceTree = "<group>"; };
-		B255A5661500C4800073DF21 /* PunycodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PunycodeTests.m; sourceTree = "<group>"; };
-		B25753801F3CE8B2002606DD /* WebNSURLExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebNSURLExtras.h; sourceTree = "<group>"; };
 		B25753821F3CE9A9002606DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scanner+Extensions.swift"; sourceTree = "<group>"; };
 		B265ED10244B94E50038CB55 /* NSString+IDNA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+IDNA.swift"; sourceTree = "<group>"; };
@@ -201,7 +170,6 @@
 		B2C3DD4C241FECF400484850 /* PunyCocoa_Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PunyCocoa_Swift.entitlements; sourceTree = "<group>"; };
 		B2C3DD52241FEDC800484850 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		B2C3DD54241FEDF900484850 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
-		B2C59E7224278AF400183346 /* uidna-min.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uidna-min.h"; sourceTree = "<group>"; };
 		B2C8FD5E24661FC2006DF2D9 /* PunycodeCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PunycodeCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C8FD6024661FC2006DF2D9 /* PunycodeCocoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunycodeCocoa.h; sourceTree = "<group>"; };
 		B2C8FD6124661FC2006DF2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -212,23 +180,11 @@
 		B2D4E9A008E0191700574ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mac/Info.plist; sourceTree = "<group>"; };
 		B2D4E9A208E0191800574ACD /* PunyCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunyCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extensions.swift"; sourceTree = "<group>"; };
-		B301345C1A964E1E00AF6C4E /* NSString+Punycode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Punycode.h"; sourceTree = "<group>"; };
-		B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Punycode.m"; sourceTree = "<group>"; };
 		B30134611A964E2600AF6C4E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B30134621A964E2600AF6C4E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B24106FA22450B860014E4D0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B24106FB22450B860014E4D0 /* libicucore.tbd in Frameworks */,
-				B24106FC22450B860014E4D0 /* WebKit.framework in Frameworks */,
-				B24106FD22450B860014E4D0 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B24585742423206100CC75A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				B2D4E9A208E0191800574ACD /* PunyCocoa.app */,
-				B241070222450B860014E4D0 /* PunyCocoa MRR.app */,
 				B255A5591500C4800073DF21 /* PunycodeTests.xctest */,
 				B2552E1C22B134650015B473 /* PunyCocoaTouch.app */,
 				B2C3DD42241FECF200484850 /* PunyCocoa Swift.app */,
@@ -340,7 +295,6 @@
 				B29EC65B228102E300478825 /* Mac */,
 				B2C3DD43241FECF200484850 /* Mac (Swift) */,
 				B2552E1D22B134650015B473 /* iOS */,
-				B255A55F1500C4800073DF21 /* PunycodeTests */,
 				B24585782423206100CC75A4 /* PunycodeSwiftTests */,
 				B2C8FD5F24661FC2006DF2D9 /* PunycodeCocoa */,
 				B2A4B161246A146E00ED32EB /* PunycodeCocoaTouch */,
@@ -397,34 +351,12 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
-		B255A55F1500C4800073DF21 /* PunycodeTests */ = {
-			isa = PBXGroup;
-			children = (
-				B255A5651500C4800073DF21 /* PunycodeTests.h */,
-				B255A5661500C4800073DF21 /* PunycodeTests.m */,
-				B255A5601500C4800073DF21 /* Supporting Files */,
-			);
-			path = PunycodeTests;
-			sourceTree = "<group>";
-		};
-		B255A5601500C4800073DF21 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B255A5611500C4800073DF21 /* PunycodeTests-Info.plist */,
-				B255A5621500C4800073DF21 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		B29EC659228102AE00478825 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				B25753801F3CE8B2002606DD /* WebNSURLExtras.h */,
-				B2C59E7224278AF400183346 /* uidna-min.h */,
 				B2AF21082431376E009F5EE7 /* uts46 */,
 				B299C5B12464CD1F001F811B /* uts46-file-format.md */,
 				B2C3DCC0241FE94400484850 /* Swift */,
-				B2C3DCBF241FE92F00484850 /* Objective-C */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -455,15 +387,6 @@
 				B2B4F3CF242EB79E00CC752F /* main.swift */,
 			);
 			path = icumap2code;
-			sourceTree = "<group>";
-		};
-		B2C3DCBF241FE92F00484850 /* Objective-C */ = {
-			isa = PBXGroup;
-			children = (
-				B301345C1A964E1E00AF6C4E /* NSString+Punycode.h */,
-				B301345D1A964E1E00AF6C4E /* NSString+Punycode.m */,
-			);
-			path = "Objective-C";
 			sourceTree = "<group>";
 		};
 		B2C3DCC0241FE94400484850 /* Swift */ = {
@@ -526,25 +449,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B241068C22450B860014E4D0 /* PunyCocoa MRR */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B24106FF22450B860014E4D0 /* Build configuration list for PBXNativeTarget "PunyCocoa MRR" */;
-			buildPhases = (
-				B24106F222450B860014E4D0 /* Resources */,
-				B24106F622450B860014E4D0 /* Sources */,
-				B24106FA22450B860014E4D0 /* Frameworks */,
-			);
-			buildRules = (
-				B24106FE22450B860014E4D0 /* PBXBuildRule */,
-			);
-			dependencies = (
-			);
-			name = "PunyCocoa MRR";
-			productInstallPath = "$(HOME)/Applications";
-			productName = Punycode;
-			productReference = B241070222450B860014E4D0 /* PunyCocoa MRR.app */;
-			productType = "com.apple.product-type.application";
-		};
 		B24585762423206100CC75A4 /* PunycodeSwiftTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B245857C2423206100CC75A4 /* Build configuration list for PBXNativeTarget "PunycodeSwiftTests" */;
@@ -753,7 +657,6 @@
 			targets = (
 				B2D4E99208E0191700574ACD /* PunyCocoa */,
 				B2C3DD41241FECF200484850 /* PunyCocoa Swift */,
-				B241068C22450B860014E4D0 /* PunyCocoa MRR */,
 				B2552E1B22B134650015B473 /* PunyCocoaTouch */,
 				B255A5581500C4800073DF21 /* PunycodeTests */,
 				B24585762423206100CC75A4 /* PunycodeSwiftTests */,
@@ -765,16 +668,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B24106F222450B860014E4D0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B24106F322450B860014E4D0 /* MainMenu.xib in Resources */,
-				B24106F422450B860014E4D0 /* InfoPlist.strings in Resources */,
-				B24106F522450B860014E4D0 /* LICENSE in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B24585752423206100CC75A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -797,7 +690,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B30134641A964E2600AF6C4E /* LICENSE in Resources */,
-				B255A5641500C4800073DF21 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,16 +731,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B24106F622450B860014E4D0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B24106F722450B860014E4D0 /* NSString+Punycode.m in Sources */,
-				B24106F822450B860014E4D0 /* main.m in Sources */,
-				B2552E3622B13CBC0015B473 /* Controller.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B24585732423206100CC75A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -862,7 +744,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2552E3222B134C40015B473 /* NSString+Punycode.m in Sources */,
 				B2552E2322B134650015B473 /* ViewController.m in Sources */,
 				B2552E2E22B134680015B473 /* main.m in Sources */,
 				B2552E2022B134650015B473 /* AppDelegate.m in Sources */,
@@ -873,8 +754,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B30134601A964E1E00AF6C4E /* NSString+Punycode.m in Sources */,
-				B255A5671500C4800073DF21 /* PunycodeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,7 +816,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B301345F1A964E1E00AF6C4E /* NSString+Punycode.m in Sources */,
 				B2D4E99B08E0191700574ACD /* main.m in Sources */,
 				B2552E3522B13CBC0015B473 /* Controller.m in Sources */,
 			);
@@ -998,82 +876,9 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		B255A5621500C4800073DF21 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B255A5631500C4800073DF21 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B241070022450B860014E4D0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = M72QZ9W58G;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = Mac/Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		B241070122450B860014E4D0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = M72QZ9W58G;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = Mac/Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 		B245857D2423206100CC75A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1859,15 +1664,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B24106FF22450B860014E4D0 /* Build configuration list for PBXNativeTarget "PunyCocoa MRR" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B241070022450B860014E4D0 /* Debug */,
-				B241070122450B860014E4D0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		B245857C2423206100CC75A4 /* Build configuration list for PBXNativeTarget "PunycodeSwiftTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
