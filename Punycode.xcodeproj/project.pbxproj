@@ -29,7 +29,7 @@
 		B285064B24AF93A300D38235 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B285064C24AF93A500D38235 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B285064D24AF93A700D38235 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
-		B285064E24AF9A2F00D38235 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
+		B285064F24AF9B5C00D38235 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
 		B2A4B164246A146E00ED32EB /* PunycodeCocoaTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A4B162246A146E00ED32EB /* PunycodeCocoaTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2A4B168246A14EB00ED32EB /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B2A4B169246A14EB00ED32EB /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
@@ -681,7 +681,7 @@
 				B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */,
 				B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */,
 				B30134631A964E2600AF6C4E /* LICENSE in Resources */,
-				B285064E24AF9A2F00D38235 /* uts46 in Resources */,
+				B285064F24AF9B5C00D38235 /* uts46 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
