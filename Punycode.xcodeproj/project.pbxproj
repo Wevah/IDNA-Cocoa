@@ -655,14 +655,14 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B2D4E99208E0191700574ACD /* PunyCocoa ObjC */,
 				B2C3DD41241FECF200484850 /* PunyCocoa Swift */,
+				B2D4E99208E0191700574ACD /* PunyCocoa ObjC */,
 				B2552E1B22B134650015B473 /* PunyCocoaTouch */,
+				B2C8FD5D24661FC2006DF2D9 /* PunycodeCocoa */,
+				B2A4B15F246A146E00ED32EB /* PunycodeCocoaTouch */,
 				B255A5581500C4800073DF21 /* PunycodeTests */,
 				B24585762423206100CC75A4 /* PunycodeSwiftTests */,
 				B2B4F3CC242EB79E00CC752F /* icumap2code */,
-				B2C8FD5D24661FC2006DF2D9 /* PunycodeCocoa */,
-				B2A4B15F246A146E00ED32EB /* PunycodeCocoaTouch */,
 			);
 		};
 /* End PBXProject section */
