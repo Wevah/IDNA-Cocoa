@@ -11,11 +11,11 @@ import ArgumentParser
 struct ICUMap2Code: ParsableCommand {
 	static let configuration = CommandConfiguration(commandName: "icumap2code", abstract: "Convert UTS#46 and joiner type map files to a compact binary format.", version: "1.0 (v10)")
 
-	@Option(name: [.customLong("compress"), .short], default: UTS46.CompressionAlgorithm.none, help: ArgumentHelp("Output compression mode.", discussion: "Default is uncompressed. Supported values are 'lzfse', 'lz4', 'lzma', and 'zlib'.", valueName: "mode"))
-	var compression: UTS46.CompressionAlgorithm
+	@Option(name: [.customLong("compress"), .short], help: ArgumentHelp("Output compression mode.", discussion: "Default is uncompressed. Supported values are 'lzfse', 'lz4', 'lzma', and 'zlib'.", valueName: "mode"))
+	var compression: UTS46.CompressionAlgorithm = .none
 
 	@Flag(name: .shortAndLong, help: "Verbose output (on STDERR).")
-	var verbose: Bool
+	var verbose: Bool = false
 
 	/// ucs46.txt
 	@Option(name: [.customLong("uts46"), .short], help: ArgumentHelp("uts46.txt input file.", valueName: "file"))
@@ -27,7 +27,6 @@ struct ICUMap2Code: ParsableCommand {
 
 	@Option(name: [.customLong("output"), .short], help: ArgumentHelp("The output file.", discussion: "If no file is specified, outputs to stdout.", valueName: "file"))
 	var outputFile: String?
-
 
 	func run() throws {
 		if let path = uts46File {
