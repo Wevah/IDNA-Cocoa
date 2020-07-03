@@ -21,10 +21,14 @@
 		B2552E2E22B134680015B473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2D22B134680015B473 /* main.m */; };
 		B2552E3522B13CBC0015B473 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E3422B13CBC0015B473 /* Controller.m */; };
 		B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25753821F3CE9A9002606DD /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		B265ED11244B94E50038CB55 /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
 		B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B27409C92443E45B00E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B27409CA2443F66900E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
+		B285064624AF938500D38235 /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
+		B285064A24AF93A000D38235 /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
+		B285064B24AF93A300D38235 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
+		B285064C24AF93A500D38235 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
+		B285064D24AF93A700D38235 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
 		B2A4B164246A146E00ED32EB /* PunycodeCocoaTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A4B162246A146E00ED32EB /* PunycodeCocoaTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2A4B168246A14EB00ED32EB /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B2A4B169246A14EB00ED32EB /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
@@ -177,7 +181,7 @@
 		B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTS46+Loading.swift"; sourceTree = "<group>"; };
 		B2CB4DCF07B158A600B4C504 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		B2D4B71B2425903000B72AC6 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/libicucore.tbd; sourceTree = DEVELOPER_DIR; };
-		B2D4E9A008E0191700574ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mac/Info.plist; sourceTree = "<group>"; };
+		B2D4E9A008E0191700574ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Mac (ObjC)/Info.plist"; sourceTree = "<group>"; };
 		B2D4E9A208E0191800574ACD /* PunyCocoa ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extensions.swift"; sourceTree = "<group>"; };
 		B30134611A964E2600AF6C4E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -790,7 +794,6 @@
 			files = (
 				B2BAC3D42468BF800014124A /* Scanner+Extensions.swift in Sources */,
 				B2AF210724313283009F5EE7 /* UTS46.swift in Sources */,
-				B265ED11244B94E50038CB55 /* NSString+IDNA.swift in Sources */,
 				B24AAF0E24363D0C003DD346 /* String+Punycode.swift in Sources */,
 				B2C3DD55241FEDF900484850 /* Controller.swift in Sources */,
 				B2C8FD7624663F5B006DF2D9 /* UTS46+Loading.swift in Sources */,
@@ -816,7 +819,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B285064A24AF93A000D38235 /* Scanner+Extensions.swift in Sources */,
+				B285064B24AF93A300D38235 /* String+Punycode.swift in Sources */,
 				B2D4E99B08E0191700574ACD /* main.m in Sources */,
+				B285064624AF938500D38235 /* NSString+IDNA.swift in Sources */,
+				B285064C24AF93A500D38235 /* UTS46.swift in Sources */,
+				B285064D24AF93A700D38235 /* UTS46+Loading.swift in Sources */,
 				B2552E3522B13CBC0015B473 /* Controller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -848,7 +856,7 @@
 				B23AAC60221511F300A450E5 /* en */,
 			);
 			name = InfoPlist.strings;
-			path = Mac;
+			path = "Mac (ObjC)";
 			sourceTree = "<group>";
 		};
 		29B97318FDCFA39411CA2CEA /* MainMenu.xib */ = {
@@ -857,7 +865,7 @@
 				B23AAC62221511FE00A450E5 /* Base */,
 			);
 			name = MainMenu.xib;
-			path = Mac;
+			path = "Mac (ObjC)";
 			sourceTree = "<group>";
 		};
 		B2552E2422B134650015B473 /* Main.storyboard */ = {
@@ -1059,6 +1067,7 @@
 		B255A56A1500C4800073DF21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PunyCocoa.app/Contents/MacOS/PunyCocoa";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1095,6 +1104,7 @@
 		B255A56B1500C4800073DF21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PunyCocoa.app/Contents/MacOS/PunyCocoa";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1254,11 +1264,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1291,11 +1302,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
