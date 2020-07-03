@@ -7,6 +7,7 @@
 
 import Foundation
 import Compression
+import os
 
 extension UTS46 {
 
@@ -61,7 +62,15 @@ extension UTS46 {
 
 	static func loadIfNecessary() throws {
 		guard !isLoaded else { return }
-		guard let url = Bundle(for: Self.self).url(forResource: "uts46", withExtension: nil) else { throw CocoaError(.fileNoSuchFile) }
+		guard let url = Bundle(for: Self.self).url(forResource: "uts46", withExtension: nil) else {
+			if #available(OSX 10.12, *) {
+				os_log("uts46 data file is missing!", type: .error)
+			} else {
+				print("uts46 data file is missing!")
+			}
+			
+			throw CocoaError(.fileNoSuchFile)
+		}
 
 		try load(from: url)
 	}
