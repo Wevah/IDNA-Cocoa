@@ -3,5 +3,5 @@ xcode_project: Punycode.xcodeproj
 xcode_scheme:
     - PunyCocoa
     - PunyCocoa Swift
-osx_image: xcode11.4
+osx_image: xcode11.5
 xcode_destination: platform=macOS
