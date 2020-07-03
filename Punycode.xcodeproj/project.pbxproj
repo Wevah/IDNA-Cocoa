@@ -469,15 +469,15 @@
 		B2C3DCC0241FE94400484850 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				B2C3DCC1241FE95B00484850 /* String+Punycode.swift */,
-				B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */,
-				B2AF210624313283009F5EE7 /* UTS46.swift */,
-				B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */,
-				B2C8FD7224663ECC006DF2D9 /* UTS46+Conversion.swift */,
-				B23CBE6024AE05B100F98F35 /* Scanner+ConversionExtensions.swift */,
+				B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */,
 				B27409C82443E45B00E567E7 /* Data+Extensions.swift */,
 				B265ED10244B94E50038CB55 /* NSString+IDNA.swift */,
-				B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */,
+				B23CBE6024AE05B100F98F35 /* Scanner+ConversionExtensions.swift */,
+				B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */,
+				B2C3DCC1241FE95B00484850 /* String+Punycode.swift */,
+				B2AF210624313283009F5EE7 /* UTS46.swift */,
+				B2C8FD7224663ECC006DF2D9 /* UTS46+Conversion.swift */,
+				B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
