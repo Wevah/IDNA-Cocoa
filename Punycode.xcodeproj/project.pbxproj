@@ -29,6 +29,7 @@
 		B285064B24AF93A300D38235 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B285064C24AF93A500D38235 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B285064D24AF93A700D38235 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
+		B285064E24AF9A2F00D38235 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
 		B2A4B164246A146E00ED32EB /* PunycodeCocoaTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A4B162246A146E00ED32EB /* PunycodeCocoaTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2A4B168246A14EB00ED32EB /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B2A4B169246A14EB00ED32EB /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
@@ -58,14 +59,12 @@
 		B2C8FD7624663F5B006DF2D9 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
 		B2C8FD7724663FB8006DF2D9 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
 		B2CF9C6B2430728800A23B4E /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = B2CF9C6A2430728800A23B4E /* ArgumentParser */; };
-		B2D4B71A2425902800B72AC6 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B26FA03C2055425C00CD6AF1 /* libicucore.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
 		B2D4B71C2425903000B72AC6 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4B71B2425903000B72AC6 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B2D4E99B08E0191700574ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B30134631A964E2600AF6C4E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
-		B30134641A964E2600AF6C4E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -83,13 +82,6 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
-		B255A56C1500C53E0073DF21 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B2D4E99208E0191700574ACD;
-			remoteInfo = PunyCocoa;
-		};
 		B2C8FD6324661FC2006DF2D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -151,7 +143,6 @@
 		B2552E2C22B134680015B473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2552E2D22B134680015B473 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B2552E3422B13CBC0015B473 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
-		B255A5591500C4800073DF21 /* PunycodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunycodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25753821F3CE9A9002606DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scanner+Extensions.swift"; sourceTree = "<group>"; };
 		B265ED10244B94E50038CB55 /* NSString+IDNA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+IDNA.swift"; sourceTree = "<group>"; };
@@ -201,14 +192,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2D4B71C2425903000B72AC6 /* libicucore.tbd in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B255A5551500C4800073DF21 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2D4B71A2425902800B72AC6 /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				B2D4E9A208E0191800574ACD /* PunyCocoa ObjC.app */,
-				B255A5591500C4800073DF21 /* PunycodeTests.xctest */,
 				B2552E1C22B134650015B473 /* PunyCocoaTouch.app */,
 				B2C3DD42241FECF200484850 /* PunyCocoa Swift.app */,
 				B24585772423206100CC75A4 /* PunycodeSwiftTests.xctest */,
@@ -488,24 +470,6 @@
 			productReference = B2552E1C22B134650015B473 /* PunyCocoaTouch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B255A5581500C4800073DF21 /* PunycodeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B255A5691500C4800073DF21 /* Build configuration list for PBXNativeTarget "PunycodeTests" */;
-			buildPhases = (
-				B255A5541500C4800073DF21 /* Sources */,
-				B255A5551500C4800073DF21 /* Frameworks */,
-				B255A5561500C4800073DF21 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B255A56D1500C53E0073DF21 /* PBXTargetDependency */,
-			);
-			name = PunycodeTests;
-			productName = PunycodeTests;
-			productReference = B255A5591500C4800073DF21 /* PunycodeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		B2A4B15F246A146E00ED32EB /* PunycodeCocoaTouch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2A4B167246A146E00ED32EB /* Build configuration list for PBXNativeTarget "PunycodeCocoaTouch" */;
@@ -620,9 +584,6 @@
 						DevelopmentTeam = M72QZ9W58G;
 						ProvisioningStyle = Automatic;
 					};
-					B255A5581500C4800073DF21 = {
-						ProvisioningStyle = Automatic;
-					};
 					B2A4B15F246A146E00ED32EB = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -664,7 +625,6 @@
 				B2552E1B22B134650015B473 /* PunyCocoaTouch */,
 				B2C8FD5D24661FC2006DF2D9 /* PunycodeCocoa */,
 				B2A4B15F246A146E00ED32EB /* PunycodeCocoaTouch */,
-				B255A5581500C4800073DF21 /* PunycodeTests */,
 				B24585762423206100CC75A4 /* PunycodeSwiftTests */,
 				B2B4F3CC242EB79E00CC752F /* icumap2code */,
 			);
@@ -686,14 +646,6 @@
 				B2552E2B22B134680015B473 /* LaunchScreen.storyboard in Resources */,
 				B2552E2822B134680015B473 /* Assets.xcassets in Resources */,
 				B2552E2622B134650015B473 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B255A5561500C4800073DF21 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B30134641A964E2600AF6C4E /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +681,7 @@
 				B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */,
 				B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */,
 				B30134631A964E2600AF6C4E /* LICENSE in Resources */,
+				B285064E24AF9A2F00D38235 /* uts46 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,13 +704,6 @@
 				B2552E2322B134650015B473 /* ViewController.m in Sources */,
 				B2552E2E22B134680015B473 /* main.m in Sources */,
 				B2552E2022B134650015B473 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B255A5541500C4800073DF21 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,11 +778,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B255A56D1500C53E0073DF21 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B2D4E99208E0191700574ACD /* PunyCocoa ObjC */;
-			targetProxy = B255A56C1500C53E0073DF21 /* PBXContainerItemProxy */;
-		};
 		B2C8FD6424661FC2006DF2D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B2C8FD5D24661FC2006DF2D9 /* PunycodeCocoa */;
@@ -1064,73 +1005,6 @@
 			};
 			name = Release;
 		};
-		B255A56A1500C4800073DF21 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PunyCocoa.app/Contents/MacOS/PunyCocoa";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "PunycodeTests/PunycodeTests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.derailer.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		B255A56B1500C4800073DF21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PunyCocoa.app/Contents/MacOS/PunyCocoa";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "PunycodeTests/PunycodeTests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.derailer.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Release;
-		};
 		B2A4B165246A146E00ED32EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1254,7 +1128,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = PUNYCODE_COCOA_USE_ICU;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = Mac/Info.plist;
+				INFOPLIST_FILE = "Mac (ObjC)/Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1269,6 +1143,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1292,7 +1167,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = PUNYCODE_COCOA_USE_ICU;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = Mac/Info.plist;
+				INFOPLIST_FILE = "Mac (ObjC)/Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1690,15 +1565,6 @@
 			buildConfigurations = (
 				B2552E2F22B134680015B473 /* Debug */,
 				B2552E3022B134680015B473 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		B255A5691500C4800073DF21 /* Build configuration list for PBXNativeTarget "PunycodeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B255A56A1500C4800073DF21 /* Debug */,
-				B255A56B1500C4800073DF21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

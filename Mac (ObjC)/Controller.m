@@ -7,8 +7,7 @@
 //
 
 #import "Controller.h"
-#import "NSString+Punycode.h"
-
+#import "PunyCocoa_ObjC-Swift.h"
 
 @interface Controller ()
 
