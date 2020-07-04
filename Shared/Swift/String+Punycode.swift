@@ -96,7 +96,7 @@ public extension String {
 
 		guard let host = urlParts.host.idnaEncoded else { return nil }
 
-		result.append("\(host)\(pathAndQuery )")
+		result.append("\(host)\(pathAndQuery)")
 
 		if var fragment = urlParts.fragment {
 			var fragmentAlloweCharacters = CharacterSet.urlFragmentAllowed
