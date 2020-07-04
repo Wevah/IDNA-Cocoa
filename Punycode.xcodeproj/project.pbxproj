@@ -30,6 +30,14 @@
 		B285064C24AF93A500D38235 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B285064D24AF93A700D38235 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
 		B285064F24AF9B5C00D38235 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
+		B285065024B0414900D38235 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
+		B285065124B0414D00D38235 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
+		B285065224B0414E00D38235 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
+		B285065324B0415200D38235 /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
+		B285065424B0415600D38235 /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
+		B285065524B0415800D38235 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
+		B285065624B0415A00D38235 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
+		B285065724B0418A00D38235 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
 		B2A4B164246A146E00ED32EB /* PunycodeCocoaTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A4B162246A146E00ED32EB /* PunycodeCocoaTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2A4B168246A14EB00ED32EB /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B2A4B169246A14EB00ED32EB /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
@@ -148,6 +156,7 @@
 		B265ED10244B94E50038CB55 /* NSString+IDNA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+IDNA.swift"; sourceTree = "<group>"; };
 		B26FA03C2055425C00CD6AF1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B27409C82443E45B00E567E7 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		B285065824B0426100D38235 /* PunyCocoaTouch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PunyCocoaTouch.entitlements; sourceTree = "<group>"; };
 		B299C5B12464CD1F001F811B /* uts46-file-format.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "uts46-file-format.md"; sourceTree = "<group>"; };
 		B2A4B160246A146E00ED32EB /* PunycodeCocoaTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PunycodeCocoaTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A4B162246A146E00ED32EB /* PunycodeCocoaTouch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunycodeCocoaTouch.h; sourceTree = "<group>"; };
@@ -274,6 +283,7 @@
 		29B97314FDCFA39411CA2CEA /* Punycode */ = {
 			isa = PBXGroup;
 			children = (
+				B285065824B0426100D38235 /* PunyCocoaTouch.entitlements */,
 				B30134611A964E2600AF6C4E /* LICENSE */,
 				B30134621A964E2600AF6C4E /* README.md */,
 				B29EC659228102AE00478825 /* Shared */,
@@ -646,6 +656,7 @@
 				B2552E2B22B134680015B473 /* LaunchScreen.storyboard in Resources */,
 				B2552E2822B134680015B473 /* Assets.xcassets in Resources */,
 				B2552E2622B134650015B473 /* Main.storyboard in Resources */,
+				B285065724B0418A00D38235 /* uts46 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,8 +713,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2552E2322B134650015B473 /* ViewController.m in Sources */,
+				B285065524B0415800D38235 /* String+Punycode.swift in Sources */,
+				B285065324B0415200D38235 /* NSString+IDNA.swift in Sources */,
+				B285065024B0414900D38235 /* UTS46+Loading.swift in Sources */,
+				B285065624B0415A00D38235 /* UTS46.swift in Sources */,
 				B2552E2E22B134680015B473 /* main.m in Sources */,
 				B2552E2022B134650015B473 /* AppDelegate.m in Sources */,
+				B285065224B0414E00D38235 /* Data+Extensions.swift in Sources */,
+				B285065424B0415600D38235 /* Scanner+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +787,7 @@
 				B2D4E99B08E0191700574ACD /* main.m in Sources */,
 				B285064624AF938500D38235 /* NSString+IDNA.swift in Sources */,
 				B285064C24AF93A500D38235 /* UTS46.swift in Sources */,
+				B285065124B0414D00D38235 /* Data+Extensions.swift in Sources */,
 				B285064D24AF93A700D38235 /* UTS46+Loading.swift in Sources */,
 				B2552E3522B13CBC0015B473 /* Controller.m in Sources */,
 			);
@@ -872,7 +890,6 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PunyCocoa Swift.app/Contents/MacOS/PunyCocoa Swift";
 			};
 			name = Debug;
@@ -916,7 +933,6 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PunyCocoa Swift.app/Contents/MacOS/PunyCocoa Swift";
 			};
 			name = Release;
@@ -936,6 +952,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = PunyCocoaTouch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
@@ -961,6 +978,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoaTouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -980,6 +998,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = PunyCocoaTouch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
@@ -1000,6 +1019,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.PunyCocoaTouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1054,7 +1074,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1104,7 +1123,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1144,7 +1162,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1182,7 +1199,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1230,6 +1246,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=300";
 				RUN_CLANG_STATIC_ANALYZER = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1270,6 +1287,7 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=300";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1309,7 +1327,6 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1343,7 +1360,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1392,7 +1408,6 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1434,7 +1449,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.derailer.PunyCocoa-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1490,7 +1504,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1542,7 +1555,6 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

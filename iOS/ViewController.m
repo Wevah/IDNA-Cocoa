@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-#import "NSString+Punycode.h"
+#import "PunyCocoaTouch-Swift.h"
 
 @interface ViewController ()
 
