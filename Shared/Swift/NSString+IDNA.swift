@@ -10,8 +10,8 @@ import Foundation
 @objc public extension NSString {
 	@objc(IDNAEncodedString) var idnaEncoded: String? { (self as String).idnaEncoded }
 	@objc(IDNADecodedString) var idnaDecoded: String? { (self as String).idnaDecoded }
-	var encodedURLString: String? { (self as String).encodedURLString}
-	var decodedURLString: String? { (self as String).encodedURLString }
+	var encodedURLString: String? { (self as String).encodedURLString }
+	var decodedURLString: String? { (self as String).decodedURLString }
 }
 
 @objc public extension NSURL {
