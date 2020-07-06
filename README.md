@@ -2,12 +2,12 @@
 
 [![Build Status](https://travis-ci.org/Wevah/Punycode-Cocoa.svg?branch=master)](https://travis-ci.org/Wevah/Punycode-Cocoa)
 
-v2.0 (2020)
+v2.0b1 (2020)
 by Nate Weaver (Wevah)  
 https://derailer.org/  
 https://github.com/Wevah/Punycode-Cocoa
 
-A simple punycode/IDNA String extension and NSString category, based on code and documentation from RFC 3492 and RFC 3490.
+An IDNA String extension and NSString overlay, based on [UTS #46](https://unicode.org/reports/tr46/).
 
 Use this to convert internationalized domain names (IDN) between Unicode and ASCII.
 
@@ -21,17 +21,11 @@ To use in your own projects, you need to include some files from the `Shared/Swi
 
 (UTS46+Conversion.swift is for importing text files containing UTS #46 mappings and exporting to the binary format used by UTS46+Loading.swift, and isn't necessary for most projects.)   
 
-The Objective-C `NSString+Punycode` files are compatible with both ARC and Manual Retain Release modes.
+If your project needs to call from Objective-C:
 
-**Note:** The Objective-C implementation currently on `master` is pretty out-of-date, but the Swift version has appropriate  `@objc` extensions. I may update the Objective-C implementation eventually!
+- NSString+IDNA.swift for NSString overlays.
 
 Note that these API currently don't do homograph detection.
-
-## Macros (Objective-C only)
-
-Define `PUNYCODE_COCOA_USE_WEBKIT` to have Punycode Cocoa methods call internal WebKit methods instead of the custom implementations. Useful if you're already linking against WebKit, or want additional homograph attack protection. However, this probably won't be allowed on the App Store due to its use of private methods.
-
-Define `PUNYCODE_COCOA_USE_ICU` to use ICU (by default the system's ICU). Using the system ICU may get your app rejected if you intend put it on the App Store. Compiling and bundling your own ICU libs (from http://sute.icu-project.org/) is almost certainly allowed, though you will want to build NSString+Punycode with the headers from your downloaded library/source.
 
 ## Interface
 
