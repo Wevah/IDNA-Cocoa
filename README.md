@@ -19,11 +19,11 @@ To use in your own projects, you need to include some files from the `Shared/Swi
 - Scanner+Extensions.swift
 - String+Punycode.swift
 
-(UTS46+Conversion.swift is for importing text files containing UTS #46 mappings and exporting to the binary format used by UTS46+Loading.swift, and isn't necessary for most projects.)   
-
 If your project needs to call from Objective-C:
 
 - NSString+IDNA.swift for NSString overlays.
+
+(UTS46+Conversion.swift is for importing text files containing UTS #46 mappings and exporting to the binary format used by UTS46+Loading.swift, and isn't necessary if you just want to use the encoding/decoding routines.)
 
 Note that these API currently don't do homograph detection.
 
