@@ -283,7 +283,6 @@
 		29B97314FDCFA39411CA2CEA /* Punycode */ = {
 			isa = PBXGroup;
 			children = (
-				B285065824B0426100D38235 /* PunyCocoaTouch.entitlements */,
 				B30134611A964E2600AF6C4E /* LICENSE */,
 				B30134621A964E2600AF6C4E /* README.md */,
 				B29EC659228102AE00478825 /* Shared */,
@@ -343,6 +342,7 @@
 				B2552E2922B134680015B473 /* LaunchScreen.storyboard */,
 				B2552E2C22B134680015B473 /* Info.plist */,
 				B2552E2D22B134680015B473 /* main.m */,
+				B285065824B0426100D38235 /* PunyCocoaTouch.entitlements */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
