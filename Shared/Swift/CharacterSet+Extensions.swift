@@ -21,6 +21,8 @@ extension CharacterSet {
 	/// let data = charset.rangeStringData()
 	/// // data is "agmmwz" (UTF-8 encoded)
 	/// ```
+	/// - Note: This can be relatively expensive, because it needs to iterate through all
+	/// valid Unicode code points.
 	func rangeStringData() -> Data {
 		var str = String()
 
