@@ -190,6 +190,8 @@ class UTS46 {
 			flags = Flags(rawValue: rawValue[rawValue.index(rawValue.startIndex, offsetBy: 7)])
 
 			if flags.hasCRC {
+				guard rawValue.count >= 12 else { return nil }
+				
 				let crcStart = rawValue.index(rawValue.startIndex, offsetBy: 8)
 
 				crc = rawValue.withUnsafeBytes { (buffer: UnsafeRawBufferPointer) in
