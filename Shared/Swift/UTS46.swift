@@ -182,7 +182,7 @@ class UTS46 {
 		var compression: CompressionAlgorithm { flags.compression }
 		var dataOffset: Int { 8 + (flags.hasCRC ? 4 : 0) }
 
-		init?<T: DataProtocol>(rawValue: T) where T.Index == Int {
+		init?<T>(rawValue: T) where T: DataProtocol, T: ContiguousBytes, T.Index == Int {
 			guard rawValue.count >= 8 else { return nil }
 			guard rawValue.prefix(Self.signature.count).elementsEqual(Self.signature) else { return nil }
 
@@ -191,10 +191,9 @@ class UTS46 {
 
 			if flags.hasCRC {
 				let crcStart = rawValue.index(rawValue.startIndex, offsetBy: 8)
-				let crcData = Data(rawValue[crcStart..<crcStart + 4])
 
-				crc = crcData.withUnsafeBytes { (buffer: UnsafeRawBufferPointer) in
-					return UInt32(littleEndian: buffer.load(as: UInt32.self))
+				crc = rawValue.withUnsafeBytes { (buffer: UnsafeRawBufferPointer) in
+					return UInt32(littleEndian: buffer.load(fromByteOffset: crcStart, as: UInt32.self))
 				}
 
 			}
