@@ -32,7 +32,9 @@ extension UTS46 {
 
 		let compressedData = fileData[offset...]
 
-		guard let crc = header.crc, crc == compressedData.crc32 else { throw UTS46Error.badCRC }
+		if let crc = header.crc {
+			guard crc == compressedData.crc32 else { throw UTS46Error.badCRC }
+		}
 
 		guard let data = self.decompress(data: compressedData, algorithm: header.compression) else {
 			throw UTS46Error.decompressionError
