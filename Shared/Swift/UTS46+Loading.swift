@@ -12,9 +12,9 @@ import os
 extension UTS46 {
 
 	private static func parseHeader(from data: Data) throws -> Header? {
-		let headerData = data.prefix(8)
+		let headerData = data.prefix(12)
 
-		guard headerData.count == 8 else { throw UTS46Error.badSize }
+		guard headerData.count == 12 else { throw UTS46Error.badSize }
 
 		return Header(rawValue: headerData)
 	}
@@ -32,15 +32,7 @@ extension UTS46 {
 
 		let compressedData = fileData[offset...]
 
-		if header.hasCRC {
-			let crcBytes = fileData[offset - 4..<offset]
-
-			let crc = crcBytes.withUnsafeBytes { (buffer: UnsafeRawBufferPointer) in
-				return UInt32(littleEndian: buffer.load(as: UInt32.self))
-			}
-
-			guard compressedData.crc32 == crc else { throw UTS46Error.badCRC }
-		}
+		guard let crc = header.crc, crc == compressedData.crc32 else { throw UTS46Error.badCRC }
 
 		guard let data = self.decompress(data: compressedData, algorithm: header.compression) else {
 			throw UTS46Error.decompressionError

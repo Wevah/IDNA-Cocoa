@@ -188,14 +188,8 @@ extension UTS46 {
 			}
 		}
 
-		let header = Header(compression: compression, hasCRC: includeCRC)
+		let header = Header(compression: compression, crc: includeCRC ? data.crc32 : nil)
 		outputData.append(contentsOf: header.rawValue)
-
-		if includeCRC {
-			var crc = data.crc32.littleEndian
-			let crcData = Data(bytes: &crc, count: MemoryLayout.stride(ofValue: crc))
-			outputData.append(crcData)
-		}
 
 		outputData.append(data)
 

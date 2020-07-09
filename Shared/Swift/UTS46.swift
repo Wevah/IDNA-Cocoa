@@ -19,7 +19,7 @@ import Compression
 ///     +--------------+---------+---------+---------+
 ///     | 6 bytes      | 1 byte  | 1 byte  | 4 bytes |
 ///     +--------------+---------+---------+---------+
-///     | magic number | version | flags   | crc32   |
+///     | magic number | version | flags   | crc32?  |
 ///     +--------------+---------+---------+---------+
 ///
 /// - `magic number`: `"UTS#46"` (`0x55 0x54 0x53 0x23 0x34 0x36`).
@@ -32,7 +32,7 @@ import Compression
 ///       | currently unused      | crc | compression     |
 ///       +-----+-----+-----+-----+-----+-----+-----+-----+
 ///
-///     - `crc`: Contains a CRC32 of the data after the header.
+///     - `crc32`: Contains a CRC32 of the data after the header, if the `crc` flag is set.
 ///     - `compression`: compression mode of the data.
 ///       Currently identical to NSData's compression constants + 1:
 ///
@@ -133,8 +133,18 @@ class UTS46 {
 		typealias RawValue = [UInt8]
 
 		var rawValue: [UInt8] {
-			let value = Self.signature + [version, flags.rawValue]
-			assert(value.count == 8)
+			var value = Self.signature + [version, flags.rawValue]
+
+			if self.hasCRC, let crc = crc {
+				var crcValue = crc.littleEndian
+				let crcData = Data(bytes: &crcValue, count: MemoryLayout.stride(ofValue: crcValue))
+				value += crcData
+
+				assert(value.count == 12)
+			} else {
+				assert(value.count == 8)
+			}
+
 			return value
 		}
 
@@ -168,20 +178,32 @@ class UTS46 {
 		let version: UInt8
 		private var flags: Flags
 		var hasCRC: Bool { flags.hasCRC }
+		var crc: UInt32?
 		var compression: CompressionAlgorithm { flags.compression }
 		var dataOffset: Int { 8 + (flags.hasCRC ? 4 : 0) }
 
 		init?<T: DataProtocol>(rawValue: T) where T.Index == Int {
-			guard rawValue.count == 8 else { return nil }
+			guard rawValue.count >= 8 else { return nil }
 			guard rawValue.prefix(Self.signature.count).elementsEqual(Self.signature) else { return nil }
 
 			version = rawValue[rawValue.index(rawValue.startIndex, offsetBy: 6)]
 			flags = Flags(rawValue: rawValue[rawValue.index(rawValue.startIndex, offsetBy: 7)])
+
+			if flags.hasCRC {
+				let crcStart = rawValue.index(rawValue.startIndex, offsetBy: 8)
+				let crcData = Data(rawValue[crcStart..<crcStart + 4])
+
+				crc = crcData.withUnsafeBytes { (buffer: UnsafeRawBufferPointer) in
+					return UInt32(littleEndian: buffer.load(as: UInt32.self))
+				}
+
+			}
 		}
 
-		init(compression: CompressionAlgorithm = .none, hasCRC: Bool = false) {
-			self.version = 1
-			self.flags = Flags(compression: compression, hasCRC: hasCRC)
+		init(compression: CompressionAlgorithm = .none, crc: UInt32?) {
+			version = 1
+			flags = Flags(compression: compression, hasCRC: crc != nil)
+			self.crc = crc
 		}
 
 		var debugDescription: String { "has CRC: \(hasCRC); compression: \(String(describing: compression))" }
