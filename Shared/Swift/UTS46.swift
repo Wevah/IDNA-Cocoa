@@ -102,6 +102,7 @@ class UTS46 {
 		case decompressionError
 		case badMarker
 		case unknownVersion
+		case badCRC
 	}
 
 	/// Identical values to `NSData.CompressionAlgorithm + 1`.

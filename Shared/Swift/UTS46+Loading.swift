@@ -32,6 +32,16 @@ extension UTS46 {
 
 		let compressedData = fileData[offset...]
 
+		if header.hasCRC {
+			let crcBytes = fileData[offset - 4..<offset]
+
+			let crc = crcBytes.withUnsafeBytes { (buffer: UnsafeRawBufferPointer) in
+				return UInt32(littleEndian: buffer.load(as: UInt32.self))
+			}
+
+			guard compressedData.crc32 == crc else { throw UTS46Error.badCRC }
+		}
+
 		guard let data = self.decompress(data: compressedData, algorithm: header.compression) else {
 			throw UTS46Error.decompressionError
 		}
