@@ -16,11 +16,11 @@ import Compression
 ///
 /// Header:
 ///
-///     +--------------+---------+---------+---------+
-///     | 6 bytes      | 1 byte  | 1 byte  | 4 bytes |
-///     +--------------+---------+---------+---------+
-///     | magic number | version | flags   | crc32?  |
-///     +--------------+---------+---------+---------+
+///     +--------------+---------+---------+----------+
+///     | 6 bytes      | 1 byte  | 1 byte  | 4 bytes? |
+///     +--------------+---------+---------+----------+
+///     | magic number | version | flags   | crc32    |
+///     +--------------+---------+---------+----------+
 ///
 /// - `magic number`: `"UTS#46"` (`0x55 0x54 0x53 0x23 0x34 0x36`).
 /// - `version`: format version (1 byte; currently `0x01`).
@@ -32,7 +32,7 @@ import Compression
 ///       | currently unused      | crc | compression     |
 ///       +-----+-----+-----+-----+-----+-----+-----+-----+
 ///
-///     - `crc32`: Contains a CRC32 of the data after the header, if the `crc` flag is set.
+///     - `crc32`: Optional CRC32 of the data after the header, if the `crc` flag is set.
 ///     - `compression`: compression mode of the data.
 ///       Currently identical to NSData's compression constants + 1:
 ///
