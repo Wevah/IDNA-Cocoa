@@ -156,8 +156,8 @@ class UTS46 {
 				return (hasCRC ? hasCRCMask : 0) | compression.rawValue
 			}
 
-			var hasCRC: Bool
-			var compression: CompressionAlgorithm
+			let hasCRC: Bool
+			let compression: CompressionAlgorithm
 
 			private let hasCRCMask: UInt8 = 1 << 3
 			private let compressionMask: UInt8 = 0x7
