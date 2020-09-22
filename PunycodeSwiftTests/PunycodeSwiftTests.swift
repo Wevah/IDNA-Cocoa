@@ -102,4 +102,9 @@ class PunycodeSwiftTests: XCTestCase {
 		let rangeData = charset.rangeStringData()
 		XCTAssertEqual(rangeData, "agmmwz".data(using: .utf8)!)
 	}
+
+	func testEmptyFragment() {
+		XCTAssertEqual("https://derailer.org/foo#".encodedURLString, "https://derailer.org/foo#")
+	}
+	
 }

@@ -406,7 +406,7 @@ private extension String {
 
 		if !s.isAtEnd {
 			_ = s.shimScanString("#")
-			fragment = s.shimScanUpToCharacters(from: .newlines)!
+			fragment = s.shimScanUpToCharacters(from: .newlines) ?? ""
 		}
 
 		let usernamePasswordHostPort = host.components(separatedBy: "@")
