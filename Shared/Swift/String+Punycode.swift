@@ -382,10 +382,7 @@ private extension String {
 
 				if delim.hasPrefix(":") {
 					scheme = hostOrScheme
-
-					if !s.isAtEnd {
-						host = s.shimScanUpToCharacters(from: slashQuestion)!
-					}
+					host = s.shimScanUpToCharacters(from: slashQuestion) ?? ""
 				} else {
 					host = hostOrScheme
 				}
@@ -400,12 +397,9 @@ private extension String {
 			}
 		}
 
-		if !s.isAtEnd {
-			path = s.shimScanUpToString("#")!
-		}
+		path = s.shimScanUpToString("#") ?? ""
 
-		if !s.isAtEnd {
-			_ = s.shimScanString("#")
+		if s.shimScanString("#") != nil {
 			fragment = s.shimScanUpToCharacters(from: .newlines) ?? ""
 		}
 
