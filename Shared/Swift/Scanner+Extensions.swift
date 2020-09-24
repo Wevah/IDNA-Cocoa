@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Wrapper functions for < 10.15 compatibility
+// Wrapper functions for < 10.15 compatibility.
 // TODO: Remove when support for < 10.15 is dropped.
 extension Scanner {
 
