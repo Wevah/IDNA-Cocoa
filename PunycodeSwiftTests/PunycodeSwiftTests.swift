@@ -106,5 +106,14 @@ class PunycodeSwiftTests: XCTestCase {
 	func testEmptyFragment() {
 		XCTAssertEqual("https://derailer.org/foo#".encodedURLString, "https://derailer.org/foo#")
 	}
+
+	func testEmptyQuery() {
+		XCTAssertEqual("https://derailer.org/foo?".encodedURLString, "https://derailer.org/foo?")
+	}
+
+	func testEmptyHostWithQuery() {
+		XCTAssertEqual("https://?".encodedURLString, "https://?")
+
+	}
 	
 }
