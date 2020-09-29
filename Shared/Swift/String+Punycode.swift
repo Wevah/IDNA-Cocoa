@@ -377,15 +377,11 @@ private extension String {
 		var fragment: String?
 
 		if let hostOrScheme = s.shimScanUpToCharacters(from: colonSlash) {
-			if !s.isAtEnd {
-				delim = s.shimScanCharacters(from: colonSlash)!
+			delim = s.shimScanCharacters(from: colonSlash) ?? ""
 
-				if delim.hasPrefix(":") {
-					scheme = hostOrScheme
-					host = s.shimScanUpToCharacters(from: slashQuestion) ?? ""
-				} else {
-					host = hostOrScheme
-				}
+			if delim.hasPrefix(":") {
+				scheme = hostOrScheme
+				host = s.shimScanUpToCharacters(from: slashQuestion) ?? ""
 			} else {
 				host = hostOrScheme
 			}
