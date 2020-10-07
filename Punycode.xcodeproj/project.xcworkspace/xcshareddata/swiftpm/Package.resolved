@@ -5,8 +5,8 @@
         "package": "swift-argument-parser",
         "repositoryURL": "git@github.com:apple/swift-argument-parser.git",
         "state": {
-          "branch": "master",
-          "revision": "7255fd547f70468e19abbac5f7964f1ef309ad92",
+          "branch": "main",
+          "revision": "d424bca0ec66ec0e3888ebdc118379d348a67da3",
           "version": null
         }
       }
