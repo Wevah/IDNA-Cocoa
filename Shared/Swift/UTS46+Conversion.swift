@@ -203,7 +203,7 @@ extension UTS46 {
 	static func write(to fileHandle: FileHandle, compression: CompressionAlgorithm = .none) throws {
 		let data = try self.data(compression: compression)
 
-		if #available(macOS 10.15, iOS 13.0, *) {
+		if #available(macOS 10.15.4, iOS 13.4, *) {
 			try fileHandle.write(contentsOf: data)
 		} else {
 			fileHandle.write(data)
