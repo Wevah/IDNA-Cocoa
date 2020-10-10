@@ -113,7 +113,11 @@ class PunycodeSwiftTests: XCTestCase {
 
 	func testEmptyHostWithQuery() {
 		XCTAssertEqual("https://?".encodedURLString, "https://?")
+	}
 
+	func testNoSchemeButSlash() {
+		XCTAssertEqual("foo/bar".encodedURLString, "foo/bar")
+		XCTAssertEqual("foobar.com/".encodedURLString, "foobar.com/")
 	}
 	
 }

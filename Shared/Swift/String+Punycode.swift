@@ -377,12 +377,14 @@ private extension String {
 		var fragment: String?
 
 		if let hostOrScheme = s.shimScanUpToCharacters(from: colonSlash) {
-			delim = s.shimScanCharacters(from: colonSlash) ?? ""
+			let maybeDelim = s.shimScanCharacters(from: colonSlash) ?? ""
 
-			if delim.hasPrefix(":") {
+			if maybeDelim.hasPrefix(":") {
+				delim = maybeDelim
 				scheme = hostOrScheme
 				host = s.shimScanUpToCharacters(from: slashQuestion) ?? ""
 			} else {
+				path.append(maybeDelim)
 				host = hostOrScheme
 			}
 		} else if let maybeDelim = s.shimScanString("//") {
@@ -393,7 +395,7 @@ private extension String {
 			}
 		}
 
-		path = s.shimScanUpToString("#") ?? ""
+		path.append(s.shimScanUpToString("#") ?? "")
 
 		if s.shimScanString("#") != nil {
 			fragment = s.shimScanUpToCharacters(from: .newlines) ?? ""
