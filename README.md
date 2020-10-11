@@ -7,7 +7,7 @@ by Nate Weaver (Wevah)
 https://derailer.org/  
 https://github.com/Wevah/Punycode-Cocoa
 
-An IDNA String extension and NSString overlay, based on [UTS #46](https://unicode.org/reports/tr46/).
+An IDNA String extension and NSString overlay, based on [UTS #46](https://unicode.org/reports/tr46/). Currently implents the full conversion table and joiner validation.
 
 Use this to convert internationalized domain names (IDN) between Unicode and ASCII.
 
