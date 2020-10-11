@@ -1,7 +1,7 @@
 language: objective-c
 xcode_project: Punycode.xcodeproj
 xcode_scheme:
-    - PunyCocoa
+    - PunyCocoa ObjC
     - PunyCocoa Swift
 osx_image: xcode12.0
 xcode_destination: platform=macOS
