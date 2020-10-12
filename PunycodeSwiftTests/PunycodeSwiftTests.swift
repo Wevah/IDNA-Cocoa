@@ -119,5 +119,17 @@ class PunycodeSwiftTests: XCTestCase {
 		XCTAssertEqual("foo/bar".encodedURLString, "foo/bar")
 		XCTAssertEqual("foobar.com/".encodedURLString, "foobar.com/")
 	}
-	
+
+	func testASCIIURL() {
+		XCTAssertEqual(URL(unicodeString: "https://foobar.com/"), URL(string: "https://foobar.com/"))
+	}
+
+	func testUnicodePath() {
+		XCTAssertEqual(URL(unicodeString: "https://foobar.com/bücher"), URL(string: "https://foobar.com/b%C3%BCcher"))
+	}
+
+	func testSpace() {
+		XCTAssertEqual("https://foo.com/foo bar/".encodedURLString, "https://foo.com/foo%20bar/")
+	}
+
 }
