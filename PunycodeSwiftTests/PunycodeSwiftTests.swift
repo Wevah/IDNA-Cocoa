@@ -79,17 +79,17 @@ class PunycodeSwiftTests: XCTestCase {
 		// u + combining umlaut should convert to u-with-umlaut
 		let utf8: [UInt8] = [0x75, 0xcc, 0x88]
 		let str = String(bytes: utf8, encoding: .utf8)
-		XCTAssertEqual(str?.encodedURLString, "xn--tda")
+		XCTAssertEqual(str?.idnaEncoded, "xn--tda")
 	}
 
 	func testInvalidCodepoints() {
-		XCTAssertNil("a⒈com".encodedURLString)
+		XCTAssertNil("a⒈com".idnaEncoded)
 	}
 
 	func testInvalidDecoding() {
-		XCTAssertNil("xn--u-ccb.com".decodedURLString)
-		XCTAssertNil("xn--0.pt".decodedURLString)
-		XCTAssertNil("xn--a-ecp.ru".decodedURLString)
+		XCTAssertNil("xn--u-ccb.com".idnaDecoded)
+		XCTAssertNil("xn--0.pt".idnaDecoded)
+		XCTAssertNil("xn--a-ecp.ru".idnaDecoded)
 	}
 
 	func testCRC32() {
@@ -130,6 +130,26 @@ class PunycodeSwiftTests: XCTestCase {
 
 	func testSpace() {
 		XCTAssertEqual("https://foo.com/foo bar/".encodedURLString, "https://foo.com/foo%20bar/")
+	}
+
+	func testRelative() {
+		let base = URL(string: "https://foo.com/")
+
+		XCTAssertEqual(URL(unicodeString: "bar", relativeTo: base)?.absoluteString, "https://foo.com/bar")
+		XCTAssertEqual(URL(unicodeString: "bär", relativeTo: base)?.absoluteString, "https://foo.com/b%C3%A4r")
+		XCTAssertEqual(URL(unicodeString: "bär?baz#quux", relativeTo: base)?.absoluteString, "https://foo.com/b%C3%A4r?baz#quux")
+
+		XCTAssertEqual(URL(unicodeString: "https://bär.com/", relativeTo: base)?.absoluteString, "https://xn--br-via.com/")
+
+		XCTAssertEqual(URL(unicodeString: "/:", relativeTo: base)?.absoluteString, "https://foo.com/:")
+		XCTAssertEqual(URL(unicodeString: ":/", relativeTo: base)?.absoluteString, "https://foo.com/")
+
+	}
+
+	func testMoreRelative() {
+		let base = URL(string: "https://foo.com/")
+
+		XCTAssertEqual(URL(unicodeString: "//bär/", relativeTo: base)?.absoluteString, "https://xn--br-via/")
 	}
 
 }

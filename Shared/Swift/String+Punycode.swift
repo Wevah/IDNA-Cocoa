@@ -80,8 +80,7 @@ public extension String {
 		var pathAndQuery = urlParts.pathAndQuery
 
 		var allowedCharacters = CharacterSet.urlPathAllowed
-		allowedCharacters.insert(charactersIn: "%")
-		allowedCharacters.insert(charactersIn: "?")
+		allowedCharacters.insert(charactersIn: "%?")
 		pathAndQuery = pathAndQuery.addingPercentEncoding(withAllowedCharacters: allowedCharacters) ?? ""
 
 		var result = "\(urlParts.scheme)\(urlParts.delim)"
@@ -149,10 +148,11 @@ public extension URL {
 	init?(unicodeString: String) {
 		if let url = URL(string: unicodeString) {
 			self = url
-		} else {
-			guard let encodedString = unicodeString.encodedURLString else { return nil }
-			self.init(string: encodedString)
+			return
 		}
+
+		guard let encodedString = unicodeString.encodedURLString else { return nil }
+		self.init(string: encodedString)
 	}
 
 	/// The IDNA- and percent-decoded representation of the URL.
@@ -171,14 +171,21 @@ public extension URL {
 	///   - unicodeString: The URL string with which to initialize the NSURL object. `unicodeString` is interpreted relative to `baseURL`.
 	///   - url: The base URL for the URL object
 	init?(unicodeString: String, relativeTo url: URL?) {
-		let parts = unicodeString.urlParts
-
-		if !parts.scheme.isEmpty {
-			guard let encodedString = unicodeString.encodedURLString else { return nil }
-			self.init(string: encodedString, relativeTo: url)
+		if let url = URL(string: unicodeString, relativeTo: url) {
+			self = url
+			return
 		}
 
-		self.init(string: unicodeString, relativeTo: url)
+		let parts = unicodeString.urlParts
+
+		if !parts.host.isEmpty {
+			guard let encodedString = unicodeString.encodedURLString else { return nil }
+			self.init(string: encodedString, relativeTo: url)
+		} else {
+			var allowedCharacters = CharacterSet.urlPathAllowed
+			allowedCharacters.insert(charactersIn: "%?#")
+			self.init(string: unicodeString.addingPercentEncoding(withAllowedCharacters: allowedCharacters)!, relativeTo: url)
+		}
 	}
 
 }
@@ -388,8 +395,8 @@ private extension String {
 				scheme = hostOrScheme
 				host = s.shimScanUpToCharacters(from: slashQuestion) ?? ""
 			} else {
+				path.append(hostOrScheme)
 				path.append(maybeDelim)
-				host = hostOrScheme
 			}
 		} else if let maybeDelim = s.shimScanString("//") {
 			delim = maybeDelim
