@@ -147,8 +147,12 @@ public extension URL {
 	///
 	/// - Parameter unicodeString: The unicode URL string with which to create a URL.
 	init?(unicodeString: String) {
-		guard let encodedString = unicodeString.encodedURLString else { return nil }
-		self.init(string: encodedString)
+		if let url = URL(string: unicodeString) {
+			self = url
+		} else {
+			guard let encodedString = unicodeString.encodedURLString else { return nil }
+			self.init(string: encodedString)
+		}
 	}
 
 	/// The IDNA- and percent-decoded representation of the URL.
