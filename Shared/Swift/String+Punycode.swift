@@ -184,7 +184,8 @@ public extension URL {
 		} else {
 			var allowedCharacters = CharacterSet.urlPathAllowed
 			allowedCharacters.insert(charactersIn: "%?#")
-			self.init(string: unicodeString.addingPercentEncoding(withAllowedCharacters: allowedCharacters)!, relativeTo: url)
+			guard let encoded = unicodeString.addingPercentEncoding(withAllowedCharacters: allowedCharacters) else { return nil }
+			self.init(string: encoded, relativeTo: url)
 		}
 	}
 
