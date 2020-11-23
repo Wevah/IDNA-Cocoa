@@ -138,7 +138,6 @@
 		B23CBE6024AE05B100F98F35 /* Scanner+ConversionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scanner+ConversionExtensions.swift"; sourceTree = "<group>"; };
 		B24585772423206100CC75A4 /* IDNASwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDNASwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunycodeSwiftTests.swift; sourceTree = "<group>"; };
-		B245857B2423206100CC75A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2552E1C22B134650015B473 /* PunyCocoaTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunyCocoaTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2552E1E22B134650015B473 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B2552E1F22B134650015B473 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -345,7 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */,
-				B245857B2423206100CC75A4 /* Info.plist */,
 			);
 			path = IDNATests;
 			sourceTree = "<group>";

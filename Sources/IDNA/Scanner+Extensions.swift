@@ -12,7 +12,7 @@ import Foundation
 extension Scanner {
 
 	func shimScanUpToCharacters(from set: CharacterSet) -> String? {
-		if #available(macOS 10.15, iOS 13.0, *) {
+		if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *) {
 			return self.scanUpToCharacters(from: set)
 		} else {
 			var str: NSString?
@@ -22,7 +22,7 @@ extension Scanner {
 	}
 
 	func shimScanCharacters(from set: CharacterSet) -> String? {
-		if #available(macOS 10.15, iOS 13.0, *) {
+		if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *) {
 			return self.scanCharacters(from: set)
 		} else {
 			var str: NSString?
@@ -32,7 +32,7 @@ extension Scanner {
 	}
 
 	func shimScanUpToString(_ substring: String) -> String? {
-		if #available(macOS 10.15, iOS 13.0, *) {
+		if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *) {
 			return self.scanUpToString(substring)
 		} else {
 			var str: NSString?
@@ -42,7 +42,7 @@ extension Scanner {
 	}
 
 	func shimScanString(_ searchString: String) -> String? {
-		if #available(macOS 10.15, iOS 13.0, *) {
+		if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *) {
 			return self.scanString(searchString)
 		} else {
 			var str: NSString?

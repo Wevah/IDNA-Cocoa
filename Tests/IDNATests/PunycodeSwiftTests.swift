@@ -5,6 +5,7 @@
 //  Created by Nate Weaver on 2020-03-18.
 //
 
+#if !os(watchOS)
 import XCTest
 @testable import IDNA
 
@@ -153,3 +154,4 @@ class IDNATests: XCTestCase {
 	}
 
 }
+#endif

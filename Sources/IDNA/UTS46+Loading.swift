@@ -75,7 +75,7 @@ extension UTS46 {
 	static func loadIfNecessary() throws {
 		guard !isLoaded else { return }
 		guard let url = Self.bundle.url(forResource: "uts46", withExtension: nil) else {
-			if #available(OSX 10.12, *) {
+			if #available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *) {
 				os_log("uts46 data file is missing!", type: .error)
 			} else {
 				print("uts46 data file is missing!")
