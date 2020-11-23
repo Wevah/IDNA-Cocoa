@@ -1,14 +1,14 @@
 //
-//  PunycodeSwiftTests.swift
-//  PunycodeSwiftTests
+//  IDNATests.swift
+//  IDNATests
 //
 //  Created by Nate Weaver on 2020-03-18.
 //
 
 import XCTest
-@testable import PunyCocoa_Swift
+@testable import IDNA
 
-class PunycodeSwiftTests: XCTestCase {
+class IDNATests: XCTestCase {
 
 	func testIDNAEncoding() {
 		let dict = [
@@ -97,11 +97,11 @@ class PunycodeSwiftTests: XCTestCase {
 		XCTAssertEqual(data.crc32, 0x8c736521)
 	}
 
-	func testRangeStringData() {
-		let charset = CharacterSet(charactersIn: "abcdefgmwxyz")
-		let rangeData = charset.rangeStringData()
-		XCTAssertEqual(rangeData, "agmmwz".data(using: .utf8)!)
-	}
+//	func testRangeStringData() {
+//		let charset = CharacterSet(charactersIn: "abcdefgmwxyz")
+//		let rangeData = charset.rangeStringData()
+//		XCTAssertEqual(rangeData, "agmmwz".data(using: .utf8)!)
+//	}
 
 	func testEmptyFragment() {
 		XCTAssertEqual("https://derailer.org/foo#".encodedURLString, "https://derailer.org/foo#")
