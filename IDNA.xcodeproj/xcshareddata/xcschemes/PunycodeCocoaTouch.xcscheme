@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B2C8FD5D24661FC2006DF2D9"
-               BuildableName = "PunycodeCocoa.framework"
-               BlueprintName = "PunycodeCocoa"
-               ReferencedContainer = "container:Punycode.xcodeproj">
+               BlueprintIdentifier = "B2A4B15F246A146E00ED32EB"
+               BuildableName = "IDNACocoaTouch.framework"
+               BlueprintName = "IDNACocoaTouch"
+               ReferencedContainer = "container:IDNA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B24585762423206100CC75A4"
-               BuildableName = "PunycodeSwiftTests.xctest"
-               BlueprintName = "PunycodeSwiftTests"
-               ReferencedContainer = "container:Punycode.xcodeproj">
+               BuildableName = "IDNASwiftTests.xctest"
+               BlueprintName = "IDNASwiftTests"
+               ReferencedContainer = "container:IDNA.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -60,10 +60,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B2C8FD5D24661FC2006DF2D9"
-            BuildableName = "PunycodeCocoa.framework"
-            BlueprintName = "PunycodeCocoa"
-            ReferencedContainer = "container:Punycode.xcodeproj">
+            BlueprintIdentifier = "B2A4B15F246A146E00ED32EB"
+            BuildableName = "IDNACocoaTouch.framework"
+            BlueprintName = "IDNACocoaTouch"
+            ReferencedContainer = "container:IDNA.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

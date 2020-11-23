@@ -1,6 +1,4 @@
-# Punycode Cocoa
-
-[![Build Status](https://travis-ci.org/Wevah/Punycode-Cocoa.svg?branch=master)](https://travis-ci.org/Wevah/Punycode-Cocoa)
+# IDNA Cocoa
 
 v2.0b3 (2020)
 by Nate Weaver (Wevah)  

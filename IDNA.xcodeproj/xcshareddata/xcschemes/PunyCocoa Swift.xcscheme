@@ -14,32 +14,18 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B2D4E99208E0191700574ACD"
-               BuildableName = "PunyCocoa ObjC.app"
-               BlueprintName = "PunyCocoa ObjC"
-               ReferencedContainer = "container:Punycode.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B255A5581500C4800073DF21"
-               BuildableName = "PunycodeTests.xctest"
-               BlueprintName = "PunycodeTests"
-               ReferencedContainer = "container:Punycode.xcodeproj">
+               BlueprintIdentifier = "B2C3DD41241FECF200484850"
+               BuildableName = "PunyCocoa Swift.app"
+               BlueprintName = "PunyCocoa Swift"
+               ReferencedContainer = "container:IDNA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
@@ -47,10 +33,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B255A5581500C4800073DF21"
-               BuildableName = "PunycodeTests.xctest"
-               BlueprintName = "PunycodeTests"
-               ReferencedContainer = "container:Punycode.xcodeproj">
+               BlueprintIdentifier = "B24585762423206100CC75A4"
+               BuildableName = "IDNASwiftTests.xctest"
+               BlueprintName = "IDNASwiftTests"
+               ReferencedContainer = "container:IDNA.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -69,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B2D4E99208E0191700574ACD"
-            BuildableName = "PunyCocoa ObjC.app"
-            BlueprintName = "PunyCocoa ObjC"
-            ReferencedContainer = "container:Punycode.xcodeproj">
+            BlueprintIdentifier = "B2C3DD41241FECF200484850"
+            BuildableName = "PunyCocoa Swift.app"
+            BlueprintName = "PunyCocoa Swift"
+            ReferencedContainer = "container:IDNA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -86,10 +72,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B2D4E99208E0191700574ACD"
-            BuildableName = "PunyCocoa ObjC.app"
-            BlueprintName = "PunyCocoa ObjC"
-            ReferencedContainer = "container:Punycode.xcodeproj">
+            BlueprintIdentifier = "B2C3DD41241FECF200484850"
+            BuildableName = "PunyCocoa Swift.app"
+            BlueprintName = "PunyCocoa Swift"
+            ReferencedContainer = "container:IDNA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
