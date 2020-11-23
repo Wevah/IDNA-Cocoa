@@ -1,5 +1,5 @@
 //
-//  String+Punycode.swift
+//  String+IDNA.swift
 //  Punycode
 //
 //  Created by Nate Weaver on 2020-03-16.

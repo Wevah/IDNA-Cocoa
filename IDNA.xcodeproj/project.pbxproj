@@ -12,7 +12,7 @@
 		B244BE8A2460CD2800FBA17F /* CharacterSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */; };
 		B244BE8B2460CD2A00FBA17F /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
 		B245857A2423206100CC75A4 /* PunycodeSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */; };
-		B24AAF0E24363D0C003DD346 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
+		B24AAF0E24363D0C003DD346 /* String+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+IDNA.swift */; };
 		B2552E2022B134650015B473 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E1F22B134650015B473 /* AppDelegate.m */; };
 		B2552E2322B134650015B473 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2552E2222B134650015B473 /* ViewController.m */; };
 		B2552E2622B134650015B473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2552E2422B134650015B473 /* Main.storyboard */; };
@@ -26,7 +26,7 @@
 		B27409CA2443F66900E567E7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B285064624AF938500D38235 /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
 		B285064A24AF93A000D38235 /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
-		B285064B24AF93A300D38235 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
+		B285064B24AF93A300D38235 /* String+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+IDNA.swift */; };
 		B285064C24AF93A500D38235 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B285064D24AF93A700D38235 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
 		B285064F24AF9B5C00D38235 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
@@ -35,11 +35,10 @@
 		B285065224B0414E00D38235 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B285065324B0415200D38235 /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
 		B285065424B0415600D38235 /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
-		B285065524B0415800D38235 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
+		B285065524B0415800D38235 /* String+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+IDNA.swift */; };
 		B285065624B0415A00D38235 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B285065724B0418A00D38235 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2AF21082431376E009F5EE7 /* uts46 */; };
 		B2A4B164246A146E00ED32EB /* PunycodeCocoaTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A4B162246A146E00ED32EB /* PunycodeCocoaTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B2A4B168246A14EB00ED32EB /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
 		B2A4B169246A14EB00ED32EB /* Scanner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */; };
 		B2A4B16A246A14EB00ED32EB /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B2A4B16B246A14EB00ED32EB /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
@@ -58,7 +57,7 @@
 		B2C8FD6224661FC2006DF2D9 /* PunycodeCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = B2C8FD6024661FC2006DF2D9 /* PunycodeCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2C8FD6524661FC2006DF2D9 /* IDNACocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C8FD5E24661FC2006DF2D9 /* IDNACocoa.framework */; };
 		B2C8FD6624661FC2006DF2D9 /* IDNACocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2C8FD5E24661FC2006DF2D9 /* IDNACocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B2C8FD6B24661FDD006DF2D9 /* String+Punycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+Punycode.swift */; };
+		B2C8FD6B24661FDD006DF2D9 /* String+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3DCC1241FE95B00484850 /* String+IDNA.swift */; };
 		B2C8FD6D24661FDD006DF2D9 /* UTS46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF210624313283009F5EE7 /* UTS46.swift */; };
 		B2C8FD6E24661FDD006DF2D9 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27409C82443E45B00E567E7 /* Data+Extensions.swift */; };
 		B2C8FD6F24661FDD006DF2D9 /* NSString+IDNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED10244B94E50038CB55 /* NSString+IDNA.swift */; };
@@ -165,7 +164,7 @@
 		B2AF21082431376E009F5EE7 /* uts46 */ = {isa = PBXFileReference; lastKnownFileType = file; path = uts46; sourceTree = "<group>"; };
 		B2B4F3CD242EB79E00CC752F /* icumap2code */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = icumap2code; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B4F3CF242EB79E00CC752F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		B2C3DCC1241FE95B00484850 /* String+Punycode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Punycode.swift"; sourceTree = "<group>"; };
+		B2C3DCC1241FE95B00484850 /* String+IDNA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+IDNA.swift"; sourceTree = "<group>"; };
 		B2C3DD42241FECF200484850 /* PunyCocoa Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C3DD44241FECF200484850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2C3DD46241FECF400484850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -284,7 +283,9 @@
 			children = (
 				B30134611A964E2600AF6C4E /* LICENSE */,
 				B30134621A964E2600AF6C4E /* README.md */,
-				B29EC659228102AE00478825 /* Shared */,
+				B29EC659228102AE00478825 /* Sources */,
+				B299C5B12464CD1F001F811B /* uts46-file-format.md */,
+				B2C3DCC0241FE94400484850 /* Swift */,
 				B2B4F3CE242EB79E00CC752F /* icumap2code */,
 				B29EC65B228102E300478825 /* Mac (ObjC) */,
 				B2C3DD43241FECF200484850 /* Mac (Swift) */,
@@ -319,6 +320,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B20A76EE256C2A9C00454E7C /* IDNA */ = {
+			isa = PBXGroup;
+			children = (
+				B2C3DCC1241FE95B00484850 /* String+IDNA.swift */,
+				B2AF21082431376E009F5EE7 /* uts46 */,
+				B27409C82443E45B00E567E7 /* Data+Extensions.swift */,
+				B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */,
+				B2AF210624313283009F5EE7 /* UTS46.swift */,
+				B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */,
+			);
+			path = IDNA;
+			sourceTree = "<group>";
+		};
 		B24585782423206100CC75A4 /* PunycodeSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,14 +359,12 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
-		B29EC659228102AE00478825 /* Shared */ = {
+		B29EC659228102AE00478825 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B2AF21082431376E009F5EE7 /* uts46 */,
-				B299C5B12464CD1F001F811B /* uts46-file-format.md */,
-				B2C3DCC0241FE94400484850 /* Swift */,
+				B20A76EE256C2A9C00454E7C /* IDNA */,
 			);
-			path = Shared;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		B29EC65B228102E300478825 /* Mac (ObjC) */ = {
@@ -387,14 +399,9 @@
 			isa = PBXGroup;
 			children = (
 				B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */,
-				B27409C82443E45B00E567E7 /* Data+Extensions.swift */,
 				B265ED10244B94E50038CB55 /* NSString+IDNA.swift */,
 				B23CBE6024AE05B100F98F35 /* Scanner+ConversionExtensions.swift */,
-				B25AEA6C244D8CEC0009E982 /* Scanner+Extensions.swift */,
-				B2C3DCC1241FE95B00484850 /* String+Punycode.swift */,
-				B2AF210624313283009F5EE7 /* UTS46.swift */,
 				B2C8FD7224663ECC006DF2D9 /* UTS46+Conversion.swift */,
-				B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -711,7 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2552E2322B134650015B473 /* ViewController.m in Sources */,
-				B285065524B0415800D38235 /* String+Punycode.swift in Sources */,
+				B285065524B0415800D38235 /* String+IDNA.swift in Sources */,
 				B285065324B0415200D38235 /* NSString+IDNA.swift in Sources */,
 				B285065024B0414900D38235 /* UTS46+Loading.swift in Sources */,
 				B285065624B0415A00D38235 /* UTS46.swift in Sources */,
@@ -730,7 +737,6 @@
 				B2A4B16D246A14EB00ED32EB /* NSString+IDNA.swift in Sources */,
 				B2A4B16B246A14EB00ED32EB /* UTS46+Loading.swift in Sources */,
 				B2A4B16A246A14EB00ED32EB /* UTS46.swift in Sources */,
-				B2A4B168246A14EB00ED32EB /* String+Punycode.swift in Sources */,
 				B2A4B16C246A14EB00ED32EB /* Data+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,7 +761,7 @@
 			files = (
 				B2BAC3D42468BF800014124A /* Scanner+Extensions.swift in Sources */,
 				B2AF210724313283009F5EE7 /* UTS46.swift in Sources */,
-				B24AAF0E24363D0C003DD346 /* String+Punycode.swift in Sources */,
+				B24AAF0E24363D0C003DD346 /* String+IDNA.swift in Sources */,
 				B2C3DD55241FEDF900484850 /* Controller.swift in Sources */,
 				B2C8FD7624663F5B006DF2D9 /* UTS46+Loading.swift in Sources */,
 				B2C3DD45241FECF200484850 /* AppDelegate.swift in Sources */,
@@ -772,7 +778,7 @@
 				B2BAC3D12468BE5F0014124A /* Scanner+Extensions.swift in Sources */,
 				B2C8FD6D24661FDD006DF2D9 /* UTS46.swift in Sources */,
 				B2C8FD7724663FB8006DF2D9 /* UTS46+Loading.swift in Sources */,
-				B2C8FD6B24661FDD006DF2D9 /* String+Punycode.swift in Sources */,
+				B2C8FD6B24661FDD006DF2D9 /* String+IDNA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,7 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B285064A24AF93A000D38235 /* Scanner+Extensions.swift in Sources */,
-				B285064B24AF93A300D38235 /* String+Punycode.swift in Sources */,
+				B285064B24AF93A300D38235 /* String+IDNA.swift in Sources */,
 				B2D4E99B08E0191700574ACD /* main.m in Sources */,
 				B285064624AF938500D38235 /* NSString+IDNA.swift in Sources */,
 				B285064C24AF93A500D38235 /* UTS46.swift in Sources */,
