@@ -284,13 +284,13 @@
 				B30134611A964E2600AF6C4E /* LICENSE */,
 				B30134621A964E2600AF6C4E /* README.md */,
 				B29EC659228102AE00478825 /* Sources */,
+				B20A76FB256C2B9600454E7C /* Tests */,
 				B299C5B12464CD1F001F811B /* uts46-file-format.md */,
 				B2C3DCC0241FE94400484850 /* Swift */,
 				B2B4F3CE242EB79E00CC752F /* icumap2code */,
 				B29EC65B228102E300478825 /* Mac (ObjC) */,
 				B2C3DD43241FECF200484850 /* Mac (Swift) */,
 				B2552E1D22B134650015B473 /* iOS */,
-				B24585782423206100CC75A4 /* PunycodeSwiftTests */,
 				B2C8FD5F24661FC2006DF2D9 /* PunycodeCocoa */,
 				B2A4B161246A146E00ED32EB /* PunycodeCocoaTouch */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -333,13 +333,21 @@
 			path = IDNA;
 			sourceTree = "<group>";
 		};
-		B24585782423206100CC75A4 /* PunycodeSwiftTests */ = {
+		B20A76FB256C2B9600454E7C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B24585782423206100CC75A4 /* IDNATests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		B24585782423206100CC75A4 /* IDNATests */ = {
 			isa = PBXGroup;
 			children = (
 				B24585792423206100CC75A4 /* PunycodeSwiftTests.swift */,
 				B245857B2423206100CC75A4 /* Info.plist */,
 			);
-			path = PunycodeSwiftTests;
+			path = IDNATests;
 			sourceTree = "<group>";
 		};
 		B2552E1D22B134650015B473 /* iOS */ = {
