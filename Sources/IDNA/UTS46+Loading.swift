@@ -30,6 +30,17 @@ extension UTS46 {
 
 		guard fileData.count > offset else { throw UTS46Error.badSize }
 
+		switch header.version {
+			case 1:
+				break;
+			default:
+				if #available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *) {
+					os_log("Unrecognized version found; assuming 1.", type: .debug)
+				} else {
+					print("Unrecognized version found; assuming 1.")
+				}
+		}
+
 		let compressedData = fileData[offset...]
 
 		if let crc = header.crc {
