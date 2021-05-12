@@ -33,6 +33,7 @@ let package = Package(
 		.target(
 			name: "IDNAObjC",
 			resources: [.copy("uts46")],
-			cSettings: [.define("SWIFT_PACKAGE")]),
+			cSettings: [.define("SWIFT_PACKAGE"),
+						.unsafeFlags(["-Wall"])]),
     ]
 )
