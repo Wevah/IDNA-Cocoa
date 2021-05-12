@@ -11,6 +11,9 @@ let package = Package(
         .library(
             name: "IDNA",
             targets: ["IDNA"]),
+		.library(
+			name: "IDNAObjC",
+			targets: ["IDNAObjC"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -27,5 +30,9 @@ let package = Package(
         .testTarget(
             name: "IDNATests",
             dependencies: ["IDNA"]),
+		.target(
+			name: "IDNAObjC",
+			resources: [.copy("uts46")],
+			cSettings: [.define("SWIFT_PACKAGE")]),
     ]
 )
