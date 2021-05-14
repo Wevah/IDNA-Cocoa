@@ -10,6 +10,8 @@
 #import "NSData+Extensions.h"
 #import <os/log.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(uint8_t, UTS46JoiningType) {
 	UTS46JoiningTypeCausing	= 'C',
 	UTS46JoiningTypeDual = 'D',
@@ -158,9 +160,10 @@ static BOOL isLoaded;
 	return [NSError errorWithDomain:UTS46ErrorDomain code:code userInfo:nil];
 }
 
-+ (UTS46Header *)parseHeaderFromData:(NSData *)data error:(NSError **)error {
++ (nullable UTS46Header *)parseHeaderFromData:(NSData *)data error:(NSError **)error {
 	if (data.length < 12) {
-		*error = [self errorWithCode:UTS46ErrorBadSize];
+		if (error)
+			*error = [self errorWithCode:UTS46ErrorBadSize];
 		return nil;
 	}
 
@@ -177,30 +180,36 @@ static BOOL isLoaded;
 	if (!header) { return nil; }
 
 	if (header.version != 1) {
-		*error = [self errorWithCode:UTS46ErrorUnknownVersion];
+		if (error)
+			*error = [self errorWithCode:UTS46ErrorUnknownVersion];
 		return NO;
 	}
 
 	NSUInteger offset = header.dataOffset;
 
 	if (fileData.length <= offset) {
-		*error = [self errorWithCode:UTS46ErrorBadSize];
+		if (error)
+			*error = [self errorWithCode:UTS46ErrorBadSize];
 	}
 
 	NSData *compressedData = [fileData subdataWithRange:(NSRange){ offset, fileData.length - offset}];
 
 	if (compressedData.CRC32 != header.CRC) {
-		*error = [self errorWithCode:UTS46ErrorBadCRC];
-		return nil;
+		if (error)
+			*error = [self errorWithCode:UTS46ErrorBadCRC];
+		return NO;
 	}
 
 	NSData *data = [self decompressData:compressedData algorithm:header.compression];
 
 	if (!data) {
-		*error = [self errorWithCode:UTS46ErrorDecompression];
-		return nil;
+		if (error)
+			*error = [self errorWithCode:UTS46ErrorDecompression];
+		return NO;
 	}
 
+
+	return YES;
 }
 
 + (NSBundle *)bundle {
@@ -225,7 +234,8 @@ static BOOL isLoaded;
 			NSLog(@"uts46 data file is missing!");
 		}
 
-		*error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSFileNoSuchFileError userInfo:nil];
+		if (error)
+			*error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSFileNoSuchFileError userInfo:nil];
 		return NO;
 	}
 
@@ -240,15 +250,18 @@ static BOOL isLoaded;
 	compression_algorithm rawAlgorithm = UTS46RawAlgorithm(algorithm);
 
 	NSUInteger capacity = 131072; // 128 KB
-	uint8_t *destinationBuffer = malloc(capacity);
+	NSMutableData *dest = [NSMutableData data];
+	dest.length = capacity;
 
-	size_t decodedCount = compression_decode_buffer(destinationBuffer, capacity, data.bytes, data.length, NULL, rawAlgorithm);
+	size_t decodedCount = compression_decode_buffer(dest.mutableBytes, capacity, data.bytes, data.length, NULL, rawAlgorithm);
 
 	if (decodedCount == 0 || decodedCount == capacity) {
 		return nil;
 	}
 
-	return [NSData dataWithBytes:destinationBuffer length:decodedCount];
+	dest.length = decodedCount;
+
+	return [dest copy];
 }
 
 #if __LITTLE_ENDIAN__
@@ -302,14 +315,118 @@ static const NSStringEncoding UTF32_ENCODING = NSUTF32BigEndianStringEncoding;
 	return index;
 }
 
-+ (NSRange)parseRangesFromString:(NSString *)string {
++ (nullable NSArray<NSValue *> *)parseRangesFromString:(NSString *)string {
 	NSData *utf32 = [string dataUsingEncoding:UTF32_ENCODING];
-	
+
 	if (utf32.length % 8 != 0) {
-		return (NSRange){ NSNotFound, 0 };
+		return nil;
 	}
 
+	uint32_t *castBytes = (uint32_t *)utf32.bytes;
 
+	NSMutableArray<NSValue *> *ranges = [NSMutableArray array];
+	NSUInteger first;
+
+	for (NSUInteger i = 0; i < utf32.length / 4; ++i) {
+		if (i % 2 == 0){
+			first = castBytes[i];
+		} else if (first != 0) {
+			[ranges addObject:[NSValue valueWithRange:(NSRange){ first, castBytes[i] }]];
+		}
+	}
+
+	return [ranges copy];
+}
+
++ (nullable NSCharacterSet *)parseCharacterSetFromData:(NSData *)data startingAt:(NSUInteger *)index {
+	NSMutableData *accumulator = [NSMutableData data];
+	NSUInteger i = *index;
+	const uint8_t *bytes = [data bytes];
+
+	while (i < data.length && bytes[i] < UTS46MarkerMin) {
+		[accumulator appendBytes:bytes[i] length:1];
+		++i;
+	}
+
+	NSString *str = [[NSString alloc] initWithData:accumulator encoding:NSUTF8StringEncoding];
+
+	NSArray *ranges = [self parseRangesFromString:str];
+
+	if (!ranges) {
+		*index = i;
+		return nil;
+	}
+
+	NSMutableCharacterSet *charset = [[NSMutableCharacterSet alloc] init];
+
+	for (NSValue *value in ranges) {
+		[charset addCharactersInRange:value.rangeValue];
+	}
+
+	*index = i;
+	return [charset copy];
+}
+
++ (NSUInteger)parseIgnoredCharactersFromData:(NSData *)data startingAt:(NSUInteger)index {
+	ignoredCharacters = [self parseCharacterSetFromData:data startingAt:&index];
+	return index;
+}
+
++ (NSUInteger)parseDisallowedCharactersFromData:(NSData *)data startingAt:(NSUInteger)index {
+	disallowedCharacters = [self parseCharacterSetFromData:data startingAt:&index];
+	return index;
+}
+
++ (NSUInteger)parseJoiningTypesFromData:(NSData *)data startingAt:(NSUInteger)index {
+	const uint8_t *bytes = [data bytes];
+
+	NSMutableDictionary<NSNumber *, NSNumber *> *dict = [NSMutableDictionary dictionary];
+
+	while (index < data.length && bytes[index] < UTS46MarkerMin) {
+		NSMutableData *accumulator = [NSMutableData data];
+		BOOL shouldBreak = NO;
+
+		while (index < data.length) {
+			if (bytes[index] > UTS46MarkerMin) {
+				shouldBreak = YES;
+			}
+
+			[accumulator appendBytes:bytes[index] length:1];
+			++index;
+		}
+
+		if (shouldBreak)
+			break;
+
+		NSString *str = [[NSString alloc] initWithData:accumulator encoding:NSUTF8StringEncoding];
+		NSData *utf32 = [str dataUsingEncoding:UTF32_ENCODING];
+		uint32_t *castBytes = (uint32_t)data.bytes;
+
+		UTS46JoiningType type = 0;
+		uint32_t first = 0;
+
+		for (NSUInteger i = 0; i < utf32.length / 4; ++i) {
+			if (castBytes[i] <= 127) {
+				type = castBytes[i];
+			} else if (type == 0) {
+				if (first == 0) {
+					first = castBytes[i];
+				} else {
+					for (uint32_t j = first; j <= castBytes[i]; ++i) {
+						dict[@(j)] = @(type);
+					}
+
+					first = 0;
+				}
+			}
+		}
+	}
+
+	joiningTypes = [dict copy];
+
+	return index;
 }
 
 @end
+
+NS_ASSUME_NONNULL_END
