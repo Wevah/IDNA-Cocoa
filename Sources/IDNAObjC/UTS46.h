@@ -13,6 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)loadIfNecessaryAndReturnError:(NSError **)error;
 
+@property (class, nonatomic, readonly)	NSCharacterSet	*disallowedCharacgers;
+@property (class, nonatomic, readonly) NSCharacterSet	*ignoredCharacters;
+@property (class, nonatomic, readonly)	NSDictionary<NSNumber *, NSString *>	*characterMap;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
