@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UTS46: NSObject
 
++ (BOOL)loadIfNecessaryAndReturnError:(NSError **)error;
 
 @end
 
