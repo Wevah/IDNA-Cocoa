@@ -35,5 +35,8 @@ let package = Package(
 			resources: [.copy("uts46")],
 			cSettings: [.define("SWIFT_PACKAGE"),
 						.unsafeFlags(["-Wall"])]),
+		.testTarget(
+			name: "IDNAObjCTests",
+			dependencies: ["IDNAObjC"]),
     ]
 )
