@@ -75,7 +75,7 @@ NSErrorUserInfoKey const UTS46DisallowedCodepointKey;
 	for (NSUInteger i = 0; i < length; ++i) {
 		uint32_t codepoint = codepoints[i];
 
-		if ([UTS46.disallowedCharacgers longCharacterIsMember:codepoint]) {
+		if ([UTS46.disallowedCharacters longCharacterIsMember:codepoint]) {
 			if (error)
 				*error = [NSError errorWithDomain:UTS46MapError code:UTS46MapErrorDisallowedCodepoint userInfo:@{UTS46DisallowedCodepointKey: @(codepoint)}];
 			return nil;
@@ -140,7 +140,7 @@ static inline UCCharPropertyValue combiningClassForLongCharacter(UTF32Char chara
 	UniCharCount textLength = 2;
 
 	if (character > 0x10000) {
-		CFStringGetSurrogatePairForLongCharacter(previous, utf16);
+		CFStringGetSurrogatePairForLongCharacter(character, utf16);
 	} else {
 		utf16[0] = (UniChar)character;
 		textLength = 1;
