@@ -487,7 +487,7 @@ private extension String {
 			let scalar = scalars[index]
 
 			if scalar.value == 0x200C { // Zero-width non-joiner
-				if index == scalars.indices.first { return false }
+				if index == scalars.startIndex { return false }
 
 				var subindex = scalars.index(before: index)
 				var previous = scalars[subindex]
