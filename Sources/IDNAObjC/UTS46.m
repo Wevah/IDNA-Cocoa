@@ -264,14 +264,6 @@ static BOOL isLoaded;
 	return [dest copy];
 }
 
-#if __LITTLE_ENDIAN__
-static const NSStringEncoding UTF32_ENCODING = NSUTF32LittleEndianStringEncoding;
-#elif __BIG_ENDIAN__
-static const NSStringEncoding UTF32_ENCODING = NSUTF32BigEndianStringEncoding;
-#else
-#error "Unsupported endianness"
-#endif
-
 + (NSUInteger)parseCharacterMapFromData:(NSData *)data start:(NSUInteger)start {
 	NSMutableDictionary<NSNumber *, NSString *> *dict = [NSMutableDictionary dictionary];
 

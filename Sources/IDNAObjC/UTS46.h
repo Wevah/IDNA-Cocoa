@@ -9,6 +9,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#if __LITTLE_ENDIAN__
+static const NSStringEncoding UTF32_ENCODING = NSUTF32LittleEndianStringEncoding;
+#elif __BIG_ENDIAN__
+static const NSStringEncoding UTF32_ENCODING = NSUTF32BigEndianStringEncoding;
+#else
+#error "Unsupported endianness"
+#endif
+
 @interface UTS46: NSObject
 
 + (BOOL)loadIfNecessaryAndReturnError:(NSError **)error;

@@ -68,8 +68,7 @@ NSErrorUserInfoKey const UTS46DisallowedCodepointKey;
 
 	NSMutableString *result = [NSMutableString string];
 
-	// FIXME: Use the macro from UTS46
-	NSData *utf32 = [self dataUsingEncoding:NSUTF32LittleEndianStringEncoding];
+	NSData *utf32 = [self dataUsingEncoding:UTF32_ENCODING];
 	NSUInteger length = utf32.length / 4;
 	uint32_t *codepoints = (uint32_t *)utf32.bytes;
 
@@ -91,7 +90,7 @@ NSErrorUserInfoKey const UTS46DisallowedCodepointKey;
 		if (mapped) {
 			[result appendString:mapped];
 		} else {
-			[result appendString:[[NSString alloc] initWithBytes:&codepoint length:4 encoding:NSUTF32LittleEndianStringEncoding]];
+			[result appendString:[[NSString alloc] initWithBytes:&codepoint length:4 encoding:UTF32_ENCODING]];
 		}
 	}
 
