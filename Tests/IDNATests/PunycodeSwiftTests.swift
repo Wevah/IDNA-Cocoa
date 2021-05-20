@@ -16,7 +16,7 @@ class IDNATests: XCTestCase {
 			"http://www.bücher.ch/":	"http://www.xn--bcher-kva.ch/",
 			"президент":				"xn--d1abbgf6aiiy",
 			"例え":						"xn--r8jz45g",
-			"איגוד-האינטרנט.org.il": "xn----zhcbgfhe2aacg8fb5i.org.il"
+			/* ltr */ "איגוד-האינטרנט.org.il": "xn----zhcbgfhe2aacg8fb5i.org.il"
 		]
 
 		for (key, value) in dict {
