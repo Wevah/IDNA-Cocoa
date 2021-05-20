@@ -297,7 +297,7 @@ private extension StringProtocol {
 
 		var b = scalars.startIndex
 
-		for j in scalars.indices {
+		for j in scalars.indices.reversed() {
 			if Character(self.unicodeScalars[j]) == Punycode.delimiter {
 				b = j
 				break
