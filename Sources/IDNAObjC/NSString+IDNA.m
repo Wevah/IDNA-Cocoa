@@ -133,12 +133,107 @@ NSErrorUserInfoKey const UTS46DisallowedCodepointKey;
 	return [self hasValidJoiners];
 }
 
+const UCCharPropertyValue combiningClassVirama = 9;
+
+static inline UCCharPropertyValue combiningClassForLongCharacter(UTF32Char character) {
+	UniChar utf16[2];
+	UniCharCount textLength = 2;
+
+	if (character > 0x10000) {
+		CFStringGetSurrogatePairForLongCharacter(previous, utf16);
+	} else {
+		utf16[0] = (UniChar)character;
+		textLength = 1;
+	}
+
+	UCCharPropertyValue propValue;
+
+	UCGetCharProperty(utf16, textLength, kUCCharPropTypeCombiningClass, &propValue);
+
+	return propValue;
+}
+
 - (BOOL)hasValidJoiners {
 	if (![UTS46 loadIfNecessaryAndReturnError:nil]) {
 		[NSException raise:NSInternalInconsistencyException format:@"Couldn't load UTS46 data file"];
 	}
 
+	NSData *utf32 = [self dataUsingEncoding:UTF32_ENCODING];
+	uint32_t *codepoints = (uint32_t *)utf32.bytes;
+	NSUInteger count = utf32.length / 4;
 
+	for (NSUInteger i = 0; i < count; ++i) {
+		uint32_t codepoint = codepoints[i];
+
+		if (codepoint == 0x200C) { // Zero-width non-joiner
+
+			if (i == 0) { return false; }
+
+			NSUInteger subindex = i - 1;
+			uint32_t previous = codepoints[subindex];
+
+			UCCharPropertyValue combiningClass = combiningClassForLongCharacter(previous);
+
+			if (combiningClass == combiningClassVirama) { continue; }
+
+			while (1) {
+				UTS46JoiningType joiningType = UTS46.joiningTypes[@(previous)].unsignedCharValue;
+
+				if (joiningType == 0) {
+					return false;
+				}
+
+				if (joiningType == UTS46JoiningTypeTransparent) {
+					if (subindex == 0) {
+						return false;
+					}
+
+					--subindex;
+					previous = codepoints[subindex];
+				} else if (joiningType == UTS46JoiningTypeDual || joiningType == UTS46JoiningTypeLeft) {
+					break;
+				} else {
+					return false;
+				}
+			}
+
+			subindex = i + 1;
+			uint32_t next = codepoints[subindex];
+
+			while (1) {
+				if (subindex == count) {
+					return false;
+				}
+
+				UTS46JoiningType joiningType = UTS46.joiningTypes[@(next)].unsignedCharValue;
+
+				if (joiningType == 0) {
+					return false;
+				}
+
+				if (joiningType == UTS46JoiningTypeTransparent) {
+					++subindex;
+					next = codepoints[subindex];
+				} else if (joiningType == UTS46JoiningTypeRight || joiningType == UTS46JoiningTypeDual) {
+					break;
+				} else {
+					return false;
+				}
+
+			}
+		} else if (codepoint == 0x200D) { // Zero-width joiner
+			if (i == 0) { return false; }
+
+			NSUInteger subindex = i - 1;
+			uint32_t previous = codepoints[subindex];
+
+			UCCharPropertyValue combiningClass = combiningClassForLongCharacter(previous);
+
+			if (combiningClass != combiningClassVirama) { return false; }
+		}
+	}
+
+	return true;
 }
 
 @end

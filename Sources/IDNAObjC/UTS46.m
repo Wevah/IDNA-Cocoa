@@ -12,14 +12,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(uint8_t, UTS46JoiningType) {
-	UTS46JoiningTypeCausing	= 'C',
-	UTS46JoiningTypeDual = 'D',
-	UTS46JoiningTypeRight = 'R',
-	UTS46JoiningTypeLeft = 'L',
-	UTS46JoiningTypeTransparent = 'T'
-};
-
 typedef NS_ENUM(uint8_t, UTS46Marker) {
 	UTS46MarkerCharacterMap = UINT8_MAX,
 	UTS46MarkerIgnoredCharacters = UINT8_MAX - 1,
@@ -155,6 +147,22 @@ static BOOL isLoaded;
 // MARK: - Loading
 
 @implementation UTS46
+
++ (NSDictionary<NSNumber *, NSString *> *)characterMap {
+	return characterMap;
+}
+
++ (NSCharacterSet *)ignoredCharacters {
+	return ignoredCharacters;
+}
+
++ (NSCharacterSet *)disallowedCharacters {
+	return disallowedCharacters;
+}
+
++ (NSDictionary<NSNumber *, NSNumber *> *)joiningTypes {
+	return joiningTypes;
+}
 
 + (NSError *)errorWithCode:(UTS46Error)code {
 	return [NSError errorWithDomain:UTS46ErrorDomain code:code userInfo:nil];

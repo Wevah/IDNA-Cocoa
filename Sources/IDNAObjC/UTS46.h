@@ -17,13 +17,22 @@ static const NSStringEncoding UTF32_ENCODING = NSUTF32BigEndianStringEncoding;
 #error "Unsupported endianness"
 #endif
 
+typedef NS_ENUM(uint8_t, UTS46JoiningType) {
+	UTS46JoiningTypeCausing	= 'C',
+	UTS46JoiningTypeDual = 'D',
+	UTS46JoiningTypeRight = 'R',
+	UTS46JoiningTypeLeft = 'L',
+	UTS46JoiningTypeTransparent = 'T'
+};
+
 @interface UTS46: NSObject
 
 + (BOOL)loadIfNecessaryAndReturnError:(NSError **)error;
 
-@property (class, nonatomic, readonly)	NSCharacterSet	*disallowedCharacgers;
+@property (class, nonatomic, readonly) NSDictionary<NSNumber *, NSString *>	*characterMap;
+@property (class, nonatomic, readonly) NSCharacterSet	*disallowedCharacters;
 @property (class, nonatomic, readonly) NSCharacterSet	*ignoredCharacters;
-@property (class, nonatomic, readonly)	NSDictionary<NSNumber *, NSString *>	*characterMap;
+@property (class, nonatomic, readonly) NSDictionary<NSNumber *, NSNumber *> *joiningTypes; // uint32_t -> UTS46JoiningType
 
 
 @end
