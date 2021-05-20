@@ -13,10 +13,10 @@ class IDNATests: XCTestCase {
 
 	func testIDNAEncoding() {
 		let dict = [
-			"http://www.bücher.ch/":	"http://www.xn--bcher-kva.ch/",
-			"президент":				"xn--d1abbgf6aiiy",
-			"例え":						"xn--r8jz45g",
-			/* ltr */ "איגוד-האינטרנט.org.il": "xn----zhcbgfhe2aacg8fb5i.org.il"
+			"http://www.bücher.ch/":		"http://www.xn--bcher-kva.ch/",
+			"президент":					"xn--d1abbgf6aiiy",
+			"例え":							"xn--r8jz45g",
+			/* ltr */ "איגוד-האינטרנט.org.il":	"xn----zhcbgfhe2aacg8fb5i.org.il"
 		]
 
 		for (key, value) in dict {
