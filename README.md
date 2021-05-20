@@ -110,7 +110,7 @@ Convenience property equivalent to `someURL.absoluteString.decodedURLString`.
 init?(unicodeString: String, relativeTo url: URL?) {
 ```
 
-##### Objective-C: 
+##### Objective-C:
 ```objc
 + (nullable instancetype)URLWithUnicodeString:(NSString *)URLString relativeToURL:(nullable NSURL *)baseURL;
 ```
