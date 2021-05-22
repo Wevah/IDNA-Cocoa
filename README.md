@@ -1,6 +1,6 @@
 # IDNA Cocoa
 
-v2.0b3 (2020)
+v2.0b4 (2021)
 by Nate Weaver (Wevah)  
 https://derailer.org/  
 https://github.com/Wevah/Punycode-Cocoa
@@ -11,7 +11,9 @@ An IDNA String extension and NSString overlay, based on [UTS #46](https://unicod
 
 Use this to convert internationalized domain names (IDN) between Unicode and ASCII.
 
-To use in your own projects, you need to include some files from the `Shared/Swift` folder, and make sure the `uts46` data file is copied to your application's `Resources` folder. The required Swift files are:
+To use in your own projects, this repository can be imported as a Swift package.
+
+Alternatively, the files can be manually included: Everything in `Sources/IDNA`:
 
 - UTS46.swift
 - UTS46+Loading.swift
@@ -19,9 +21,7 @@ To use in your own projects, you need to include some files from the `Shared/Swi
 - Scanner+Extensions.swift
 - String+Punycode.swift
 
-If your project needs to call from Objective-C:
-
-- NSString+IDNA.swift for NSString overlays.
+If your project needs to call from Objective-C make sure to include NSString+IDNA.swift for the NSString overlays.
 
 (UTS46+Conversion.swift is for importing text files containing UTS #46 mappings and exporting to the binary format used by UTS46+Loading.swift, and isn't necessary if you just want to use the encoding/decoding routines.)
 
@@ -119,4 +119,4 @@ Convenience initializer for creating a URL from a Unicode string, relative to an
 
 -----
 
-© 2012–2020 Nate Weaver (Wevah)
+© 2012–2021 Nate Weaver (Wevah)
