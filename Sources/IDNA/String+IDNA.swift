@@ -546,6 +546,7 @@ private enum Punycode {
 	}
 
 	static func encodeDigit(_ d: UInt32, flag: Bool) -> UInt32 {
+		// The extra UInt32 cast is to prevent typechecking from taking ages.
 		return d + 22 + 75 * UInt32(d < 26 ? 1 : 0) - ((flag ? 1 : 0) << 5)
 	}
 
