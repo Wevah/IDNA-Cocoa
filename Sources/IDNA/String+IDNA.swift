@@ -216,7 +216,7 @@ private extension StringProtocol {
 		var h: UInt32 = outLen
 
 		if b > 0 {
-			result.append(Punycode.delimiter)
+			result.unicodeScalars.append(Punycode.delimiter)
 		}
 
 		// Main encoding loop:
@@ -295,22 +295,9 @@ private extension StringProtocol {
 		var i: UInt32 = 0
 		var bias = Punycode.initialBias
 
-		var b = scalars.startIndex
+		let b = scalars.lastIndex(of: "-") ?? scalars.startIndex
 
-		for j in scalars.indices.reversed() {
-			if Character(self.unicodeScalars[j]) == Punycode.delimiter {
-				b = j
-				break
-			}
-		}
-
-		for j in scalars.indices {
-			if j >= b {
-				break
-			}
-
-			let scalar = scalars[j]
-
+		for scalar in scalars[..<b] {
 			if !scalar.isASCII {
 				return nil // bad input
 			}
@@ -553,7 +540,7 @@ private enum Punycode {
 	static let damp = UInt32(700)
 	static let initialBias = UInt32(72)
 	static let initialN = UInt32(0x80)
-	static let delimiter: Character = "-"
+	static let delimiter: UnicodeScalar = "-"
 
 	static func decodeDigit(_ cp: UInt32) -> UInt32 {
 		return cp &- 48 < 10 ? cp &- 22 : cp &- 65 < 26 ? cp &- 65 :
