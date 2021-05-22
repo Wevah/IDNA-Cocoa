@@ -304,13 +304,11 @@ private extension StringProtocol {
 
 			result.unicodeScalars.append(scalar)
 			outLen += 1
-
 		}
 
 		var inPos = b > scalars.startIndex ? scalars.index(after: b) : scalars.startIndex
 
 		while inPos < endIndex {
-
 			var k = Punycode.base
 			var w: UInt32 = 1
 			let oldi = i
