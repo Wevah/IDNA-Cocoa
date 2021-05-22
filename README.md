@@ -21,9 +21,9 @@ Alternatively, the files can be manually included: Everything in `Sources/IDNA`:
 - Scanner+Extensions.swift
 - String+Punycode.swift
 
-If your project needs to call from Objective-C make sure to include NSString+IDNA.swift for the NSString overlays.
+If your project needs to call from Objective-C make sure to include `NSString+IDNA.swift` for the `NSString` overlays.
 
-(UTS46+Conversion.swift is for importing text files containing UTS #46 mappings and exporting to the binary format used by UTS46+Loading.swift, and isn't necessary if you just want to use the encoding/decoding routines.)
+(`UTS46+Conversion.swift` is for importing text files containing UTS #46 mappings and exporting to the binary format used by `UTS46+Loading.swift`, and isn't necessary if you just want to use the encoding/decoding routines.)
 
 Note that these API currently don't do homograph detection.
 
