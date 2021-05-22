@@ -238,7 +238,6 @@ private extension StringProtocol {
 			n = m
 
 			for c in scalars {
-
 				if c.value < n {
 					delta += 1
 
@@ -553,7 +552,6 @@ private enum Punycode {
 	static let maxint = UInt32.max
 
 	static func adapt(delta: UInt32, numPoints: UInt32, firstTime: Bool) -> UInt32 {
-
 		var delta = delta
 
 		delta = firstTime ? delta / Self.damp : delta >> 1
