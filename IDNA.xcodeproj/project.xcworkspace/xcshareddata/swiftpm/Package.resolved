@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "swift-argument-parser",
-        "repositoryURL": "git@github.com:apple/swift-argument-parser.git",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser.git",
         "state": {
-          "branch": "main",
-          "revision": "d424bca0ec66ec0e3888ebdc118379d348a67da3",
-          "version": null
+          "branch": null,
+          "revision": "e1465042f195f374b94f915ba8ca49de24300a0d",
+          "version": "1.0.2"
         }
       }
     ]

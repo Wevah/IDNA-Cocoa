@@ -65,12 +65,12 @@
 		B2C8FD7324663ECC006DF2D9 /* UTS46+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7224663ECC006DF2D9 /* UTS46+Conversion.swift */; };
 		B2C8FD7624663F5B006DF2D9 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
 		B2C8FD7724663FB8006DF2D9 /* UTS46+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FD7424663F55006DF2D9 /* UTS46+Loading.swift */; };
-		B2CF9C6B2430728800A23B4E /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = B2CF9C6A2430728800A23B4E /* ArgumentParser */; };
 		B2D4B71C2425903000B72AC6 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4B71B2425903000B72AC6 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B2D4E99808E0191700574ACD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B2D4E99B08E0191700574ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		B2FBBA1D2752BF4D0079D948 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = B2FBBA1C2752BF4D0079D948 /* ArgumentParser */; };
 		B30134631A964E2600AF6C4E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
 /* End PBXBuildFile section */
 
@@ -212,7 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2CF9C6B2430728800A23B4E /* ArgumentParser in Frameworks */,
+				B2FBBA1D2752BF4D0079D948 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +523,7 @@
 			);
 			name = icumap2code;
 			packageProductDependencies = (
-				B2CF9C6A2430728800A23B4E /* ArgumentParser */,
+				B2FBBA1C2752BF4D0079D948 /* ArgumentParser */,
 			);
 			productName = icumap2code;
 			productReference = B2B4F3CD242EB79E00CC752F /* icumap2code */;
@@ -542,6 +542,8 @@
 			dependencies = (
 			);
 			name = "PunyCocoa Swift";
+			packageProductDependencies = (
+			);
 			productName = "PunyCocoa Swift";
 			productReference = B2C3DD42241FECF200484850 /* PunyCocoa Swift.app */;
 			productType = "com.apple.product-type.application";
@@ -636,7 +638,7 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Punycode */;
 			packageReferences = (
-				B2CF9C692430728800A23B4E /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				B2FBBA1B2752BF4D0079D948 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -1650,20 +1652,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B2CF9C692430728800A23B4E /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+		B2FBBA1B2752BF4D0079D948 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:apple/swift-argument-parser.git";
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B2CF9C6A2430728800A23B4E /* ArgumentParser */ = {
+		B2FBBA1C2752BF4D0079D948 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B2CF9C692430728800A23B4E /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			package = B2FBBA1B2752BF4D0079D948 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
 			productName = ArgumentParser;
 		};
 /* End XCSwiftPackageProductDependency section */

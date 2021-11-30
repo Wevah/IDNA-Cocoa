@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/wevah/Projects/IDNA-Cocoa/IDNA.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
