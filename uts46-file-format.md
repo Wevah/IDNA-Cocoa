@@ -16,7 +16,7 @@ All multibyte integers are little-endian.
 
 - `magic number`: `"UTS#46"` (`0x55 0x54 0x53 0x23 0x34 0x36`).
 - `version`: format version (1 byte; currently `0x01`).
-- `flags`: See [Flags](#flags) below
+- `flags`: See [Flags](#flags) below.
 - `optional crc`: A CRC32 of the data section if `flags` has the `has crc` bit set.
 
 ### Flags
