@@ -54,7 +54,7 @@ compression_algorithm UTS46RawAlgorithm(UTS46CompressionAlgorithm algo) {
 		case UTS46CompressionAlgorithmZLIB:
 			return COMPRESSION_ZLIB;
 		default:
-			return -1;
+			return 0;
 	}
 }
 
@@ -224,7 +224,7 @@ static BOOL isLoaded;
 #ifdef SWIFT_PACKAGE
 	return SWIFTPM_MODULE_BUNDLE;
 #else
-	return [NSBundle bundleForClass:self]
+	return [NSBundle bundleForClass:self];
 #endif
 }
 
@@ -281,7 +281,7 @@ static BOOL isLoaded;
 	while (index < count) {
 		BOOL markerFound = NO;
 		NSMutableData *accumulator = [NSMutableData data];
-		uint8_t *bytes = (uint8_t)data.bytes;
+		uint8_t *bytes = (uint8_t *)data.bytes;
 
 		while (bytes[index] != UTS46MarkerSequenceTerminator) {
 			if (bytes[index] > UTS46MarkerMin) {
@@ -289,7 +289,7 @@ static BOOL isLoaded;
 				break;
 			}
 
-			[accumulator appendBytes:bytes[index] length:1];
+			[accumulator appendBytes:&bytes[index] length:1];
 			++index;
 		}
 
@@ -325,7 +325,7 @@ static BOOL isLoaded;
 	uint32_t *castBytes = (uint32_t *)utf32.bytes;
 
 	NSMutableArray<NSValue *> *ranges = [NSMutableArray array];
-	NSUInteger first;
+	NSUInteger first = 0;
 
 	for (NSUInteger i = 0; i < utf32.length / 4; ++i) {
 		if (i % 2 == 0){
@@ -344,7 +344,7 @@ static BOOL isLoaded;
 	const uint8_t *bytes = [data bytes];
 
 	while (i < data.length && bytes[i] < UTS46MarkerMin) {
-		[accumulator appendBytes:bytes[i] length:1];
+		[accumulator appendBytes:&bytes[i] length:1];
 		++i;
 	}
 
@@ -391,7 +391,7 @@ static BOOL isLoaded;
 				shouldBreak = YES;
 			}
 
-			[accumulator appendBytes:bytes[index] length:1];
+			[accumulator appendBytes:&bytes[index] length:1];
 			++index;
 		}
 
@@ -400,14 +400,14 @@ static BOOL isLoaded;
 
 		NSString *str = [[NSString alloc] initWithData:accumulator encoding:NSUTF8StringEncoding];
 		NSData *utf32 = [str dataUsingEncoding:UTF32_ENCODING];
-		uint32_t *castBytes = (uint32_t)data.bytes;
+		uint32_t *castBytes = (uint32_t *)data.bytes;
 
 		UTS46JoiningType type = 0;
 		uint32_t first = 0;
 
 		for (NSUInteger i = 0; i < utf32.length / 4; ++i) {
 			if (castBytes[i] <= 127) {
-				type = castBytes[i];
+				type = (UTS46JoiningType)castBytes[i];
 			} else if (type == 0) {
 				if (first == 0) {
 					first = castBytes[i];
