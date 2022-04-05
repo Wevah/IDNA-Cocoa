@@ -11,8 +11,8 @@
 @implementation NSData (Extensions)
 
 - (uint32_t)CRC32 {
-	uint32_t initial = crc32(0, NULL, 0);
-	return crc32(initial, self.bytes, self.length);
+	uLong initial = crc32(0, NULL, 0);
+	return (uint32_t)crc32(initial, self.bytes, (uInt)self.length);
 }
 
 @end
