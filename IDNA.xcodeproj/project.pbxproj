@@ -70,6 +70,19 @@
 		B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		B2D4E99B08E0191700574ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		B2F9457927F9083D001D15D3 /* IDNACocoaObjC.docc in Sources */ = {isa = PBXBuildFile; fileRef = B2F9457827F9083D001D15D3 /* IDNACocoaObjC.docc */; };
+		B2F9457F27F9083D001D15D3 /* IDNACocoaObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9457527F9083D001D15D3 /* IDNACocoaObjC.framework */; };
+		B2F9458627F9083D001D15D3 /* IDNACocoaObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9458527F9083D001D15D3 /* IDNACocoaObjCTests.m */; };
+		B2F9458727F9083D001D15D3 /* IDNACocoaObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = B2F9457727F9083D001D15D3 /* IDNACocoaObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2F9458A27F9083D001D15D3 /* IDNACocoaObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9457527F9083D001D15D3 /* IDNACocoaObjC.framework */; };
+		B2F9458B27F9083D001D15D3 /* IDNACocoaObjC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9457527F9083D001D15D3 /* IDNACocoaObjC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B2F9459227F90856001D15D3 /* UTS46.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9456827F90807001D15D3 /* UTS46.m */; };
+		B2F9459327F90856001D15D3 /* NSData+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = B2F9456927F90807001D15D3 /* NSData+Extensions.h */; };
+		B2F9459427F90866001D15D3 /* NSString+IDNA.h in Headers */ = {isa = PBXBuildFile; fileRef = B2F9456B27F90807001D15D3 /* NSString+IDNA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2F9459527F9086B001D15D3 /* NSString+IDNA.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9456C27F90807001D15D3 /* NSString+IDNA.m */; };
+		B2F9459627F9086F001D15D3 /* NSData+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9456D27F90807001D15D3 /* NSData+Extensions.m */; };
+		B2F9459727F90871001D15D3 /* UTS46.h in Headers */ = {isa = PBXBuildFile; fileRef = B2F9456E27F90807001D15D3 /* UTS46.h */; };
+		B2F9459827F9087D001D15D3 /* uts46 in Resources */ = {isa = PBXBuildFile; fileRef = B2F9456F27F90807001D15D3 /* uts46 */; };
 		B2FBBA1D2752BF4D0079D948 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = B2FBBA1C2752BF4D0079D948 /* ArgumentParser */; };
 		B30134631A964E2600AF6C4E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30134611A964E2600AF6C4E /* LICENSE */; };
 /* End PBXBuildFile section */
@@ -103,6 +116,27 @@
 			remoteGlobalIDString = B2C3DD41241FECF200484850;
 			remoteInfo = "PunyCocoa Swift";
 		};
+		B2F9458027F9083D001D15D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2F9457427F9083D001D15D3;
+			remoteInfo = IDNACocoaObjC;
+		};
+		B2F9458227F9083D001D15D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2D4E99208E0191700574ACD;
+			remoteInfo = "PunyCocoa ObjC";
+		};
+		B2F9458827F9083D001D15D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2F9457427F9083D001D15D3;
+			remoteInfo = IDNACocoaObjC;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +155,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B2F9458B27F9083D001D15D3 /* IDNACocoaObjC.framework in Embed Frameworks */,
 				B2C8FD6624661FC2006DF2D9 /* IDNACocoa.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -181,6 +216,18 @@
 		B2D4E9A008E0191700574ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Mac (ObjC)/Info.plist"; sourceTree = "<group>"; };
 		B2D4E9A208E0191800574ACD /* PunyCocoa ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PunyCocoa ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D853C9244E42ED004B697E /* CharacterSet+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extensions.swift"; sourceTree = "<group>"; };
+		B2F9456827F90807001D15D3 /* UTS46.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTS46.m; sourceTree = "<group>"; };
+		B2F9456927F90807001D15D3 /* NSData+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Extensions.h"; sourceTree = "<group>"; };
+		B2F9456B27F90807001D15D3 /* NSString+IDNA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+IDNA.h"; sourceTree = "<group>"; };
+		B2F9456C27F90807001D15D3 /* NSString+IDNA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+IDNA.m"; sourceTree = "<group>"; };
+		B2F9456D27F90807001D15D3 /* NSData+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Extensions.m"; sourceTree = "<group>"; };
+		B2F9456E27F90807001D15D3 /* UTS46.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTS46.h; sourceTree = "<group>"; };
+		B2F9456F27F90807001D15D3 /* uts46 */ = {isa = PBXFileReference; lastKnownFileType = file; path = uts46; sourceTree = "<group>"; };
+		B2F9457527F9083D001D15D3 /* IDNACocoaObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IDNACocoaObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F9457727F9083D001D15D3 /* IDNACocoaObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDNACocoaObjC.h; sourceTree = "<group>"; };
+		B2F9457827F9083D001D15D3 /* IDNACocoaObjC.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = IDNACocoaObjC.docc; sourceTree = "<group>"; };
+		B2F9457E27F9083D001D15D3 /* IDNACocoaObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDNACocoaObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F9458527F9083D001D15D3 /* IDNACocoaObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDNACocoaObjCTests.m; sourceTree = "<group>"; };
 		B30134611A964E2600AF6C4E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B30134621A964E2600AF6C4E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,9 +282,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				B26FA03D2055425C00CD6AF1 /* libicucore.tbd in Frameworks */,
+				B2F9458A27F9083D001D15D3 /* IDNACocoaObjC.framework in Frameworks */,
 				B25753831F3CE9A9002606DD /* WebKit.framework in Frameworks */,
 				B2D4E99F08E0191700574ACD /* Cocoa.framework in Frameworks */,
 				B2C8FD6524661FC2006DF2D9 /* IDNACocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F9457227F9083D001D15D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F9457B27F9083D001D15D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F9457F27F9083D001D15D3 /* IDNACocoaObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +336,8 @@
 				B2B4F3CD242EB79E00CC752F /* icumap2code */,
 				B2C8FD5E24661FC2006DF2D9 /* IDNACocoa.framework */,
 				B2A4B160246A146E00ED32EB /* IDNACocoaTouch.framework */,
+				B2F9457527F9083D001D15D3 /* IDNACocoaObjC.framework */,
+				B2F9457E27F9083D001D15D3 /* IDNACocoaObjCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -292,6 +357,8 @@
 				B2552E1D22B134650015B473 /* iOS */,
 				B2C8FD5F24661FC2006DF2D9 /* PunycodeCocoa */,
 				B2A4B161246A146E00ED32EB /* PunycodeCocoaTouch */,
+				B2F9457627F9083D001D15D3 /* IDNACocoaObjC */,
+				B2F9458427F9083D001D15D3 /* IDNACocoaObjCTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -369,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				B20A76EE256C2A9C00454E7C /* IDNA */,
+				B2F9456727F90807001D15D3 /* IDNAObjC */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -434,6 +502,45 @@
 			path = PunycodeCocoa;
 			sourceTree = "<group>";
 		};
+		B2F9456727F90807001D15D3 /* IDNAObjC */ = {
+			isa = PBXGroup;
+			children = (
+				B2F9456827F90807001D15D3 /* UTS46.m */,
+				B2F9456927F90807001D15D3 /* NSData+Extensions.h */,
+				B2F9456A27F90807001D15D3 /* include */,
+				B2F9456C27F90807001D15D3 /* NSString+IDNA.m */,
+				B2F9456D27F90807001D15D3 /* NSData+Extensions.m */,
+				B2F9456E27F90807001D15D3 /* UTS46.h */,
+				B2F9456F27F90807001D15D3 /* uts46 */,
+			);
+			path = IDNAObjC;
+			sourceTree = "<group>";
+		};
+		B2F9456A27F90807001D15D3 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B2F9456B27F90807001D15D3 /* NSString+IDNA.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		B2F9457627F9083D001D15D3 /* IDNACocoaObjC */ = {
+			isa = PBXGroup;
+			children = (
+				B2F9457727F9083D001D15D3 /* IDNACocoaObjC.h */,
+				B2F9457827F9083D001D15D3 /* IDNACocoaObjC.docc */,
+			);
+			path = IDNACocoaObjC;
+			sourceTree = "<group>";
+		};
+		B2F9458427F9083D001D15D3 /* IDNACocoaObjCTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2F9458527F9083D001D15D3 /* IDNACocoaObjCTests.m */,
+			);
+			path = IDNACocoaObjCTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -450,6 +557,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2C8FD6224661FC2006DF2D9 /* PunycodeCocoa.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F9457027F9083D001D15D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F9458727F9083D001D15D3 /* IDNACocoaObjC.h in Headers */,
+				B2F9459427F90866001D15D3 /* NSString+IDNA.h in Headers */,
+				B2F9459327F90856001D15D3 /* NSData+Extensions.h in Headers */,
+				B2F9459727F90871001D15D3 /* UTS46.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,12 +698,50 @@
 			);
 			dependencies = (
 				B2C8FD6424661FC2006DF2D9 /* PBXTargetDependency */,
+				B2F9458927F9083D001D15D3 /* PBXTargetDependency */,
 			);
 			name = "PunyCocoa ObjC";
 			productInstallPath = "$(HOME)/Applications";
 			productName = Punycode;
 			productReference = B2D4E9A208E0191800574ACD /* PunyCocoa ObjC.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B2F9457427F9083D001D15D3 /* IDNACocoaObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2F9458C27F9083D001D15D3 /* Build configuration list for PBXNativeTarget "IDNACocoaObjC" */;
+			buildPhases = (
+				B2F9457027F9083D001D15D3 /* Headers */,
+				B2F9457127F9083D001D15D3 /* Sources */,
+				B2F9457227F9083D001D15D3 /* Frameworks */,
+				B2F9457327F9083D001D15D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IDNACocoaObjC;
+			productName = IDNACocoaObjC;
+			productReference = B2F9457527F9083D001D15D3 /* IDNACocoaObjC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B2F9457D27F9083D001D15D3 /* IDNACocoaObjCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2F9458F27F9083D001D15D3 /* Build configuration list for PBXNativeTarget "IDNACocoaObjCTests" */;
+			buildPhases = (
+				B2F9457A27F9083D001D15D3 /* Sources */,
+				B2F9457B27F9083D001D15D3 /* Frameworks */,
+				B2F9457C27F9083D001D15D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2F9458127F9083D001D15D3 /* PBXTargetDependency */,
+				B2F9458327F9083D001D15D3 /* PBXTargetDependency */,
+			);
+			name = IDNACocoaObjCTests;
+			productName = IDNACocoaObjCTests;
+			productReference = B2F9457E27F9083D001D15D3 /* IDNACocoaObjCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -626,6 +782,13 @@
 						DevelopmentTeam = M72QZ9W58G;
 						ProvisioningStyle = Automatic;
 					};
+					B2F9457427F9083D001D15D3 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					B2F9457D27F9083D001D15D3 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = B2D4E99208E0191700574ACD;
+					};
 				};
 			};
 			buildConfigurationList = B2B33EAC0A9B4534002D5B27 /* Build configuration list for PBXProject "IDNA" */;
@@ -649,6 +812,8 @@
 				B2C8FD5D24661FC2006DF2D9 /* IDNACocoa */,
 				B2A4B15F246A146E00ED32EB /* IDNACocoaTouch */,
 				B24585762423206100CC75A4 /* IDNASwiftTests */,
+				B2F9457427F9083D001D15D3 /* IDNACocoaObjC */,
+				B2F9457D27F9083D001D15D3 /* IDNACocoaObjCTests */,
 				B2B4F3CC242EB79E00CC752F /* icumap2code */,
 			);
 		};
@@ -706,6 +871,21 @@
 				B2D4E99908E0191700574ACD /* InfoPlist.strings in Resources */,
 				B30134631A964E2600AF6C4E /* LICENSE in Resources */,
 				B285064F24AF9B5C00D38235 /* uts46 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F9457327F9083D001D15D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F9459827F9087D001D15D3 /* uts46 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F9457C27F9083D001D15D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +985,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2F9457127F9083D001D15D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F9459627F9086F001D15D3 /* NSData+Extensions.m in Sources */,
+				B2F9459227F90856001D15D3 /* UTS46.m in Sources */,
+				B2F9459527F9086B001D15D3 /* NSString+IDNA.m in Sources */,
+				B2F9457927F9083D001D15D3 /* IDNACocoaObjC.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F9457A27F9083D001D15D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F9458627F9083D001D15D3 /* IDNACocoaObjCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -817,6 +1016,21 @@
 			isa = PBXTargetDependency;
 			target = B2C3DD41241FECF200484850 /* PunyCocoa Swift */;
 			targetProxy = B2D14AF02435801000F324B6 /* PBXContainerItemProxy */;
+		};
+		B2F9458127F9083D001D15D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2F9457427F9083D001D15D3 /* IDNACocoaObjC */;
+			targetProxy = B2F9458027F9083D001D15D3 /* PBXContainerItemProxy */;
+		};
+		B2F9458327F9083D001D15D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2D4E99208E0191700574ACD /* PunyCocoa ObjC */;
+			targetProxy = B2F9458227F9083D001D15D3 /* PBXContainerItemProxy */;
+		};
+		B2F9458927F9083D001D15D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2F9457427F9083D001D15D3 /* IDNACocoaObjC */;
+			targetProxy = B2F9458827F9083D001D15D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1574,6 +1788,188 @@
 			};
 			name = Release;
 		};
+		B2F9458D27F9083D001D15D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.IDNACocoaObjC;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B2F9458E27F9083D001D15D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.IDNACocoaObjC;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B2F9459027F9083D001D15D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.IDNACocoaObjCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PunyCocoa ObjC.app/Contents/MacOS/PunyCocoa ObjC";
+			};
+			name = Debug;
+		};
+		B2F9459127F9083D001D15D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = M72QZ9W58G;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.derailer.IDNACocoaObjCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PunyCocoa ObjC.app/Contents/MacOS/PunyCocoa ObjC";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1645,6 +2041,24 @@
 			buildConfigurations = (
 				B2C8FD6824661FC2006DF2D9 /* Debug */,
 				B2C8FD6924661FC2006DF2D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B2F9458C27F9083D001D15D3 /* Build configuration list for PBXNativeTarget "IDNACocoaObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F9458D27F9083D001D15D3 /* Debug */,
+				B2F9458E27F9083D001D15D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B2F9458F27F9083D001D15D3 /* Build configuration list for PBXNativeTarget "IDNACocoaObjCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F9459027F9083D001D15D3 /* Debug */,
+				B2F9459127F9083D001D15D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

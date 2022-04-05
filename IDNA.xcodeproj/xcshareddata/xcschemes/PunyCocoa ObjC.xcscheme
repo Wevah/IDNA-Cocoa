@@ -53,6 +53,16 @@
                ReferencedContainer = "container:IDNA.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B2F9457D27F9083D001D15D3"
+               BuildableName = "IDNACocoaObjCTests.xctest"
+               BlueprintName = "IDNACocoaObjCTests"
+               ReferencedContainer = "container:IDNA.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
