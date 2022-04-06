@@ -83,7 +83,7 @@ extension UTS46 {
 				joiningType.count == 1 else { continue }
 
 			for codepoint in range {
-				joiningTypes[UInt32(codepoint)] = JoiningType(rawValue: joiningType.first!)!
+				joiningTypes[UInt32(codepoint)] = JoiningType(rawValue: joiningType.unicodeScalars.first!)!
 			}
 		}
 	}
@@ -113,7 +113,7 @@ extension UTS46 {
 	}
 
 	private static func joiningTypesData() -> Data {
-		var reverseMap: [Character: String] = ["C": "", "D": "", "L": "", "R": "", "T": ""]
+		var reverseMap: [UnicodeScalar: String] = ["C": "", "D": "", "L": "", "R": "", "T": ""]
 
 		for (codepoint, joiningType) in joiningTypes {
 			reverseMap[joiningType.rawValue]?.unicodeScalars.append(UnicodeScalar(codepoint)!)

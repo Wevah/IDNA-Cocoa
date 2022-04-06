@@ -230,7 +230,7 @@ extension UTS46 {
 
 			for scalar in str.unicodeScalars {
 				if scalar.isASCII {
-					type = JoiningType(rawValue: Character(scalar))
+					type = JoiningType(rawValue: scalar)
 				} else if let type = type {
 					if first == nil {
 						first = scalar

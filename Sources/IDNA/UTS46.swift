@@ -88,7 +88,7 @@ class UTS46 {
 		static let sequenceTerminator: UInt8 = 0
 	}
 
-	enum JoiningType: Character {
+	enum JoiningType: UnicodeScalar {
 		case causing = "C"
 		case dual = "D"
 		case right = "R"
