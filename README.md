@@ -119,4 +119,4 @@ Convenience initializer for creating a URL from a Unicode string, relative to an
 
 -----
 
-© 2012–2021 Nate Weaver (Wevah)
+© 2012–2022 Nate Weaver (Wevah)
