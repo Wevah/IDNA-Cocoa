@@ -18,7 +18,7 @@ extension Data {
 		return self.withUnsafeBytes {
 			let buffer = $0.bindMemory(to: UInt8.self)
 
-			if #available(macOS 10.13, iOS 11.0, tvOS 9999.0, watchOS 9999.0, *) {
+			if #available(macOS 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *) {
 				let initial = zlib.crc32_z(0, nil, 0)
 				return UInt32(zlib.crc32_z(initial, buffer.baseAddress, buffer.count))
 			} else {
