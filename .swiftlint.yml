@@ -1,3 +1,9 @@
 disabled_rules:
-    - switch_case_alignment
     - nesting
+
+switch_case_alignment:
+    indented_cases: true
+    
+# Some code has been manually converted from the RFC and uses single-character identifiers.
+identifier_name:
+    min_length: 1
