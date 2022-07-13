@@ -1,5 +1,9 @@
 disabled_rules:
     - nesting
+    - file_length
+
+excluded:
+    - .build
 
 switch_case_alignment:
     indented_cases: true
