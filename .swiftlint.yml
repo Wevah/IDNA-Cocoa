@@ -1,0 +1,3 @@
+disabled_rules:
+    - switch_case_alignment
+    - nesting

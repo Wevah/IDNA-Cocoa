@@ -32,7 +32,7 @@ extension UTS46 {
 
 		switch header.version {
 			case 1:
-				break;
+				break
 			default:
 				if #available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *) {
 					os_log("Unrecognized version found; assuming 1.", type: .debug)

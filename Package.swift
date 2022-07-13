@@ -10,7 +10,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "IDNA",
-            targets: ["IDNA"]),
+            targets: ["IDNA"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -26,6 +26,6 @@ let package = Package(
 			swiftSettings: [.define("SWIFT_PACKAGE")]),
         .testTarget(
             name: "IDNATests",
-            dependencies: ["IDNA"]),
+            dependencies: ["IDNA"])
     ]
 )
