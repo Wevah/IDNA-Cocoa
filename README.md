@@ -86,7 +86,7 @@ init?(unicodeString: String)
 ```objc
 + (nullable instancetype)URLWithUnicodeString:(NSString *)URLString;
 ```
-	
+
 Convenience initializer equivalent to `URL(string: unicodeString.encodedURLString)`/ `[NSURL URLWithString:URLString.encodedURLString]`.
 
 -----

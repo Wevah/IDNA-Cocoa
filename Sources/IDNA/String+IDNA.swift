@@ -348,7 +348,7 @@ private extension StringProtocol {
 
 			let index = result.unicodeScalars.index(result.unicodeScalars.startIndex, offsetBy: Int(i))
 			result.unicodeScalars.insert(UnicodeScalar(n)!, at: index)
-			
+
 			outLen += 1
 			i += 1
 		}
@@ -464,7 +464,7 @@ private extension String {
 	/// See [RFC 5892, Appendix A.1 and A.2](https://tools.ietf.org/html/rfc5892#appendix-A).
 	var hasValidJoiners: Bool {
 		try! UTS46.loadIfNecessary()
-		
+
 		let scalars = self.unicodeScalars
 
 		for index in scalars.indices {

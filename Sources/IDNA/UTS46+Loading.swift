@@ -91,7 +91,7 @@ extension UTS46 {
 			} else {
 				print("uts46 data file is missing!")
 			}
-			
+
 			throw CocoaError(.fileNoSuchFile)
 		}
 
