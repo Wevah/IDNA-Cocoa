@@ -13,9 +13,9 @@ class IDNATests: XCTestCase {
 
 	func testIDNAEncoding() {
 		let dict = [
-			"http://www.bücher.ch/":		"http://www.xn--bcher-kva.ch/",
-			"президент":					"xn--d1abbgf6aiiy",
-			"例え":							"xn--r8jz45g",
+			"http://www.bücher.ch/":			"http://www.xn--bcher-kva.ch/",
+			"президент":						"xn--d1abbgf6aiiy",
+			"例え":								"xn--r8jz45g",
 			/* ltr */ "איגוד-האינטרנט.org.il":	"xn----zhcbgfhe2aacg8fb5i.org.il"
 		]
 
@@ -26,10 +26,10 @@ class IDNATests: XCTestCase {
 
 	func testIDNDecoding() {
 		let dict = [
-			"http://www.xn--bcher-kva.ch/":	"http://www.bücher.ch/",
-			"xn--d1abbgf6aiiy":				"президент",
-			"xn--r8jz45g": 					"例え",
-			"xn----zhcbgfhe2aacg8fb5i.org.il": "איגוד-האינטרנט.org.il"
+			"http://www.xn--bcher-kva.ch/":		"http://www.bücher.ch/",
+			"xn--d1abbgf6aiiy":					"президент",
+			"xn--r8jz45g": 						"例え",
+			"xn----zhcbgfhe2aacg8fb5i.org.il": 	"איגוד-האינטרנט.org.il"
 		]
 
 		for (key, value) in dict {
