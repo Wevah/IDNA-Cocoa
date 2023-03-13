@@ -77,9 +77,9 @@ If marker is `ignoredCharacters` (`0xFE`) or `disallowedCharacters` (`0xFD`):
 
 If marker is `joiningTypes` (`0xFC`):
 
-```
-[type][[codepoint-range] ...]
-```
+
+    [type][[codepoint-range] ...]
+
 
 where `type` is one of `C`, `D`, `L`, `R`, or `T`.
 
