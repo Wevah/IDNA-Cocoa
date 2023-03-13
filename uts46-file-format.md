@@ -10,9 +10,9 @@ All multibyte integers are little-endian.
 
 ## Header
 
-| 6 bytes      | 1 byte  | 1 byte | 4 bytes? |
-|--------------|---------|--------|---------|
-| magic number | version | flags  | optional crc
+| 6 bytes      | 1 byte  | 1 byte | 4 bytes?     |
+|--------------|---------|--------|--------------|
+| magic number | version | flags  | optional crc |
 
 - `magic number`: `"UTS#46"` (`0x55 0x54 0x53 0x23 0x34 0x36`).
 - `version`: format version (1 byte; currently `0x01`).
